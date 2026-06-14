@@ -1,0 +1,4 @@
+seed,npebbles,cutoff_mm,bed_height_mm,zmax_mm,top_bin_count,geometric_contact_count,global_mean_degree,global_median_degree,top_bin_mean_degree,top_bin_median_degree,top10pct_mean_degree,top5_ids,top5_mean_degree,active_pebbles,active_mean_degree,active_median_zrank,localized_broken_bonds,first_break_pebble,first_break_zrank,first_break_degree,first_break_height_bin,first_break_displacement_mm,first_event_new_broken_bonds
+seed01,500,1.05,3.9943700000000004,4.4939100000000005,15,1371,5.484,6.0,3.2,3,3.74,500;499;498;497;496,3.0,5,4.8,30,271,500,1,3,8,0.0724975,23
+seed02,500,1.05,4.08026,4.579879999999999,9,1328,5.312,5.0,3.2222222222222223,3,3.86,500;499;498;497;496,3.0,4,4.5,9.0,246,500,1,3,8,0.0724975,42
+seed03,500,1.05,3.8153040000000003,4.31489,28,1341,5.364,5.0,3.75,4.0,4.06,500;499;498;497;496,3.2,7,4.428571428571429,4,559,500,1,4,8,0.0724975,23

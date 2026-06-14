@@ -1,0 +1,39 @@
+units si
+atom_style granular
+atom_modify map array
+atom_modify sort 0 0.0
+boundary f f f
+newton off
+communicate mode single vel yes
+hard_particles yes
+soft_particles yes
+
+region reg block -0.0012 0.0012 -0.0012 0.0012 -0.0012 0.0012 units box
+create_box 1 reg
+neighbor 1.0e-4 bin
+neigh_modify delay 0
+
+fix m1 all property/global youngsModulus peratomtype 9.0e10
+fix m2 all property/global poissonsRatio peratomtype 0.25
+fix m3 all property/global coefficientRestitution peratomtypepair 1 0.3
+fix m4 all property/global coefficientFriction peratomtypepair 1 0.5
+fix b1 all property/global radiusMultiplierBond peratomtypepair 1 1.0
+fix b2 all property/global normalBondStiffnessPerUnitArea peratomtypepair 1 1.0e14
+fix b3 all property/global tangentialBondStiffnessPerUnitArea peratomtypepair 1 5.0e13
+fix b4 all property/global maxSigmaBond peratomtypepair 1 5.0e7
+fix b5 all property/global maxTauBond peratomtypepair 1 5.0e7
+fix b6 all property/global dampingNormalForceBond peratomtypepair 1 0.0
+fix b7 all property/global dampingTangentialForceBond peratomtypepair 1 0.0
+fix b8 all property/global dampingNormalTorqueBond peratomtypepair 1 0.0
+fix b9 all property/global dampingTangentialTorqueBond peratomtypepair 1 0.0
+fix b10 all property/global tsCreateBond scalar 1.0
+fix b11 all property/global createDistanceBond peratomtypepair 1 2.0e-4
+
+pair_style gran model hertz tangential history cohesion bond stressBreak on createBondAlways off
+pair_coeff * *
+
+fix mesh_bottom all mesh/surface/stress file ../meshes/bottom_plate.stl type 1
+fix mesh_top all mesh/surface/stress file ../meshes/top_plate.stl type 1
+fix wall_all all wall/gran model hertz tangential history cohesion bond mesh n_meshes 2 meshes mesh_bottom mesh_top stressBreak on createBondAlways off
+
+run 0

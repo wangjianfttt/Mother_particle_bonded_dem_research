@@ -1,0 +1,9 @@
+order,display_name,given_name,family_name,affiliation_ids,affiliations,email,corresponding_author,credit_roles,approval_status
+1,Jian Wang,Jian,Wang,"1;2","Anhui University of Science and Technology; Institute of Plasma Physics, Chinese Academy of Sciences",wjfttt@mail.ustc.edu.cn,yes,"Validation; Supervision; Project administration; Methodology; Investigation; Conceptualization",confirm_before_upload
+2,Siyu Wang,Siyu,Wang,1,Anhui University of Science and Technology,,no,"Writing - original draft; Formal analysis; Data curation; Visualization",confirm_before_upload
+3,Hang Zhang,Hang,Zhang,1,Anhui University of Science and Technology,,no,"Writing - original draft; Formal analysis; Data curation; Visualization",confirm_before_upload
+4,Ming-Zhun Lei,Ming-Zhun,Lei,2,"Institute of Plasma Physics, Chinese Academy of Sciences",,no,"Writing - review and editing; Validation; Project administration; Formal analysis",confirm_before_upload
+5,Wei Wen,Wei,Wen,"1;2","Anhui University of Science and Technology; Institute of Plasma Physics, Chinese Academy of Sciences",,no,"Writing - review and editing; Supervision; Project administration; Methodology; Conceptualization",confirm_before_upload
+6,Qi-Gang Wu,Qi-Gang,Wu,2,"Institute of Plasma Physics, Chinese Academy of Sciences",,no,"Validation; Resources; Data curation",confirm_before_upload
+7,Gang Shen,Gang,Shen,1,Anhui University of Science and Technology,,no,"Writing - review and editing; Supervision; Project administration",confirm_before_upload
+8,Haishun Deng,Haishun,Deng,1,Anhui University of Science and Technology,,no,"Supervision; Project administration",confirm_before_upload

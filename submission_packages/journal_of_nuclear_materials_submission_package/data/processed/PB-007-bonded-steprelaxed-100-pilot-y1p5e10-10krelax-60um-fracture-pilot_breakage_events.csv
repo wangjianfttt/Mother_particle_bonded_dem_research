@@ -1,0 +1,4 @@
+event_index,timestep,pebble_id,pebble_z_mm,rank_from_top,reference_step,initial_internal_bonds,intact_internal_bonds,broken_internal_bonds,delta_broken_since_previous_dump,new_broken_bonds,cumulative_broken_bonds,top_displacement_m,top_displacement_mm,top_force_z_N,bottom_force_z_N,side_force_z_N,all_wall_force_z_N
+1,60000,78,2.96658,2,20000,4935,4933,2,2,2,2,2.5e-05,0.025,0.059380426,-0.059637081,-0.012919306,-0.013175961
+2,80000,78,2.96658,2,20000,4935,4931,4,2,2,4,3.5e-05,0.034999999999999996,0.11968985,-0.1536218,-0.036093575,-0.070025517
+3,130000,78,2.96658,2,20000,4935,4930,5,1,1,5,6e-05,0.060000000000000005,0.15779377,-0.19427913,-0.030824573,-0.06730993

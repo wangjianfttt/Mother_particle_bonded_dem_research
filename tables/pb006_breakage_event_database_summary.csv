@@ -1,0 +1,8 @@
+case,npebbles,endpoint_displacement_mm,event_count,broken_bonds,damaged_pebbles,first_break_displacement_mm,first_break_pebble_id,first_break_rank_from_top_id,max_event_size
+seed01-500,500,0.2,11,271,5,0.0724975,500,1,60
+seed02-500,500,0.2,9,246,4,0.0724975,500,1,65
+seed03-500,500,0.2,22,559,7,0.0724975,500,1,63
+seed01-1000-0p10,1000,0.1,6,53,1,0.0674975,1000,1,20
+seed01-1000-0p15-restartable,1000,0.15,15,98,3,0.0674975,1000,1,20
+seed01-1000-orient02-0p15,1000,0.15,9,95,1,0.0724975,1000,1,27
+seed02-1000-0p15-restartable,1000,0.15,31,316,5,0.0599975,1000,1,21

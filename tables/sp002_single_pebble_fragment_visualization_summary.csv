@@ -1,0 +1,8 @@
+metric,value
+source_timestep,1200000
+subparticles,500
+intact_bonds,5335
+fragment_count,40
+largest_fragment_particles,236
+second_fragment_particles,226
+single_particle_fragments,1

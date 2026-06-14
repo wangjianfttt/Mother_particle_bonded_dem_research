@@ -1,0 +1,26 @@
+sample_id,orientation_label,orientation_baseline_force_N,within_orientation_quantile,center_strength_multiplier,recommended_strength_multiplier,bulk_strength_MPa_if_CAL1_bulk90,weakplane_strength_MPa_if_CAL1_weak22p5,expected_force_if_linear_N,inside_target_window_if_linear,strategy_note
+1,x,18.637057,0.1,0.931696,0.872068,78.486105,19.621526,16.252778,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+2,xy30,27.366449,0.1,0.634502,0.593894,53.450487,13.362622,16.252778,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+3,y,28.377954,0.1,0.611886,0.572726,51.545295,12.886324,16.252778,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+4,xy45,24.572794,0.1,0.706638,0.661414,59.527216,14.881804,16.252778,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+5,tilt_xz,14.523440,0.1,1.195590,1.119072,100.716498,25.179124,16.252778,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+6,x,18.637057,0.3,0.931696,0.901882,81.169391,20.292348,16.808428,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+7,xy30,27.366449,0.3,0.634502,0.614198,55.277854,13.819463,16.808428,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+8,y,28.377954,0.3,0.611886,0.592306,53.307527,13.326882,16.808428,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+9,xy45,24.572794,0.3,0.706638,0.684026,61.562334,15.390584,16.808428,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+10,tilt_xz,14.523440,0.3,1.195590,1.157331,104.159797,26.039949,16.808428,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+11,x,18.637057,0.5,0.931696,0.931696,83.852676,20.963169,17.364079,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+12,xy30,27.366449,0.5,0.634502,0.634502,57.105221,14.276305,17.364079,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+13,y,28.377954,0.5,0.611886,0.611886,55.069760,13.767440,17.364079,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+14,xy45,24.572794,0.5,0.706638,0.706638,63.597453,15.899363,17.364079,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+15,tilt_xz,14.523440,0.5,1.195590,1.195590,107.603096,26.900774,17.364079,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+16,x,18.637057,0.7,0.931696,0.961511,86.535962,21.633991,17.919730,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+17,xy30,27.366449,0.7,0.634502,0.654807,58.932588,14.733147,17.919730,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+18,y,28.377954,0.7,0.611886,0.631467,56.831992,14.207998,17.919730,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+19,xy45,24.572794,0.7,0.706638,0.729251,65.632571,16.408143,17.919730,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+20,tilt_xz,14.523440,0.7,1.195590,1.233849,111.046395,27.761599,17.919730,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+21,x,18.637057,0.9,0.931696,0.991325,89.219248,22.304812,18.475380,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+22,xy30,27.366449,0.9,0.634502,0.675111,60.759955,15.189989,18.475380,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+23,y,28.377954,0.9,0.611886,0.651047,58.594224,14.648556,18.475380,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+24,xy45,24.572794,0.9,0.706638,0.751863,67.667690,16.916922,18.475380,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.
+25,tilt_xz,14.523440,0.9,1.195590,1.272108,114.489694,28.622424,18.475380,True,Orientation-conditioned strength multiplier; 8% within-orientation spread around target-mean center.

@@ -1,0 +1,2 @@
+pair_file,inter_pebble_edges,inter_pebble_subcontacts,inter_pebble_force_sum_N,top_loaded_mother_pebbles,bottom_loaded_mother_pebbles,top_wall_force_z_N,bottom_wall_force_z_N,side_wall_force_z_N,all_wall_force_z_N,top_reachable_mother_pebbles,bottom_mothers_reachable_from_top,spanning_force_graph
+simulations/pebble_bed/PB-007/cases/PB-007-bonded-steprelaxed-100-pilot-y2e10-10krelax-continuous0p1-5um-loopfix-pilot/post/pairs_final.local,32,41,0.2228517010673948,2,3,-0.060019,0.04334075,0.00823636956,-0.008441880440000006,24,3,1

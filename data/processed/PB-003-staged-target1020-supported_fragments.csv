@@ -1,0 +1,6 @@
+timestep,intact_bonds,fragment_count,largest_fragment_particles,second_fragment_particles,single_particle_fragments
+5000,80676,12,500,500,0
+10000,80676,12,500,500,0
+15000,80676,12,500,500,0
+20000,80676,12,500,500,0
+25000,80464,24,500,500,12

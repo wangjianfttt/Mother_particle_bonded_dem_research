@@ -1,0 +1,57 @@
+\documentclass[11pt,twocolumn]{article}
+\title{SIZE DEPENDENT CRUSH ANALYSIS OF LITHIUM ORTHOSILICATE PEBBLES\footnote{Published in Fusion Science and Technology, vol. 66, pages:136--141 (2014), doi:10.13182/FST13-737}}
+\author{R.~K.~Annabattula,$^{a,\dagger}$ M.~Kolb,$^{b}$ Y.~Gan,$^{c}$ R.~Rolli$^{b}$ and M.~Kamlah$^{b}$\\
+	$^{a}${\small{Department of Mechanical Engineering, Indian Institute of Technology Madras, Chennai - 600036, India}}
+	\\ 
+	$^{b}${\small{Institute for Applied Materials (IAM), Kalrsruhe Institute of Technology (KIT),}}\\ {\small{76344, Eggenstein-Leopoldshafen, Germany}}
+	\\
+	$^{c}${\small{School of Civil Engineering, The University of Sydney, NSW 2006, Australia}}\\ 
+$^{\dagger}${\small{Corresponding author: ratna@iitm.ac.in}}}
+\usepackage{amssymb}
+\usepackage{amsmath}
+\usepackage{txfonts}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{color}
+\usepackage[numbers,sort&compress,super]{natbib}
+\usepackage{fancyhdr}
+\usepackage{graphicx} % allows inclusion of graphics
+\usepackage{booktabs} % nice rules (thick lines) for tables
+\usepackage{microtype} % improves typography for PDF
+\usepackage{a4wide}
+\usepackage{sectsty}
+\usepackage{inputenc}
+%\usepackage[noheads,nomarkers]{endfloat}
+\usepackage{setspace}
+%\AtBeginDelayedFloats{\linespread{2}\selectfont}
+\sectionfont{\MakeUppercase}
+\newcommand{\addtext}[1]{{\color{black}{#1}}}
+\renewcommand*{\thefootnote}{\fnsymbol{footnote}}
+\renewcommand{\thesection}{\Roman{section}.}
+\renewcommand{\thetable}{\Roman{table}.}
+\renewcommand{\figurename}{Fig.}
+\renewcommand{\tablename}{TABLE}
+\renewcommand{\bibname}{References}
+\makeatletter
+\newcommand*{\citenumns}[2][]{%
+  \begingroup
+  \let\NAT@mbox=\mbox
+  \let\@cite\NAT@citenum
+  \let\NAT@space\NAT@spacechar
+  \let\NAT@super@kern\relax
+  \renewcommand\NAT@open{}%
+  \renewcommand\NAT@close{}%
+  \cite[#1]{#2}%
+  \endgroup
+}
+\makeatother
+\fancyhead{} % clear all header fields
+\date{}
+\begin{document}
+\maketitle
+\input{FST13-737R1Final-Abstract}
+\input{FST13-737R1Final-Content}
+\bibliographystyle{ans}
+\bibliography{references}
+\end{document}
+

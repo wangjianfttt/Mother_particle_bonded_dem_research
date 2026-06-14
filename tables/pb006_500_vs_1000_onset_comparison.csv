@@ -1,0 +1,5 @@
+case,mother_pebbles,endpoint_displacement_mm,output_mode,localized_events,localized_broken_bonds,broken_pebbles,first_break_displacement_mm,first_break_pebble_id,final_top_force_N,top_bin_broken_bonds,second_bin_broken_bonds,interpretation
+seed01,500,0.2,full local-dump sequence,11,271,5,0.0724975,500,27.017553,223,48,500-pebble production statistic at 0.20 mm
+seed02,500,0.2,full local-dump sequence,9,246,4,0.0724975,500,27.412001,210,36,500-pebble production statistic at 0.20 mm
+seed03,500,0.2,full local-dump sequence,22,559,7,0.0724975,500,47.85561,500,59,500-pebble production statistic at 0.20 mm
+seed01-1000 targeted window,1000,0.1,thermo scan plus targeted local-dump window,6,53,1,0.0674975,1000,10.762398,53,0,1000-pebble short-displacement onset check

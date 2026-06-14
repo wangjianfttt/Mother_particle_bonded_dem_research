@@ -1,0 +1,11 @@
+metric,value
+source_csv,/Users/wangjian-macbook13/Documents/颗粒破碎统计研究/data/processed/SP-002-WB-05-tilt_xz-bulk64p328-weak16p082_thermo.csv
+rows,601
+peak_top_force_N,10.075106
+peak_top_force_displacement_mm,0.1865
+peak_bottom_force_N,9.6338356
+peak_bottom_force_displacement_mm,0.1865
+final_intact_bonds,5393.0
+final_broken_bonds,485.0
+first_break_displacement_mm,0.103
+first_break_step,206000.0

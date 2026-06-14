@@ -1,0 +1,11 @@
+metric,value
+source_csv,data/processed/SP-002-stiffness-kn5e13_thermo.csv
+rows,241
+peak_top_force_N,4.9127721
+peak_top_force_displacement_mm,0.1175
+peak_bottom_force_N,4.5402991
+peak_bottom_force_displacement_mm,0.118
+final_intact_bonds,6670.0
+final_broken_bonds,53.0
+first_break_displacement_mm,0.1065
+first_break_step,213000.0

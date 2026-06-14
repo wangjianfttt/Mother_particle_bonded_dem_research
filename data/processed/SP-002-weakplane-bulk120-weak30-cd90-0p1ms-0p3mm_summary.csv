@@ -1,0 +1,11 @@
+metric,value
+source_csv,data/processed/SP-002-weakplane-bulk120-weak30-cd90-0p1ms-0p3mm_thermo.csv
+rows,601
+peak_top_force_N,24.361594
+peak_top_force_displacement_mm,0.2505
+peak_bottom_force_N,23.569436
+peak_bottom_force_displacement_mm,0.254
+final_intact_bonds,5365.0
+final_broken_bonds,511.0
+first_break_displacement_mm,0.1035
+first_break_step,207000.0

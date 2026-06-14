@@ -1,0 +1,9 @@
+case_id,stage,purpose,peak_top_force_N,peak_bottom_force_N,final_broken_bonds,first_break_displacement_mm,source_csv
+SP-002-strength-25MPa,single_pebble,strength_scan,3.9900986,1.7828955,242.0,0.10500000000000001,data/processed/SP-002-strength-25MPa_thermo.csv
+SP-002-strength-50MPa,single_pebble,strength_scan,6.6665597,5.4772435,193.0,0.10500000000000001,data/processed/SP-002-strength-50MPa_thermo.csv
+SP-002-strength-100MPa,single_pebble,strength_scan,16.473327,11.127082,123.0,0.11,data/processed/SP-002-strength-100MPa_thermo.csv
+SP-002-speed-0p1ms-50MPa-bonds,single_pebble,fragment_reference,6.4455429,6.0572662,106.0,0.10900000000000001,data/processed/SP-002-speed-0p1ms-50MPa-bonds_thermo.csv
+PB-001-supported-confined-load,pebble_bed,workflow_check,128.92299,0.059424835,9536.0,0.060000000000000005,data/processed/PB-001-supported-confined-load_thermo.csv
+PB-002-densify,pebble_bed,workflow_check,121.97409,0.0,8419.0,0.02,data/processed/PB-002-densify_thermo.csv
+PB-003-staged-target1000,pebble_bed,staged_initialization_diagnostic,26.155246,2.3959749,352.0,0.079995,data/processed/PB-003-staged-target1000_thermo.csv
+PB-003-staged-target1020-supported,pebble_bed,current_baseline,26.150971,6.4181275,212.0,0.099995,data/processed/PB-003-staged-target1020-supported_thermo.csv

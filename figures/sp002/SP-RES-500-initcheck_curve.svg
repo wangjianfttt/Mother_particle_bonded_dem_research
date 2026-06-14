@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="560" viewBox="0 0 900 560">
+<rect width="100%" height="100%" fill="white"/>
+<text x="450.0" y="26" text-anchor="middle" font-size="22" font-family="Arial, sans-serif" fill="#111827">SP-002 force-displacement and bond breakage</text>
+<line x1="82" y1="40.00" x2="818" y2="40.00" stroke="#d9dee2" stroke-width="1"/><line x1="82" y1="129.60" x2="818" y2="129.60" stroke="#d9dee2" stroke-width="1"/><line x1="82" y1="219.20" x2="818" y2="219.20" stroke="#d9dee2" stroke-width="1"/><line x1="82" y1="308.80" x2="818" y2="308.80" stroke="#d9dee2" stroke-width="1"/><line x1="82" y1="398.40" x2="818" y2="398.40" stroke="#d9dee2" stroke-width="1"/><line x1="82" y1="488.00" x2="818" y2="488.00" stroke="#d9dee2" stroke-width="1"/><line x1="82.00" y1="40" x2="82.00" y2="488" stroke="#edf0f2" stroke-width="1"/><text x="82.00" y="526" text-anchor="middle" font-size="18" fill="#30363d">0.000</text><line x1="229.20" y1="40" x2="229.20" y2="488" stroke="#edf0f2" stroke-width="1"/><text x="229.20" y="526" text-anchor="middle" font-size="18" fill="#30363d">0.000</text><line x1="376.40" y1="40" x2="376.40" y2="488" stroke="#edf0f2" stroke-width="1"/><text x="376.40" y="526" text-anchor="middle" font-size="18" fill="#30363d">0.000</text><line x1="523.60" y1="40" x2="523.60" y2="488" stroke="#edf0f2" stroke-width="1"/><text x="523.60" y="526" text-anchor="middle" font-size="18" fill="#30363d">0.000</text><line x1="670.80" y1="40" x2="670.80" y2="488" stroke="#edf0f2" stroke-width="1"/><text x="670.80" y="526" text-anchor="middle" font-size="18" fill="#30363d">0.000</text><line x1="818.00" y1="40" x2="818.00" y2="488" stroke="#edf0f2" stroke-width="1"/><text x="818.00" y="526" text-anchor="middle" font-size="18" fill="#30363d">0.000</text>
+<line x1="82" y1="40" x2="82" y2="488" stroke="#111827" stroke-width="1.5"/>
+<line x1="82" y1="488" x2="818" y2="488" stroke="#111827" stroke-width="1.5"/>
+<line x1="818" y1="40" x2="818" y2="488" stroke="#111827" stroke-width="1.5"/>
+<polyline points="82.00,488.00 818.00,488.00" fill="none" stroke="#1b6ca8" stroke-width="3"/>
+<polyline points="82.00,488.00 818.00,488.00" fill="none" stroke="#d1495b" stroke-width="3"/>
+<polyline points="82.00,488.00 818.00,488.00 818.00,488.00" fill="none" stroke="#4b8f29" stroke-width="3"/>
+<text x="450.0" y="552" text-anchor="middle" font-size="20" font-family="Arial, sans-serif" fill="#111827">Top displacement (mm)</text>
+<text x="24" y="280.0" text-anchor="middle" transform="rotate(-90 24 280.0)" font-size="20" font-family="Arial, sans-serif" fill="#111827">Force magnitude (N)</text>
+<text x="880" y="280.0" text-anchor="middle" transform="rotate(90 880 280.0)" font-size="20" font-family="Arial, sans-serif" fill="#111827">Broken bonds</text>
+<text x="102" y="64" font-size="18" font-family="Arial, sans-serif" fill="#1b6ca8">Top plate</text>
+<text x="212" y="64" font-size="18" font-family="Arial, sans-serif" fill="#d1495b">Bottom plate</text>
+<text x="352" y="64" font-size="18" font-family="Arial, sans-serif" fill="#4b8f29">Broken bonds</text>
+<text x="72" y="45" text-anchor="end" font-size="17" fill="#30363d">0.00</text>
+<text x="72" y="488" text-anchor="end" font-size="17" fill="#30363d">0</text>
+<text x="828" y="45" text-anchor="start" font-size="17" fill="#30363d">1</text>
+<text x="828" y="488" text-anchor="start" font-size="17" fill="#30363d">0</text>
+</svg>

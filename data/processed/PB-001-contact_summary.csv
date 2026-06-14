@@ -1,0 +1,11 @@
+metric,value
+source_csv,data/processed/PB-001-contact_thermo.csv
+rows,21
+peak_top_force_N,36.097729
+peak_top_force_displacement_mm,0.1
+peak_bottom_force_N,0.0
+peak_bottom_force_displacement_mm,0.0
+final_intact_bonds,80368.0
+final_broken_bonds,308.0
+first_break_displacement_mm,0.055
+first_break_step,11000.0

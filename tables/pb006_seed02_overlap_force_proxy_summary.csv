@@ -1,0 +1,5 @@
+timestep,top_displacement_mm,inter_pebble_edges,inter_subparticle_contacts,inter_hertz_proxy_sum_m32,topwall_pebbles,topwall_subparticle_contacts,topwall_hertz_proxy_sum_m32,top_edge_pebbles,topwall_pebble_ids
+30000,0.0724975,0,0,0,1,1,1.7184959287413475e-10,,500
+40000,0.0974975,0,0,0,1,3,2.1844914254791488e-08,,500
+70000,0.1724975,1,2,7.954027743345039e-09,1,6,2.167684423881482e-08,459-500,500
+80000,0.1974975,4,6,2.578599464619316e-08,2,13,5.8607201808271235e-08,459-500;485-500;491-500;385-459,500;499

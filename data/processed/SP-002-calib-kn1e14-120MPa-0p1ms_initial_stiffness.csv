@@ -1,0 +1,6 @@
+metric,value
+source_csv,data/processed/SP-002-calib-kn1e14-120MPa-0p1ms_thermo.csv
+force_threshold_N,0.05
+fit_points,6
+initial_stiffness_N_per_mm,569.7854462879917
+intercept_N,-57.18950627480316

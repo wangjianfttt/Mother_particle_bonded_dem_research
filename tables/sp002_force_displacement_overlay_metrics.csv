@@ -1,0 +1,4 @@
+case,peak_force_N,peak_displacement_mm,first_break_displacement_mm,final_broken_bonds
+"reference template, 0.10 m/s",18.6371,0.2445,0.1025,703
+"same template, 0.05 m/s",21.6425,0.26075,0.1025,541
+"same template, 0.03 m/s to 0.18 mm",8.84292,0.1584,0.10245,115

@@ -1,0 +1,2 @@
+pair_file,inter_pebble_edges,inter_pebble_subcontacts,inter_pebble_force_sum_N,top_loaded_mother_pebbles,bottom_loaded_mother_pebbles,top_wall_force_z_N,bottom_wall_force_z_N,side_wall_force_z_N,all_wall_force_z_N,top_reachable_mother_pebbles,bottom_mothers_reachable_from_top,spanning_force_graph
+simulations/pebble_bed/PB-007/cases/PB-007-bonded-steprelaxed-100-seed02-600ksettle-y1p5e10-10krelax-10um-gate/post/pairs_final.local,33,42,0.018653150757973833,0,8,0.0,0.0033821752153000003,0.00034834672,0.0037305219353000003,0,0,0

@@ -1,0 +1,9 @@
+case_set,n_cases,peak_top_force_N,first_break_displacement_mm,fragment_signature,manuscript_status
+homogeneous load-matched candidate,1,18.45,0.1155,494 + 1 particles; 6 single-particle chips,reject as final template because morphology is surface chipping
+SP-002-CAL1 deterministic weak-plane candidate,1,18.64,0.1025,227 + 224 particles; 49 single-particle chips,current calibration candidate for bed insertion
+SP-002-CAL1 x-normal 0.05 m/s rate check,1,21.64,0.1025,236 + 226 particles; 38 single-particle chips,true CAL1 rate check; peak rises but remains in target window and split morphology persists
+SP-002 y-normal 0.10 m/s rerun,1,28.38,0.1055,228 + 216 particles; 56 single-particle chips,orientation-specific rate check; do not cite as x-normal CAL1 reproduction
+SP-002 y-normal 0.05 m/s rerun,1,28.32,0.1052,226 + 219 particles; 53 single-particle chips,orientation-specific rate check; matches y-normal 0.10 m/s branch
+CAL1 weak-plane orientation pilot,5,14.52-28.38,0.1025-0.1060,two major fragments in all cases; largest-pair sizes 223-237 and 216-234,pilot scatter evidence; not yet Weibull-calibrated
+y-normal strength multiplier validation,5,13.86-28.38,0.1040-0.1055,two major fragments retained while strength scale changes,validates sample-level strength scaling over one orientation
+initial five-sample Weibull-conditioned trial,5,13.17 +/- 1.82,0.1020-0.1050,two major fragments retained; one low-strength tilted case is more progressive,early trial only; requires orientation-specific interpolation and more samples

@@ -1,0 +1,5 @@
+layer,nx,ny,nz,event_count,total_new_broken_bonds,first_event_timestep,first_event_top_displacement_mm,first_event_pebble_id,first_event_new_broken_bonds
+top,3,3,4,24,430,48000,0.1187475,28,3
+middle_3,3,3,4,0,0,,,,
+middle_2,3,3,4,0,0,,,,
+bottom,3,3,4,0,0,,,,

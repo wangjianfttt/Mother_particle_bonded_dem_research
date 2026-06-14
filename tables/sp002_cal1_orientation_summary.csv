@@ -1,0 +1,6 @@
+case_id,orientation_label,normal_vector,peak_top_force_N,peak_bottom_force_N,first_break_displacement_mm,final_broken_bonds,fragment_count,largest_fragment_particles,second_fragment_particles,single_particle_fragments,largest_fragment_fraction,second_fragment_fraction,failure_mode_draft
+SP-002-weakplane-bulk90-weak22p5-cd90-0p1ms-0p3mm,x,"1,0,0",18.637057,18.067335,0.1025,703.0,51,227,224,49,0.454,0.448,minor_spall_or_early_damage
+SP-002-CAL1-orient-xy30,xy30,"0.866,0.5,0",27.366449,26.892808,0.1055,804.0,59,223,220,57,0.446,0.44,minor_spall_or_early_damage
+SP-002-CAL1-orient-y,y,"0,1,0",28.377954,27.9139,0.1055,792.0,58,228,216,56,0.456,0.432,minor_spall_or_early_damage
+SP-002-CAL1-orient-xy45,xy45,"1,1,0",24.572794,24.067977,0.106,667.0,50,229,223,48,0.458,0.446,minor_spall_or_early_damage
+SP-002-CAL1-orient-tilt,tilt_xz,"1,0,0.5",14.52344,14.076305,0.104,452.0,31,237,234,29,0.474,0.468,progressive_bulk_damage

@@ -1,0 +1,436 @@
+{
+  "overall_status": "BLOCKED_EXTERNAL",
+  "counts": {
+    "PASS": 84,
+    "WARN": 0,
+    "BLOCKED_EXTERNAL": 1,
+    "FAIL": 0
+  },
+  "checks": [
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_submission.pdf",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission.pdf (521473 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_submission.tex",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission.tex (54573 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_submission_draft.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission_draft.md (52499 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_author_metadata.csv",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_author_metadata.csv (1643 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_author_declaration_checklist.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_author_declaration_checklist.md (2734 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_supplementary.pdf",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_supplementary.pdf (1755530 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_highlights.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_highlights.md (378 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_cover_letter_draft.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_cover_letter_draft.md (5624 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_cover_letter.docx",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_cover_letter.docx (39220 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_elsevier_declarations.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_elsevier_declarations.md (3637 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_elsevier_declarations.docx",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_elsevier_declarations.docx (38435 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_editorial_manager_upload_checklist.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_upload_checklist.md (8076 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4513 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md (8786 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_repository_metadata_zenodo.json",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_repository_metadata_zenodo.json (2415 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_reviewer_risk_prebuttal.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_reviewer_risk_prebuttal.md (10290 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv (3360 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_figure_table_source_data_matrix.csv",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_figure_table_source_data_matrix.csv (9733 bytes)"
+    },
+    {
+      "name": "required file: manuscript/journal_of_nuclear_materials_claim_evidence_boundary_matrix.csv",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_claim_evidence_boundary_matrix.csv (4552 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_author_final_upload_readme_zh.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_author_final_upload_readme_zh.md (5026 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_final_submission_action_summary.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_final_submission_action_summary.md (6207 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_coauthor_final_approval_packet.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_coauthor_final_approval_packet.md (5007 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_final_scientific_traceability_audit_20260613.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_final_scientific_traceability_audit_20260613.md (12239 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_transfer_positioning_audit_20260613.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_transfer_positioning_audit_20260613.md (3352 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_materials_novelty_positioning_matrix_20260613.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_materials_novelty_positioning_matrix_20260613.md (5048 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_key_numeric_consistency_audit_20260613.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_key_numeric_consistency_audit_20260613.md (3747 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_model_parameter_consistency_audit_20260613.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_model_parameter_consistency_audit_20260613.md (5644 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_final_upload_manifest.csv",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_final_upload_manifest.csv (3800 bytes)"
+    },
+    {
+      "name": "required file: docs/jnm_final_upload_manifest.md",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_final_upload_manifest.md (2874 bytes)"
+    },
+    {
+      "name": "required file: figures/main/journal_of_nuclear_materials_graphical_abstract.png",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/figures/main/journal_of_nuclear_materials_graphical_abstract.png (453079 bytes)"
+    },
+    {
+      "name": "required file: submission_packages/journal_of_nuclear_materials_submission_package.zip",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/journal_of_nuclear_materials_submission_package.zip (15980389 bytes)"
+    },
+    {
+      "name": "required file: submission_packages/journal_of_nuclear_materials_reproducibility_package.zip",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/journal_of_nuclear_materials_reproducibility_package.zip (9931880 bytes)"
+    },
+    {
+      "name": "required file: submission_packages/journal_of_nuclear_materials_flat_source.zip",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/journal_of_nuclear_materials_flat_source.zip (290431 bytes)"
+    },
+    {
+      "name": "required file: submission_packages/jnm_editorial_manager_upload_ready.zip",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/jnm_editorial_manager_upload_ready.zip (3451018 bytes)"
+    },
+    {
+      "name": "asset manifest",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission_asset_manifest.csv (4779 bytes)"
+    },
+    {
+      "name": "asset manifest",
+      "status": "PASS",
+      "detail": "20 rows; all referenced paths exist"
+    },
+    {
+      "name": "upload matrix",
+      "status": "PASS",
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4513 bytes)"
+    },
+    {
+      "name": "upload matrix",
+      "status": "PASS",
+      "detail": "20 rows; all referenced paths exist"
+    },
+    {
+      "name": "log clean: journal_of_nuclear_materials_submission.log",
+      "status": "PASS",
+      "detail": "No unresolved citations or fatal LaTeX errors"
+    },
+    {
+      "name": "log clean: journal_of_nuclear_materials_submission.log",
+      "status": "PASS",
+      "detail": "No unresolved citations or fatal LaTeX errors"
+    },
+    {
+      "name": "main submission package checksum",
+      "status": "PASS",
+      "detail": "journal_of_nuclear_materials_submission_package.zip checksum OK"
+    },
+    {
+      "name": "public reproducibility package checksum",
+      "status": "PASS",
+      "detail": "journal_of_nuclear_materials_reproducibility_package.zip checksum OK"
+    },
+    {
+      "name": "flat source package checksum",
+      "status": "PASS",
+      "detail": "journal_of_nuclear_materials_flat_source.zip checksum OK"
+    },
+    {
+      "name": "Editorial Manager upload-ready package checksum",
+      "status": "PASS",
+      "detail": "jnm_editorial_manager_upload_ready.zip checksum OK"
+    },
+    {
+      "name": "submission zip members",
+      "status": "PASS",
+      "detail": "39 required members present"
+    },
+    {
+      "name": "graphical abstract dimensions",
+      "status": "PASS",
+      "detail": "3535 x 1421 px"
+    },
+    {
+      "name": "highlights",
+      "status": "PASS",
+      "detail": "5 bullets; all <=85 characters"
+    },
+    {
+      "name": "abstract scope and conservative wording",
+      "status": "PASS",
+      "detail": "PASS abstract scope: 250 words, material framing and conservative boundary verified"
+    },
+    {
+      "name": "reference metadata and citation coverage",
+      "status": "PASS",
+      "detail": "PASS references: 18 active citations, 18 BibTeX entries, metadata complete"
+    },
+    {
+      "name": "manuscript figure/table integrity",
+      "status": "PASS",
+      "detail": "PASS manuscript integrity: 6 figures, 3 tables, 6 figure refs, 3 table refs"
+    },
+    {
+      "name": "figure/table source-data matrix",
+      "status": "PASS",
+      "detail": "PASS source-data matrix: 13 items, all referenced files exist"
+    },
+    {
+      "name": "claim-evidence boundary matrix",
+      "status": "PASS",
+      "detail": "PASS claim-evidence matrix: 9 claims, all evidence paths exist"
+    },
+    {
+      "name": "figure reader-facing text labels",
+      "status": "PASS",
+      "detail": "PASS figure text labels: 7 text-bearing display files audited; 8 raster exports skipped"
+    },
+    {
+      "name": "figure captions companion",
+      "status": "PASS",
+      "detail": "PASS JNM figure captions companion: graphical abstract, 6 main figures, 2 supplementary figures, source paths and reader-facing terminology verified"
+    },
+    {
+      "name": "cover letter and highlights support",
+      "status": "PASS",
+      "detail": "PASS cover letter: title/material framing and 5 highlights verified"
+    },
+    {
+      "name": "declarations and author-confirmation support",
+      "status": "PASS",
+      "detail": "PASS declarations: required Elsevier/JNM declarations present; 18 unchecked author-side confirmation item(s) remain"
+    },
+    {
+      "name": "cover letter and declarations DOCX",
+      "status": "PASS",
+      "detail": "PASS upload-docx: cover letter, declarations DOCX and QA report verified"
+    },
+    {
+      "name": "coauthor final approval packet",
+      "status": "PASS",
+      "detail": "PASS coauthor approval packet: 8 authors, funding text, declarations and evidence boundary verified"
+    },
+    {
+      "name": "Editorial Manager paste-field consistency",
+      "status": "PASS",
+      "detail": "PASS Editorial Manager paste fields: 8 authors, 5 highlights"
+    },
+    {
+      "name": "public reproducibility package",
+      "status": "PASS",
+      "detail": "PASS public reproducibility package: 125 files, manifest, checksum, representative inputs and public-file hygiene verified"
+    },
+    {
+      "name": "repro package evidence coverage",
+      "status": "PASS",
+      "detail": "PASS package coverage: 87 matrix-referenced files included"
+    },
+    {
+      "name": "Elsevier upload compliance",
+      "status": "PASS",
+      "detail": "PASS elsevier-upload-compliance: 5 highlights; graphical abstract 3535x1421px; elsarticle/frontmatter source, elsarticle-num bibliography style, flat source, upload roles, frozen repository-package routing, declarations, author upload README and DOI-insertion guidance verified"
+    },
+    {
+      "name": "Editorial Manager upload-ready bundle",
+      "status": "PASS",
+      "detail": "PASS editorial-manager-upload-ready: 17 files, zip, checksum, source-sync and upload-only hygiene verified"
+    },
+    {
+      "name": "JNM official scope alignment",
+      "status": "PASS",
+      "detail": "PASS JNM official-scope alignment: material scope, novelty boundaries, Elsevier format assets and frozen repository packet verified"
+    },
+    {
+      "name": "JNM transfer-positioning audit",
+      "status": "PASS",
+      "detail": "PASS JNM transfer-positioning audit: NF transfer reason, JNM materials framing and scope boundaries verified"
+    },
+    {
+      "name": "JNM materials-novelty positioning",
+      "status": "PASS",
+      "detail": "PASS materials-novelty positioning: JNM material object, novelty, mechanism evidence and claim boundaries verified"
+    },
+    {
+      "name": "JNM key numeric and parameter consistency",
+      "status": "PASS",
+      "detail": "PASS key numeric consistency: manuscript key event, bond-count, force-network, mechanism-index, model-parameter and active-run provenance values match processed evidence"
+    },
+    {
+      "name": "scientific storyline consistency",
+      "status": "PASS",
+      "detail": "PASS scientific storyline: event sequence, macro response, native-force topology, mechanism indices and conservative boundaries are consistent"
+    },
+    {
+      "name": "objective completion and evidence-boundary audit",
+      "status": "PASS",
+      "detail": "PASS objective-completion audit: 10 requirement rows written to /Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_objective_completion_audit_20260613.md"
+    },
+    {
+      "name": "final scientific traceability audit",
+      "status": "PASS",
+      "detail": "PASS final scientific traceability audit: 9 claims and 13 provenance items verified"
+    },
+    {
+      "name": "PDF frontmatter extraction",
+      "status": "PASS",
+      "detail": "PASS pdf frontmatter: title, 8 authors, affiliations, abstract, keywords and declarations/data-availability text verified"
+    },
+    {
+      "name": "PDF visual QA and metadata warnings",
+      "status": "PASS",
+      "detail": "PASS pdf visual QA: 11 rendered pages, 6 figure-PDF freshness checks, contact sheet and metadata-warning cleanliness verified"
+    },
+    {
+      "name": "repository-deposit staging package",
+      "status": "PASS",
+      "detail": "PASS repository-deposit staging: 11 staged files, manifest hashes, package checksum, root-package sync, metadata-author consistency, handoff sync and pre-DOI gate verified"
+    },
+    {
+      "name": "frozen repository-deposit packet",
+      "status": "PASS",
+      "detail": "PASS frozen deposit packet: submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip checksum OK, metadata JSON valid, upload instructions and support files current"
+    },
+    {
+      "name": "JNM start-here guide",
+      "status": "PASS",
+      "detail": "PASS JNM start-here guide: frozen upload path, DOI commands, gate counts and support-zip copy verified"
+    },
+    {
+      "name": "repository deposit copy-paste fields",
+      "status": "PASS",
+      "detail": "PASS repository copy-paste fields: upload file, metadata and DOI commands verified"
+    },
+    {
+      "name": "final upload manifest",
+      "status": "PASS",
+      "detail": "PASS final upload manifest: 12 entries, hashes and upload roles verified"
+    },
+    {
+      "name": "public upload text hygiene",
+      "status": "PASS",
+      "detail": "PASS public-artifact hygiene: public text has no local absolute paths, no reader-facing internal case labels and DOI placeholders are scoped"
+    },
+    {
+      "name": "reader-facing terminology hygiene",
+      "status": "PASS",
+      "detail": "PASS reader-facing hygiene: internal labels, low-level run-file terms and software provenance are confined to appropriate manuscript locations"
+    },
+    {
+      "name": "fake repository identifier leakage",
+      "status": "PASS",
+      "detail": "PASS fake repository identifier check: no concrete rehearsal DOI or example URL leaked"
+    },
+    {
+      "name": "title consistency",
+      "status": "PASS",
+      "detail": "PASS title consistency: 8 title-sensitive files match manuscript title"
+    },
+    {
+      "name": "author metadata consistency",
+      "status": "PASS",
+      "detail": "PASS author metadata matches manuscript (8 authors)"
+    },
+    {
+      "name": "reader-facing internal case labels",
+      "status": "PASS",
+      "detail": "No PB/SP/CAL/seed labels in active manuscript text"
+    },
+    {
+      "name": "repository DOI/stable URL",
+      "status": "BLOCKED_EXTERNAL",
+      "detail": "Repository deposit and DOI/stable URL insertion still needed: manuscript/journal_of_nuclear_materials_submission_draft.md, manuscript/journal_of_nuclear_materials_submission.tex, manuscript/journal_of_nuclear_materials_claim_evidence_boundary_matrix.csv, manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv, manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv, manuscript/journal_of_nuclear_materials_repository_metadata_readme.md, docs/jnm_author_final_upload_readme_zh.md, docs/jnm_final_submission_action_summary.md, docs/next_stage_optimization_plan.md"
+    },
+    {
+      "name": "running DEM processes",
+      "status": "PASS",
+      "detail": "No active current-workspace LIGGGHTS/lmp process detected"
+    }
+  ]
+}

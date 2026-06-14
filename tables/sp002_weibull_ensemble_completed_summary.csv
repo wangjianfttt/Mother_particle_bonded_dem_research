@@ -1,0 +1,6 @@
+sample_id,case_id,orientation_label,recommended_strength_multiplier,bulk_strength_MPa,weak_strength_MPa,peak_top_force_N,peak_bottom_force_N,first_break_displacement_mm,fragment_count,largest_fragment_particles,second_fragment_particles,single_particle_fragments,largest_fragment_fraction,second_fragment_fraction,failure_mode_draft
+1,SP-002-WB-01-x-bulk60p034-weak15p009,x,0.667049,60.034421,15.008605,12.508447,12.01654,0.102,56,223,223,54,0.446,0.446,minor_spall_or_early_damage
+2,SP-002-WB-02-xy30-bulk61p126-weak15p281,xy30,0.679174,61.125701,15.281425,15.350923,14.994037,0.104,61,221,220,59,0.442,0.44,minor_spall_or_early_damage
+3,SP-002-WB-03-y-bulk62p204-weak15p551,y,0.691152,62.203662,15.550915,14.451689,13.999303,0.104,64,221,217,62,0.442,0.434,minor_spall_or_early_damage
+4,SP-002-WB-04-xy45-bulk63p27-weak15p818,xy45,0.703005,63.27049,15.817623,13.466007,13.010234,0.10500000000000001,54,225,223,52,0.45,0.446,minor_spall_or_early_damage
+5,SP-002-WB-05-tilt_xz-bulk64p328-weak16p082,tilt_xz,0.714758,64.328227,16.082057,10.075106,9.6338356,0.103,33,235,233,30,0.47,0.466,progressive_bulk_damage

@@ -1,0 +1,2 @@
+pair_file,inter_pebble_edges,inter_pebble_subcontacts,inter_pebble_force_sum_N,top_loaded_mother_pebbles,bottom_loaded_mother_pebbles,top_wall_force_z_N,bottom_wall_force_z_N,side_wall_force_z_N,all_wall_force_z_N,top_reachable_mother_pebbles,bottom_mothers_reachable_from_top,spanning_force_graph
+simulations/pebble_bed/PB-007/cases/PB-007-bonded-steprelaxed-100-seed03-600ksettle-y1p5e10-10krelax-60um-nohold-fracture-seed03/post/pairs_final.local,63,97,1.0320753598831003,3,9,-0.21535790000000002,0.16854707918,-0.004470773199999998,-0.051281594020000015,54,7,1

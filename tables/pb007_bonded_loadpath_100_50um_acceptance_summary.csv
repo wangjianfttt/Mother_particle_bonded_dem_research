@@ -1,0 +1,2 @@
+thermo_file,initial_intact_bonds,minimum_intact_bonds,maximum_broken_bonds_per_output,final_top_displacement_m,final_top_force_N,final_bottom_force_N,final_reaction_balance_ratio,native_inter_pebble_edges,native_top_reachable_mother_pebbles,native_bottom_mothers_reachable_from_top,native_spanning_force_graph,zero_pre_damage
+data/processed/PB-007-bonded-loadpath-100-pilot-50um_thermo.csv,493500,493500,0,5e-05,0.006532333,0.00035007989,0.05359186220298322,163,99,26,1,1

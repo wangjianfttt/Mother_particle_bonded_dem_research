@@ -1,0 +1,3 @@
+case,n_mother_pebbles,n_subparticles,event_count,pebbles_with_breakage,first_break_displacement_mm,last_event_displacement_mm,total_new_broken_bonds,min_broken_bonds_per_active_pebble,max_broken_bonds_per_active_pebble,event_timesteps,max_event_force_N
+ordered,36,18000,27,9,0.1287475,0.1487475,306,34,34,52000 56000 60000,20.513885
+random_orientation,36,18000,24,9,0.1187475,0.1487475,430,33,70,48000 52000 56000 60000,37.111366

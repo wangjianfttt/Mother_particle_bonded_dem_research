@@ -1,0 +1,2 @@
+timestep,reference_step,intact_bonds,broken_bonds_from_reference,fragment_count,largest_fragment_fraction,second_fragment_fraction,single_particle_fragment_fraction,largest_span_x_over_d,largest_span_y_over_d,largest_span_z_over_d,second_centroid_r_over_R,broken_edges,broken_core_fraction,broken_surface_fraction,broken_span_x_over_d,broken_span_y_over_d,broken_span_z_over_d,failure_mode_draft
+0,0,0,0,500,0.002,0.002,1.0,0.0,0.0,0.0,0.7129248876013095,0,0.0,0.0,0.0,0.0,0.0,prebond_or_invalid

@@ -1,0 +1,4 @@
+case_id,bond_strength_MPa,peak_top_force_N,peak_top_force_displacement_mm,peak_bottom_force_N,final_broken_bonds,first_break_displacement_mm,thermo_csv
+SP-002-strength-25MPa,25,3.9900986,0.125,1.7828955,242.0,0.10500000000000001,data/processed/SP-002-strength-25MPa_thermo.csv
+SP-002-strength-50MPa,50,6.6665597,0.135,5.4772435,193.0,0.10500000000000001,data/processed/SP-002-strength-50MPa_thermo.csv
+SP-002-strength-100MPa,100,16.473327,0.145,11.127082,123.0,0.11,data/processed/SP-002-strength-100MPa_thermo.csv

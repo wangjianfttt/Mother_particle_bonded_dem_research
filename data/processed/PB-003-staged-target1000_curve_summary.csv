@@ -1,0 +1,11 @@
+metric,value
+source_csv,data/processed/PB-003-staged-target1000_thermo.csv
+rows,24
+peak_top_force_N,26.155246
+peak_top_force_displacement_mm,0.1
+peak_bottom_force_N,2.3959749
+peak_bottom_force_displacement_mm,-0.0
+final_intact_bonds,80324.0
+final_broken_bonds,212.0
+first_break_displacement_mm,0.079995
+first_break_step,17000.0

@@ -1,0 +1,11 @@
+metric,value
+source_csv,/Users/wangjian-macbook13/Documents/颗粒破碎统计研究/data/processed/SP-002-WB-03-y-bulk62p204-weak15p551_thermo.csv
+rows,601
+peak_top_force_N,14.451689
+peak_top_force_displacement_mm,0.27099999999999996
+peak_bottom_force_N,13.999303
+peak_bottom_force_displacement_mm,0.29100000000000004
+final_intact_bonds,4982.0
+final_broken_bonds,864.0
+first_break_displacement_mm,0.104
+first_break_step,208000.0

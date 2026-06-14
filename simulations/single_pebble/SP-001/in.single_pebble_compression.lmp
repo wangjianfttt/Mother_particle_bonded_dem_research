@@ -1,0 +1,93 @@
+# SP-001: Li4SiO4 bonded-sphere single-pebble compression draft
+# Units are SI. This script is a first runnable scaffold and should be validated
+# after LIGGGHTS-INL is compiled locally.
+
+echo            both
+units           si
+atom_style      granular
+atom_modify     map array
+boundary        f f f
+newton          off
+communicate     single vel yes
+hard_particles  yes
+soft_particles  yes
+
+variable        dt              equal 5.0e-9
+variable        dump_every      equal 1000
+variable        nsteps          index 100000
+variable        rho             equal 2400.0
+variable        young           equal 9.0e10
+variable        poisson         equal 0.25
+variable        cor             equal 0.3
+variable        mu              equal 0.5
+
+# First calibration placeholders. These are intentionally conservative and must
+# be fitted against Li4SiO4 single-pebble compression data.
+variable        rb_mult         equal 1.0
+variable        kn_bond         equal 1.0e14
+variable        kt_bond         equal 5.0e13
+variable        sigma_max       equal 5.0e7
+variable        tau_max         equal 5.0e7
+variable        create_dist     equal 2.00e-4
+
+region          reg block -0.001 0.001 -0.001 0.001 -0.001 0.001 units box
+create_box      1 reg
+
+neighbor        1.0e-4 bin
+neigh_modify    delay 0
+
+fix             m1 all property/global youngsModulus peratomtype ${young}
+fix             m2 all property/global poissonsRatio peratomtype ${poisson}
+fix             m3 all property/global coefficientRestitution peratomtypepair 1 ${cor}
+fix             m4 all property/global coefficientFriction peratomtypepair 1 ${mu}
+
+fix             b1 all property/global radiusMultiplierBond peratomtypepair 1 ${rb_mult}
+fix             b2 all property/global normalBondStiffnessPerUnitArea peratomtypepair 1 ${kn_bond}
+fix             b3 all property/global tangentialBondStiffnessPerUnitArea peratomtypepair 1 ${kt_bond}
+fix             b4 all property/global maxSigmaBond peratomtypepair 1 ${sigma_max}
+fix             b5 all property/global maxTauBond peratomtypepair 1 ${tau_max}
+fix             b6 all property/global dampingNormalForceBond peratomtypepair 1 0.0
+fix             b7 all property/global dampingTangentialForceBond peratomtypepair 1 0.0
+fix             b8 all property/global dampingNormalTorqueBond peratomtypepair 1 0.0
+fix             b9 all property/global dampingTangentialTorqueBond peratomtypepair 1 0.0
+fix             b10 all property/global tsCreateBond scalar 1.0
+fix             b11 all property/global createDistanceBond peratomtypepair 1 ${create_dist}
+
+pair_style      gran model hertz tangential history cohesion bond stressBreak on createBondAlways off
+pair_coeff      * *
+
+fix             clump all particletemplate/multiplespheres 15485863 atom_type 1 &
+                density constant ${rho} nspheres 500 ntry 10000000 &
+                spheres file data/li4sio4_sp_500_nooverlap.multisphere scale 1.0 bonded yes
+
+create_particles clump single 0.0 0.0 0.0 velocity 0.0 0.0 0.0
+
+# Minimal mechanical debugging boundary: hold the lower cap and move the upper
+# cap downward. Formal validation should replace this with two rigid mesh plates.
+region          bottom_cap block INF INF INF INF -0.00055 -0.00038 units box
+region          top_cap    block INF INF INF INF  0.00038  0.00055 units box
+group           bottom region bottom_cap
+group           top    region top_cap
+group           mobile subtract all bottom top
+
+fix             hold_bottom bottom freeze
+fix             move_top top move linear 0.0 0.0 -1.0e-4
+fix             integrate mobile nve/sphere
+fix             damp all viscous 0.02
+fix             ts all check/timestep/gran ${dump_every} 0.2 0.2
+
+compute         bond_status all bond/counter
+compute         bond_force all pair/gran/local/bond
+variable        top_force atom fz
+compute         fz_top top reduce sum v_top_force
+
+thermo_style    custom step atoms ke c_fz_top c_bond_status[1] c_bond_status[2] c_bond_status[3]
+thermo          ${dump_every}
+thermo_modify   lost ignore norm no
+
+dump            dmp all custom ${dump_every} post/particles_*.dump id type x y z vx vy vz fx fy fz radius
+# Text bond dumps can be enabled after confirming the local array columns:
+# dump          bnd all local ${dump_every} post/bonds_*.dump index c_bond_force[1] c_bond_force[2] c_bond_force[3]
+
+timestep        ${dt}
+run             ${nsteps}

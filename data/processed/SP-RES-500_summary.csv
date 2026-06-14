@@ -1,0 +1,11 @@
+metric,value
+source_csv,/Users/wangjian-macbook13/Documents/颗粒破碎统计研究/data/processed/SP-RES-500_thermo.csv
+rows,601
+peak_top_force_N,19.395593
+peak_top_force_displacement_mm,0.2605
+peak_bottom_force_N,18.94637
+peak_bottom_force_displacement_mm,0.2605
+final_intact_bonds,5401.0
+final_broken_bonds,475.0
+first_break_displacement_mm,0.095
+first_break_step,190000.0

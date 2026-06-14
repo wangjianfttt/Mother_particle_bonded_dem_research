@@ -1,0 +1,6 @@
+metric,value
+source_csv,data/processed/SP-002-stiffness-kn2e14_thermo.csv
+force_threshold_N,0.05
+fit_points,6
+initial_stiffness_N_per_mm,465.36191885900627
+intercept_N,-46.69041897723722

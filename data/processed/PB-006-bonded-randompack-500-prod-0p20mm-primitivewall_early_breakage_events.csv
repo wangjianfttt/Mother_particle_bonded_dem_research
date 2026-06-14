@@ -1,0 +1,2 @@
+event_index,timestep,pebble_id,new_broken_bonds,cumulative_broken_bonds,top_displacement_m,top_displacement_mm,top_force_z_N,bottom_force_z_N
+1,30000,500,23,23,,,,

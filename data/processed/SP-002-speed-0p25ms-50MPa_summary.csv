@@ -1,0 +1,11 @@
+metric,value
+source_csv,data/processed/SP-002-speed-0p25ms-50MPa_thermo.csv
+rows,121
+peak_top_force_N,6.9870008
+peak_top_force_displacement_mm,0.13125
+peak_bottom_force_N,5.8185261
+peak_bottom_force_displacement_mm,0.13125
+final_intact_bonds,6618.0
+final_broken_bonds,105.0
+first_break_displacement_mm,0.10625
+first_break_step,85000.0

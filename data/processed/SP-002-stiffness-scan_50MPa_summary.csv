@@ -1,0 +1,4 @@
+kn_bond,kt_bond,initial_stiffness_N_per_mm,peak_top_force_N,peak_bottom_force_N,final_broken_bonds,first_break_displacement_mm,source_csv
+5.0e13,25000000000000.0,452.1238411446624,4.9127721,4.5402991,53.0,0.1065,data/processed/SP-002-stiffness-kn5e13_thermo.csv
+1.0e14,50000000000000.0,569.7854462879917,4.5266118,4.0173092,53.0,0.10900000000000001,data/processed/SP-002-stiffness-kn1e14_thermo.csv
+2.0e14,100000000000000.0,465.36191885900627,1.5553246,1.6759937,4727.0,0.1005,data/processed/SP-002-stiffness-kn2e14_thermo.csv

@@ -1,0 +1,3 @@
+seed,first_break_step,first_break_displacement_mm,first_break_pebble_id,first_event_new_broken_bonds,localized_broken_bonds_to_40000,broken_pebbles_to_40000
+seed01,30000,0.0724975,500,23,83,500
+seed02,30000,0.0724975,500,42,60,500

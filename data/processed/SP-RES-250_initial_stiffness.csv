@@ -1,0 +1,6 @@
+metric,value
+source_csv,/Users/wangjian-macbook13/Documents/颗粒破碎统计研究/data/processed/SP-RES-250_thermo.csv
+force_threshold_N,0.05
+fit_points,6
+initial_stiffness_N_per_mm,535.4929805713151
+intercept_N,-50.28291413941776

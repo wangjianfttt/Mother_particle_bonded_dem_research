@@ -1,0 +1,2 @@
+case_label,npebbles,cutoff_mm,bed_height_mm,zmax_mm,top_bin_count,geometric_contact_count,global_mean_degree,top_bin_mean_degree,top5_ids,top5_mean_degree
+seed1000-01,1000,1.02,7.912032999999999,8.41137,58,2564,5.128,3.8448275862068964,1000;999;998;997;996,3.0

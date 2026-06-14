@@ -1,0 +1,8 @@
+source,material,diameter_mm,plate_material,loading_rate_mm_min,mean_crush_load_N,std_crush_load_N,weibull_modulus,sample_count,temperature_C,notes
+"Preliminary investigation of Li4SiO4 pebbles structural performance",Li4SiO4,,,,,,,,,"Fill from paper; reported 1-1.5 mm pebble crushing data should be checked against original table/figure."
+"Zhao et al. Engineering Fracture Mechanics 100 (2013) 28-37; DOI 10.1016/j.engfracmech.2012.05.011",Li4SiO4,0.5,WC,0.015,7.55,1.55,,92,25,"air; OSi 07/1 batch; table values from KIT Scientific Reports reproduction of crush-test data; plate material strongly affects apparent crush load."
+"Zhao et al. Engineering Fracture Mechanics 100 (2013) 28-37; DOI 10.1016/j.engfracmech.2012.05.011",Li4SiO4,0.5,AL,0.015,10.6,3.02,,86,25,"air; OSi 07/1 batch; aluminum plates give higher apparent crush load than WC in this dataset."
+"Zhao et al. Engineering Fracture Mechanics 100 (2013) 28-37; DOI 10.1016/j.engfracmech.2012.05.011",Li4SiO4,0.5,BK7,0.015,5.88,1.14,,200,25,"dry inert gas at FML; closest published pebble-pebble/fusion-environment calibration route in this subset."
+"Size dependent crush analysis of lithium orthosilicate pebbles",Li4SiO4,,,,,,,,,"Use for size effect and Weibull statistics."
+"Elastic response of individual European advanced ceramic breeder pebbles",ceramic breeder,,,,,,,,,"Use for elastic response and initial stiffness calibration."
+"Investigation of the size-dependent crushing behavior of Li4SiO4 pebbles via discrete element method",Li4SiO4,,,,,,,,,"Fusion Engineering and Design 199, 114105; DOI 10.1016/j.fusengdes.2023.114105. Use as DEM/BPM near-neighbor comparison; extract experimental calibration values from paper."

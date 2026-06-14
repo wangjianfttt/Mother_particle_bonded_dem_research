@@ -1,0 +1,2 @@
+dump,subparticles,mother_pebbles,inter_pebble_edges,inter_pebble_subcontacts,active_mother_pebbles,largest_component_pebbles,largest_component_fraction,bottom_contacting_pebbles,largest_component_bottom_pebbles,minimum_surface_z_m,maximum_surface_z_m,maximum_inter_pebble_overlap_m
+simulations/pebble_bed/PB-007/cases/PB-007-rigid-surface-100-pilot/post/spheres_00300000.dump,50000,100,164,292,99,99,0.99,27,26,-1.2928000000000023e-06,0.0034673016,1.0412927229154522e-06

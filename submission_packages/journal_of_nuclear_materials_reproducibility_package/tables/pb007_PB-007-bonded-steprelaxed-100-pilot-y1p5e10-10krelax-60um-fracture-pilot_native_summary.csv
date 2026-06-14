@@ -1,0 +1,2 @@
+pair_file,inter_pebble_edges,inter_pebble_subcontacts,inter_pebble_force_sum_N,top_loaded_mother_pebbles,bottom_loaded_mother_pebbles,top_wall_force_z_N,bottom_wall_force_z_N,side_wall_force_z_N,all_wall_force_z_N,top_reachable_mother_pebbles,bottom_mothers_reachable_from_top,spanning_force_graph
+<project-root>/simulations/pebble_bed/PB-007/cases/PB-007-bonded-steprelaxed-100-pilot-y1p5e10-10krelax-60um-fracture-pilot/post/pairs_final.local,74,119,0.8636818383292806,2,14,-0.1577655,0.19433688507,0.0306680801,0.06723946516999998,57,11,1

@@ -1,0 +1,11 @@
+metric,value
+source_csv,data/processed/SP-002-strength-100MPa_thermo.csv
+rows,31
+peak_top_force_N,16.473327
+peak_top_force_displacement_mm,0.145
+peak_bottom_force_N,11.127082
+peak_bottom_force_displacement_mm,0.13999999999999999
+final_intact_bonds,6600.0
+final_broken_bonds,123.0
+first_break_displacement_mm,0.11
+first_break_step,22000.0
