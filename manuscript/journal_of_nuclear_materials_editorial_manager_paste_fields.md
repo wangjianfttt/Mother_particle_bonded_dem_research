@@ -81,7 +81,7 @@ mother-pebble bond-series tables, breakage-event tables, native force-network se
 data and the scripts used to regenerate the replicate-comparison figure, event-aligned topology
 table and mechanism-metric table. For submission, this package should be deposited in a persistent
 repository such as Zenodo, Figshare or an institutional repository, and the final DOI or stable URL
-should be inserted here before upload: [repository DOI/URL to be added]. Very large raw restart
+should be inserted here before upload: https://doi.org/10.5281/zenodo.20687351. Very large raw restart
 files and full local-bond dump histories are retained as local case archives and can be provided as
 larger audit bundles on reasonable request, subject to repository file-size limits and institutional
 storage constraints.
@@ -134,4 +134,4 @@ Jian Wang: Validation; Supervision; Project administration; Methodology; Investi
 
 ## Repository DOI action
 
-Repository DOI or stable URL is still pending. Deposit the reduced reproducibility package first, then run `python3 scripts/insert_jnm_repository_identifier.py <doi-or-stable-url> --apply --rebuild` before final upload.
+Repository DOI or stable URL: https://doi.org/10.5281/zenodo.20687351. Deposit the reduced reproducibility package first, then run `python3 scripts/insert_jnm_repository_identifier.py https://doi.org/10.5281/zenodo.20687351 --apply --rebuild` before final upload.

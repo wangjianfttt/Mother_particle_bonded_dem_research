@@ -45,7 +45,7 @@ The current Elsevier scope statement also requires a high degree of novelty and 
 
 ## Remaining before real submission
 
-- Deposit the reduced reproducibility package and insert the DOI or stable URL.
+- Reduced reproducibility package deposited at https://doi.org/10.5281/zenodo.20687351.
 - Confirm the current Editorial Manager requirements for graphical abstract and supplementary-file item types at the time of submission.
 - Upload the prepared Highlights file and the separate Supplementary Fig. S1 PDF.
 - Decide whether to upload the current compact two-column PDF or convert to Elsevier `elsarticle` single-column review format.

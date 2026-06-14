@@ -53,9 +53,9 @@ The current dry-run coverage includes these files:
 Search for:
 
 ```text
-[repository DOI/URL to be added]
+https://doi.org/10.5281/zenodo.20687351
 repository DOI or stable URL
-deposit DOI still needed
+repository identifier inserted: https://doi.org/10.5281/zenodo.20687351
 ```
 
 The preferred update route is now:

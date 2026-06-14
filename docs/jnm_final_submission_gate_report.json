@@ -1,26 +1,26 @@
 {
-  "overall_status": "BLOCKED_EXTERNAL",
+  "overall_status": "PASS",
   "counts": {
-    "PASS": 84,
+    "PASS": 85,
     "WARN": 0,
-    "BLOCKED_EXTERNAL": 1,
+    "BLOCKED_EXTERNAL": 0,
     "FAIL": 0
   },
   "checks": [
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_submission.pdf",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission.pdf (521473 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission.pdf (388186 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_submission.tex",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission.tex (54573 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission.tex (54454 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_submission_draft.md",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission_draft.md (52499 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission_draft.md (52380 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_author_metadata.csv",
@@ -30,7 +30,7 @@
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_author_declaration_checklist.md",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_author_declaration_checklist.md (2734 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_author_declaration_checklist.md (2772 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_supplementary.pdf",
@@ -45,22 +45,22 @@
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_cover_letter_draft.md",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_cover_letter_draft.md (5624 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_cover_letter_draft.md (5632 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_cover_letter.docx",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_cover_letter.docx (39220 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_cover_letter.docx (39239 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_elsevier_declarations.md",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_elsevier_declarations.md (3637 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_elsevier_declarations.md (3678 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_elsevier_declarations.docx",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_elsevier_declarations.docx (38435 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_elsevier_declarations.docx (38466 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_editorial_manager_upload_checklist.md",
@@ -70,17 +70,17 @@
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4513 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4542 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md (8786 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md (8837 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_repository_metadata_zenodo.json",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_repository_metadata_zenodo.json (2415 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_repository_metadata_zenodo.json (2539 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_reviewer_risk_prebuttal.md",
@@ -90,7 +90,7 @@
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv (3360 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv (3445 bytes)"
     },
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_figure_table_source_data_matrix.csv",
@@ -100,27 +100,27 @@
     {
       "name": "required file: manuscript/journal_of_nuclear_materials_claim_evidence_boundary_matrix.csv",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_claim_evidence_boundary_matrix.csv (4552 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_claim_evidence_boundary_matrix.csv (4590 bytes)"
     },
     {
       "name": "required file: docs/jnm_author_final_upload_readme_zh.md",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_author_final_upload_readme_zh.md (5026 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_author_final_upload_readme_zh.md (5112 bytes)"
     },
     {
       "name": "required file: docs/jnm_final_submission_action_summary.md",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_final_submission_action_summary.md (6207 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_final_submission_action_summary.md (6272 bytes)"
     },
     {
       "name": "required file: docs/jnm_coauthor_final_approval_packet.md",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_coauthor_final_approval_packet.md (5007 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_coauthor_final_approval_packet.md (5029 bytes)"
     },
     {
       "name": "required file: docs/jnm_final_scientific_traceability_audit_20260613.md",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_final_scientific_traceability_audit_20260613.md (12239 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/docs/jnm_final_scientific_traceability_audit_20260613.md (12277 bytes)"
     },
     {
       "name": "required file: docs/jnm_transfer_positioning_audit_20260613.md",
@@ -160,27 +160,27 @@
     {
       "name": "required file: submission_packages/journal_of_nuclear_materials_submission_package.zip",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/journal_of_nuclear_materials_submission_package.zip (15980389 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/journal_of_nuclear_materials_submission_package.zip (15691737 bytes)"
     },
     {
       "name": "required file: submission_packages/journal_of_nuclear_materials_reproducibility_package.zip",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/journal_of_nuclear_materials_reproducibility_package.zip (9931880 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/journal_of_nuclear_materials_reproducibility_package.zip (9775042 bytes)"
     },
     {
       "name": "required file: submission_packages/journal_of_nuclear_materials_flat_source.zip",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/journal_of_nuclear_materials_flat_source.zip (290431 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/journal_of_nuclear_materials_flat_source.zip (290401 bytes)"
     },
     {
       "name": "required file: submission_packages/jnm_editorial_manager_upload_ready.zip",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/jnm_editorial_manager_upload_ready.zip (3451018 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/submission_packages/jnm_editorial_manager_upload_ready.zip (3318100 bytes)"
     },
     {
       "name": "asset manifest",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission_asset_manifest.csv (4779 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_submission_asset_manifest.csv (4859 bytes)"
     },
     {
       "name": "asset manifest",
@@ -190,7 +190,7 @@
     {
       "name": "upload matrix",
       "status": "PASS",
-      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4513 bytes)"
+      "detail": "/Users/wangjian-macbook13/Documents/\u9897\u7c92\u7834\u788e\u7edf\u8ba1\u7814\u7a76/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4542 bytes)"
     },
     {
       "name": "upload matrix",
@@ -424,8 +424,8 @@
     },
     {
       "name": "repository DOI/stable URL",
-      "status": "BLOCKED_EXTERNAL",
-      "detail": "Repository deposit and DOI/stable URL insertion still needed: manuscript/journal_of_nuclear_materials_submission_draft.md, manuscript/journal_of_nuclear_materials_submission.tex, manuscript/journal_of_nuclear_materials_claim_evidence_boundary_matrix.csv, manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv, manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv, manuscript/journal_of_nuclear_materials_repository_metadata_readme.md, docs/jnm_author_final_upload_readme_zh.md, docs/jnm_final_submission_action_summary.md, docs/next_stage_optimization_plan.md"
+      "status": "PASS",
+      "detail": "No repository DOI placeholder found"
     },
     {
       "name": "running DEM processes",

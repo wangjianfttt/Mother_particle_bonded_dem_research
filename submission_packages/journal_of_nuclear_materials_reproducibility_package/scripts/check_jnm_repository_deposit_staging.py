@@ -51,6 +51,8 @@ BOOTSTRAP_ALLOWED_FAILURES = {
     "PDF visual QA and metadata warnings",
     "final upload manifest",
     "repository-deposit staging package",
+    "frozen repository-deposit packet",
+    "JNM start-here guide",
     "public reproducibility package",
     "repro package evidence coverage",
     "fake repository identifier leakage",

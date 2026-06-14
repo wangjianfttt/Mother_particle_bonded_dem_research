@@ -4,9 +4,9 @@ This is the short author-side checklist for converting the locally prepared Jour
 
 ## Current local status
 
-- Local manuscript/package gate: `BLOCKED_EXTERNAL`
+- Local manuscript/package gate: `PASS after repository identifier insertion`
 - Local failures: none
-- Expected blocker: repository DOI or stable URL has not yet been inserted
+- Repository identifier inserted: https://doi.org/10.5281/zenodo.20687351
 - Public reproducibility package: prepared and checksum-verified
 - Editorial Manager support package: prepared and checksum-verified
 - Final upload manifest: prepared and checksum-verified
@@ -19,15 +19,15 @@ This is the short author-side checklist for converting the locally prepared Jour
 
 Upload this file to Zenodo, Figshare or an institutional repository:
 
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_reproducibility_package.zip`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip`
 - Current verified package size/count: 125 files in the public reproducibility package
-- Frozen SHA256: `ffa2c5d8b73c8c39093eb7b288d4b4fabdc4e3ac2524f9f334747cd91f719430`
+- Frozen SHA256: `b9a8bd2e16ea84ed874e31bac701fb0a45b22fe9435b3a2c898306c518a28a30`
 
 Keep or upload the checksum file:
 
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_reproducibility_package.zip.sha256`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip.sha256`
 
-Run `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/VERIFY_BEFORE_UPLOAD.sh` before upload. The staging folder remains useful for generation and audit, but the frozen folder is the stable upload source.
+Run `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/VERIFY_BEFORE_UPLOAD.sh` before upload. The staging folder remains useful for generation and audit, but the frozen folder is the stable upload source.
 
 Do not use this internal Editorial Manager support package as the public repository record:
 
@@ -50,24 +50,24 @@ Use the final upload manifest as the authoritative file-by-file routing table:
 
 Use this structured metadata file as the source for creators and description:
 
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_repository_metadata_zenodo.json`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_repository_metadata_zenodo.json`
 
 Use the Chinese author-side upload checklist if needed:
 
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/jnm_repository_deposit_action_checklist_zh.md`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/jnm_repository_deposit_action_checklist_zh.md`
 
 ## Step 3: insert the DOI or stable URL
 
 After the repository reserves or publishes a DOI/stable URL, preview the update:
 
 ```bash
-python3 scripts/insert_jnm_repository_identifier.py <doi-or-stable-url> --dry-run
+python3 scripts/insert_jnm_repository_identifier.py https://doi.org/10.5281/zenodo.20687351 --dry-run
 ```
 
 Then apply it and rebuild all derived artifacts:
 
 ```bash
-python3 scripts/insert_jnm_repository_identifier.py <doi-or-stable-url> --apply --rebuild
+python3 scripts/insert_jnm_repository_identifier.py https://doi.org/10.5281/zenodo.20687351 --apply --rebuild
 ```
 
 Expected result after a valid DOI/stable URL is inserted:

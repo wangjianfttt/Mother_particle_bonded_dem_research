@@ -49,7 +49,7 @@ This work was supported by the Anhui Provincial Natural Science Foundation (2408
 - Declaration of competing interest: the authors declare no known competing financial interests or personal relationships that could have appeared to influence the work.
 - Role of the funding source: the funding sources had no role in the design of the computational study, data collection, data analysis, manuscript writing or submission decision.
 - Generative-AI declaration: the corresponding author must keep, edit or remove the current Elsevier AI-assisted-technologies statement according to the authors' actual disclosure choice and current submission-form wording.
-- Data and code availability: the reduced reproducibility package must be deposited first, and the real DOI or stable URL must replace the current placeholder before submission.
+- Data and code availability: the reduced reproducibility package must be deposited first, and the real DOI or stable URL has been inserted before submission: https://doi.org/10.5281/zenodo.20687351.
 
 ## Final coauthor confirmation checklist
 

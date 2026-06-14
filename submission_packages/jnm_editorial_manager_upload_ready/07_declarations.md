@@ -35,6 +35,6 @@ The template-generation, run-control, post-processing, figure-building and manus
 - [ ] Corresponding author email confirmed.
 - [ ] CRediT contribution statement confirmed by all authors.
 - [ ] Funding text and grant numbers confirmed.
-- [ ] Repository DOI or stable URL inserted after deposit.
+- [ ] Repository DOI or stable URL inserted after deposit: https://doi.org/10.5281/zenodo.20687351.
 - [ ] Generative-AI declaration confirmed or edited before upload.
 - [ ] Journal submission system metadata matches the manuscript title page.

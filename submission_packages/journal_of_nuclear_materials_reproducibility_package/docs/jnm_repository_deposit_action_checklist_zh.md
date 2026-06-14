@@ -12,11 +12,11 @@
 
 优先上传这个公开可复现包：
 
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_reproducibility_package.zip`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip`
 
 建议同时保存或上传校验文件：
 
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_reproducibility_package.zip.sha256`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip.sha256`
 
 不要把下面这个内部投稿支持包作为公开数据仓库记录上传：
 
@@ -28,8 +28,8 @@
 
 可直接使用：
 
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_repository_metadata_zenodo.json`
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_repository_metadata_readme.md`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_repository_metadata_zenodo.json`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_repository_metadata_readme.md`
 
 建议填写：
 
@@ -55,7 +55,7 @@ python3 scripts/check_jnm_submission_gate.py
 同时在 frozen 上传目录内核对公开可复现包的 SHA256：
 
 ```bash
-cd submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8
+cd submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e
 shasum -a 256 -c journal_of_nuclear_materials_reproducibility_package.zip.sha256
 cd -
 ```

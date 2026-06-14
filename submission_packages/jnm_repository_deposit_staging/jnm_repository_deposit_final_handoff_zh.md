@@ -5,13 +5,13 @@
 ## 只上传这个公开复现包
 
 - 上传文件：`submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip`
-- 文件大小：9.47 MiB
-- SHA256：`b9a8bd2e16ea84ed874e31bac701fb0a45b22fe9435b3a2c898306c518a28a30`
+- 文件大小：9.32 MiB
+- SHA256：`3438ff25b662f3b55c09888605a41275e0801421fb3dd52d973e18677ba6ad02`
 
 建议同时上传或在仓库描述中记录校验文件：
 
 - 校验文件：`submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip.sha256`
-- 校验文件 SHA256：`8f6e9ccc83a00a28868991d8d190280b74fe9d7e57740b0b0b7f91ad22e9dd0a`
+- 校验文件 SHA256：`48f8f509f8c22afd039b1526fa9cb0c3c53808aa3c08a03f7a99ebe75da396d4`
 
 上传前建议在 frozen 目录内执行一次校验，并保留 staging 检查作为生成一致性审计：
 
@@ -26,9 +26,9 @@ python3 scripts/check_jnm_repository_deposit_staging.py
 
 ## 当前本地 gate 状态
 
-- overall_status：`BLOCKED_EXTERNAL`
-- PASS/WARN/BLOCKED_EXTERNAL/FAIL：`84/0/1/0`
-- 当前外部 blocker：repository DOI/stable URL
+- overall_status：`PASS`
+- PASS/WARN/BLOCKED_EXTERNAL/FAIL：`85/0/0/0`
+- 当前外部 blocker：无
 
 这个状态是正常的：在真实 DOI 或稳定 URL 插入前，本地 gate 应保持 `BLOCKED_EXTERNAL`，且不应有 `FAIL`。
 

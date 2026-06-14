@@ -50,5 +50,12 @@
   "access_right": "open",
   "version": "1.0",
   "language": "eng",
-  "notes": "Before final deposit, confirm author names, affiliations, license choice, repository community and whether ORCID identifiers should be added. After deposit, insert the generated DOI or stable URL into the manuscript Data availability statement, cover letter and submission system."
+  "notes": "Before final upload, confirm author names, affiliations, license choice, repository community and whether ORCID identifiers should be added. Repository identifier inserted for manuscript submission: https://doi.org/10.5281/zenodo.20687351.",
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.20687351",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    }
+  ]
 }

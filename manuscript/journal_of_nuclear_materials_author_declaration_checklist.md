@@ -65,5 +65,5 @@ This work was supported by the Anhui Provincial Natural Science Foundation (2408
 - [ ] Funding numbers are correct.
 - [ ] Competing-interest declaration is approved.
 - [ ] Generative-AI declaration is approved or edited to match the authors' final disclosure choice.
-- [ ] Repository DOI/stable URL is inserted after deposit.
+- [ ] Repository DOI/stable URL inserted after deposit: https://doi.org/10.5281/zenodo.20687351.
 - [ ] Editorial Manager metadata matches the manuscript title page.

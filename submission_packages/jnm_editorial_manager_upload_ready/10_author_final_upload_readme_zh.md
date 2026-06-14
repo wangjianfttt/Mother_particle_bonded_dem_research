@@ -40,8 +40,8 @@ submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/VERIFY_BEFOR
 拿到 DOI 或稳定 URL 后，在项目根目录执行：
 
 ```bash
-python3 scripts/insert_jnm_repository_identifier.py <真实DOI或URL> --dry-run
-python3 scripts/insert_jnm_repository_identifier.py <真实DOI或URL> --apply --rebuild
+python3 scripts/insert_jnm_repository_identifier.py https://doi.org/10.5281/zenodo.20687351 --dry-run
+python3 scripts/insert_jnm_repository_identifier.py https://doi.org/10.5281/zenodo.20687351 --apply --rebuild
 ```
 
 如果插入后 gate 显示 `PASS`，再进入 Editorial Manager 正式投稿。
@@ -57,7 +57,7 @@ python3 scripts/insert_jnm_repository_identifier.py <真实DOI或URL> --apply --
 | Graphical abstract | `figures/main/journal_of_nuclear_materials_graphical_abstract.png` 或 `.tiff` | 系统允许时单独上传 |
 | Supplementary material | `manuscript/journal_of_nuclear_materials_supplementary.pdf` | 作为 supporting information 上传 |
 | Declarations | `manuscript/journal_of_nuclear_materials_elsevier_declarations.md` | 按系统字段分别复制 |
-| Data/code availability | DOI 插入后的 manuscript 和 paste fields | 不要保留 `[repository DOI/URL to be added]` |
+| Data/code availability | DOI 插入后的 manuscript 和 paste fields | 使用真实 DOI：`https://doi.org/10.5281/zenodo.20687351`；不要保留 DOI 占位符 |
 
 投稿用总包在这里：
 

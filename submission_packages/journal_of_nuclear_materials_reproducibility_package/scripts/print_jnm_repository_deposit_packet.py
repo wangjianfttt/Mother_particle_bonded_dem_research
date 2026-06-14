@@ -12,7 +12,7 @@ from pathlib import Path
 ROOT = Path(__file__).resolve().parents[1]
 STAGING = ROOT / "submission_packages/jnm_repository_deposit_staging"
 MANIFEST = STAGING / "STAGING_MANIFEST.csv"
-FROZEN = ROOT / "submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8"
+FROZEN = ROOT / "submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e"
 GATE_JSON = ROOT / "docs/jnm_final_submission_gate_report.json"
 PACKAGE_NAME = "journal_of_nuclear_materials_reproducibility_package.zip"
 CHECKSUM_NAME = PACKAGE_NAME + ".sha256"

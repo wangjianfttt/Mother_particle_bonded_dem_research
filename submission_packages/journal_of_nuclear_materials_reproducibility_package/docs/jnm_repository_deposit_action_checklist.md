@@ -6,13 +6,13 @@ This checklist is for the author-side repository deposit that must be completed 
 
 Upload the reduced public package:
 
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_reproducibility_package.zip`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip`
 
 Also upload or retain with the repository record, if the repository allows supporting files:
 
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_reproducibility_package.zip.sha256`
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_repository_metadata_zenodo.json`
-- `submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8/journal_of_nuclear_materials_repository_metadata_readme.md`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip.sha256`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_repository_metadata_zenodo.json`
+- `submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_repository_metadata_readme.md`
 
 Do not upload the internal Editorial Manager support package as the public data record:
 
@@ -46,7 +46,7 @@ Local checks before upload:
 ```bash
 python3 scripts/check_jnm_public_repro_package.py
 python3 scripts/check_jnm_repository_deposit_staging.py
-cd submission_packages/jnm_repository_deposit_FROZEN_20260614_ffa2c5d8
+cd submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e
 shasum -a 256 -c journal_of_nuclear_materials_reproducibility_package.zip.sha256
 cd -
 ```

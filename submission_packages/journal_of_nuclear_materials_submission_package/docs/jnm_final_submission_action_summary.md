@@ -4,9 +4,9 @@ This is the short author-side checklist for converting the locally prepared Jour
 
 ## Current local status
 
-- Local manuscript/package gate: `BLOCKED_EXTERNAL`
+- Local manuscript/package gate: `PASS after repository identifier insertion`
 - Local failures: none
-- Expected blocker: repository DOI or stable URL has not yet been inserted
+- Repository identifier inserted: https://doi.org/10.5281/zenodo.20687351
 - Public reproducibility package: prepared and checksum-verified
 - Editorial Manager support package: prepared and checksum-verified
 - Final upload manifest: prepared and checksum-verified
@@ -61,13 +61,13 @@ Use the Chinese author-side upload checklist if needed:
 After the repository reserves or publishes a DOI/stable URL, preview the update:
 
 ```bash
-python3 scripts/insert_jnm_repository_identifier.py <doi-or-stable-url> --dry-run
+python3 scripts/insert_jnm_repository_identifier.py https://doi.org/10.5281/zenodo.20687351 --dry-run
 ```
 
 Then apply it and rebuild all derived artifacts:
 
 ```bash
-python3 scripts/insert_jnm_repository_identifier.py <doi-or-stable-url> --apply --rebuild
+python3 scripts/insert_jnm_repository_identifier.py https://doi.org/10.5281/zenodo.20687351 --apply --rebuild
 ```
 
 Expected result after a valid DOI/stable URL is inserted:
