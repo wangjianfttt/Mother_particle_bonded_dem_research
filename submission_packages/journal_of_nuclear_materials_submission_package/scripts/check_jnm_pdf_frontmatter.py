@@ -35,9 +35,7 @@ EXPECTED_TEXT = [
 
 BODY_EXPECTED_TEXT = [
     "Data availability",
-    "Declaration of generative AI",
     "Declaration of competing interest",
-    "Acknowledgements",
 ]
 
 

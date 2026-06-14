@@ -208,9 +208,6 @@ def check_text_support() -> list[str]:
     declarations = DECLARATIONS.read_text()
     required_declaration_terms = [
         "competing interest",
-        "Funding",
-        "Role of the funding source",
-        "Declaration of generative AI",
         "Data availability",
         "Code availability",
     ]

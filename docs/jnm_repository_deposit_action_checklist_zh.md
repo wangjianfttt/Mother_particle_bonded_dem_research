@@ -107,6 +107,6 @@ python3 scripts/check_jnm_submission_gate.py
 ## 7. 论文上传前最后确认
 
 - 作者顺序、单位、通讯作者邮箱和 CRediT 贡献是否确认。
-- 基金、利益冲突、AI 使用声明是否确认。
+- 利益冲突、数据/代码可用性声明是否确认。
 - Data availability 中 DOI 或稳定 URL 是否真实可打开。
 - 论文仍保持保守表述：单颗粒模板是 calibration candidate；100 母球床结果是 event-sequence evidence；不声称收敛破碎概率；不声称最终 Li4SiO4 材料本构；不声称已完成热-流-力耦合预测。

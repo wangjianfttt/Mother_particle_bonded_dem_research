@@ -79,30 +79,31 @@ manifest. The package includes the corrected pilot, the intact independent corre
 delayed-cracking third corrected bed and the 0.5x/0.25x strength-audit thermo histories,
 mother-pebble bond-series tables, breakage-event tables, native force-network series, Fig. 6 source
 data and the scripts used to regenerate the replicate-comparison figure, event-aligned topology
-table and mechanism-metric table. For submission, this package should be deposited in a persistent
-repository such as Zenodo, Figshare or an institutional repository, and the final DOI or stable URL
-should be inserted here before upload: https://doi.org/10.5281/zenodo.20687351. Very large raw restart
-files and full local-bond dump histories are retained as local case archives and can be provided as
-larger audit bundles on reasonable request, subject to repository file-size limits and institutional
-storage constraints.
+table and mechanism-metric table. The package has been deposited in a persistent repository and is
+available at https://doi.org/10.5281/zenodo.20687351. Very large raw restart files and full
+local-bond dump histories are retained as local case archives and can be provided as larger audit
+bundles on reasonable request, subject to repository file-size limits and institutional storage
+constraints.
 
 ## Code availability statement
 
 The template-generation, run-control, figure-generation and post-processing scripts are included in
 the reduced reproducibility package under `scripts/`, with representative DEM input files under
-`simulations/`. The deposited package is intended to reproduce the manuscript-level processed data
-audits, figures and evidence matrices from the included CSV tables and representative inputs; it
-does not redistribute the local DEM executable, very large restart files or full raw local-bond dump
-histories. The simulation environment used for the reported calculations is stated in the Methods
-Summary, and the package manifest provides SHA256 checksums for the deposited scripts, inputs,
-processed data and figures.
+`simulations/`, and are mirrored in the GitHub repository
+`wangjianfttt/Mother_particle_bonded_dem_research`. The citable archived version uses the same
+repository DOI, https://doi.org/10.5281/zenodo.20687351. The package is intended to reproduce the
+manuscript-level processed data audits, figures and evidence matrices from the included CSV tables
+and representative inputs; it does not redistribute the local DEM executable, very large restart
+files or full raw local-bond dump histories. The simulation environment used for the reported
+calculations is stated in the Methods Summary, and the package manifest provides SHA256 checksums
+for the deposited scripts, inputs, processed data and figures.
 
 ## Declaration of competing interest
 
 The authors declare that they have no known competing financial interests or personal relationships
 that could have appeared to influence the work reported in this paper.
 
-## Funding declaration
+## Acknowledgements
 
 This work was supported by the Anhui Provincial Natural Science Foundation (2408085QA030), the
 Science Foundation of the Institute of Plasma Physics, Chinese Academy of Sciences (DSJJ-2025-08),
@@ -112,26 +113,10 @@ and Innovation Team of Anhui Province, China (2022AH010052), the Scientific Rese
 High-level Talents of Anhui University of Science and Technology, China (2021yjrc51), and the
 Collaborative Innovation Program of Hefei Science Center, CAS, China (2019HSC-CIP006).
 
-## Role of the funding source
-
-The funding sources had no role in the design of the computational study, the collection, analysis
-or interpretation of the simulation data, the writing of the manuscript, or the decision to submit
-the article for publication.
-
-## Declaration of generative AI and AI-assisted technologies in the writing process
-
-During the preparation of this work, the authors used OpenAI's ChatGPT/Codex tools to assist with
-manuscript organization, language editing, code review, figure-generation scripting and
-submission-package preparation. After using these tools, the authors reviewed, edited and verified
-the manuscript text, code, figures and data products as needed, and take full responsibility for the
-content of the publication.  Note for the corresponding author: edit or remove this statement
-according to the actual tools used and the current Elsevier submission-form requirement. Do not list
-an AI tool as an author.
-
 ## CRediT authorship contribution statement
 
 Jian Wang: Validation; Supervision; Project administration; Methodology; Investigation; Conceptualization. Siyu Wang: Writing - original draft; Formal analysis; Data curation; Visualization. Hang Zhang: Writing - original draft; Formal analysis; Data curation; Visualization. Ming-Zhun Lei: Writing - review and editing; Validation; Project administration; Formal analysis. Wei Wen: Writing - review and editing; Supervision; Project administration; Methodology; Conceptualization. Qi-Gang Wu: Validation; Resources; Data curation. Gang Shen: Writing - review and editing; Supervision; Project administration. Haishun Deng: Supervision; Project administration.
 
 ## Repository DOI action
 
-Repository DOI or stable URL: https://doi.org/10.5281/zenodo.20687351. Deposit the reduced reproducibility package first, then run `python3 scripts/insert_jnm_repository_identifier.py https://doi.org/10.5281/zenodo.20687351 --apply --rebuild` before final upload.
+Repository DOI or stable URL: https://doi.org/10.5281/zenodo.20687351.

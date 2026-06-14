@@ -110,15 +110,18 @@ def main() -> int:
     abstract = plain_paragraph(section(manuscript_text, "Abstract"))
     data_statement = plain_paragraph(section(manuscript_text, "Data availability statement"))
     code_statement = plain_paragraph(section(manuscript_text, "Code availability statement"))
-    funding = declaration_section(declarations_text, "Funding declaration")
-    role_of_funder = declaration_section(declarations_text, "Role of the funding source")
-    ai_declaration = declaration_section(
-        declarations_text,
-        "Declaration of generative AI and AI-assisted technologies in the writing process",
-    )
+    acknowledgements = plain_paragraph(section(manuscript_text, "Acknowledgements"))
     competing_interest = declaration_section(declarations_text, "Declaration of competing interest")
     highlights = highlight_bullets(highlights_text)
     affiliations = affiliations_from_manuscript(manuscript_text)
+    doi_match = re.search(r"https://doi\.org/\S+", data_statement)
+    repository_action = (
+        f"Repository DOI or stable URL: {doi_match.group(0).rstrip('.')}."
+        if doi_match
+        else "Repository DOI or stable URL is still pending. Deposit the reduced reproducibility package first, "
+        "then run `python3 scripts/insert_jnm_repository_identifier.py <doi-or-stable-url> "
+        "--apply --rebuild` before final upload."
+    )
 
     lines = [
         "# Journal of Nuclear Materials Editorial Manager paste fields",
@@ -174,17 +177,9 @@ def main() -> int:
         "",
         wrap_field(competing_interest),
         "",
-        "## Funding declaration",
+        "## Acknowledgements",
         "",
-        wrap_field(funding),
-        "",
-        "## Role of the funding source",
-        "",
-        wrap_field(role_of_funder),
-        "",
-        "## Declaration of generative AI and AI-assisted technologies in the writing process",
-        "",
-        wrap_field(ai_declaration),
+        wrap_field(acknowledgements),
         "",
         "## CRediT authorship contribution statement",
         "",
@@ -192,9 +187,7 @@ def main() -> int:
         "",
         "## Repository DOI action",
         "",
-        "Repository DOI or stable URL is still pending. Deposit the reduced reproducibility package first, "
-        "then run `python3 scripts/insert_jnm_repository_identifier.py <doi-or-stable-url> "
-        "--apply --rebuild` before final upload.",
+        repository_action,
         "",
     ]
     OUTPUT.write_text("\n".join(lines), encoding="utf-8")

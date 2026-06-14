@@ -90,6 +90,5 @@ Use these prepared files:
 ## Final author checks
 
 - Confirm author order, affiliations and CRediT roles.
-- Confirm funding and competing-interest statements.
-- Confirm the generative-AI declaration wording.
+- Confirm the Acknowledgements, competing-interest, data-availability and code-availability statements.
 - Confirm the conservative claim boundaries: calibration candidate, event-sequence evidence, no converged failure probability, no final Li4SiO4 material law and no coupled thermal-flow prediction.

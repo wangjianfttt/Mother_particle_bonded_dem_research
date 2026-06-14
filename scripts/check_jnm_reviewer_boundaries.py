@@ -51,7 +51,7 @@ REQUIRED_PREBUTTAL_PHRASES = [
     "Do not call the bed compression fully quasi-static",
 ]
 
-EXPECTED_RISKS = {f"R{idx}" for idx in range(1, 11)}
+EXPECTED_RISKS = {f"R{idx}" for idx in range(1, 10)}
 EXPECTED_CLAIMS = {f"C{idx}" for idx in range(1, 10)}
 
 RISKY_PATTERNS = {

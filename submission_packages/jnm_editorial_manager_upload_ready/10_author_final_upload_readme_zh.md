@@ -67,7 +67,7 @@ python3 scripts/insert_jnm_repository_identifier.py https://doi.org/10.5281/zeno
 
 ## 3. 复制粘贴字段
 
-优先从下面这个文件复制标题、摘要、关键词、Highlights、Data availability、Code availability、Funding、CRediT 和 AI 声明：
+优先从下面这个文件复制标题、摘要、关键词、Highlights、Data availability、Code availability、Acknowledgements、CRediT 和利益冲突声明：
 
 `manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md`
 
@@ -88,7 +88,7 @@ Jian Wang, `wjfttt@mail.ustc.edu.cn`
 - `python3 scripts/check_jnm_final_upload_manifest.py` 输出 `PASS final upload manifest`。
 - Data availability 中已经是真实 DOI 或稳定 URL。
 - PDF 首页作者、单位、摘要、关键词无错。
-- 8 位作者均确认作者顺序、单位、基金、CRediT、利益冲突和 AI 声明。
+- 8 位作者均确认作者顺序、单位、CRediT、Acknowledgements、利益冲突、数据/代码可用性和论文证据边界。
 - 不上传内部 reviewer-risk prebuttal，除非编辑部明确要求。
 - 不把本地大体积 restart、完整 local-bond dump 当成常规补充文件上传；公开包中已经包含可审查的 processed data、代表性输入、图表源数据和脚本。
 

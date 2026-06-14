@@ -20,6 +20,14 @@ Reduced reproducibility package for acceptance-gated bonded-template DEM of Li4S
 
 This reduced reproducibility package supports the manuscript "Acceptance-gated bonded-template DEM reveals localized fracture sequences in Li4SiO4 ceramic breeder beds". It contains processed single-pebble validation summaries, corrected-bed thermo histories, mother-pebble bond-series tables, breakage-event tables, native force-network summaries, figure source data, manuscript figures and post-processing scripts. Very large DEM restart files and complete raw local-bond dump histories are retained outside this reduced package and can be assembled as larger audit bundles on reasonable request.
 
+The corresponding live GitHub repository is:
+
+https://github.com/wangjianfttt/Mother_particle_bonded_dem_research
+
+The citable archived package uses the DOI:
+
+https://doi.org/10.5281/zenodo.20687351
+
 ## Suggested license
 
 Use `CC BY 4.0` for the reduced data/figure/script package unless the corresponding author or institution prefers another repository license. If code reuse is expected, consider adding a separate software license before public release.

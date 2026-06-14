@@ -10,7 +10,7 @@ Do not submit until:
 
 - The reduced reproducibility package has been deposited in a persistent repository.
 - The generated DOI or stable URL has been inserted into the manuscript Data availability statement.
-- The corresponding author has confirmed the author list, affiliations, funding text, CRediT statement, competing-interest statement and generative-AI declaration.
+- The corresponding author has confirmed the author list, affiliations, CRediT statement, competing-interest statement, data/code availability statements and conservative claim boundaries.
 
 ## File upload matrix
 

@@ -1,34 +1,34 @@
 # JNM final submission gate report
 
-Overall status: **PASS**
+Overall status: **FAIL**
 
-Summary: 85 PASS, 0 WARN, 0 BLOCKED_EXTERNAL, 0 FAIL.
+Summary: 84 PASS, 0 WARN, 0 BLOCKED_EXTERNAL, 1 FAIL.
 
 | Check | Status | Detail |
 | --- | --- | --- |
-| required file: manuscript/journal_of_nuclear_materials_submission.pdf | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_submission.pdf (388186 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_submission.tex | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_submission.tex (54454 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_submission_draft.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_submission_draft.md (52380 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_submission.pdf | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_submission.pdf (387862 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_submission.tex | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_submission.tex (53874 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_submission_draft.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_submission_draft.md (51805 bytes) |
 | required file: manuscript/journal_of_nuclear_materials_author_metadata.csv | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_author_metadata.csv (1643 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_author_declaration_checklist.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_author_declaration_checklist.md (2772 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_author_declaration_checklist.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_author_declaration_checklist.md (1940 bytes) |
 | required file: manuscript/journal_of_nuclear_materials_supplementary.pdf | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_supplementary.pdf (1755530 bytes) |
 | required file: manuscript/journal_of_nuclear_materials_highlights.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_highlights.md (378 bytes) |
 | required file: manuscript/journal_of_nuclear_materials_cover_letter_draft.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_cover_letter_draft.md (5632 bytes) |
 | required file: manuscript/journal_of_nuclear_materials_cover_letter.docx | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_cover_letter.docx (39239 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_elsevier_declarations.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_elsevier_declarations.md (3678 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_elsevier_declarations.docx | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_elsevier_declarations.docx (38466 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_editorial_manager_upload_checklist.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_editorial_manager_upload_checklist.md (8076 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4542 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md (8837 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_repository_metadata_zenodo.json | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_repository_metadata_zenodo.json (2539 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_reviewer_risk_prebuttal.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_reviewer_risk_prebuttal.md (10290 bytes) |
-| required file: manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv (3445 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_elsevier_declarations.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_elsevier_declarations.md (2062 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_elsevier_declarations.docx | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_elsevier_declarations.docx (37751 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_editorial_manager_upload_checklist.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_editorial_manager_upload_checklist.md (8101 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4534 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_editorial_manager_paste_fields.md (7748 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_repository_metadata_zenodo.json | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_repository_metadata_zenodo.json (2814 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_reviewer_risk_prebuttal.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_reviewer_risk_prebuttal.md (9922 bytes) |
+| required file: manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_reviewer_risk_matrix.csv (3190 bytes) |
 | required file: manuscript/journal_of_nuclear_materials_figure_table_source_data_matrix.csv | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_figure_table_source_data_matrix.csv (9733 bytes) |
 | required file: manuscript/journal_of_nuclear_materials_claim_evidence_boundary_matrix.csv | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_claim_evidence_boundary_matrix.csv (4590 bytes) |
-| required file: docs/jnm_author_final_upload_readme_zh.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_author_final_upload_readme_zh.md (5077 bytes) |
-| required file: docs/jnm_final_submission_action_summary.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_final_submission_action_summary.md (6272 bytes) |
-| required file: docs/jnm_coauthor_final_approval_packet.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_coauthor_final_approval_packet.md (5029 bytes) |
-| required file: docs/jnm_final_scientific_traceability_audit_20260613.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_final_scientific_traceability_audit_20260613.md (12239 bytes) |
+| required file: docs/jnm_author_final_upload_readme_zh.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_author_final_upload_readme_zh.md (5172 bytes) |
+| required file: docs/jnm_final_submission_action_summary.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_final_submission_action_summary.md (6274 bytes) |
+| required file: docs/jnm_coauthor_final_approval_packet.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_coauthor_final_approval_packet.md (3922 bytes) |
+| required file: docs/jnm_final_scientific_traceability_audit_20260613.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_final_scientific_traceability_audit_20260613.md (12277 bytes) |
 | required file: docs/jnm_transfer_positioning_audit_20260613.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_transfer_positioning_audit_20260613.md (3352 bytes) |
 | required file: docs/jnm_materials_novelty_positioning_matrix_20260613.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_materials_novelty_positioning_matrix_20260613.md (5048 bytes) |
 | required file: docs/jnm_key_numeric_consistency_audit_20260613.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_key_numeric_consistency_audit_20260613.md (3747 bytes) |
@@ -36,13 +36,13 @@ Summary: 85 PASS, 0 WARN, 0 BLOCKED_EXTERNAL, 0 FAIL.
 | required file: docs/jnm_final_upload_manifest.csv | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_final_upload_manifest.csv (3800 bytes) |
 | required file: docs/jnm_final_upload_manifest.md | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/docs/jnm_final_upload_manifest.md (2874 bytes) |
 | required file: figures/main/journal_of_nuclear_materials_graphical_abstract.png | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/figures/main/journal_of_nuclear_materials_graphical_abstract.png (453079 bytes) |
-| required file: submission_packages/journal_of_nuclear_materials_submission_package.zip | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/submission_packages/journal_of_nuclear_materials_submission_package.zip (15691866 bytes) |
-| required file: submission_packages/journal_of_nuclear_materials_reproducibility_package.zip | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/submission_packages/journal_of_nuclear_materials_reproducibility_package.zip (9775067 bytes) |
-| required file: submission_packages/journal_of_nuclear_materials_flat_source.zip | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/submission_packages/journal_of_nuclear_materials_flat_source.zip (290401 bytes) |
-| required file: submission_packages/jnm_editorial_manager_upload_ready.zip | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/submission_packages/jnm_editorial_manager_upload_ready.zip (3318085 bytes) |
-| asset manifest | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_submission_asset_manifest.csv (4859 bytes) |
+| required file: submission_packages/journal_of_nuclear_materials_submission_package.zip | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/submission_packages/journal_of_nuclear_materials_submission_package.zip (15680399 bytes) |
+| required file: submission_packages/journal_of_nuclear_materials_reproducibility_package.zip | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/submission_packages/journal_of_nuclear_materials_reproducibility_package.zip (9770267 bytes) |
+| required file: submission_packages/journal_of_nuclear_materials_flat_source.zip | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/submission_packages/journal_of_nuclear_materials_flat_source.zip (290200 bytes) |
+| required file: submission_packages/jnm_editorial_manager_upload_ready.zip | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/submission_packages/jnm_editorial_manager_upload_ready.zip (3315386 bytes) |
+| asset manifest | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_submission_asset_manifest.csv (4814 bytes) |
 | asset manifest | PASS | 20 rows; all referenced paths exist |
-| upload matrix | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4542 bytes) |
+| upload matrix | PASS | /Users/wangjian-macbook13/Documents/颗粒破碎统计研究/manuscript/journal_of_nuclear_materials_editorial_manager_upload_matrix.csv (4534 bytes) |
 | upload matrix | PASS | 20 rows; all referenced paths exist |
 | log clean: journal_of_nuclear_materials_submission.log | PASS | No unresolved citations or fatal LaTeX errors |
 | log clean: journal_of_nuclear_materials_submission.log | PASS | No unresolved citations or fatal LaTeX errors |
@@ -61,9 +61,9 @@ Summary: 85 PASS, 0 WARN, 0 BLOCKED_EXTERNAL, 0 FAIL.
 | figure reader-facing text labels | PASS | PASS figure text labels: 7 text-bearing display files audited; 8 raster exports skipped |
 | figure captions companion | PASS | PASS JNM figure captions companion: graphical abstract, 6 main figures, 2 supplementary figures, source paths and reader-facing terminology verified |
 | cover letter and highlights support | PASS | PASS cover letter: title/material framing and 5 highlights verified |
-| declarations and author-confirmation support | PASS | PASS declarations: required Elsevier/JNM declarations present; 18 unchecked author-side confirmation item(s) remain |
+| declarations and author-confirmation support | PASS | PASS declarations: required Elsevier/JNM declarations present; 14 unchecked author-side confirmation item(s) remain |
 | cover letter and declarations DOCX | PASS | PASS upload-docx: cover letter, declarations DOCX and QA report verified |
-| coauthor final approval packet | PASS | PASS coauthor approval packet: 8 authors, funding text, declarations and evidence boundary verified |
+| coauthor final approval packet | PASS | PASS coauthor approval packet: 8 authors, declarations and evidence boundary verified |
 | Editorial Manager paste-field consistency | PASS | PASS Editorial Manager paste fields: 8 authors, 5 highlights |
 | public reproducibility package | PASS | PASS public reproducibility package: 125 files, manifest, checksum, representative inputs and public-file hygiene verified |
 | repro package evidence coverage | PASS | PASS package coverage: 87 matrix-referenced files included |
@@ -78,7 +78,7 @@ Summary: 85 PASS, 0 WARN, 0 BLOCKED_EXTERNAL, 0 FAIL.
 | final scientific traceability audit | PASS | PASS final scientific traceability audit: 9 claims and 13 provenance items verified |
 | PDF frontmatter extraction | PASS | PASS pdf frontmatter: title, 8 authors, affiliations, abstract, keywords and declarations/data-availability text verified |
 | PDF visual QA and metadata warnings | PASS | PASS pdf visual QA: 11 rendered pages, 6 figure-PDF freshness checks, contact sheet and metadata-warning cleanliness verified |
-| repository-deposit staging package | PASS | PASS repository-deposit staging: 11 staged files, manifest hashes, package checksum, root-package sync, metadata-author consistency, handoff sync and pre-DOI gate verified |
+| repository-deposit staging package | FAIL | FAIL repository-deposit staging: final gate report contains non-staging FAIL entries Editorial Manager upload-ready bundle |
 | frozen repository-deposit packet | PASS | PASS frozen deposit packet: submission_packages/jnm_repository_deposit_FROZEN_20260614_b9a8bd2e/journal_of_nuclear_materials_reproducibility_package.zip checksum OK, metadata JSON valid, upload instructions and support files current |
 | JNM start-here guide | PASS | PASS JNM start-here guide: frozen upload path, DOI commands, gate counts and support-zip copy verified |
 | repository deposit copy-paste fields | PASS | PASS repository copy-paste fields: upload file, metadata and DOI commands verified |

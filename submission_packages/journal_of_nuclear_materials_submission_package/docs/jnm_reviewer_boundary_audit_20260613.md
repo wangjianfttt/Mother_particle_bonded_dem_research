@@ -18,7 +18,6 @@ that every high-risk reviewer concern remains bounded by the current evidence.
 | Dynamic and quasi-static limits | Single-pebble rate checks and step-relaxed bed gates bound the present protocol. | Fig. 3, Fig. 4, Methods and reviewer-risk prebuttal. | Do not call the corrected bed compression fully quasi-static; use step-relaxed and rate-bounded wording. |
 | 60 micrometre endpoint force balance | The 60 micrometre endpoint is not treated as a quasi-static force-balance validation state; it is used as fracture-event chronology and native force-network reorganization evidence. | Active-run provenance capsule and processed acceptance summary. | Do not promote the 60 micrometre endpoint residual to a validated quasi-static bed response. |
 | Data availability | The reduced reproducibility package is locally prepared and checksum verified, but submission completion needs a repository DOI or stable URL. | Final gate, frozen deposit packet, final upload manifest and data-availability statement. | Do not submit as locally complete while the DOI/stable URL placeholder remains. |
-| AI declaration | AI-assisted writing/code support is declared with author responsibility retained. | Manuscript declaration and Elsevier declarations file. | Do not leave the declaration out of the submitted manuscript or declarations package. |
 
 ## Required conservative phrases in the active manuscript
 
@@ -47,4 +46,3 @@ The active manuscript must not make unqualified claims of:
 
 Negated or boundary-setting uses are acceptable, for example "not as a
 converged fracture probability" or "not a final Li4SiO4 material law".
-

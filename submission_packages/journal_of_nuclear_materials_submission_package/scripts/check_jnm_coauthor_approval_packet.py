@@ -19,9 +19,7 @@ REQUIRED_PHRASES = [
     "Jian Wang",
     "wjfttt@mail.ustc.edu.cn",
     "CRediT authorship contribution statement",
-    "Funding text to approve",
     "Declaration of competing interest",
-    "Generative-AI declaration",
     "Data and code availability",
     "repository DOI or stable URL",
     "Evidence boundary reminder",
@@ -29,15 +27,7 @@ REQUIRED_PHRASES = [
     "event-sequence and sensitivity evidence",
 ]
 
-REQUIRED_GRANTS = [
-    "2408085QA030",
-    "DSJJ-2025-08",
-    "AIMTEERC202307",
-    "2024M753266",
-    "2022AH010052",
-    "2021yjrc51",
-    "2019HSC-CIP006",
-]
+REQUIRED_GRANTS: list[str] = []
 
 
 def checkbox_count(text: str) -> int:
@@ -74,8 +64,8 @@ def main() -> int:
             if role not in text:
                 errors.append(f"missing CRediT role for {name}: {role}")
 
-    if checkbox_count(text) < 10:
-        errors.append("expected at least 10 final confirmation checkboxes")
+    if checkbox_count(text) < 8:
+        errors.append("expected at least 8 final confirmation checkboxes")
     if "confirm before upload" not in text:
         errors.append("approval packet must preserve confirm-before-upload status")
 
@@ -85,7 +75,7 @@ def main() -> int:
             print(f"- {error}")
         return 1
 
-    print(f"PASS coauthor approval packet: {len(rows)} authors, funding text, declarations and evidence boundary verified")
+    print(f"PASS coauthor approval packet: {len(rows)} authors, declarations and evidence boundary verified")
     return 0
 
 

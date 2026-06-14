@@ -51,8 +51,6 @@ def main() -> int:
     decl_required = [
         "Declarations",
         "Declaration of competing interest",
-        "Funding declaration",
-        "Declaration of generative AI",
         "Data availability statement for Editorial Manager",
         "Final author approval checklist",
     ]

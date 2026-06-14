@@ -50,4 +50,4 @@ The current Elsevier scope statement also requires a high degree of novelty and 
 - Upload the prepared Highlights file and the separate Supplementary Fig. S1 PDF.
 - Decide whether to upload the current compact two-column PDF or convert to Elsevier `elsarticle` single-column review format.
 - If LaTeX source files are requested, use the prepared flat source-file upload bundle because Elsevier's Editorial Manager may not process subfolder paths in source submissions.
-- Confirm the declaration wording for any generative-AI-assisted manuscript preparation before final upload.
+- Confirm the declaration wording for competing interest, data availability and code availability before final upload.

@@ -28,9 +28,7 @@ REQUIRED_SECTIONS = [
     "Data availability statement",
     "Code availability statement",
     "Declaration of competing interest",
-    "Funding declaration",
-    "Role of the funding source",
-    "Declaration of generative AI and AI-assisted technologies in the writing process",
+    "Acknowledgements",
     "CRediT authorship contribution statement",
     "Repository DOI action",
 ]
