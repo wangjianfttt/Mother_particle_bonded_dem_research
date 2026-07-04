@@ -308,6 +308,10 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         DOCS / "cpm_author_email_public_lookup_20260704.md",
         DOCS / "cpm_author_email_public_lookup_20260704.csv",
         MANUSCRIPT / "computational_particle_mechanics_live_submission_packet.docx",
+        MANUSCRIPT / "computational_particle_mechanics_coauthor_email_request_zh_en.docx",
+        MANUSCRIPT / "computational_particle_mechanics_coauthor_email_request_zh_en.txt",
+        MANUSCRIPT / "computational_particle_mechanics_live_submission_checklist.docx",
+        MANUSCRIPT / "computational_particle_mechanics_live_submission_checklist.md",
     ]
     for src in core_files:
         copy_file(src, SUPPORT_DIR, rows=rows, role="core")
@@ -344,6 +348,7 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         "scripts/build_cpm_reviewer_risk_preflight.py",
         "scripts/build_cpm_submission_readiness_report.py",
         "scripts/build_cpm_live_submission_packet.py",
+        "scripts/build_cpm_submission_support_docs.py",
         "scripts/check_cpm_reviewer_risk_preflight.py",
         "scripts/check_cpm_scientific_alignment.py",
         "data/figure_source/pb007_material_strength_response.csv",

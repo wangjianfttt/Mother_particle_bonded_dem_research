@@ -4,6 +4,7 @@ Manuscript: Bonded-template DEM reveals strength- and topology-dependent fractur
 
 - [ ] **Preflight:** Run scripts/check_computational_particle_mechanics_submission_package.py and confirm PASS.
 - [ ] **Author e-mails:** Fill seven missing coauthor e-mails if the live system requires all author e-mails.
+- [ ] **Candidate e-mails:** Ask Gang Shen and Haishun Deng to confirm whether the two public candidate e-mails may be used.
 - [ ] **Article type:** Select Research article or the closest equivalent in the live Elsevier/ScienceDirect system.
 - [ ] **Manuscript:** Upload 01_manuscript.pdf.
 - [ ] **Highlights:** Upload 02_highlights.docx or paste the five Highlights from 08_editorial_submission_fields.docx.

@@ -266,6 +266,17 @@ def check_support_docs() -> None:
             fail(f"START_HERE missing {required}")
     if not LIVE_PACKET_JSON.exists():
         fail("missing live-submission packet JSON")
+    coauthor_request = (
+        ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.txt"
+    ).read_text(encoding="utf-8")
+    for term in [
+        "shenganghit@163.com",
+        "269469122@qq.com",
+        "未确认前直接填入投稿系统",
+        "before author confirmation",
+    ]:
+        if term not in coauthor_request:
+            fail(f"coauthor e-mail request missing confirmation term: {term}")
     payload = json.loads(LIVE_PACKET_JSON.read_text(encoding="utf-8"))
     for key, value in [
         ("target_journal", "Computational Particle Mechanics"),
