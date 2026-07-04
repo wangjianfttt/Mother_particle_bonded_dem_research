@@ -53,6 +53,8 @@ The current local verification status is recorded in:
 - `docs/cpm_submission_readiness_report_20260704.json`
 - `docs/cpm_literature_gap_map_20260704.md`
 - `docs/cpm_literature_gap_map_20260704.csv`
+- `docs/cpm_material_response_summary_20260704.md`
+- `docs/cpm_material_response_summary_20260704.csv`
 - `docs/computational_particle_mechanics_submission_package_qa_20260704.md`
 - `docs/next_stage_optimization_plan.md`
 
@@ -89,4 +91,10 @@ Regenerate the reviewer-risk preflight matrix with:
 
 ```bash
 python3 scripts/build_cpm_reviewer_risk_preflight.py
+```
+
+Regenerate the material-response summary with:
+
+```bash
+python3 scripts/build_cpm_material_response_summary.py
 ```

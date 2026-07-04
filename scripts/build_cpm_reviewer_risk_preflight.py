@@ -44,7 +44,8 @@ ROWS = [
             "figures/pb007/pb007_material_strength_response.pdf; "
             "tables/pb007_material_parameter_response.csv; "
             "tables/pb007_material_strength_matrix_summary.csv; "
-            "data/figure_source/pb007_material_strength_response.csv"
+            "data/figure_source/pb007_material_strength_response.csv; "
+            "docs/cpm_material_response_summary_20260704.md"
         ),
         "boundary": "Finite-window material-strength response, not a universal strength law.",
         "status": "reduced",

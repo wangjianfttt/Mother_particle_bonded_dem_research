@@ -79,6 +79,8 @@ Current literature-gap and novelty support:
 
 - `docs/cpm_literature_gap_map_20260704.md`
 - `docs/cpm_literature_gap_map_20260704.csv`
+- `docs/cpm_material_response_summary_20260704.md`
+- `docs/cpm_material_response_summary_20260704.csv`
 - `docs/cpm_reviewer_risk_preflight_20260704.md`
 - `docs/cpm_reviewer_risk_preflight_20260704.csv`
 

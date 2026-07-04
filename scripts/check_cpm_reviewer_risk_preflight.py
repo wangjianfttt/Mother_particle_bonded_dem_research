@@ -45,6 +45,13 @@ REQUIRED_TEXT = {
         "ready_for_live_submission_after_external_metadata",
         "Missing coauthor e-mail addresses: `7`",
     ],
+    DOCS / "cpm_material_response_summary_20260704.md": [
+        "11 completed endpoints",
+        "6 strength-reduction rows",
+        "first localized bond loss advances from 39 to 19 micrometres",
+        "minimum cracking force sum 0.575 N / maximum zero-loss force sum 0.253 N = 2.28",
+        "Do not use them as a converged stochastic fracture-probability estimate",
+    ],
 }
 
 FORBIDDEN_READER_TERMS = re.compile(
