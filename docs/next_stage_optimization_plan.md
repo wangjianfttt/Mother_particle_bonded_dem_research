@@ -1,3 +1,36 @@
+# Current CPM submission handoff (2026-07-04 23:43 CST)
+
+The active retargeted route is now Computational Particle Mechanics. The current manuscript package should be treated as internally ready after external author metadata, not as an APT/JNM resubmission package.
+
+Verified current artifacts:
+
+- Main upload package: `submission_packages/computational_particle_mechanics_upload_ready.zip` (`shasum -a 256 -c` passed).
+- Optional blinded review package: `submission_packages/computational_particle_mechanics_blinded_review_optional.zip` (`shasum -a 256 -c` passed).
+- Reduced reproducibility/support package: `submission_packages/repaired_submission_package.zip` (`shasum -a 256 -c` passed).
+- Editorial-style repaired upload package: `submission_packages/repaired_editorial_upload_ready.zip` (`shasum -a 256 -c` passed).
+- Current CPM checks passed:
+  - `scripts/check_repaired_submission_package.py`
+  - `scripts/check_computational_particle_mechanics_submission_package.py`
+- Current status reports:
+  - `docs/cpm_submission_readiness_report_20260704.md`
+  - `docs/cpm_goal_completion_audit_20260704.md`
+  - `docs/cpm_live_submission_packet_20260704.md`
+
+Remaining external items before final live submission:
+
+- Complete seven coauthor e-mail addresses if the live submission system requires them.
+- Confirm the article type and upload categories in the live system.
+- Preview the system-generated submission PDF before final submit.
+
+Author-email support files are already generated in Word/CSV/Markdown/text form:
+
+- `manuscript/computational_particle_mechanics_author_email_collection_packet.docx`
+- `manuscript/computational_particle_mechanics_author_email_collection_packet.csv`
+- `manuscript/computational_particle_mechanics_author_email_collection_packet.md`
+- `manuscript/computational_particle_mechanics_author_email_collection_packet.txt`
+
+Storage status remains clean for local raw DEM outputs: a live scan found zero `simulations/` or `data/` raw-output files larger than 20 MB matching `*dump*`, `*.local`, `*.restart`, `*restart*`, `*.vtk`, `*.vtp`, `*.vtu`, `*.lammpstrj`, `*.xyz` or `*.data`. The large raw archives are on `/Volumes/BulkArchive`; see `docs/nas_offload_manifests/nas_offload_status_20260704.md`.
+
 # Current PB-007 manuscript-repair status (2026-07-04)
 
 After the Nuclear Fusion, Journal of Nuclear Materials and Advanced Powder Technology editorial rejections, the next stage is a scientific rebuild. The revised manuscript should answer a particulate-mechanics question: how bonded-particle material strength and random force-path topology jointly control the first localized fracture events in packed brittle ceramic pebbles.

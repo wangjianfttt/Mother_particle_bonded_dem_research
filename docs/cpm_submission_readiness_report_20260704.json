@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T23:30:03",
+  "generated_at": "2026-07-04T23:42:34",
   "target_journal": "Computational Particle Mechanics",
   "manuscript_title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
   "doi": "https://doi.org/10.5281/zenodo.20687351",
@@ -10,8 +10,8 @@
   "upload_package_bytes": 3818973,
   "upload_package_sha256": "eaac922e60de8e66f500f475fcdd8a344089e9608116b4e3d5cdc3c75e173b20",
   "reproducibility_package": "submission_packages/repaired_submission_package.zip",
-  "reproducibility_package_bytes": 6388337,
-  "reproducibility_package_sha256": "10cd79f9fb548d1fefc818a621f8417f8f661e710c2521cf424d5d1991fbd918",
+  "reproducibility_package_bytes": 6388578,
+  "reproducibility_package_sha256": "50f379a87fcdb3a3613ae4183dfc8369dcf01e953a6d4777cdb5c4e5142091b6",
   "required_repro_support_members": 28,
   "present_repro_support_members": 28,
   "missing_repro_support_members": [],

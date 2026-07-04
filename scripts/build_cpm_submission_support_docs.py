@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import csv
 from pathlib import Path
 
 from docx import Document
@@ -53,6 +54,65 @@ PUBLIC_CANDIDATE_EMAILS = [
         "请邓海顺老师确认该邮箱是否可用于投稿系统",
         "Please confirm whether this e-mail may be used in the submission system.",
     ),
+]
+
+AUTHOR_EMAIL_ACTION_ROWS = [
+    {
+        "author": "Siyu Wang",
+        "affiliation": "Anhui University of Science and Technology",
+        "current_status": "Missing",
+        "public_candidate": "",
+        "source": "No reliable public candidate after local search and targeted web search.",
+        "action": "Ask author directly for preferred submission-system e-mail.",
+    },
+    {
+        "author": "Hang Zhang",
+        "affiliation": "Anhui University of Science and Technology",
+        "current_status": "Missing",
+        "public_candidate": "",
+        "source": "No reliable public candidate after local search and targeted web search.",
+        "action": "Ask author directly for preferred submission-system e-mail.",
+    },
+    {
+        "author": "Ming-Zhun Lei",
+        "affiliation": "Institute of Plasma Physics, Chinese Academy of Sciences",
+        "current_status": "Missing",
+        "public_candidate": "leimz@ipp.ac.cn",
+        "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8234535/",
+        "action": "Ask author to confirm whether this public candidate may be used.",
+    },
+    {
+        "author": "Wei Wen",
+        "affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Chinese Academy of Sciences",
+        "current_status": "Missing",
+        "public_candidate": "wenwei@ipp.ac.cn",
+        "source": "https://www.ipp.cas.cn/yjs/xcsc/202207/P020250115777706650358.pdf",
+        "action": "Ask author to confirm whether this public candidate may be used.",
+    },
+    {
+        "author": "Qi-Gang Wu",
+        "affiliation": "Institute of Plasma Physics, Chinese Academy of Sciences",
+        "current_status": "Missing",
+        "public_candidate": "",
+        "source": "No reliable personal e-mail candidate after local search and targeted web search.",
+        "action": "Ask author directly for preferred submission-system e-mail.",
+    },
+    {
+        "author": "Gang Shen",
+        "affiliation": "Anhui University of Science and Technology",
+        "current_status": "Missing",
+        "public_candidate": "shenganghit@163.com",
+        "source": "https://journals.sagepub.com/doi/10.1177/09544062241299521",
+        "action": "Ask author to confirm whether this public candidate may be used.",
+    },
+    {
+        "author": "Haishun Deng",
+        "affiliation": "Anhui University of Science and Technology",
+        "current_status": "Missing",
+        "public_candidate": "269469122@qq.com",
+        "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11637116/",
+        "action": "Ask author to confirm whether this public candidate may be used.",
+    },
 ]
 
 
@@ -181,12 +241,100 @@ def write_live_checklist() -> None:
     md.write_text("\n".join(lines) + "\n", encoding="utf-8")
 
 
+def write_author_email_collection_packet() -> None:
+    csv_path = MANUSCRIPT / "computational_particle_mechanics_author_email_collection_packet.csv"
+    with csv_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(AUTHOR_EMAIL_ACTION_ROWS[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(AUTHOR_EMAIL_ACTION_ROWS)
+
+    short_zh = [
+        "各位老师、同学好，CPM投稿系统可能需要每位作者邮箱。请直接回复：",
+        "1. 投稿系统使用邮箱；",
+        "2. 作者顺序和单位是否确认；",
+        "3. 贡献描述是否确认。",
+        "已有公开候选邮箱的作者请确认能否使用该邮箱；没有候选邮箱的作者请提供一个常用学术邮箱。",
+    ]
+    short_en = [
+        "Dear coauthors, the CPM submission system may require one e-mail address for every author. Please reply with:",
+        "1. preferred submission-system e-mail;",
+        "2. confirmation of author order and affiliation;",
+        "3. confirmation of the contribution statement.",
+        "Authors with public candidate e-mails should confirm whether the candidate can be used. Authors without a candidate should provide a preferred academic e-mail.",
+    ]
+    md_lines = [
+        "# CPM author e-mail collection packet",
+        "",
+        f"Manuscript: {TITLE}",
+        "",
+        "## Copy-ready short message, Chinese",
+        "",
+        *short_zh,
+        "",
+        "## Copy-ready short message, English",
+        "",
+        *short_en,
+        "",
+        "## Action table",
+        "",
+        "| Author | Affiliation | Status | Public candidate | Action |",
+        "| --- | --- | --- | --- | --- |",
+    ]
+    for row in AUTHOR_EMAIL_ACTION_ROWS:
+        md_lines.append(
+            f"| {row['author']} | {row['affiliation']} | {row['current_status']} | "
+            f"{row['public_candidate'] or 'None'} | {row['action']} |"
+        )
+    md_lines.extend(
+        [
+            "",
+            "## Rule",
+            "",
+            "Public candidates are confirmation aids only. Do not enter them into the live submission system until the corresponding author or coauthor confirms the address.",
+            "",
+        ]
+    )
+    md_path = MANUSCRIPT / "computational_particle_mechanics_author_email_collection_packet.md"
+    txt_path = MANUSCRIPT / "computational_particle_mechanics_author_email_collection_packet.txt"
+    md_path.write_text("\n".join(md_lines), encoding="utf-8")
+    txt_path.write_text("\n".join(md_lines), encoding="utf-8")
+
+    doc = Document()
+    configure(doc)
+    add_title(doc, "Author e-mail collection packet")
+    doc.add_heading("Copy-ready short message, Chinese", level=1)
+    for line in short_zh:
+        doc.add_paragraph(line)
+    doc.add_heading("Copy-ready short message, English", level=1)
+    for line in short_en:
+        doc.add_paragraph(line)
+    doc.add_heading("Action table", level=1)
+    table = doc.add_table(rows=1, cols=4)
+    table.style = "Table Grid"
+    headers = ["Author", "Status", "Public candidate", "Action"]
+    for cell, text in zip(table.rows[0].cells, headers):
+        cell.text = text
+    for row in AUTHOR_EMAIL_ACTION_ROWS:
+        cells = table.add_row().cells
+        cells[0].text = row["author"]
+        cells[1].text = row["current_status"]
+        cells[2].text = row["public_candidate"] or "None"
+        cells[3].text = row["action"]
+    doc.add_heading("Rule", level=1)
+    doc.add_paragraph(
+        "Public candidates are confirmation aids only. Do not enter them into the live submission system until the corresponding author or coauthor confirms the address."
+    )
+    doc.save(MANUSCRIPT / "computational_particle_mechanics_author_email_collection_packet.docx")
+
+
 def main() -> None:
     MANUSCRIPT.mkdir(exist_ok=True)
     write_email_request()
     write_live_checklist()
+    write_author_email_collection_packet()
     print(MANUSCRIPT / "computational_particle_mechanics_coauthor_email_request_zh_en.docx")
     print(MANUSCRIPT / "computational_particle_mechanics_live_submission_checklist.docx")
+    print(MANUSCRIPT / "computational_particle_mechanics_author_email_collection_packet.docx")
 
 
 if __name__ == "__main__":

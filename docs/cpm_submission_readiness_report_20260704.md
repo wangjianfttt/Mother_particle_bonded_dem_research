@@ -1,6 +1,6 @@
 # CPM Submission Readiness Report
 
-Generated: `2026-07-04T23:30:03`
+Generated: `2026-07-04T23:42:34`
 
 ## Status
 
@@ -23,8 +23,8 @@ PASS CPM submission package: manifest=15, figures=19, docx=9, DOI, guide alignme
 - Upload package bytes: `3818973`
 - Upload package SHA256: `eaac922e60de8e66f500f475fcdd8a344089e9608116b4e3d5cdc3c75e173b20`
 - Reduced reproducibility package: `submission_packages/repaired_submission_package.zip`
-- Reduced reproducibility package bytes: `6388337`
-- Reduced reproducibility package SHA256: `10cd79f9fb548d1fefc818a621f8417f8f661e710c2521cf424d5d1991fbd918`
+- Reduced reproducibility package bytes: `6388578`
+- Reduced reproducibility package SHA256: `50f379a87fcdb3a3613ae4183dfc8369dcf01e953a6d4777cdb5c4e5142091b6`
 - Required reduced-package CPM support members: `28`
 - Present reduced-package CPM support members: `28`
 - Missing reduced-package CPM support members: `0`

@@ -1,6 +1,6 @@
 # CPM Live Submission Packet
 
-Generated: `2026-07-04T23:30:02`
+Generated: `2026-07-04T23:42:33`
 
 - Target journal: Computational Particle Mechanics
 - Submission route: ScienceDirect / Editorial Manager live submission route
