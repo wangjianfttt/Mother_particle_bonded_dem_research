@@ -1,4 +1,4 @@
-# CPM author e-mail public lookup, 2026-07-04
+# CPM author e-mail public lookup, 2026-07-04; refreshed 2026-07-05
 
 ## Purpose
 
@@ -31,6 +31,16 @@ the coauthor before final entry into the journal submission system.
   variants for Siyu Wang, Hang Zhang and Qi-Gang Wu. The search found ambiguous
   same-name records and author pages without a usable personal e-mail, so no
   additional candidate was added for these three authors.
+- A third targeted lookup on 2026-07-05 repeated English and Chinese searches
+  for `Siyu Wang Anhui University of Science and Technology email`, `王思雨
+  安徽理工大学 邮箱`, `Hang Zhang Anhui University of Science and Technology
+  email`, `张航 安徽理工大学 邮箱`, `Qi-Gang Wu Institute of Plasma Physics
+  email`, `Qigang Wu Institute of Plasma Physics email`, `吴琪刚 等离子体
+  物理研究所 邮箱` and `吴琪刚 中科院等离子体物理研究所 email`. The pass again
+  found same-name records or pages without a verifiable personal e-mail. The
+  ResearchGate page for Li4SiO4/Li2TiO3 ceramic-particle crushing confirms a
+  relevant `Qi-Gang Wu` authorship context, but it does not provide a
+  submission-system e-mail candidate. No new candidate was promoted.
 - Ming-Zhun Lei: the open PMC article "Optimization of Electron Beam Welding
   Joint of Water-Cooled Ceramic Breeder Blanket" lists Mingzhun Lei and includes
   the public e-mail candidate `leimz@ipp.ac.cn`.
@@ -53,4 +63,5 @@ the coauthor before final entry into the journal submission system.
 Do not overwrite the official author e-mail completion sheet automatically.
 Instead, send the existing coauthor e-mail request together with this candidate
 lookup note, and ask the four authors with candidates to confirm whether those
-addresses should be used for the CPM submission system.
+addresses should be used for the CPM submission system. Ask Siyu Wang, Hang
+Zhang and Qi-Gang Wu directly for their preferred submission-system e-mail.
