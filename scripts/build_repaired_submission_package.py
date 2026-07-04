@@ -334,6 +334,8 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         "scripts/build_apt_redesigned_data_figures.py",
         "scripts/plot_apt_graphical_abstract.py",
         "scripts/build_cpm_literature_gap_map.py",
+        "scripts/build_cpm_official_submission_guide_alignment.py",
+        "scripts/build_cpm_blinded_review_package.py",
         "scripts/build_cpm_material_response_summary.py",
         "scripts/build_cpm_reviewer_risk_preflight.py",
         "scripts/build_cpm_submission_readiness_report.py",
@@ -345,6 +347,8 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         "tables/pb007_material_parameter_run_progress.csv",
         "docs/cpm_literature_gap_map_20260704.csv",
         "docs/cpm_literature_gap_map_20260704.md",
+        "docs/cpm_official_submission_guide_alignment_20260704.csv",
+        "docs/cpm_official_submission_guide_alignment_20260704.md",
         "docs/cpm_material_response_summary_20260704.csv",
         "docs/cpm_material_response_summary_20260704.md",
         "docs/cpm_reviewer_risk_preflight_20260704.csv",
@@ -370,13 +374,14 @@ Repository DOI: https://doi.org/10.5281/zenodo.20687351
 
 Large raw DEM dump, local-bond and restart histories are kept outside this compact package on the NAS archive described in `docs/nas_raw_dump_storage_check_20260704_1736.md`.
 
-The included `docs/cpm_*` files record the Computational Particle Mechanics retargeting support evidence, including literature-gap mapping, material-response summary values and reviewer-risk preflight checks. The live readiness report is kept outside this zip because it records the current package checksum.
+The included `docs/cpm_*` files record the Computational Particle Mechanics retargeting support evidence, including official-guide alignment, literature-gap mapping, material-response summary values and reviewer-risk preflight checks. The live readiness report is kept outside this zip because it records the current package checksum.
 
 Primary checks:
 
 ```bash
 python3 scripts/check_repaired_full_manuscript_consistency.py
 python3 scripts/build_apt_redesigned_data_figures.py
+python3 scripts/build_cpm_official_submission_guide_alignment.py
 python3 scripts/build_cpm_material_response_summary.py
 python3 scripts/build_cpm_reviewer_risk_preflight.py
 python3 scripts/check_cpm_reviewer_risk_preflight.py

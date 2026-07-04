@@ -25,10 +25,13 @@ UPLOAD_ZIP = ROOT / "submission_packages" / "computational_particle_mechanics_up
 UPLOAD_SHA = Path(str(UPLOAD_ZIP) + ".sha256")
 REPRO_ZIP = ROOT / "submission_packages" / "repaired_submission_package.zip"
 REPRO_SHA = ROOT / "submission_packages" / "repaired_submission_package.zip.sha256"
+BLINDED_ZIP = ROOT / "submission_packages" / "computational_particle_mechanics_blinded_review_optional.zip"
+BLINDED_SHA = ROOT / "submission_packages" / "computational_particle_mechanics_blinded_review_optional.zip.sha256"
 CPM_TEX = ROOT / "manuscript" / "computational_particle_mechanics_submission.tex"
 COVER_LETTER = ROOT / "manuscript" / "computational_particle_mechanics_cover_letter.md"
 CPM_FIELDS = ROOT / "manuscript" / "computational_particle_mechanics_editorial_fields.md"
 CPM_HIGHLIGHTS = ROOT / "manuscript" / "computational_particle_mechanics_highlights.md"
+OFFICIAL_GUIDE = ROOT / "docs" / "cpm_official_submission_guide_alignment_20260704.md"
 README = ROOT / "README_CPM_SUBMISSION_20260704.md"
 START_HERE = ROOT / "START_HERE_CPM_SUBMISSION.md"
 SUPPORT_DOCX = [
@@ -66,6 +69,23 @@ DOCX_FILES = [
     "06_author_emails_and_contributions.docx",
     "08_editorial_submission_fields.docx",
     "10_author_email_completion_sheet.docx",
+]
+
+BLINDED_FORBIDDEN_TERMS = [
+    "Jian Wang",
+    "Siyu Wang",
+    "Hang Zhang",
+    "Ming-Zhun Lei",
+    "Wei Wen",
+    "Qi-Gang Wu",
+    "Gang Shen",
+    "Haishun Deng",
+    "wjfttt@mail.ustc.edu.cn",
+    "Anhui University of Science and Technology",
+    "Institute of Plasma Physics",
+    "Chinese Academy of Sciences",
+    "10.5281/zenodo.20687351",
+    "wangjianfttt",
 ]
 
 FORBIDDEN_READER_TERMS = re.compile(
@@ -222,11 +242,48 @@ def check_support_docs() -> None:
     for required in [
         "computational_particle_mechanics_upload_ready.zip",
         "10_author_email_completion_sheet.docx",
+        "computational_particle_mechanics_blinded_review_optional.zip",
+        "cpm_official_submission_guide_alignment_20260704.md",
         "scripts/check_computational_particle_mechanics_submission_package.py",
         "10.5281/zenodo.20687351",
     ]:
         if required not in start:
             fail(f"START_HERE missing {required}")
+
+
+def check_official_guide_alignment() -> None:
+    if not OFFICIAL_GUIDE.exists():
+        fail("missing official submission-guide alignment report")
+    text = OFFICIAL_GUIDE.read_text(encoding="utf-8")
+    required = [
+        "ScienceDirect Guide for Authors",
+        "Springer transition notice",
+        "Double-anonymized review",
+        "computational_particle_mechanics_blinded_review_optional.zip",
+        "external_metadata_pending",
+    ]
+    for term in required:
+        if term not in text:
+            fail(f"official guide alignment report missing {term!r}")
+
+
+def check_blinded_review_package() -> None:
+    check_sha_file(BLINDED_ZIP, BLINDED_SHA)
+    names = check_zip(BLINDED_ZIP)
+    required = {
+        "computational_particle_mechanics_blinded_review_optional/01_blinded_manuscript.pdf",
+        "computational_particle_mechanics_blinded_review_optional/01_blinded_manuscript.tex",
+        "computational_particle_mechanics_blinded_review_optional/README_blinded_review_optional.txt",
+        "computational_particle_mechanics_blinded_review_optional/references.bib",
+    }
+    missing = sorted(required - set(names))
+    if missing:
+        fail(f"blinded-review zip missing files: {missing}")
+    with zipfile.ZipFile(BLINDED_ZIP) as zf:
+        tex = zf.read("computational_particle_mechanics_blinded_review_optional/01_blinded_manuscript.tex").decode("utf-8", errors="ignore")
+    found = [term for term in BLINDED_FORBIDDEN_TERMS if term in tex]
+    if found:
+        fail(f"blinded manuscript source still contains identifying terms: {found}")
 
 
 def check_scientific_alignment() -> None:
@@ -257,9 +314,11 @@ def main() -> None:
     check_reader_text()
     check_doi_and_target()
     check_support_docs()
+    check_official_guide_alignment()
+    check_blinded_review_package()
     check_scientific_alignment()
     check_reviewer_risk_preflight()
-    print("PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified")
+    print("PASS CPM submission package: manifest=15, figures=19, docx=8, DOI, guide alignment and optional blinded package verified")
 
 
 if __name__ == "__main__":

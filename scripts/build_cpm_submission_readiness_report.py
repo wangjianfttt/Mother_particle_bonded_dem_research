@@ -23,9 +23,12 @@ REPORT_JSON = DOCS / "cpm_submission_readiness_report_20260704.json"
 
 REQUIRED_REPRO_SUPPORT = [
     "repaired_submission_package/docs/cpm_literature_gap_map_20260704.md",
+    "repaired_submission_package/docs/cpm_official_submission_guide_alignment_20260704.md",
     "repaired_submission_package/docs/cpm_material_response_summary_20260704.md",
     "repaired_submission_package/docs/cpm_reviewer_risk_preflight_20260704.md",
     "repaired_submission_package/scripts/build_cpm_literature_gap_map.py",
+    "repaired_submission_package/scripts/build_cpm_official_submission_guide_alignment.py",
+    "repaired_submission_package/scripts/build_cpm_blinded_review_package.py",
     "repaired_submission_package/scripts/build_cpm_material_response_summary.py",
     "repaired_submission_package/scripts/build_cpm_reviewer_risk_preflight.py",
     "repaired_submission_package/scripts/check_cpm_reviewer_risk_preflight.py",

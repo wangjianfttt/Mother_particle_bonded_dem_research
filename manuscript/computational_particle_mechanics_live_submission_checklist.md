@@ -11,6 +11,7 @@ Manuscript: Bonded-template DEM reveals strength- and topology-dependent fractur
 - [ ] **Declaration:** Upload 04_declaration_of_competing_interest.docx.
 - [ ] **Cover letter:** Upload 05_cover_letter.docx.
 - [ ] **Authors and CRediT:** Use 06_author_emails_and_contributions.docx and the completed e-mail sheet.
+- [ ] **Blinded manuscript if requested:** Use computational_particle_mechanics_blinded_review_optional.zip only if the live system requests a blinded manuscript for double-anonymized review.
 - [ ] **LaTeX source:** Upload 07_latex_source.zip if the initial submission system requests source files.
 - [ ] **Figures:** Upload 09_main_figures.zip or individual figure files if the system separates artwork upload.
 - [ ] **Data availability:** Paste the DOI-backed data availability statement from 08_editorial_submission_fields.docx.

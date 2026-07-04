@@ -37,6 +37,15 @@ This zip contains:
 - `10_author_email_completion_sheet.docx` / `.csv`
 - `README_upload_roles.txt`
 
+Optional double-anonymized review support:
+
+- `submission_packages/computational_particle_mechanics_blinded_review_optional.zip`
+- `submission_packages/computational_particle_mechanics_blinded_review_optional.zip.sha256`
+
+Use this optional package only if the live submission system asks for a blinded
+manuscript file. The main upload package remains the authoritative full
+submission package.
+
 ## Current external item
 
 The corresponding author e-mail is available:
@@ -78,7 +87,7 @@ Current machine-readable readiness report:
 Latest local status recorded in the readiness report:
 
 - Local package ready: `True`
-- Reduced reproducibility package CPM support members: `8/8` present
+- Reduced reproducibility package CPM support members: `11/11` present
 - Missing reduced-package CPM support members: `0`
 - External metadata still pending: seven coauthor e-mail addresses if the live
   submission system requires all author e-mails
@@ -87,6 +96,8 @@ Current literature-gap and novelty support:
 
 - `docs/cpm_literature_gap_map_20260704.md`
 - `docs/cpm_literature_gap_map_20260704.csv`
+- `docs/cpm_official_submission_guide_alignment_20260704.md`
+- `docs/cpm_official_submission_guide_alignment_20260704.csv`
 - `docs/cpm_material_response_summary_20260704.md`
 - `docs/cpm_material_response_summary_20260704.csv`
 - `docs/cpm_reviewer_risk_preflight_20260704.md`
@@ -103,10 +114,10 @@ The reduced reproducibility package remains:
 - `submission_packages/repaired_submission_package.zip`
 - `submission_packages/repaired_submission_package.zip.sha256`
 
-It contains the current literature-gap map, material-response summary,
-reviewer-risk matrix and the scripts used to regenerate/check those support
-files. The live readiness report itself is kept outside the zip because it
-records the current package checksum.
+It contains the current official-guide alignment, literature-gap map,
+material-response summary, reviewer-risk matrix and the scripts used to
+regenerate/check those support files. The live readiness report itself is kept
+outside the zip because it records the current package checksum.
 
 The large raw restart files and full local-bond dump histories are archived
 outside the GitHub repository and are not needed for initial manuscript review.
