@@ -27,11 +27,18 @@ the coauthor before final entry into the journal submission system.
 
 ## Source notes
 
+- A second targeted lookup on 2026-07-04 searched English and Chinese name
+  variants for Siyu Wang, Hang Zhang and Qi-Gang Wu. The search found ambiguous
+  same-name records and author pages without a usable personal e-mail, so no
+  additional candidate was added for these three authors.
 - Ming-Zhun Lei: the open PMC article "Optimization of Electron Beam Welding
   Joint of Water-Cooled Ceramic Breeder Blanket" lists Mingzhun Lei and includes
   the public e-mail candidate `leimz@ipp.ac.cn`.
 - Wei Wen: the public IPP/CAS institute brochure page lists Wei Wen and includes
   the public e-mail candidate `wenwei@ipp.ac.cn`.
+- Qi-Gang Wu: public article pages confirm the name in IPP/CAS-related fusion
+  engineering contexts, but the pages checked in this pass did not provide a
+  personal e-mail that can be used as a submission-system candidate.
 - Gang Shen: the SAGE article page for "State recognition based adaptive
   cutting method for roadheader" lists Gang Shen with ORCID
   `0000-0002-4787-0324` and includes the public e-mail candidate
