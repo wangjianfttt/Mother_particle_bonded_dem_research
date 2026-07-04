@@ -1,0 +1,36 @@
+{
+  "generated_at": "2026-07-04T20:00:59",
+  "target_journal": "Computational Particle Mechanics",
+  "manuscript_title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
+  "doi": "https://doi.org/10.5281/zenodo.20687351",
+  "github_repository": "wangjianfttt/Mother_particle_bonded_dem_research",
+  "preflight_status": "PASS",
+  "preflight_output": "PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified",
+  "upload_package": "submission_packages/computational_particle_mechanics_upload_ready.zip",
+  "upload_package_bytes": 3818534,
+  "upload_package_sha256": "aa943c106bfa144de9d9f14c56cd053feb155a2e747600579092d713ecd5e09a",
+  "reproducibility_package": "submission_packages/repaired_submission_package.zip",
+  "reproducibility_package_bytes": 6205103,
+  "reproducibility_package_sha256": "1d2621aea90e73a6bac6ede79d71e64cfaf19d202850e1ac7154eb92a20d7295",
+  "manifest_rows": 15,
+  "upload_zip_members": 16,
+  "latex_source_members": 9,
+  "main_figure_members": 19,
+  "author_rows": 8,
+  "missing_email_count": 7,
+  "missing_email_authors": [
+    "Siyu Wang",
+    "Hang Zhang",
+    "Ming-Zhun Lei",
+    "Wei Wen",
+    "Qi-Gang Wu",
+    "Gang Shen",
+    "Haishun Deng"
+  ],
+  "internal_status": "ready_for_live_submission_after_external_metadata",
+  "external_items": [
+    "Complete seven missing coauthor e-mail addresses if required by the live submission system.",
+    "Confirm the article type and upload categories in the live Elsevier/ScienceDirect submission system.",
+    "Preview the system-generated submission PDF before final submit."
+  ]
+}

@@ -51,6 +51,22 @@ Observed result:
 PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified
 ```
 
+Readiness-report command:
+
+```bash
+/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
+```
+
+Observed outputs:
+
+- `docs/cpm_submission_readiness_report_20260704.md`
+- `docs/cpm_submission_readiness_report_20260704.json`
+
+The generated report records the upload-package SHA256, reduced
+reproducibility-package SHA256, 15 upload-manifest rows, 16 upload-zip members,
+nine LaTeX-source members, 19 main-figure members, eight author rows and seven
+currently missing coauthor e-mail addresses.
+
 Expanded check:
 
 ```bash

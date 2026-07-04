@@ -68,6 +68,17 @@ Expected result:
 PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified
 ```
 
+Current machine-readable readiness report:
+
+- `docs/cpm_submission_readiness_report_20260704.md`
+- `docs/cpm_submission_readiness_report_20260704.json`
+
+Regenerate it with:
+
+```bash
+/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
+```
+
 The reduced reproducibility package remains:
 
 - `submission_packages/repaired_submission_package.zip`

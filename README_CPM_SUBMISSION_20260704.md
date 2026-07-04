@@ -49,6 +49,8 @@ files and representative input files to support manuscript-level regeneration.
 The current local verification status is recorded in:
 
 - `START_HERE_CPM_SUBMISSION.md`
+- `docs/cpm_submission_readiness_report_20260704.md`
+- `docs/cpm_submission_readiness_report_20260704.json`
 - `docs/computational_particle_mechanics_submission_package_qa_20260704.md`
 - `docs/next_stage_optimization_plan.md`
 
@@ -56,3 +58,9 @@ Practical submission support files are:
 
 - `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx`
 - `manuscript/computational_particle_mechanics_live_submission_checklist.docx`
+
+Regenerate the readiness report with:
+
+```bash
+/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
+```

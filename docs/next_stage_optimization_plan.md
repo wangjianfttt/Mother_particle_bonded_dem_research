@@ -785,6 +785,13 @@ Package verification:
   fields and upload README found no remaining `audit`, `diagnostic`, `gate`,
   `however`, `therefore`, `rather than`, `not only`, internal case-label or
   previous-journal residue.
+- `scripts/build_cpm_submission_readiness_report.py` now generates
+  `docs/cpm_submission_readiness_report_20260704.md` and `.json`. The report
+  reruns the CPM preflight command and records the current upload-package
+  SHA256, reduced reproducibility-package SHA256, manifest counts, nested
+  package counts and the seven missing coauthor e-mail addresses. The latest
+  generated status is `PASS` for the local package and
+  `ready_for_live_submission_after_external_metadata` for final submission.
 
 Remaining before submission:
 
