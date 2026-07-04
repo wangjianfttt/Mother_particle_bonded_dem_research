@@ -73,6 +73,11 @@ Current machine-readable readiness report:
 - `docs/cpm_submission_readiness_report_20260704.md`
 - `docs/cpm_submission_readiness_report_20260704.json`
 
+Current literature-gap and novelty support:
+
+- `docs/cpm_literature_gap_map_20260704.md`
+- `docs/cpm_literature_gap_map_20260704.csv`
+
 Regenerate it with:
 
 ```bash

@@ -1,6 +1,6 @@
 # CPM Submission Readiness Report
 
-Generated: `2026-07-04T20:00:59`
+Generated: `2026-07-04T20:16:14`
 
 ## Status
 
@@ -18,8 +18,8 @@ Generated: `2026-07-04T20:00:59`
 ## Package Evidence
 
 - Upload package: `submission_packages/computational_particle_mechanics_upload_ready.zip`
-- Upload package bytes: `3818534`
-- Upload package SHA256: `aa943c106bfa144de9d9f14c56cd053feb155a2e747600579092d713ecd5e09a`
+- Upload package bytes: `3818937`
+- Upload package SHA256: `cb90f2a851e69ca8ea6ac9b4acddee01819448e283cef6a0c58c76b4413a4143`
 - Reduced reproducibility package: `submission_packages/repaired_submission_package.zip`
 - Reduced reproducibility package bytes: `6205103`
 - Reduced reproducibility package SHA256: `1d2621aea90e73a6bac6ede79d71e64cfaf19d202850e1ac7154eb92a20d7295`

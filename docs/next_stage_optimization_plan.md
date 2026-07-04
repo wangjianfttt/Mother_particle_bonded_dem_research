@@ -639,6 +639,30 @@ Remaining submission-specific step:
   The scientific core and package should remain based on the repaired target-
   neutral draft.
 
+## 2026-07-04 CPM literature-gap support update
+
+The current Computational Particle Mechanics retargeting now includes an
+internal literature-gap map:
+
+- `docs/cpm_literature_gap_map_20260704.md`
+- `docs/cpm_literature_gap_map_20260704.csv`
+- `scripts/build_cpm_literature_gap_map.py`
+
+The map responds directly to the previous APT editorial concern that the
+literature context and novelty rationale were not explicit enough. It separates
+five prior-work classes: single-particle crush evidence, packed-bed compression
+and crushed-bed consequences, DEM force-network studies, particle-replacement
+and crushable-bed DEM, and bonded-particle fracture modelling. For each class
+it records what the literature already provides, the remaining gap, the current
+manuscript evidence and the claim boundary.
+
+The Introduction in `manuscript/repaired_full_submission_draft.md` has been
+rewritten around this structure. The stated gap is now the chronological link
+between the load-bearing contact network and the first internal bond losses
+inside named parent particles. This keeps the claim focused on finite
+100-particle windows, material-strength response and event chronology rather
+than converged stochastic failure probability.
+
 ## 2026-07-04 mechanism-variable separation update
 
 The repaired manuscript now includes a source-backed endpoint separation

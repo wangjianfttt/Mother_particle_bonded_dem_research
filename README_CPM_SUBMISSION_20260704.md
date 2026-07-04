@@ -51,6 +51,8 @@ The current local verification status is recorded in:
 - `START_HERE_CPM_SUBMISSION.md`
 - `docs/cpm_submission_readiness_report_20260704.md`
 - `docs/cpm_submission_readiness_report_20260704.json`
+- `docs/cpm_literature_gap_map_20260704.md`
+- `docs/cpm_literature_gap_map_20260704.csv`
 - `docs/computational_particle_mechanics_submission_package_qa_20260704.md`
 - `docs/next_stage_optimization_plan.md`
 
@@ -63,4 +65,10 @@ Regenerate the readiness report with:
 
 ```bash
 /Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
+```
+
+Regenerate the literature-gap map with:
+
+```bash
+python3 scripts/build_cpm_literature_gap_map.py
 ```
