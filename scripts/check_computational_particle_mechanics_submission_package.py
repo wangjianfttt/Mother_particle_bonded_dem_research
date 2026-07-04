@@ -285,6 +285,8 @@ def check_support_docs() -> None:
         ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.txt"
     ).read_text(encoding="utf-8")
     for term in [
+        "leimz@ipp.ac.cn",
+        "wenwei@ipp.ac.cn",
         "shenganghit@163.com",
         "269469122@qq.com",
         "未确认前直接填入投稿系统",
@@ -305,8 +307,8 @@ def check_support_docs() -> None:
             fail(f"live-submission packet JSON mismatch for {key}")
     if payload.get("candidate_email_lookup") != "docs/cpm_author_email_public_lookup_20260704.md":
         fail("live-submission packet JSON missing candidate e-mail lookup")
-    if payload.get("candidate_email_count") != 2:
-        fail("expected two public candidate e-mails for confirmation")
+    if payload.get("candidate_email_count") != 4:
+        fail("expected four public candidate e-mails for confirmation")
 
 
 def check_official_guide_alignment() -> None:

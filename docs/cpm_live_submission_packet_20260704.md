@@ -1,6 +1,6 @@
 # CPM Live Submission Packet
 
-Generated: `2026-07-04T22:34:51`
+Generated: `2026-07-04T23:19:40`
 
 - Target journal: Computational Particle Mechanics
 - Submission route: ScienceDirect / Editorial Manager live submission route
@@ -123,12 +123,14 @@ These entries are public candidates for corresponding-author confirmation; they 
 
 Source file: `docs/cpm_author_email_public_lookup_20260704.md`
 
+- Ming-Zhun Lei: `leimz@ipp.ac.cn` (Public candidate; confirm before final submission; source: https://pmc.ncbi.nlm.nih.gov/articles/PMC8234535/)
+- Wei Wen: `wenwei@ipp.ac.cn` (Public candidate; confirm before final submission; source: https://www.ipp.cas.cn/yjs/xcsc/202207/P020250115777706650358.pdf)
 - Gang Shen: `shenganghit@163.com` (Public candidate; confirm before final submission; source: https://journals.sagepub.com/doi/10.1177/09544062241299521)
 - Haishun Deng: `269469122@qq.com` (Public candidate; confirm before final submission; source: https://pmc.ncbi.nlm.nih.gov/articles/PMC11637116/)
 
 ## Final External Actions
 
 - [ ] Fill seven coauthor e-mail addresses if required by the live submission system.
-- [ ] Confirm public candidate e-mails for Gang Shen and Haishun Deng before using them in the live system.
+- [ ] Confirm public candidate e-mails for Ming-Zhun Lei, Wei Wen, Gang Shen and Haishun Deng before using them in the live system.
 - [ ] Confirm article type/category in the live system.
 - [ ] Preview the system-generated PDF before final submit.

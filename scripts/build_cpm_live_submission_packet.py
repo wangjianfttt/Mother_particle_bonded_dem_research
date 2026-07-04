@@ -125,7 +125,7 @@ def build_payload() -> dict[str, object]:
         "candidate_email_rows": candidate_lookup,
         "final_external_actions": [
             "Fill seven coauthor e-mail addresses if required by the live submission system.",
-            "Confirm public candidate e-mails for Gang Shen and Haishun Deng before using them in the live system.",
+            "Confirm public candidate e-mails for Ming-Zhun Lei, Wei Wen, Gang Shen and Haishun Deng before using them in the live system.",
             "Confirm article type/category in the live system.",
             "Preview the system-generated PDF before final submit.",
         ],

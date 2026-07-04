@@ -35,3 +35,14 @@ Post-check summary:
   - `/Volumes/BulkArchive/颗粒破碎统计研究_backup/pb007_raw_outputs_20260704_171122` (about 1.8 GiB)
 - Re-scanned the local workspace for raw-output files larger than 20 MB matching `*.dump`, `*dump*`, `*.local`, `*.restart`, `*.vtk`, `*.vtu`, `*.vtp`, `*.xyz` and `*.lammpstrj`; no remaining matches were found.
 - Large files still present locally are manuscript figures, submission bundles, Git objects and source/vendor files. These were not moved because they are not raw DEM dump/restart outputs.
+
+## Live recheck - 2026-07-04 23:10 CST
+
+- Confirmed the backup target remains the nearly empty 7 TiB Synology volume:
+  `/Volumes/BulkArchive` (`//wangjian@qunhui925.local/BulkArchive`), 7.0 TiB total, 6.9 TiB available, about 1% used.
+- Confirmed DEM raw-output archives already stored on that volume:
+  - `/Volumes/BulkArchive/DEM_ARCHIVE/颗粒破碎统计研究/PB-006_large_archives_20260704`: 199 files, 23.43 GiB.
+  - `/Volumes/BulkArchive/DEM_ARCHIVE/颗粒破碎统计研究/PB-007_old_restart_data_20260704`: 33 files, 4.63 GiB.
+  - `/Volumes/BulkArchive/DEM_ARCHIVE/颗粒破碎统计研究/large_raw_outputs_before_20260704_20260704`: 43 files, 1.98 GiB.
+- Re-scanned local `simulations/` and `data/` for raw-output files larger than 20 MB matching `*dump*`, `*.local`, `*.restart`, `*restart*`, `*.vtk`, `*.vtp`, `*.vtu`, `*.lammpstrj`, `*.xyz` and `*.data`; remaining match count: 0.
+- No additional local large DEM dump/restart files were moved in this pass because the local raw-output residue is already clear. Remaining local large files are manuscript figures, submission-package copies, Git objects and source/vendor files.

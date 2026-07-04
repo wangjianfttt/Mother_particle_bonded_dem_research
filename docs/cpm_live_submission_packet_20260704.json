@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T22:34:51",
+  "generated_at": "2026-07-04T23:19:40",
   "target_journal": "Computational Particle Mechanics",
   "submission_route": "ScienceDirect / Editorial Manager live submission route",
   "title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
@@ -165,49 +165,49 @@
       "role": "Highlights",
       "path": "02_highlights.docx",
       "bytes": "37011",
-      "sha256": "97973e2cace96de954bb29ab8be9c14d608f60d8222f34193aac993c5bc7188f"
+      "sha256": "a4a2a5286532cb001ccd073ad4e621c736042a9223c0040f5125fd47c218adb8"
     },
     {
       "role": "Declaration",
       "path": "04_declaration_of_competing_interest.docx",
       "bytes": "36878",
-      "sha256": "14e6edd0a0f364e4a8c0a802fa03e91ebd4bbf360868cc2d92e01417e86c159b"
+      "sha256": "d60f8882e773cb62490acd8d9b71424205e1d9d4c854b282dd291ac61e1d1d96"
     },
     {
       "role": "Cover letter",
       "path": "05_cover_letter.docx",
       "bytes": "37807",
-      "sha256": "0467adc92a741c456379c36a94a398159e154c1ff9ee5bcb63f607a033a577da"
+      "sha256": "abfda2d3cab76c858d9f1a4beaa552e91a6449273117db584e13a3a71dfbdabe"
     },
     {
       "role": "Author details",
       "path": "06_author_emails_and_contributions.docx",
       "bytes": "37572",
-      "sha256": "a6977f440409868ba80fa3c0ed41024ec7741d675c50f20f8c8becaf7f80d1f6"
+      "sha256": "502f5dfb9a90c247430d12bd623c118d0faa3c2636b5b3cf2de6e2bdbef38fee"
     },
     {
       "role": "LaTeX source",
       "path": "07_latex_source.zip",
       "bytes": "253831",
-      "sha256": "b3b7c159ea7cd3c694e3596660783c5e85b035e36a259cb4dbf8c0323e8b20b2"
+      "sha256": "d7b7e7139e9bfbb335df3d32d6a74052e92b2a2202d8ba8a1a1176673ebf02eb"
     },
     {
       "role": "Editorial submission fields",
       "path": "08_editorial_submission_fields.docx",
       "bytes": "39348",
-      "sha256": "ece1176e87aa4163adfef1f0b666e4870d49374d99cc4d23630fd7aa04e65577"
+      "sha256": "4e5ff22cb7cccbed7697183594588aefd3c223729b0d4afabc249eedd5ecb63e"
     },
     {
       "role": "Main figure files",
       "path": "09_main_figures.zip",
       "bytes": "2104485",
-      "sha256": "03ccabaea95390401098e35ad0a3b379c9c7a580bc071806e1ec39778a487285"
+      "sha256": "d54e6db988d73abdf9556b105d5839033bab7a8c51185a81d2e44042e36e3a5e"
     },
     {
       "role": "Author e-mail completion sheet",
       "path": "10_author_email_completion_sheet.docx",
       "bytes": "37548",
-      "sha256": "27aa4036b60d5bd76a5ff005a4f3b91d7ed676f53bceab486e70362c4e40c4ee"
+      "sha256": "933a4863be4b99ecf84e4ee9c5835f10e289148c15343b8e78f39c5abace5848"
     },
     {
       "role": "Author e-mail completion CSV",
@@ -315,8 +315,22 @@
     "Haishun Deng"
   ],
   "candidate_email_lookup": "docs/cpm_author_email_public_lookup_20260704.md",
-  "candidate_email_count": 2,
+  "candidate_email_count": 4,
   "candidate_email_rows": [
+    {
+      "author": "Ming-Zhun Lei",
+      "candidate_email": "leimz@ipp.ac.cn",
+      "status": "Public candidate; confirm before final submission",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8234535/",
+      "use_rule": "Use only after Ming-Zhun Lei confirms this is the preferred submission-system e-mail"
+    },
+    {
+      "author": "Wei Wen",
+      "candidate_email": "wenwei@ipp.ac.cn",
+      "status": "Public candidate; confirm before final submission",
+      "source_url": "https://www.ipp.cas.cn/yjs/xcsc/202207/P020250115777706650358.pdf",
+      "use_rule": "Use only after Wei Wen confirms this is the preferred submission-system e-mail"
+    },
     {
       "author": "Gang Shen",
       "candidate_email": "shenganghit@163.com",
@@ -334,7 +348,7 @@
   ],
   "final_external_actions": [
     "Fill seven coauthor e-mail addresses if required by the live submission system.",
-    "Confirm public candidate e-mails for Gang Shen and Haishun Deng before using them in the live system.",
+    "Confirm public candidate e-mails for Ming-Zhun Lei, Wei Wen, Gang Shen and Haishun Deng before using them in the live system.",
     "Confirm article type/category in the live system.",
     "Preview the system-generated PDF before final submit."
   ]

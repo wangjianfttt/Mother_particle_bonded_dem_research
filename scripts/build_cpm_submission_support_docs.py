@@ -30,6 +30,18 @@ MISSING_AUTHORS = [
 
 PUBLIC_CANDIDATE_EMAILS = [
     (
+        "Ming-Zhun Lei",
+        "leimz@ipp.ac.cn",
+        "请雷明准老师确认该邮箱是否可用于投稿系统",
+        "Please confirm whether this e-mail may be used in the submission system.",
+    ),
+    (
+        "Wei Wen",
+        "wenwei@ipp.ac.cn",
+        "请文伟老师确认该邮箱是否可用于投稿系统",
+        "Please confirm whether this e-mail may be used in the submission system.",
+    ),
+    (
         "Gang Shen",
         "shenganghit@163.com",
         "请沈刚老师确认该邮箱是否可用于投稿系统",
@@ -79,7 +91,7 @@ def write_email_request() -> None:
         "请下面几位作者各自提供一个投稿系统使用的机构邮箱，或确认可以使用的常用学术邮箱：",
         *[f"- {name}" for name in MISSING_AUTHORS],
         "",
-        "我另外查到两条公开候选邮箱，仅供本人确认，不会在未确认前直接填入投稿系统：",
+        "我另外查到四条公开候选邮箱，仅供本人确认，不会在未确认前直接填入投稿系统：",
         *[f"- {name}: {email}（{note_zh}）" for name, email, note_zh, _note_en in PUBLIC_CANDIDATE_EMAILS],
         "",
         "同时请确认作者顺序、单位和贡献描述没有问题。如需查看当前记录，可参考随附的 author e-mail completion sheet。",
@@ -95,7 +107,7 @@ def write_email_request() -> None:
         "Please provide one institutional or preferred academic e-mail address for the following authors:",
         *[f"- {name}" for name in MISSING_AUTHORS],
         "",
-        "Two public candidate e-mail records have been found for confirmation only. They will not be entered into the submission system before author confirmation:",
+        "Four public candidate e-mail records have been found for confirmation only. They will not be entered into the submission system before author confirmation:",
         *[f"- {name}: {email} ({note_en})" for name, email, _note_zh, note_en in PUBLIC_CANDIDATE_EMAILS],
         "",
         "Please also confirm that the author order, affiliations and contribution descriptions are correct. The current author e-mail completion sheet is attached for reference.",
@@ -127,7 +139,7 @@ def write_live_checklist() -> None:
     checklist = [
         ("Preflight", "Run scripts/check_computational_particle_mechanics_submission_package.py and confirm PASS."),
         ("Author e-mails", "Fill seven missing coauthor e-mails if the live system requires all author e-mails."),
-        ("Candidate e-mails", "Ask Gang Shen and Haishun Deng to confirm whether the two public candidate e-mails may be used."),
+        ("Candidate e-mails", "Ask Ming-Zhun Lei, Wei Wen, Gang Shen and Haishun Deng to confirm whether the four public candidate e-mails may be used."),
         ("Article type", "Select Research article or the closest equivalent in the live Elsevier/ScienceDirect system."),
         ("Manuscript", "Upload 01_manuscript.pdf."),
         ("Highlights", "Upload 02_highlights.docx or paste the five Highlights from 08_editorial_submission_fields.docx."),

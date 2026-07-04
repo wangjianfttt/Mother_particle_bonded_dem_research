@@ -13,7 +13,9 @@ Li4SiO4 bonded-template DEM 颗粒破碎论文准备转投 Computational Particl
 - Gang Shen
 - Haishun Deng
 
-我另外查到两条公开候选邮箱，仅供本人确认，不会在未确认前直接填入投稿系统：
+我另外查到四条公开候选邮箱，仅供本人确认，不会在未确认前直接填入投稿系统：
+- Ming-Zhun Lei: leimz@ipp.ac.cn（请雷明准老师确认该邮箱是否可用于投稿系统）
+- Wei Wen: wenwei@ipp.ac.cn（请文伟老师确认该邮箱是否可用于投稿系统）
 - Gang Shen: shenganghit@163.com（请沈刚老师确认该邮箱是否可用于投稿系统）
 - Haishun Deng: 269469122@qq.com（请邓海顺老师确认该邮箱是否可用于投稿系统）
 
@@ -37,7 +39,9 @@ Please provide one institutional or preferred academic e-mail address for the fo
 - Gang Shen
 - Haishun Deng
 
-Two public candidate e-mail records have been found for confirmation only. They will not be entered into the submission system before author confirmation:
+Four public candidate e-mail records have been found for confirmation only. They will not be entered into the submission system before author confirmation:
+- Ming-Zhun Lei: leimz@ipp.ac.cn (Please confirm whether this e-mail may be used in the submission system.)
+- Wei Wen: wenwei@ipp.ac.cn (Please confirm whether this e-mail may be used in the submission system.)
 - Gang Shen: shenganghit@163.com (Please confirm whether this e-mail may be used in the submission system.)
 - Haishun Deng: 269469122@qq.com (Please confirm whether this e-mail may be used in the submission system.)
 

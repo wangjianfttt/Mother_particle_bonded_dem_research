@@ -19,14 +19,19 @@ the coauthor before final entry into the journal submission system.
 |---|---|---|---|---|
 | Siyu Wang | Missing |  | No reliable public candidate found | Ask author directly |
 | Hang Zhang | Missing |  | No reliable public candidate found | Ask author directly |
-| Ming-Zhun Lei | Missing |  | No reliable public candidate found | Ask author directly |
-| Wei Wen | Missing |  | No reliable public candidate found | Ask author directly |
+| Ming-Zhun Lei | Missing | `leimz@ipp.ac.cn` | Public candidate; confirm before final submission | Use only after Ming-Zhun Lei confirms this is the preferred submission-system e-mail |
+| Wei Wen | Missing | `wenwei@ipp.ac.cn` | Public candidate; confirm before final submission | Use only after Wei Wen confirms this is the preferred submission-system e-mail |
 | Qi-Gang Wu | Missing |  | No reliable public candidate found | Ask author directly |
 | Gang Shen | Missing | `shenganghit@163.com` | Public candidate; confirm before final submission | Use only after Gang Shen confirms this is the preferred submission-system e-mail |
 | Haishun Deng | Missing | `269469122@qq.com` | Public candidate; confirm before final submission | Use only after Haishun Deng confirms this is the preferred submission-system e-mail |
 
 ## Source notes
 
+- Ming-Zhun Lei: the open PMC article "Optimization of Electron Beam Welding
+  Joint of Water-Cooled Ceramic Breeder Blanket" lists Mingzhun Lei and includes
+  the public e-mail candidate `leimz@ipp.ac.cn`.
+- Wei Wen: the public IPP/CAS institute brochure page lists Wei Wen and includes
+  the public e-mail candidate `wenwei@ipp.ac.cn`.
 - Gang Shen: the SAGE article page for "State recognition based adaptive
   cutting method for roadheader" lists Gang Shen with ORCID
   `0000-0002-4787-0324` and includes the public e-mail candidate
@@ -40,5 +45,5 @@ the coauthor before final entry into the journal submission system.
 
 Do not overwrite the official author e-mail completion sheet automatically.
 Instead, send the existing coauthor e-mail request together with this candidate
-lookup note, and ask the two authors with candidates to confirm whether those
+lookup note, and ask the four authors with candidates to confirm whether those
 addresses should be used for the CPM submission system.

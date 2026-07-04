@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T22:55:52",
+  "generated_at": "2026-07-04T23:19:59",
   "overall_status": "ready_after_external_author_metadata",
   "preflight_status": "PASS",
   "large_raw_residue_count": 0,
@@ -12,7 +12,7 @@
     ]
   },
   "readiness": {
-    "generated_at": "2026-07-04T22:54:45",
+    "generated_at": "2026-07-04T23:19:41",
     "target_journal": "Computational Particle Mechanics",
     "manuscript_title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
     "doi": "https://doi.org/10.5281/zenodo.20687351",
@@ -20,11 +20,11 @@
     "preflight_status": "PASS",
     "preflight_output": "PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match\nPASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries\nPASS CPM submission package: manifest=15, figures=19, docx=9, DOI, guide alignment, live packet and optional blinded package verified",
     "upload_package": "submission_packages/computational_particle_mechanics_upload_ready.zip",
-    "upload_package_bytes": 3818971,
-    "upload_package_sha256": "28856aa5f177038db9b2862be9a94da2ffd708caa91db228af43548ef096389e",
+    "upload_package_bytes": 3818973,
+    "upload_package_sha256": "eaac922e60de8e66f500f475fcdd8a344089e9608116b4e3d5cdc3c75e173b20",
     "reproducibility_package": "submission_packages/repaired_submission_package.zip",
-    "reproducibility_package_bytes": 6387407,
-    "reproducibility_package_sha256": "8e200794d333c4e311edeb337ef6de9ff8a84ea4376cc14a82b8dca08b01f615",
+    "reproducibility_package_bytes": 6388337,
+    "reproducibility_package_sha256": "10cd79f9fb548d1fefc818a621f8417f8f661e710c2521cf424d5d1991fbd918",
     "required_repro_support_members": 28,
     "present_repro_support_members": 28,
     "missing_repro_support_members": [],
@@ -90,7 +90,7 @@
     {
       "requirement": "External author metadata for live system",
       "status": "external_pending",
-      "evidence": "Missing coauthor e-mail count = 7; two public candidate e-mails require author confirmation.",
+      "evidence": "Missing coauthor e-mail count = 7; 4 public candidate e-mails require author confirmation.",
       "current_file_or_command": "manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx; docs/cpm_author_email_public_lookup_20260704.md",
       "remaining_action": "Collect or confirm coauthor e-mails before final system submission if the live system requires them."
     }

@@ -17,6 +17,7 @@ REPORT_MD = DOCS / "cpm_goal_completion_audit_20260704.md"
 REPORT_CSV = DOCS / "cpm_goal_completion_audit_20260704.csv"
 REPORT_JSON = DOCS / "cpm_goal_completion_audit_20260704.json"
 READINESS_JSON = DOCS / "cpm_submission_readiness_report_20260704.json"
+EMAIL_LOOKUP_CSV = DOCS / "cpm_author_email_public_lookup_20260704.csv"
 NAS_ROOT = Path("/Volumes/BulkArchive/DEM_ARCHIVE/颗粒破碎统计研究")
 
 
@@ -70,11 +71,20 @@ def read_readiness() -> dict[str, object]:
     return json.loads(READINESS_JSON.read_text(encoding="utf-8"))
 
 
+def public_candidate_email_count() -> int:
+    if not EMAIL_LOOKUP_CSV.exists():
+        return 0
+    with EMAIL_LOOKUP_CSV.open(encoding="utf-8") as handle:
+        rows = csv.DictReader(handle)
+        return sum(1 for row in rows if row.get("Public candidate e-mail", "").strip())
+
+
 def rows() -> tuple[list[dict[str, str]], dict[str, object]]:
     preflight_status, preflight_output = run_preflight()
     readiness = read_readiness()
     residue = large_raw_residue_count()
     nas = nas_archive_summary()
+    candidate_count = public_candidate_email_count()
     package_ready = (
         preflight_status == "PASS"
         and readiness.get("internal_status") == "ready_for_live_submission_after_external_metadata"
@@ -120,7 +130,7 @@ def rows() -> tuple[list[dict[str, str]], dict[str, object]]:
         {
             "requirement": "External author metadata for live system",
             "status": "external_pending" if author_pending else "achieved",
-            "evidence": "Missing coauthor e-mail count = %s; two public candidate e-mails require author confirmation." % readiness.get("missing_email_count", "unknown"),
+            "evidence": "Missing coauthor e-mail count = %s; %d public candidate e-mails require author confirmation." % (readiness.get("missing_email_count", "unknown"), candidate_count),
             "current_file_or_command": "manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx; docs/cpm_author_email_public_lookup_20260704.md",
             "remaining_action": "Collect or confirm coauthor e-mails before final system submission if the live system requires them.",
         },
