@@ -1,0 +1,322 @@
+{
+  "generated_at": "2026-07-04T22:12:04",
+  "target_journal": "Computational Particle Mechanics",
+  "submission_route": "ScienceDirect / Editorial Manager live submission route",
+  "title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
+  "upload_package": "submission_packages/computational_particle_mechanics_upload_ready.zip",
+  "optional_blinded_package": "submission_packages/computational_particle_mechanics_blinded_review_optional.zip",
+  "reduced_reproducibility_package": "submission_packages/repaired_submission_package.zip",
+  "upload_steps": [
+    {
+      "step": "1",
+      "item": "Manuscript",
+      "file_or_value": "01_manuscript.pdf",
+      "required": "yes",
+      "note": "Use the full manuscript unless the live system asks for a blinded file."
+    },
+    {
+      "step": "2",
+      "item": "Highlights",
+      "file_or_value": "02_highlights.docx",
+      "required": "yes",
+      "note": "Five highlights are also available in the editorial fields document."
+    },
+    {
+      "step": "3",
+      "item": "Graphical abstract",
+      "file_or_value": "03_graphical_abstract.png or 03_graphical_abstract.tiff",
+      "required": "if requested",
+      "note": "PDF and SVG backups are included for editable artwork."
+    },
+    {
+      "step": "4",
+      "item": "Declaration of competing interest",
+      "file_or_value": "04_declaration_of_competing_interest.docx",
+      "required": "yes",
+      "note": "No competing interests declared."
+    },
+    {
+      "step": "5",
+      "item": "Cover letter",
+      "file_or_value": "05_cover_letter.docx",
+      "required": "yes",
+      "note": "Targeted to Computational Particle Mechanics."
+    },
+    {
+      "step": "6",
+      "item": "Author details and contributions",
+      "file_or_value": "06_author_emails_and_contributions.docx",
+      "required": "yes",
+      "note": "Use with completed coauthor e-mail sheet."
+    },
+    {
+      "step": "7",
+      "item": "LaTeX source",
+      "file_or_value": "07_latex_source.zip",
+      "required": "if requested",
+      "note": "Editable source for the full manuscript."
+    },
+    {
+      "step": "8",
+      "item": "Editorial paste fields",
+      "file_or_value": "08_editorial_submission_fields.docx",
+      "required": "support",
+      "note": "Use for title, abstract, keywords, data and code availability."
+    },
+    {
+      "step": "9",
+      "item": "Main figures",
+      "file_or_value": "09_main_figures.zip",
+      "required": "if requested",
+      "note": "Contains separate PDF, PNG and SVG figure files."
+    },
+    {
+      "step": "10",
+      "item": "Author e-mail completion sheet",
+      "file_or_value": "10_author_email_completion_sheet.docx / .csv",
+      "required": "external metadata",
+      "note": "Seven coauthor e-mails remain missing in local records."
+    },
+    {
+      "step": "11",
+      "item": "Optional blinded manuscript",
+      "file_or_value": "computational_particle_mechanics_blinded_review_optional.zip",
+      "required": "only if requested",
+      "note": "Use for double-anonymized review workflow if the system asks for a blinded file."
+    },
+    {
+      "step": "12",
+      "item": "Reduced reproducibility package",
+      "file_or_value": "repaired_submission_package.zip",
+      "required": "support",
+      "note": "Use for data/code repository or supplemental support if requested."
+    }
+  ],
+  "paste_fields": [
+    {
+      "field": "Journal",
+      "value": "Computational Particle Mechanics",
+      "source": "START_HERE_CPM_SUBMISSION.md"
+    },
+    {
+      "field": "Submission route",
+      "value": "ScienceDirect / Editorial Manager live submission route",
+      "source": "docs/cpm_official_submission_guide_alignment_20260704.md"
+    },
+    {
+      "field": "Article type",
+      "value": "Research article",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    },
+    {
+      "field": "Title",
+      "value": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    },
+    {
+      "field": "Keywords",
+      "value": "brittle ceramic pebble; bonded-particle DEM; packed bed; particle breakage; force network; fracture-event sequence; bond strength",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    },
+    {
+      "field": "Abstract",
+      "value": "Packed brittle pebbles can lose mechanical integrity through a small number of localized particle fractures before bed-wide fragmentation is visible. Here, we develop a bonded-template discrete-element workflow that inserts 500-subparticle brittle templates into random packed beds with no pre-loading bond loss and records parent-particle fracture events during compression. A nominal 1 mm Li4SiO4 template is calibrated against single-pebble crush-load and split-fragment constraints. Accepted 100-particle bed windows retain 493,500 initial internal bonds, measurable load transfer and a connected native force graph before fracture loading. The completed dataset contains four localized cracking sequences, three zero-loss controls and an eleven-row material-response table, including a six-case strength matrix across two cracking geometries. The early-cracking geometry keeps first localized bond loss at 19 micrometres as strength is reduced from nominal to 0.25x, with endpoint bond loss increasing from 10 to 15 only at 0.25x. The synchronous-cracking geometry shifts first localized bond loss from 39 micrometres at nominal strength to 19 micrometres at 0.50x and 0.25x, again increasing endpoint bond loss to 15 only at 0.25x. These results show that fracture onset in finite packed-particle windows is controlled by the combination of local force-path topology and bonded-particle strength. The workflow converts packed-bed compression from bulk force reporting into a source-data-backed event sequence with particle identity, bond-loss increment and native force-network state.",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    },
+    {
+      "field": "Highlights",
+      "value": "- Bonded templates resolve parent-particle fracture events inside random packed beds. (83 characters)\n- Intact 500-subparticle templates are inserted without pre-loading bond loss. (76 characters)\n- Event tables record displacement, bond-loss increment and damaged-particle identity. (84 characters)\n- Force-network state variables separate zero-loss and localized-cracking endpoints. (82 characters)\n- A bond-strength matrix shows geometry-dependent shifts in fracture onset. (73 characters)",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    },
+    {
+      "field": "Data availability",
+      "value": "The processed event tables, native force-network summaries, material-response tables, figure source data, manuscript figures and post-processing scripts supporting this study are provided in a reduced reproducibility package with a checksum manifest. The package has been deposited in a persistent repository and is available at https://doi.org/10.5281/zenodo.20687351. Very large raw restart files and full local-bond dump histories are retained as larger archives and can be provided on reasonable request subject to repository file-size limits and institutional storage constraints.",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    },
+    {
+      "field": "Code availability",
+      "value": "The template-generation, run-control, figure-generation and post-processing scripts are included in the reduced reproducibility package under `scripts/`, with representative DEM input files under `simulations/`, and are mirrored in the GitHub repository wangjianfttt/Mother_particle_bonded_dem_research. The citable archived version uses the same repository DOI, https://doi.org/10.5281/zenodo.20687351. The package reproduces manuscript-level processed data tables, figures and source-data matrices from the included CSV tables and representative inputs. The local DEM executable, very large restart files and full raw local-bond dump histories are retained outside the compact package.",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    },
+    {
+      "field": "Declaration",
+      "value": "The authors declare that they have no known competing financial interests or personal relationships that could have appeared to influence the work reported in this paper.",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    },
+    {
+      "field": "Funding / acknowledgements",
+      "value": "This work was supported by the Anhui Provincial Natural Science Foundation (2408085QA030), the Science Foundation of the Institute of Plasma Physics, Chinese Academy of Sciences (DSJJ-2025-08), the Anhui Intelligent Mine Technology and Equipment Engineering Research Center (AIMTEERC202307), the China Post-doctoral Science Foundation under Grant Number 2024M753266, the Excellent Research and Innovation Team of Anhui Province, China (2022AH010052), the Scientific Research Foundation for High-level Talents of Anhui University of Science and Technology, China (2021yjrc51), and the Collaborative Innovation Program of Hefei Science Center, CAS, China (2019HSC-CIP006).",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    },
+    {
+      "field": "Corresponding author",
+      "value": "Jian Wang, wjfttt@mail.ustc.edu.cn",
+      "source": "manuscript/computational_particle_mechanics_editorial_fields.md"
+    }
+  ],
+  "manifest_rows": [
+    {
+      "role": "Manuscript",
+      "path": "01_manuscript.pdf",
+      "bytes": "511197",
+      "sha256": "dd44fd29c77b077383e6233b3f401271c5564800794424d5e6baba7a56a08a0b"
+    },
+    {
+      "role": "Highlights",
+      "path": "02_highlights.docx",
+      "bytes": "37011",
+      "sha256": "97973e2cace96de954bb29ab8be9c14d608f60d8222f34193aac993c5bc7188f"
+    },
+    {
+      "role": "Declaration",
+      "path": "04_declaration_of_competing_interest.docx",
+      "bytes": "36878",
+      "sha256": "14e6edd0a0f364e4a8c0a802fa03e91ebd4bbf360868cc2d92e01417e86c159b"
+    },
+    {
+      "role": "Cover letter",
+      "path": "05_cover_letter.docx",
+      "bytes": "37807",
+      "sha256": "0467adc92a741c456379c36a94a398159e154c1ff9ee5bcb63f607a033a577da"
+    },
+    {
+      "role": "Author details",
+      "path": "06_author_emails_and_contributions.docx",
+      "bytes": "37572",
+      "sha256": "a6977f440409868ba80fa3c0ed41024ec7741d675c50f20f8c8becaf7f80d1f6"
+    },
+    {
+      "role": "LaTeX source",
+      "path": "07_latex_source.zip",
+      "bytes": "253831",
+      "sha256": "b3b7c159ea7cd3c694e3596660783c5e85b035e36a259cb4dbf8c0323e8b20b2"
+    },
+    {
+      "role": "Editorial submission fields",
+      "path": "08_editorial_submission_fields.docx",
+      "bytes": "39348",
+      "sha256": "ece1176e87aa4163adfef1f0b666e4870d49374d99cc4d23630fd7aa04e65577"
+    },
+    {
+      "role": "Main figure files",
+      "path": "09_main_figures.zip",
+      "bytes": "2104485",
+      "sha256": "03ccabaea95390401098e35ad0a3b379c9c7a580bc071806e1ec39778a487285"
+    },
+    {
+      "role": "Author e-mail completion sheet",
+      "path": "10_author_email_completion_sheet.docx",
+      "bytes": "37548",
+      "sha256": "27aa4036b60d5bd76a5ff005a4f3b91d7ed676f53bceab486e70362c4e40c4ee"
+    },
+    {
+      "role": "Author e-mail completion CSV",
+      "path": "10_author_email_completion_sheet.csv",
+      "bytes": "1336",
+      "sha256": "338f7ea8d758a0b9672805f637a7301d5cf3e536fa4ba01161d2a093984f7aa5"
+    },
+    {
+      "role": "Graphical abstract",
+      "path": "03_graphical_abstract.png",
+      "bytes": "387312",
+      "sha256": "a8afd29ec0b1f9f8c84f6abf3c33d9aea80c4393fedaf1b474d4dd1742094dc6"
+    },
+    {
+      "role": "Graphical abstract",
+      "path": "03_graphical_abstract.tiff",
+      "bytes": "20093146",
+      "sha256": "b0d11729b340a64a13a00ab639f6a5bef79b9f62977b29d1b0ecd7e391d45799"
+    },
+    {
+      "role": "Graphical abstract editable",
+      "path": "03_graphical_abstract.pdf",
+      "bytes": "43607",
+      "sha256": "122ae69263576791f64fa0e05e5ffde49b450c44988c57861491448cac415263"
+    },
+    {
+      "role": "Graphical abstract editable",
+      "path": "03_graphical_abstract.svg",
+      "bytes": "42847",
+      "sha256": "34e8abf53e587c9e0f4dd237cc7863758c6744b6dd18f57639ffb8b0a6f93000"
+    },
+    {
+      "role": "Upload guide",
+      "path": "README_upload_roles.txt",
+      "bytes": "905",
+      "sha256": "3693fd0fd3ed1b219362cf1ce80c2cbac4834acc8d0b34d46ac4836fd41fc67a"
+    }
+  ],
+  "author_rows": [
+    {
+      "Author": "Jian Wang",
+      "Affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Chinese Academy of Sciences",
+      "E-mail to fill or confirm": "wjfttt@mail.ustc.edu.cn",
+      "Status": "Available",
+      "Contribution summary": "Validation, Supervision, Project administration, Methodology, Investigation, Conceptualization"
+    },
+    {
+      "Author": "Siyu Wang",
+      "Affiliation": "Anhui University of Science and Technology",
+      "E-mail to fill or confirm": "",
+      "Status": "Missing",
+      "Contribution summary": "Writing - original draft, Formal analysis, Data curation, Visualization"
+    },
+    {
+      "Author": "Hang Zhang",
+      "Affiliation": "Anhui University of Science and Technology",
+      "E-mail to fill or confirm": "",
+      "Status": "Missing",
+      "Contribution summary": "Writing - original draft, Formal analysis, Data curation, Visualization"
+    },
+    {
+      "Author": "Ming-Zhun Lei",
+      "Affiliation": "Institute of Plasma Physics, Chinese Academy of Sciences",
+      "E-mail to fill or confirm": "",
+      "Status": "Missing",
+      "Contribution summary": "Writing - review and editing, Validation, Project administration, Formal analysis"
+    },
+    {
+      "Author": "Wei Wen",
+      "Affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Chinese Academy of Sciences",
+      "E-mail to fill or confirm": "",
+      "Status": "Missing",
+      "Contribution summary": "Writing - review and editing, Supervision, Project administration, Methodology, Conceptualization"
+    },
+    {
+      "Author": "Qi-Gang Wu",
+      "Affiliation": "Institute of Plasma Physics, Chinese Academy of Sciences",
+      "E-mail to fill or confirm": "",
+      "Status": "Missing",
+      "Contribution summary": "Validation, Resources, Data curation"
+    },
+    {
+      "Author": "Gang Shen",
+      "Affiliation": "Anhui University of Science and Technology",
+      "E-mail to fill or confirm": "",
+      "Status": "Missing",
+      "Contribution summary": "Writing - review and editing, Supervision, Project administration"
+    },
+    {
+      "Author": "Haishun Deng",
+      "Affiliation": "Anhui University of Science and Technology",
+      "E-mail to fill or confirm": "",
+      "Status": "Missing",
+      "Contribution summary": "Supervision, Project administration"
+    }
+  ],
+  "missing_email_count": 7,
+  "missing_email_authors": [
+    "Siyu Wang",
+    "Hang Zhang",
+    "Ming-Zhun Lei",
+    "Wei Wen",
+    "Qi-Gang Wu",
+    "Gang Shen",
+    "Haishun Deng"
+  ],
+  "final_external_actions": [
+    "Fill seven coauthor e-mail addresses if required by the live submission system.",
+    "Confirm article type/category in the live system.",
+    "Preview the system-generated PDF before final submit."
+  ]
+}

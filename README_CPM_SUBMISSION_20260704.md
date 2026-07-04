@@ -57,6 +57,10 @@ The current local verification status is recorded in:
 - `START_HERE_CPM_SUBMISSION.md`
 - `docs/cpm_submission_readiness_report_20260704.md`
 - `docs/cpm_submission_readiness_report_20260704.json`
+- `docs/cpm_live_submission_packet_20260704.md`
+- `docs/cpm_live_submission_packet_20260704.csv`
+- `docs/cpm_live_submission_packet_20260704.json`
+- `docs/cpm_live_submission_packet_docx_qa_20260704.md`
 - `docs/cpm_literature_gap_map_20260704.md`
 - `docs/cpm_literature_gap_map_20260704.csv`
 - `docs/cpm_official_submission_guide_alignment_20260704.md`
@@ -81,11 +85,18 @@ Practical submission support files are:
 
 - `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx`
 - `manuscript/computational_particle_mechanics_live_submission_checklist.docx`
+- `manuscript/computational_particle_mechanics_live_submission_packet.docx`
 
 Regenerate the readiness report with:
 
 ```bash
 /Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
+```
+
+Regenerate the live-submission packet with:
+
+```bash
+/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_live_submission_packet.py
 ```
 
 The package check also runs:

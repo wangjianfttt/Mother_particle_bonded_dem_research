@@ -5,6 +5,7 @@ from __future__ import annotations
 
 import csv
 import hashlib
+import json
 import re
 import subprocess
 import sys
@@ -34,13 +35,20 @@ CPM_HIGHLIGHTS = ROOT / "manuscript" / "computational_particle_mechanics_highlig
 OFFICIAL_GUIDE = ROOT / "docs" / "cpm_official_submission_guide_alignment_20260704.md"
 README = ROOT / "README_CPM_SUBMISSION_20260704.md"
 START_HERE = ROOT / "START_HERE_CPM_SUBMISSION.md"
+LIVE_PACKET_DOCX = ROOT / "manuscript" / "computational_particle_mechanics_live_submission_packet.docx"
+LIVE_PACKET_MD = ROOT / "docs" / "cpm_live_submission_packet_20260704.md"
+LIVE_PACKET_CSV = ROOT / "docs" / "cpm_live_submission_packet_20260704.csv"
+LIVE_PACKET_JSON = ROOT / "docs" / "cpm_live_submission_packet_20260704.json"
 SUPPORT_DOCX = [
     ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.docx",
     ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.docx",
+    LIVE_PACKET_DOCX,
 ]
 SUPPORT_TEXT = [
     ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.txt",
     ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.md",
+    LIVE_PACKET_MD,
+    LIVE_PACKET_CSV,
 ]
 
 EXPECTED_UPLOAD_FILES = {
@@ -243,12 +251,27 @@ def check_support_docs() -> None:
         "computational_particle_mechanics_upload_ready.zip",
         "10_author_email_completion_sheet.docx",
         "computational_particle_mechanics_blinded_review_optional.zip",
+        "computational_particle_mechanics_live_submission_packet.docx",
+        "cpm_live_submission_packet_20260704.md",
         "cpm_official_submission_guide_alignment_20260704.md",
         "scripts/check_computational_particle_mechanics_submission_package.py",
         "10.5281/zenodo.20687351",
     ]:
         if required not in start:
             fail(f"START_HERE missing {required}")
+    if not LIVE_PACKET_JSON.exists():
+        fail("missing live-submission packet JSON")
+    payload = json.loads(LIVE_PACKET_JSON.read_text(encoding="utf-8"))
+    for key, value in [
+        ("target_journal", "Computational Particle Mechanics"),
+        ("submission_route", "ScienceDirect / Editorial Manager live submission route"),
+        ("upload_package", "submission_packages/computational_particle_mechanics_upload_ready.zip"),
+        ("optional_blinded_package", "submission_packages/computational_particle_mechanics_blinded_review_optional.zip"),
+        ("reduced_reproducibility_package", "submission_packages/repaired_submission_package.zip"),
+        ("missing_email_count", 7),
+    ]:
+        if payload.get(key) != value:
+            fail(f"live-submission packet JSON mismatch for {key}")
 
 
 def check_official_guide_alignment() -> None:
@@ -318,7 +341,7 @@ def main() -> None:
     check_blinded_review_package()
     check_scientific_alignment()
     check_reviewer_risk_preflight()
-    print("PASS CPM submission package: manifest=15, figures=19, docx=8, DOI, guide alignment and optional blinded package verified")
+    print("PASS CPM submission package: manifest=15, figures=19, docx=9, DOI, guide alignment, live packet and optional blinded package verified")
 
 
 if __name__ == "__main__":
