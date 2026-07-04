@@ -1,0 +1,272 @@
+{
+  "generated_at": "2026-07-05T00:03:34",
+  "manuscript_pdf": "manuscript/computational_particle_mechanics_submission.pdf",
+  "upload_pdf": "submission_packages/computational_particle_mechanics_upload_ready/01_manuscript.pdf",
+  "manuscript_pdf_sha256": "dd44fd29c77b077383e6233b3f401271c5564800794424d5e6baba7a56a08a0b",
+  "upload_pdf_sha256": "dd44fd29c77b077383e6233b3f401271c5564800794424d5e6baba7a56a08a0b",
+  "manuscript_matches_upload_pdf": true,
+  "visual_qa_dir": "docs/pdf_visual_qa/cpm_final_submission_20260704",
+  "contact_sheet": "docs/pdf_visual_qa/cpm_final_submission_20260704/contact_sheet.png",
+  "page_count": 18,
+  "contains_title": true,
+  "contains_doi": true,
+  "contains_references_heading": true,
+  "unresolved_reference_tokens": 0,
+  "page_metrics": [
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-01.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 8.0517,
+      "nonwhite_ratio": 0.059326,
+      "content_bbox": [
+        215,
+        243,
+        972,
+        1369
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-02.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 9.5947,
+      "nonwhite_ratio": 0.070921,
+      "content_bbox": [
+        214,
+        250,
+        972,
+        1365
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-03.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 8.2508,
+      "nonwhite_ratio": 0.06159,
+      "content_bbox": [
+        214,
+        255,
+        971,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-04.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 7.9737,
+      "nonwhite_ratio": 0.059583,
+      "content_bbox": [
+        215,
+        250,
+        971,
+        1365
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-05.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 6.479,
+      "nonwhite_ratio": 0.048887,
+      "content_bbox": [
+        216,
+        246,
+        971,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-06.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 6.6228,
+      "nonwhite_ratio": 0.066076,
+      "content_bbox": [
+        215,
+        253,
+        971,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-07.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 6.0135,
+      "nonwhite_ratio": 0.060285,
+      "content_bbox": [
+        215,
+        253,
+        971,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-08.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 5.8187,
+      "nonwhite_ratio": 0.074479,
+      "content_bbox": [
+        215,
+        255,
+        971,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-09.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 6.812,
+      "nonwhite_ratio": 0.049931,
+      "content_bbox": [
+        215,
+        246,
+        971,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-10.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 10.2045,
+      "nonwhite_ratio": 0.075749,
+      "content_bbox": [
+        216,
+        256,
+        971,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-11.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 7.4198,
+      "nonwhite_ratio": 0.055186,
+      "content_bbox": [
+        215,
+        246,
+        971,
+        1365
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-12.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 6.2514,
+      "nonwhite_ratio": 0.049651,
+      "content_bbox": [
+        215,
+        257,
+        971,
+        1365
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-13.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 9.1712,
+      "nonwhite_ratio": 0.068298,
+      "content_bbox": [
+        214,
+        250,
+        971,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-14.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 9.1575,
+      "nonwhite_ratio": 0.067699,
+      "content_bbox": [
+        215,
+        250,
+        971,
+        1365
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-15.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 7.9084,
+      "nonwhite_ratio": 0.057016,
+      "content_bbox": [
+        215,
+        250,
+        971,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-16.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 7.7551,
+      "nonwhite_ratio": 0.056941,
+      "content_bbox": [
+        218,
+        249,
+        972,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-17.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 7.7549,
+      "nonwhite_ratio": 0.056846,
+      "content_bbox": [
+        218,
+        249,
+        972,
+        1366
+      ],
+      "blank_flag": false
+    },
+    {
+      "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-18.png",
+      "width": 1190,
+      "height": 1540,
+      "mean_ink_distance": 2.3416,
+      "nonwhite_ratio": 0.017237,
+      "content_bbox": [
+        218,
+        249,
+        970,
+        1366
+      ],
+      "blank_flag": false
+    }
+  ],
+  "blank_page_count": 0,
+  "blank_pages": [],
+  "status": "PASS"
+}

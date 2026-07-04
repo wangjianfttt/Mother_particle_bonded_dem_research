@@ -44,6 +44,8 @@ LIVE_PACKET_JSON = ROOT / "docs" / "cpm_live_submission_packet_20260704.json"
 ACTION_SHEET_MD = ROOT / "docs" / "cpm_live_submission_action_sheet_20260704.md"
 ACTION_SHEET_CSV = ROOT / "docs" / "cpm_live_submission_action_sheet_20260704.csv"
 ACTION_SHEET_JSON = ROOT / "docs" / "cpm_live_submission_action_sheet_20260704.json"
+PDF_QA_JSON = ROOT / "docs" / "cpm_final_pdf_visual_qa_20260704.json"
+PDF_QA_MD = ROOT / "docs" / "cpm_final_pdf_visual_qa_20260704.md"
 EMAIL_LOOKUP_MD = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.md"
 EMAIL_LOOKUP_CSV = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.csv"
 SUPPORT_DOCX = [
@@ -63,6 +65,8 @@ SUPPORT_TEXT = [
     ACTION_SHEET_MD,
     ACTION_SHEET_CSV,
     ACTION_SHEET_JSON,
+    PDF_QA_JSON,
+    PDF_QA_MD,
     EMAIL_LOOKUP_MD,
     EMAIL_LOOKUP_CSV,
 ]
@@ -284,13 +288,15 @@ def check_support_docs() -> None:
         "computational_particle_mechanics_live_submission_packet.docx",
         "cpm_live_submission_packet_20260704.md",
         "cpm_live_submission_action_sheet_20260704.md",
+        "cpm_final_pdf_visual_qa_20260704.md",
         "cpm_author_email_public_lookup_20260704.md",
         "cpm_official_submission_guide_alignment_20260704.md",
         "scripts/check_computational_particle_mechanics_submission_package.py",
         "10.5281/zenodo.20687351",
         "Four public candidate e-mail records",
         "confirmation aids only",
-        "Reduced reproducibility package CPM support members: `34/34` present",
+        "Reduced reproducibility package CPM support members: `38/38` present",
+        "Current final PDF visual QA: `PASS`, 18 pages, 0 blank pages, manuscript/upload PDF SHA match",
     ]:
         if required not in start:
             fail(f"START_HERE missing {required}")
@@ -357,6 +363,25 @@ def check_support_docs() -> None:
                 fail(f"live-submission action sheet CSV missing {term}")
         elif term not in action_text:
             fail(f"live-submission action sheet missing {term}")
+    if not PDF_QA_JSON.exists():
+        fail("missing CPM final PDF visual QA JSON")
+    pdf_qa = json.loads(PDF_QA_JSON.read_text(encoding="utf-8"))
+    expected_pdf_qa = {
+        "status": "PASS",
+        "page_count": 18,
+        "manuscript_matches_upload_pdf": True,
+        "blank_page_count": 0,
+        "contains_title": True,
+        "contains_doi": True,
+        "contains_references_heading": True,
+        "unresolved_reference_tokens": 0,
+    }
+    for key, expected in expected_pdf_qa.items():
+        if pdf_qa.get(key) != expected:
+            fail(f"CPM final PDF visual QA mismatch for {key}: {pdf_qa.get(key)!r}")
+    contact_sheet = ROOT / pdf_qa.get("contact_sheet", "")
+    if not contact_sheet.exists() or contact_sheet.stat().st_size == 0:
+        fail("CPM final PDF contact sheet is missing or empty")
 
 
 def check_official_guide_alignment() -> None:

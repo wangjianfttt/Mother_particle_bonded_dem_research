@@ -108,12 +108,15 @@ Current machine-readable readiness report:
 
 - `docs/cpm_submission_readiness_report_20260704.md`
 - `docs/cpm_submission_readiness_report_20260704.json`
+- `docs/cpm_final_pdf_visual_qa_20260704.md`
+- `docs/cpm_final_pdf_visual_qa_20260704.json`
 
 Latest local status recorded in the readiness report:
 
 - Local package ready: `True`
-- Reduced reproducibility package CPM support members: `34/34` present
+- Reduced reproducibility package CPM support members: `38/38` present
 - Missing reduced-package CPM support members: `0`
+- Current final PDF visual QA: `PASS`, 18 pages, 0 blank pages, manuscript/upload PDF SHA match
 - External metadata still pending: seven coauthor e-mail addresses if the live
   submission system requires all author e-mails
 
