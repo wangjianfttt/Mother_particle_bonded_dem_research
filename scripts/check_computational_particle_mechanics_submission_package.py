@@ -6,6 +6,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import re
+import subprocess
 import sys
 import zipfile
 from pathlib import Path
@@ -25,6 +26,7 @@ UPLOAD_SHA = Path(str(UPLOAD_ZIP) + ".sha256")
 REPRO_ZIP = ROOT / "submission_packages" / "repaired_submission_package.zip"
 REPRO_SHA = ROOT / "submission_packages" / "repaired_submission_package.zip.sha256"
 CPM_TEX = ROOT / "manuscript" / "computational_particle_mechanics_submission.tex"
+COVER_LETTER = ROOT / "manuscript" / "computational_particle_mechanics_cover_letter.md"
 CPM_FIELDS = ROOT / "manuscript" / "computational_particle_mechanics_editorial_fields.md"
 CPM_HIGHLIGHTS = ROOT / "manuscript" / "computational_particle_mechanics_highlights.md"
 README = ROOT / "README_CPM_SUBMISSION_20260704.md"
@@ -183,6 +185,7 @@ def check_highlights() -> None:
 def check_reader_text() -> None:
     for path in [
         CPM_TEX,
+        COVER_LETTER,
         CPM_FIELDS,
         CPM_HIGHLIGHTS,
         UPLOAD_DIR / "README_upload_roles.txt",
@@ -226,6 +229,14 @@ def check_support_docs() -> None:
             fail(f"START_HERE missing {required}")
 
 
+def check_scientific_alignment() -> None:
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "check_cpm_scientific_alignment.py")],
+        cwd=ROOT,
+        check=True,
+    )
+
+
 def main() -> None:
     check_sha_file(UPLOAD_ZIP, UPLOAD_SHA)
     check_sha_file(REPRO_ZIP, REPRO_SHA)
@@ -238,6 +249,7 @@ def main() -> None:
     check_reader_text()
     check_doi_and_target()
     check_support_docs()
+    check_scientific_alignment()
     print("PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified")
 
 

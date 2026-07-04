@@ -663,6 +663,13 @@ inside named parent particles. This keeps the claim focused on finite
 100-particle windows, material-strength response and event chronology rather
 than converged stochastic failure probability.
 
+The same scientific spine is now enforced across the manuscript, cover letter,
+editorial submission fields and literature-gap map by:
+
+- `scripts/check_cpm_scientific_alignment.py`
+
+The CPM package checker calls this script before reporting package readiness.
+
 ## 2026-07-04 mechanism-variable separation update
 
 The repaired manuscript now includes a source-backed endpoint separation

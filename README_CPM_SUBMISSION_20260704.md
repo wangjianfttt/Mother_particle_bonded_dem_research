@@ -67,6 +67,15 @@ Regenerate the readiness report with:
 /Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
 ```
 
+The package check also runs:
+
+```bash
+python3 scripts/check_cpm_scientific_alignment.py
+```
+
+This verifies that the manuscript, cover letter, editorial fields and
+literature-gap map use the same scientific rationale.
+
 Regenerate the literature-gap map with:
 
 ```bash

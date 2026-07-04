@@ -1,12 +1,13 @@
 # CPM Submission Readiness Report
 
-Generated: `2026-07-04T20:16:14`
+Generated: `2026-07-04T20:26:26`
 
 ## Status
 
 - Internal package status: `ready_for_live_submission_after_external_metadata`
 - Preflight status: `PASS`
-- Preflight output: `PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified`
+- Preflight output: `PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match
+PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified`
 
 ## Target
 
@@ -18,8 +19,8 @@ Generated: `2026-07-04T20:16:14`
 ## Package Evidence
 
 - Upload package: `submission_packages/computational_particle_mechanics_upload_ready.zip`
-- Upload package bytes: `3818937`
-- Upload package SHA256: `cb90f2a851e69ca8ea6ac9b4acddee01819448e283cef6a0c58c76b4413a4143`
+- Upload package bytes: `3818971`
+- Upload package SHA256: `28856aa5f177038db9b2862be9a94da2ffd708caa91db228af43548ef096389e`
 - Reduced reproducibility package: `submission_packages/repaired_submission_package.zip`
 - Reduced reproducibility package bytes: `6205103`
 - Reduced reproducibility package SHA256: `1d2621aea90e73a6bac6ede79d71e64cfaf19d202850e1ac7154eb92a20d7295`

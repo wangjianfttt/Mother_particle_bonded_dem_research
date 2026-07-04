@@ -65,6 +65,7 @@ Run:
 Expected result:
 
 ```text
+PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match
 PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified
 ```
 
