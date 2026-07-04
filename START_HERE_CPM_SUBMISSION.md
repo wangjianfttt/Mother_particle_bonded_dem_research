@@ -47,6 +47,13 @@ Seven coauthor e-mail addresses are not in the current local records. Use
 `10_author_email_completion_sheet.docx` or `.csv` to collect them if the live
 submission system requires every author's e-mail address.
 
+Support files for this step:
+
+- `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx`
+- `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.txt`
+- `manuscript/computational_particle_mechanics_live_submission_checklist.docx`
+- `manuscript/computational_particle_mechanics_live_submission_checklist.md`
+
 ## Pre-submission check
 
 Run:
@@ -58,7 +65,7 @@ Run:
 Expected result:
 
 ```text
-PASS CPM submission package: manifest=15, figures=19, docx=6, DOI and reader text verified
+PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified
 ```
 
 The reduced reproducibility package remains:
@@ -68,4 +75,3 @@ The reduced reproducibility package remains:
 
 The large raw restart files and full local-bond dump histories are archived
 outside the GitHub repository and are not needed for initial manuscript review.
-

@@ -729,6 +729,9 @@ New target-specific files:
 - `manuscript/computational_particle_mechanics_highlights.md`
 - `scripts/build_computational_particle_mechanics_submission_package.py`
 - `scripts/check_computational_particle_mechanics_submission_package.py`
+- `scripts/build_cpm_submission_support_docs.py`
+- `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx`
+- `manuscript/computational_particle_mechanics_live_submission_checklist.docx`
 
 New target-specific upload package:
 
@@ -772,8 +775,8 @@ Package verification:
   primary pre-submission command is
   `/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/check_computational_particle_mechanics_submission_package.py`,
   which verifies the upload zip, reduced reproducibility zip, manifest,
-  DOCX files, main-figure package, author e-mail completion sheet, Highlights,
-  DOI statements and reader-facing terminology.
+  DOCX files, main-figure package, author e-mail completion sheet, support
+  DOCX files, Highlights and DOI statements.
 - Additional 2026-07-04 QA: the five target Highlights are 83, 76, 84, 82 and
   73 characters, respectively; the current PDF is 18 pages; all 18 rendered
   page PNGs and the contact sheet are under

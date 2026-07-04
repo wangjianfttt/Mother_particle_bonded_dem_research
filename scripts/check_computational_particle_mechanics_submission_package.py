@@ -28,6 +28,15 @@ CPM_TEX = ROOT / "manuscript" / "computational_particle_mechanics_submission.tex
 CPM_FIELDS = ROOT / "manuscript" / "computational_particle_mechanics_editorial_fields.md"
 CPM_HIGHLIGHTS = ROOT / "manuscript" / "computational_particle_mechanics_highlights.md"
 README = ROOT / "README_CPM_SUBMISSION_20260704.md"
+START_HERE = ROOT / "START_HERE_CPM_SUBMISSION.md"
+SUPPORT_DOCX = [
+    ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.docx",
+    ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.docx",
+]
+SUPPORT_TEXT = [
+    ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.txt",
+    ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.md",
+]
 
 EXPECTED_UPLOAD_FILES = {
     "01_manuscript.pdf",
@@ -196,6 +205,27 @@ def check_doi_and_target() -> None:
         fail("editorial fields missing DOI statements")
 
 
+def check_support_docs() -> None:
+    if not START_HERE.exists():
+        fail("missing START_HERE_CPM_SUBMISSION.md")
+    for path in SUPPORT_DOCX:
+        if not path.exists():
+            fail(f"missing support DOCX: {path.name}")
+        Document(path)
+    for path in SUPPORT_TEXT:
+        if not path.exists() or path.stat().st_size == 0:
+            fail(f"missing or empty support text file: {path.name}")
+    start = START_HERE.read_text(encoding="utf-8")
+    for required in [
+        "computational_particle_mechanics_upload_ready.zip",
+        "10_author_email_completion_sheet.docx",
+        "scripts/check_computational_particle_mechanics_submission_package.py",
+        "10.5281/zenodo.20687351",
+    ]:
+        if required not in start:
+            fail(f"START_HERE missing {required}")
+
+
 def main() -> None:
     check_sha_file(UPLOAD_ZIP, UPLOAD_SHA)
     check_sha_file(REPRO_ZIP, REPRO_SHA)
@@ -207,9 +237,9 @@ def main() -> None:
     check_highlights()
     check_reader_text()
     check_doi_and_target()
-    print("PASS CPM submission package: manifest=15, figures=19, docx=6, DOI and reader text verified")
+    check_support_docs()
+    print("PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified")
 
 
 if __name__ == "__main__":
     main()
-

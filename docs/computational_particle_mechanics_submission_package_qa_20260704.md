@@ -48,7 +48,7 @@ Primary command:
 Observed result:
 
 ```text
-PASS CPM submission package: manifest=15, figures=19, docx=6, DOI and reader text verified
+PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified
 ```
 
 Expanded check:

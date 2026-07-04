@@ -51,3 +51,8 @@ The current local verification status is recorded in:
 - `START_HERE_CPM_SUBMISSION.md`
 - `docs/computational_particle_mechanics_submission_package_qa_20260704.md`
 - `docs/next_stage_optimization_plan.md`
+
+Practical submission support files are:
+
+- `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx`
+- `manuscript/computational_particle_mechanics_live_submission_checklist.docx`

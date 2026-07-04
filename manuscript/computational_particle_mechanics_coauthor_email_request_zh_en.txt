@@ -1,0 +1,39 @@
+Subject: 请补充CPM投稿作者邮箱 / Author e-mail confirmation for CPM submission
+
+各位老师、同学好，
+
+Li4SiO4 bonded-template DEM 颗粒破碎论文准备转投 Computational Particle Mechanics。投稿系统可能要求填写每位作者的邮箱地址。当前稿件中通讯作者邮箱已经确认：Jian Wang, wjfttt@mail.ustc.edu.cn。
+
+请下面几位作者各自提供一个投稿系统使用的机构邮箱，或确认可以使用的常用学术邮箱：
+- Siyu Wang
+- Hang Zhang
+- Ming-Zhun Lei
+- Wei Wen
+- Qi-Gang Wu
+- Gang Shen
+- Haishun Deng
+
+同时请确认作者顺序、单位和贡献描述没有问题。如需查看当前记录，可参考随附的 author e-mail completion sheet。
+
+谢谢！
+Jian Wang
+
+---
+
+Dear coauthors,
+
+We are preparing the Li4SiO4 bonded-template DEM manuscript for submission to Computational Particle Mechanics. The online submission system may require an e-mail address for every author. The corresponding author e-mail has been confirmed as Jian Wang, wjfttt@mail.ustc.edu.cn.
+
+Please provide one institutional or preferred academic e-mail address for the following authors:
+- Siyu Wang
+- Hang Zhang
+- Ming-Zhun Lei
+- Wei Wen
+- Qi-Gang Wu
+- Gang Shen
+- Haishun Deng
+
+Please also confirm that the author order, affiliations and contribution descriptions are correct. The current author e-mail completion sheet is attached for reference.
+
+Best regards,
+Jian Wang
