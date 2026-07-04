@@ -327,14 +327,117 @@ def write_author_email_collection_packet() -> None:
     doc.save(MANUSCRIPT / "computational_particle_mechanics_author_email_collection_packet.docx")
 
 
+def write_individual_contact_messages() -> None:
+    rows = []
+    for row in AUTHOR_EMAIL_ACTION_ROWS:
+        author = row["author"]
+        candidate = row["public_candidate"]
+        if candidate:
+            zh = (
+                f"{author}老师您好，CPM投稿系统可能需要每位作者邮箱。"
+                f"我查到一个公开候选邮箱：{candidate}。请您确认该邮箱是否可以用于本次投稿系统；"
+                "同时请确认作者顺序、单位和贡献描述是否无误。谢谢！"
+            )
+            en = (
+                f"Dear {author}, the CPM submission system may require one e-mail address for every author. "
+                f"I found the following public candidate e-mail: {candidate}. "
+                "Could you please confirm whether it may be used in the submission system, and whether the author order, affiliation and contribution statement are correct?"
+            )
+            action_type = "confirm_public_candidate"
+        else:
+            zh = (
+                f"{author}您好，CPM投稿系统可能需要每位作者邮箱。"
+                "请您回复一个可用于投稿系统的常用学术邮箱；同时请确认作者顺序、单位和贡献描述是否无误。谢谢！"
+            )
+            en = (
+                f"Dear {author}, the CPM submission system may require one e-mail address for every author. "
+                "Could you please provide a preferred academic e-mail address for the submission system, and confirm whether the author order, affiliation and contribution statement are correct?"
+            )
+            action_type = "ask_directly"
+        rows.append(
+            {
+                "author": author,
+                "action_type": action_type,
+                "public_candidate": candidate,
+                "chinese_message": zh,
+                "english_message": en,
+            }
+        )
+
+    csv_path = MANUSCRIPT / "computational_particle_mechanics_individual_contact_messages.csv"
+    with csv_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.DictWriter(handle, fieldnames=list(rows[0]), lineterminator="\n")
+        writer.writeheader()
+        writer.writerows(rows)
+
+    md_lines = [
+        "# CPM individual coauthor contact messages",
+        "",
+        f"Manuscript: {TITLE}",
+        "",
+        "Rule: public candidate e-mails are confirmation aids only. Do not enter them into the live submission system until the corresponding author or coauthor confirms the address.",
+        "",
+    ]
+    for row in rows:
+        md_lines.extend(
+            [
+                f"## {row['author']}",
+                "",
+                f"- Action type: `{row['action_type']}`",
+                f"- Public candidate: `{row['public_candidate'] or 'None'}`",
+                "",
+                "Chinese message:",
+                "",
+                row["chinese_message"],
+                "",
+                "English message:",
+                "",
+                row["english_message"],
+                "",
+            ]
+        )
+    md_path = MANUSCRIPT / "computational_particle_mechanics_individual_contact_messages.md"
+    txt_path = MANUSCRIPT / "computational_particle_mechanics_individual_contact_messages.txt"
+    md_path.write_text("\n".join(md_lines), encoding="utf-8")
+    txt_path.write_text("\n".join(md_lines), encoding="utf-8")
+
+    doc = Document()
+    configure(doc)
+    add_title(doc, "Individual coauthor contact messages")
+    doc.add_paragraph(
+        "Public candidate e-mails are confirmation aids only. Do not enter them into the live submission system until the corresponding author or coauthor confirms the address."
+    )
+    doc.add_paragraph(
+        "Use the Chinese message directly for quick confirmation. The English version is included below each author as a backup."
+    )
+    for row in rows:
+        doc.add_heading(row["author"], level=1)
+        meta = doc.add_table(rows=0, cols=2)
+        meta.style = "Table Grid"
+        for label, value in [
+            ("Action", row["action_type"]),
+            ("Public candidate", row["public_candidate"] or "None"),
+        ]:
+            cells = meta.add_row().cells
+            cells[0].text = label
+            cells[1].text = value
+        doc.add_paragraph("Chinese message").runs[0].bold = True
+        doc.add_paragraph(row["chinese_message"])
+        doc.add_paragraph("English backup message").runs[0].bold = True
+        doc.add_paragraph(row["english_message"])
+    doc.save(MANUSCRIPT / "computational_particle_mechanics_individual_contact_messages.docx")
+
+
 def main() -> None:
     MANUSCRIPT.mkdir(exist_ok=True)
     write_email_request()
     write_live_checklist()
     write_author_email_collection_packet()
+    write_individual_contact_messages()
     print(MANUSCRIPT / "computational_particle_mechanics_coauthor_email_request_zh_en.docx")
     print(MANUSCRIPT / "computational_particle_mechanics_live_submission_checklist.docx")
     print(MANUSCRIPT / "computational_particle_mechanics_author_email_collection_packet.docx")
+    print(MANUSCRIPT / "computational_particle_mechanics_individual_contact_messages.docx")
 
 
 if __name__ == "__main__":

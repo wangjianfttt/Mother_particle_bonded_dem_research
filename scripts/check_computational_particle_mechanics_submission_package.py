@@ -50,6 +50,7 @@ EMAIL_LOOKUP_MD = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.md"
 EMAIL_LOOKUP_CSV = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.csv"
 SUPPORT_DOCX = [
     ROOT / "manuscript" / "computational_particle_mechanics_author_email_collection_packet.docx",
+    ROOT / "manuscript" / "computational_particle_mechanics_individual_contact_messages.docx",
     ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.docx",
     ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.docx",
     LIVE_PACKET_DOCX,
@@ -58,6 +59,9 @@ SUPPORT_TEXT = [
     ROOT / "manuscript" / "computational_particle_mechanics_author_email_collection_packet.csv",
     ROOT / "manuscript" / "computational_particle_mechanics_author_email_collection_packet.md",
     ROOT / "manuscript" / "computational_particle_mechanics_author_email_collection_packet.txt",
+    ROOT / "manuscript" / "computational_particle_mechanics_individual_contact_messages.csv",
+    ROOT / "manuscript" / "computational_particle_mechanics_individual_contact_messages.md",
+    ROOT / "manuscript" / "computational_particle_mechanics_individual_contact_messages.txt",
     ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.txt",
     ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.md",
     LIVE_PACKET_MD,
@@ -284,6 +288,7 @@ def check_support_docs() -> None:
         "computational_particle_mechanics_upload_ready.zip",
         "10_author_email_completion_sheet.docx",
         "computational_particle_mechanics_author_email_collection_packet.docx",
+        "computational_particle_mechanics_individual_contact_messages.docx",
         "computational_particle_mechanics_blinded_review_optional.zip",
         "computational_particle_mechanics_live_submission_packet.docx",
         "cpm_live_submission_packet_20260704.md",
@@ -295,7 +300,7 @@ def check_support_docs() -> None:
         "10.5281/zenodo.20687351",
         "Four public candidate e-mail records",
         "confirmation aids only",
-        "Reduced reproducibility package CPM support members: `38/38` present",
+        "Reduced reproducibility package CPM support members: `42/42` present",
         "Current final PDF visual QA: `PASS`, 18 pages, 0 blank pages, manuscript/upload PDF SHA match",
     ]:
         if required not in start:
@@ -329,6 +334,22 @@ def check_support_docs() -> None:
     ]:
         if term not in collection_packet:
             fail(f"author e-mail collection packet missing term: {term}")
+    individual_messages = (
+        ROOT / "manuscript" / "computational_particle_mechanics_individual_contact_messages.md"
+    ).read_text(encoding="utf-8")
+    for term in [
+        "CPM individual coauthor contact messages",
+        "confirm_public_candidate",
+        "ask_directly",
+        "Siyu Wang",
+        "Qi-Gang Wu",
+        "leimz@ipp.ac.cn",
+        "wenwei@ipp.ac.cn",
+        "shenganghit@163.com",
+        "269469122@qq.com",
+    ]:
+        if term not in individual_messages:
+            fail(f"individual contact messages missing term: {term}")
     payload = json.loads(LIVE_PACKET_JSON.read_text(encoding="utf-8"))
     for key, value in [
         ("target_journal", "Computational Particle Mechanics"),

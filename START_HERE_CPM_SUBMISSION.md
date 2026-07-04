@@ -75,6 +75,10 @@ Support files for this step:
 - `manuscript/computational_particle_mechanics_author_email_collection_packet.csv`
 - `manuscript/computational_particle_mechanics_author_email_collection_packet.md`
 - `manuscript/computational_particle_mechanics_author_email_collection_packet.txt`
+- `manuscript/computational_particle_mechanics_individual_contact_messages.docx`
+- `manuscript/computational_particle_mechanics_individual_contact_messages.csv`
+- `manuscript/computational_particle_mechanics_individual_contact_messages.md`
+- `manuscript/computational_particle_mechanics_individual_contact_messages.txt`
 - `manuscript/computational_particle_mechanics_live_submission_checklist.docx`
 - `manuscript/computational_particle_mechanics_live_submission_checklist.md`
 - `manuscript/computational_particle_mechanics_live_submission_packet.docx`
@@ -114,7 +118,7 @@ Current machine-readable readiness report:
 Latest local status recorded in the readiness report:
 
 - Local package ready: `True`
-- Reduced reproducibility package CPM support members: `38/38` present
+- Reduced reproducibility package CPM support members: `42/42` present
 - Missing reduced-package CPM support members: `0`
 - Current final PDF visual QA: `PASS`, 18 pages, 0 blank pages, manuscript/upload PDF SHA match
 - External metadata still pending: seven coauthor e-mail addresses if the live
