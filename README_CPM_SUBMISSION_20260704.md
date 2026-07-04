@@ -71,13 +71,22 @@ The package check also runs:
 
 ```bash
 python3 scripts/check_cpm_scientific_alignment.py
+python3 scripts/check_cpm_reviewer_risk_preflight.py
 ```
 
-This verifies that the manuscript, cover letter, editorial fields and
-literature-gap map use the same scientific rationale.
+These checks verify that the manuscript, cover letter, editorial fields and
+literature-gap map use the same scientific rationale, and that the main
+editor/reviewer risks are mapped to current evidence and conservative
+boundaries.
 
 Regenerate the literature-gap map with:
 
 ```bash
 python3 scripts/build_cpm_literature_gap_map.py
+```
+
+Regenerate the reviewer-risk preflight matrix with:
+
+```bash
+python3 scripts/build_cpm_reviewer_risk_preflight.py
 ```

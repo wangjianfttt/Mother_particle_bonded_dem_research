@@ -670,6 +670,22 @@ editorial submission fields and literature-gap map by:
 
 The CPM package checker calls this script before reporting package readiness.
 
+## 2026-07-04 CPM reviewer-risk preflight update
+
+The current CPM package now includes an internal reviewer-risk preflight matrix:
+
+- `docs/cpm_reviewer_risk_preflight_20260704.md`
+- `docs/cpm_reviewer_risk_preflight_20260704.csv`
+- `scripts/build_cpm_reviewer_risk_preflight.py`
+- `scripts/check_cpm_reviewer_risk_preflight.py`
+
+The matrix maps seven likely editor/reviewer concerns to current evidence and
+claim boundaries: literature rationale, material-property dependence,
+statistical scope, single-particle template credibility, artificial pre-loading
+damage, reproducibility/raw-data handling and journal scope. The CPM package
+checker now calls the reviewer-risk preflight script after the scientific
+alignment check.
+
 ## 2026-07-04 mechanism-variable separation update
 
 The repaired manuscript now includes a source-backed endpoint separation

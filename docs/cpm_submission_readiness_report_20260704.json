@@ -1,11 +1,11 @@
 {
-  "generated_at": "2026-07-04T20:26:26",
+  "generated_at": "2026-07-04T20:34:45",
   "target_journal": "Computational Particle Mechanics",
   "manuscript_title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
   "doi": "https://doi.org/10.5281/zenodo.20687351",
   "github_repository": "wangjianfttt/Mother_particle_bonded_dem_research",
   "preflight_status": "PASS",
-  "preflight_output": "PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match\nPASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified",
+  "preflight_output": "PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match\nPASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries\nPASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified",
   "upload_package": "submission_packages/computational_particle_mechanics_upload_ready.zip",
   "upload_package_bytes": 3818971,
   "upload_package_sha256": "28856aa5f177038db9b2862be9a94da2ffd708caa91db228af43548ef096389e",

@@ -1,12 +1,13 @@
 # CPM Submission Readiness Report
 
-Generated: `2026-07-04T20:26:26`
+Generated: `2026-07-04T20:34:45`
 
 ## Status
 
 - Internal package status: `ready_for_live_submission_after_external_metadata`
 - Preflight status: `PASS`
 - Preflight output: `PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match
+PASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries
 PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified`
 
 ## Target

@@ -66,6 +66,7 @@ Expected result:
 
 ```text
 PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match
+PASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries
 PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified
 ```
 
@@ -78,6 +79,8 @@ Current literature-gap and novelty support:
 
 - `docs/cpm_literature_gap_map_20260704.md`
 - `docs/cpm_literature_gap_map_20260704.csv`
+- `docs/cpm_reviewer_risk_preflight_20260704.md`
+- `docs/cpm_reviewer_risk_preflight_20260704.csv`
 
 Regenerate it with:
 

@@ -237,6 +237,14 @@ def check_scientific_alignment() -> None:
     )
 
 
+def check_reviewer_risk_preflight() -> None:
+    subprocess.run(
+        [sys.executable, str(ROOT / "scripts" / "check_cpm_reviewer_risk_preflight.py")],
+        cwd=ROOT,
+        check=True,
+    )
+
+
 def main() -> None:
     check_sha_file(UPLOAD_ZIP, UPLOAD_SHA)
     check_sha_file(REPRO_ZIP, REPRO_SHA)
@@ -250,6 +258,7 @@ def main() -> None:
     check_doi_and_target()
     check_support_docs()
     check_scientific_alignment()
+    check_reviewer_risk_preflight()
     print("PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support docs verified")
 
 
