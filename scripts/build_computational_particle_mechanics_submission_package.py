@@ -198,6 +198,34 @@ def build_latex_source_zip(path: Path) -> None:
             zf.write(src, src.relative_to(ROOT))
 
 
+def build_main_figures_zip(path: Path) -> None:
+    """Package main figures as separate editable/raster files for upload."""
+    if path.exists():
+        path.unlink()
+    figure_stems = [
+        FIG / "main" / "fig1_workflow",
+        FIG / "apt_redesign" / "fig2_single_pebble_template_validation",
+        FIG / "apt_redesign" / "fig3_entry_state_validation",
+        FIG / "apt_redesign" / "fig4_pilot_fracture_event_sequence",
+        FIG / "apt_redesign" / "fig5_mechanism_state_space",
+        FIG / "pb007" / "pb007_material_strength_response",
+    ]
+    readme = (
+        "Main figure files for Computational Particle Mechanics submission\n\n"
+        "Each main figure is supplied as PDF, PNG and SVG. The high-resolution TIFF\n"
+        "files remain in the local working tree and can be uploaded separately if\n"
+        "the submission system requests TIFF-only figure files.\n"
+    )
+    with zipfile.ZipFile(path, "w", compression=zipfile.ZIP_DEFLATED) as zf:
+        zf.writestr("README_main_figures.txt", readme)
+        for stem in figure_stems:
+            for ext in [".pdf", ".png", ".svg"]:
+                src = stem.with_suffix(ext)
+                if not src.exists():
+                    raise FileNotFoundError(src)
+                zf.write(src, src.relative_to(ROOT))
+
+
 def build_target_tex_and_pdf() -> None:
     source = MANUSCRIPT / "repaired_full_submission.tex"
     text = source.read_text(encoding="utf-8")
@@ -234,6 +262,8 @@ def main() -> None:
     write_author_docx(author_docx)
     latex_source_zip = UPLOAD_DIR / "07_latex_source.zip"
     build_latex_source_zip(latex_source_zip)
+    main_figures_zip = UPLOAD_DIR / "09_main_figures.zip"
+    build_main_figures_zip(main_figures_zip)
 
     copy_and_record(CPM_PDF, UPLOAD_DIR / "01_manuscript.pdf", "Manuscript", rows)
     for path, role in [
@@ -243,6 +273,7 @@ def main() -> None:
         (author_docx, "Author details"),
         (latex_source_zip, "LaTeX source"),
         (fields_docx, "Editorial submission fields"),
+        (main_figures_zip, "Main figure files"),
     ]:
         rows.append({"role": role, "path": path.name, "bytes": str(path.stat().st_size), "sha256": sha256(path)})
 
@@ -274,6 +305,7 @@ def main() -> None:
                 "Author e-mails and CRediT contributions: 06_author_emails_and_contributions.docx",
                 "LaTeX manuscript source: 07_latex_source.zip",
                 "Editorial system paste fields: 08_editorial_submission_fields.docx",
+                "Main figure files: 09_main_figures.zip",
                 "",
                 "Computational Particle Mechanics currently routes submissions through the Elsevier/ScienceDirect journal page.",
                 "The full reproducibility package remains submission_packages/repaired_submission_package.zip.",

@@ -23,7 +23,7 @@ https://doi.org/10.5281/zenodo.20687351
 
 The upload-ready package contains the manuscript PDF, Highlights, graphical
 abstract, declaration, cover letter, author contribution file, LaTeX source zip
-and editorial-system paste fields.
+editorial-system paste fields and separate main-figure files.
 
 The reduced reproducibility package contains manuscript-level source data,
 tables, figure-generation scripts, checking scripts, figures and the rebuilt

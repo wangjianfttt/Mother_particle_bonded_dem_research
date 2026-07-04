@@ -738,11 +738,14 @@ Package verification:
 
 - `zipfile.testzip()` returned no bad file.
 - ZIP SHA256 matches the generated `.sha256` file.
-- Manifest contains 12 records.
+- Manifest contains 13 records after adding the separate main-figure package.
 - `02_highlights.docx`, `04_declaration_of_competing_interest.docx`,
   `05_cover_letter.docx`, `06_author_emails_and_contributions.docx` and
   `08_editorial_submission_fields.docx` open successfully with `python-docx`.
 - The package includes `07_latex_source.zip`.
+- The package includes `09_main_figures.zip`, containing a README plus PDF,
+  PNG and SVG versions of the six main figures for upload systems that request
+  figure files separately from the manuscript source.
 - `07_latex_source.zip` was extracted to `/tmp/cpm_latex_source_check4` and
   compiled successfully from the extracted `manuscript` directory with
   `latexmk -pdf -interaction=nonstopmode -halt-on-error

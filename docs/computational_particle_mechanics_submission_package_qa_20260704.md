@@ -24,6 +24,7 @@ ZIP:
 | Author e-mails and CRediT contributions | `06_author_emails_and_contributions.docx` |
 | LaTeX manuscript source | `07_latex_source.zip` |
 | Editorial system paste fields | `08_editorial_submission_fields.docx` |
+| Main figure files | `09_main_figures.zip` |
 | Upload guide | `README_upload_roles.txt` |
 
 ## Build command
@@ -53,9 +54,12 @@ with zipfile.ZipFile(zip_path) as zf:
 digest = hashlib.sha256(zip_path.read_bytes()).hexdigest()
 assert digest == sha_path.read_text().split()[0]
 rows = list(csv.DictReader((root / "computational_particle_mechanics_upload_ready" / "MANIFEST.csv").open()))
-assert len(rows) == 12
+assert len(rows) == 13
 with zipfile.ZipFile(root / "computational_particle_mechanics_upload_ready" / "07_latex_source.zip") as zf:
     assert zf.testzip() is None
+with zipfile.ZipFile(root / "computational_particle_mechanics_upload_ready" / "09_main_figures.zip") as zf:
+    assert zf.testzip() is None
+    assert len(zf.namelist()) == 19
 for name in [
     "02_highlights.docx",
     "04_declaration_of_competing_interest.docx",
@@ -72,11 +76,13 @@ Observed result:
 
 - ZIP integrity: pass.
 - ZIP SHA256: pass.
-- Manifest: 12 records after adding the LaTeX source zip and editorial
-  submission-fields Word file.
+- Manifest: 13 records after adding the LaTeX source zip, editorial
+  submission-fields Word file and separate main-figure package.
 - Word files: all open successfully with `python-docx`.
 - `07_latex_source.zip` opens successfully and contains the target-specific
   source file `manuscript/computational_particle_mechanics_submission.tex`.
+- `09_main_figures.zip` opens successfully and contains 19 members: a README
+  plus PDF, PNG and SVG versions of the six main figures.
 - The five Highlights contain 83, 76, 84, 82 and 73 characters, respectively,
   so they satisfy the common Elsevier 85-character limit.
 
@@ -140,6 +146,9 @@ Observed result:
 - `08_editorial_submission_fields.docx` is a helper file for copying title,
   abstract, keywords, highlights, declarations and availability statements into
   the live submission system. It is not necessarily an upload category.
+- `09_main_figures.zip` is included because Elsevier author instructions ask
+  authors to provide figures as separate files along with the manuscript. The
+  LaTeX source zip also contains the figure PDFs needed for compilation.
 - Computational Particle Mechanics is currently routed through the
   Elsevier/ScienceDirect journal page, so the final upload categories should be
   checked in the live submission system.
