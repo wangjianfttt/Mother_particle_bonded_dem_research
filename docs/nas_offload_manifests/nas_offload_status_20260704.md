@@ -24,3 +24,14 @@ Post-check summary:
 - Remaining local project size is dominated by figure files, submission-package copies, and Git history, not by DEM dump/restart files.
 - Current manuscript-facing and reproducibility files were left in place.
 
+## Live recheck - 2026-07-04 21:12 CST
+
+- Confirmed selected NAS target: `/Volumes/BulkArchive` (`//wangjian@qunhui925.local/BulkArchive`), 7.0 TiB total, 6.9 TiB available, about 1% used.
+- Confirmed archived DEM raw-output folders on the 7 TiB volume:
+  - `/Volumes/BulkArchive/DEM_ARCHIVE/颗粒破碎统计研究/PB-006_large_archives_20260704` (about 23 GiB)
+  - `/Volumes/BulkArchive/DEM_ARCHIVE/颗粒破碎统计研究/PB-007_old_restart_data_20260704` (about 4.6 GiB)
+  - `/Volumes/BulkArchive/DEM_ARCHIVE/颗粒破碎统计研究/large_raw_outputs_before_20260704_20260704` (about 2.0 GiB)
+  - `/Volumes/BulkArchive/颗粒破碎统计研究_backup/raw_simulation_dumps_20260704_164309` (about 721 MiB)
+  - `/Volumes/BulkArchive/颗粒破碎统计研究_backup/pb007_raw_outputs_20260704_171122` (about 1.8 GiB)
+- Re-scanned the local workspace for raw-output files larger than 20 MB matching `*.dump`, `*dump*`, `*.local`, `*.restart`, `*.vtk`, `*.vtu`, `*.vtp`, `*.xyz` and `*.lammpstrj`; no remaining matches were found.
+- Large files still present locally are manuscript figures, submission bundles, Git objects and source/vendor files. These were not moved because they are not raw DEM dump/restart outputs.
