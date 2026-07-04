@@ -723,10 +723,12 @@ Rationale:
 
 New target-specific files:
 
+- `START_HERE_CPM_SUBMISSION.md`
 - `docs/computational_particle_mechanics_targeting_plan_20260704.md`
 - `manuscript/computational_particle_mechanics_cover_letter.md`
 - `manuscript/computational_particle_mechanics_highlights.md`
 - `scripts/build_computational_particle_mechanics_submission_package.py`
+- `scripts/check_computational_particle_mechanics_submission_package.py`
 
 New target-specific upload package:
 
@@ -766,6 +768,12 @@ Package verification:
   `08_editorial_submission_fields.docx` provide the title, abstract, keywords,
   highlights, availability statements, declaration text and upload-role mapping
   for the live Elsevier/ScienceDirect submission system.
+- `START_HERE_CPM_SUBMISSION.md` is the current handoff entry point. The
+  primary pre-submission command is
+  `/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/check_computational_particle_mechanics_submission_package.py`,
+  which verifies the upload zip, reduced reproducibility zip, manifest,
+  DOCX files, main-figure package, author e-mail completion sheet, Highlights,
+  DOI statements and reader-facing terminology.
 - Additional 2026-07-04 QA: the five target Highlights are 83, 76, 84, 82 and
   73 characters, respectively; the current PDF is 18 pages; all 18 rendered
   page PNGs and the contact sheet are under

@@ -39,6 +39,20 @@ runtime must be used for this package builder.
 
 ## Verification
 
+Primary command:
+
+```bash
+/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/check_computational_particle_mechanics_submission_package.py
+```
+
+Observed result:
+
+```text
+PASS CPM submission package: manifest=15, figures=19, docx=6, DOI and reader text verified
+```
+
+Expanded check:
+
 ```bash
 /Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 - <<'PY'
 from pathlib import Path

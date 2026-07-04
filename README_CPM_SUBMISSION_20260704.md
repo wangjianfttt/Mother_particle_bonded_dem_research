@@ -23,8 +23,8 @@ https://doi.org/10.5281/zenodo.20687351
 
 The upload-ready package contains the manuscript PDF, Highlights, graphical
 abstract, declaration, cover letter, author contribution file, LaTeX source zip
-editorial-system paste fields, separate main-figure files and an author e-mail
-completion sheet.
+and editorial-system paste fields, separate main-figure files and an author
+e-mail completion sheet.
 
 The reduced reproducibility package contains manuscript-level source data,
 tables, figure-generation scripts, checking scripts, figures and the rebuilt
@@ -41,12 +41,13 @@ files and representative input files to support manuscript-level regeneration.
 ## Basic verification
 
 ```bash
-python3 scripts/check_repaired_full_manuscript_consistency.py
+/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/check_computational_particle_mechanics_submission_package.py
 (cd submission_packages && shasum -a 256 -c repaired_submission_package.zip.sha256)
 (cd submission_packages && shasum -a 256 -c computational_particle_mechanics_upload_ready.zip.sha256)
 ```
 
 The current local verification status is recorded in:
 
+- `START_HERE_CPM_SUBMISSION.md`
 - `docs/computational_particle_mechanics_submission_package_qa_20260704.md`
 - `docs/next_stage_optimization_plan.md`
