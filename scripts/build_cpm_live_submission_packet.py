@@ -22,6 +22,8 @@ UPLOAD_DIR = ROOT / "submission_packages" / "computational_particle_mechanics_up
 FIELDS = MANUSCRIPT / "computational_particle_mechanics_editorial_fields.md"
 EMAIL_SHEET = UPLOAD_DIR / "10_author_email_completion_sheet.csv"
 MANIFEST = UPLOAD_DIR / "MANIFEST.csv"
+EMAIL_LOOKUP_MD = DOCS / "cpm_author_email_public_lookup_20260704.md"
+EMAIL_LOOKUP_CSV = DOCS / "cpm_author_email_public_lookup_20260704.csv"
 
 OUT_MD = DOCS / "cpm_live_submission_packet_20260704.md"
 OUT_CSV = DOCS / "cpm_live_submission_packet_20260704.csv"
@@ -89,6 +91,21 @@ def build_payload() -> dict[str, object]:
     manifest_rows = read_csv(MANIFEST)
     author_rows = read_csv(EMAIL_SHEET)
     missing = [row["Author"] for row in author_rows if row["Status"] == "Missing"]
+    candidate_lookup_rows = read_csv(EMAIL_LOOKUP_CSV) if EMAIL_LOOKUP_CSV.exists() else []
+    candidate_lookup = []
+    for row in candidate_lookup_rows:
+        candidate_email = row.get("candidate_email") or row.get("Public candidate e-mail") or ""
+        if not candidate_email:
+            continue
+        candidate_lookup.append(
+            {
+                "author": row.get("author") or row.get("Author") or "",
+                "candidate_email": candidate_email,
+                "status": row.get("status") or row.get("Confidence") or "",
+                "source_url": row.get("source_url") or row.get("Source") or "",
+                "use_rule": row.get("use_rule") or row.get("Use rule") or "",
+            }
+        )
     return {
         "generated_at": datetime.now().isoformat(timespec="seconds"),
         "target_journal": TARGET,
@@ -103,8 +120,12 @@ def build_payload() -> dict[str, object]:
         "author_rows": author_rows,
         "missing_email_count": len(missing),
         "missing_email_authors": missing,
+        "candidate_email_lookup": str(EMAIL_LOOKUP_MD.relative_to(ROOT)),
+        "candidate_email_count": len(candidate_lookup),
+        "candidate_email_rows": candidate_lookup,
         "final_external_actions": [
             "Fill seven coauthor e-mail addresses if required by the live submission system.",
+            "Confirm public candidate e-mails for Gang Shen and Haishun Deng before using them in the live system.",
             "Confirm article type/category in the live system.",
             "Preview the system-generated PDF before final submit.",
         ],
@@ -132,6 +153,7 @@ def write_markdown(payload: dict[str, object]) -> None:
         f"- Main upload package: `{payload['upload_package']}`",
         f"- Optional blinded package: `{payload['optional_blinded_package']}`",
         f"- Reduced reproducibility package: `{payload['reduced_reproducibility_package']}`",
+        f"- Public candidate e-mail lookup: `{payload['candidate_email_lookup']}`",
         "",
         "## Upload Sequence",
         "",
@@ -155,6 +177,19 @@ def write_markdown(payload: dict[str, object]) -> None:
     lines.append("")
     for name in payload["missing_email_authors"]:  # type: ignore[index]
         lines.append(f"- {name}")
+    lines.extend(["", "## Public Candidate E-mail Lookup", ""])
+    lines.append(
+        "These entries are public candidates for corresponding-author confirmation; "
+        "they do not change the formal missing-email count."
+    )
+    lines.append("")
+    lines.append(f"Source file: `{payload['candidate_email_lookup']}`")
+    lines.append("")
+    for row in payload["candidate_email_rows"]:  # type: ignore[index]
+        lines.append(
+            f"- {row['author']}: `{row['candidate_email']}` "
+            f"({row['status']}; source: {row['source_url']})"
+        )
     lines.extend(["", "## Final External Actions", ""])
     for item in payload["final_external_actions"]:  # type: ignore[index]
         lines.append(f"- [ ] {item}")
@@ -226,6 +261,8 @@ def write_docx(payload: dict[str, object]) -> None:
         ["Optional blinded package", str(payload["optional_blinded_package"])],
         ["Reduced reproducibility package", str(payload["reduced_reproducibility_package"])],
         ["Missing author e-mails", str(payload["missing_email_count"])],
+        ["Public candidate e-mail lookup", str(payload["candidate_email_lookup"])],
+        ["Public candidate e-mails", str(payload["candidate_email_count"])],
     ]
     add_table(doc, ["Field", "Value"], core_rows)
 
@@ -247,6 +284,20 @@ def write_docx(payload: dict[str, object]) -> None:
     doc.add_heading("Missing Author E-mails", level=1)
     for name in payload["missing_email_authors"]:  # type: ignore[index]
         doc.add_paragraph(str(name), style="List Bullet")
+
+    doc.add_heading("Public Candidate E-mail Lookup", level=1)
+    doc.add_paragraph(
+        "These entries are public candidates for corresponding-author confirmation; "
+        "they do not change the formal missing-email count."
+    )
+    candidate_rows = [
+        [row["author"], row["candidate_email"], row["status"], row["source_url"]]
+        for row in payload["candidate_email_rows"]  # type: ignore[index]
+    ]
+    if candidate_rows:
+        add_table(doc, ["Author", "Candidate e-mail", "Status", "Source"], candidate_rows)
+    else:
+        doc.add_paragraph("No public candidate e-mails recorded.")
 
     doc.add_heading("Final External Actions", level=1)
     for item in payload["final_external_actions"]:  # type: ignore[index]

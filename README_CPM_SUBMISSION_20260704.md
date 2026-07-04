@@ -61,6 +61,8 @@ The current local verification status is recorded in:
 - `docs/cpm_live_submission_packet_20260704.csv`
 - `docs/cpm_live_submission_packet_20260704.json`
 - `docs/cpm_live_submission_packet_docx_qa_20260704.md`
+- `docs/cpm_author_email_public_lookup_20260704.md`
+- `docs/cpm_author_email_public_lookup_20260704.csv`
 - `docs/cpm_literature_gap_map_20260704.md`
 - `docs/cpm_literature_gap_map_20260704.csv`
 - `docs/cpm_official_submission_guide_alignment_20260704.md`
@@ -76,6 +78,11 @@ zip because it records the current package checksum. The latest local status is
 metadata item is seven coauthor e-mail addresses if the live submission system
 requires every author's e-mail address.
 
+Two public candidate e-mail records are listed in
+`docs/cpm_author_email_public_lookup_20260704.md` for corresponding-author
+confirmation. They are not counted as completed author metadata until confirmed
+by the coauthors.
+
 The optional blinded-review package is provided because the official guide
 states that the journal uses a double-anonymized review process. Use it only if
 the live submission workflow requests a blinded manuscript file; otherwise use
@@ -86,6 +93,7 @@ Practical submission support files are:
 - `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx`
 - `manuscript/computational_particle_mechanics_live_submission_checklist.docx`
 - `manuscript/computational_particle_mechanics_live_submission_packet.docx`
+- `docs/cpm_author_email_public_lookup_20260704.md`
 
 Regenerate the readiness report with:
 

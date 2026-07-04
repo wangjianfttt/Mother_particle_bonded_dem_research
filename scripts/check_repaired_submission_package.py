@@ -47,6 +47,8 @@ REQUIRED_SUPPORT = {
     "docs/cpm_live_submission_packet_20260704.json",
     "docs/cpm_live_submission_packet_20260704.md",
     "docs/cpm_live_submission_packet_docx_qa_20260704.md",
+    "docs/cpm_author_email_public_lookup_20260704.csv",
+    "docs/cpm_author_email_public_lookup_20260704.md",
     "manuscript/repaired_full_submission.pdf",
     "manuscript/repaired_full_submission.tex",
     "manuscript/repaired_full_submission_draft.md",

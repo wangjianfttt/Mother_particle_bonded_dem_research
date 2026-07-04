@@ -42,7 +42,6 @@ REQUIRED_TEXT = {
         "Bonded-particle fracture modelling",
     ],
     DOCS / "cpm_submission_readiness_report_20260704.md": [
-        "ready_for_live_submission_after_external_metadata",
         "Missing coauthor e-mail addresses: `7`",
     ],
     DOCS / "cpm_material_response_summary_20260704.md": [

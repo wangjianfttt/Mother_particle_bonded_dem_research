@@ -30,6 +30,8 @@ REQUIRED_REPRO_SUPPORT = [
     "repaired_submission_package/docs/cpm_live_submission_packet_20260704.csv",
     "repaired_submission_package/docs/cpm_live_submission_packet_20260704.json",
     "repaired_submission_package/docs/cpm_live_submission_packet_docx_qa_20260704.md",
+    "repaired_submission_package/docs/cpm_author_email_public_lookup_20260704.md",
+    "repaired_submission_package/docs/cpm_author_email_public_lookup_20260704.csv",
     "repaired_submission_package/manuscript/computational_particle_mechanics_live_submission_packet.docx",
     "repaired_submission_package/scripts/build_cpm_literature_gap_map.py",
     "repaired_submission_package/scripts/build_cpm_official_submission_guide_alignment.py",

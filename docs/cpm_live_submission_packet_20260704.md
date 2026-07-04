@@ -1,6 +1,6 @@
 # CPM Live Submission Packet
 
-Generated: `2026-07-04T22:12:04`
+Generated: `2026-07-04T22:34:51`
 
 - Target journal: Computational Particle Mechanics
 - Submission route: ScienceDirect / Editorial Manager live submission route
@@ -8,6 +8,7 @@ Generated: `2026-07-04T22:12:04`
 - Main upload package: `submission_packages/computational_particle_mechanics_upload_ready.zip`
 - Optional blinded package: `submission_packages/computational_particle_mechanics_blinded_review_optional.zip`
 - Reduced reproducibility package: `submission_packages/repaired_submission_package.zip`
+- Public candidate e-mail lookup: `docs/cpm_author_email_public_lookup_20260704.md`
 
 ## Upload Sequence
 
@@ -116,8 +117,18 @@ Missing count: `7`
 - Gang Shen
 - Haishun Deng
 
+## Public Candidate E-mail Lookup
+
+These entries are public candidates for corresponding-author confirmation; they do not change the formal missing-email count.
+
+Source file: `docs/cpm_author_email_public_lookup_20260704.md`
+
+- Gang Shen: `shenganghit@163.com` (Public candidate; confirm before final submission; source: https://journals.sagepub.com/doi/10.1177/09544062241299521)
+- Haishun Deng: `269469122@qq.com` (Public candidate; confirm before final submission; source: https://pmc.ncbi.nlm.nih.gov/articles/PMC11637116/)
+
 ## Final External Actions
 
 - [ ] Fill seven coauthor e-mail addresses if required by the live submission system.
+- [ ] Confirm public candidate e-mails for Gang Shen and Haishun Deng before using them in the live system.
 - [ ] Confirm article type/category in the live system.
 - [ ] Preview the system-generated PDF before final submit.

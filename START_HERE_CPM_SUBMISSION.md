@@ -56,6 +56,12 @@ Seven coauthor e-mail addresses are not in the current local records. Use
 `10_author_email_completion_sheet.docx` or `.csv` to collect them if the live
 submission system requires every author's e-mail address.
 
+Two public candidate e-mail records have been collected for confirmation, but
+they have not been promoted into the formal author metadata:
+
+- `docs/cpm_author_email_public_lookup_20260704.md`
+- `docs/cpm_author_email_public_lookup_20260704.csv`
+
 Support files for this step:
 
 - `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx`
@@ -67,6 +73,8 @@ Support files for this step:
 - `docs/cpm_live_submission_packet_20260704.csv`
 - `docs/cpm_live_submission_packet_20260704.json`
 - `docs/cpm_live_submission_packet_docx_qa_20260704.md`
+- `docs/cpm_author_email_public_lookup_20260704.md`
+- `docs/cpm_author_email_public_lookup_20260704.csv`
 
 ## Pre-submission check
 
@@ -92,7 +100,7 @@ Current machine-readable readiness report:
 Latest local status recorded in the readiness report:
 
 - Local package ready: `True`
-- Reduced reproducibility package CPM support members: `17/17` present
+- Reduced reproducibility package CPM support members: `19/19` present
 - Missing reduced-package CPM support members: `0`
 - External metadata still pending: seven coauthor e-mail addresses if the live
   submission system requires all author e-mails

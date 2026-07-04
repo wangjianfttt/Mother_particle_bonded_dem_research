@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T22:12:04",
+  "generated_at": "2026-07-04T22:34:51",
   "target_journal": "Computational Particle Mechanics",
   "submission_route": "ScienceDirect / Editorial Manager live submission route",
   "title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
@@ -314,8 +314,27 @@
     "Gang Shen",
     "Haishun Deng"
   ],
+  "candidate_email_lookup": "docs/cpm_author_email_public_lookup_20260704.md",
+  "candidate_email_count": 2,
+  "candidate_email_rows": [
+    {
+      "author": "Gang Shen",
+      "candidate_email": "shenganghit@163.com",
+      "status": "Public candidate; confirm before final submission",
+      "source_url": "https://journals.sagepub.com/doi/10.1177/09544062241299521",
+      "use_rule": "Use only after Gang Shen confirms this is the preferred submission-system e-mail"
+    },
+    {
+      "author": "Haishun Deng",
+      "candidate_email": "269469122@qq.com",
+      "status": "Public candidate; confirm before final submission",
+      "source_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11637116/",
+      "use_rule": "Use only after Haishun Deng confirms this is the preferred submission-system e-mail"
+    }
+  ],
   "final_external_actions": [
     "Fill seven coauthor e-mail addresses if required by the live submission system.",
+    "Confirm public candidate e-mails for Gang Shen and Haishun Deng before using them in the live system.",
     "Confirm article type/category in the live system.",
     "Preview the system-generated PDF before final submit."
   ]

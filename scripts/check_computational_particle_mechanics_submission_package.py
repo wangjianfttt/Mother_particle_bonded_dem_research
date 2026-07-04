@@ -39,6 +39,8 @@ LIVE_PACKET_DOCX = ROOT / "manuscript" / "computational_particle_mechanics_live_
 LIVE_PACKET_MD = ROOT / "docs" / "cpm_live_submission_packet_20260704.md"
 LIVE_PACKET_CSV = ROOT / "docs" / "cpm_live_submission_packet_20260704.csv"
 LIVE_PACKET_JSON = ROOT / "docs" / "cpm_live_submission_packet_20260704.json"
+EMAIL_LOOKUP_MD = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.md"
+EMAIL_LOOKUP_CSV = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.csv"
 SUPPORT_DOCX = [
     ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.docx",
     ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.docx",
@@ -49,6 +51,8 @@ SUPPORT_TEXT = [
     ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.md",
     LIVE_PACKET_MD,
     LIVE_PACKET_CSV,
+    EMAIL_LOOKUP_MD,
+    EMAIL_LOOKUP_CSV,
 ]
 
 EXPECTED_UPLOAD_FILES = {
@@ -253,6 +257,7 @@ def check_support_docs() -> None:
         "computational_particle_mechanics_blinded_review_optional.zip",
         "computational_particle_mechanics_live_submission_packet.docx",
         "cpm_live_submission_packet_20260704.md",
+        "cpm_author_email_public_lookup_20260704.md",
         "cpm_official_submission_guide_alignment_20260704.md",
         "scripts/check_computational_particle_mechanics_submission_package.py",
         "10.5281/zenodo.20687351",
@@ -272,6 +277,10 @@ def check_support_docs() -> None:
     ]:
         if payload.get(key) != value:
             fail(f"live-submission packet JSON mismatch for {key}")
+    if payload.get("candidate_email_lookup") != "docs/cpm_author_email_public_lookup_20260704.md":
+        fail("live-submission packet JSON missing candidate e-mail lookup")
+    if payload.get("candidate_email_count") != 2:
+        fail("expected two public candidate e-mails for confirmation")
 
 
 def check_official_guide_alignment() -> None:
