@@ -78,6 +78,9 @@ Support files for this step:
 - `manuscript/computational_particle_mechanics_live_submission_checklist.docx`
 - `manuscript/computational_particle_mechanics_live_submission_checklist.md`
 - `manuscript/computational_particle_mechanics_live_submission_packet.docx`
+- `docs/cpm_live_submission_action_sheet_20260704.md`
+- `docs/cpm_live_submission_action_sheet_20260704.csv`
+- `docs/cpm_live_submission_action_sheet_20260704.json`
 - `docs/cpm_live_submission_packet_20260704.md`
 - `docs/cpm_live_submission_packet_20260704.csv`
 - `docs/cpm_live_submission_packet_20260704.json`
@@ -109,7 +112,7 @@ Current machine-readable readiness report:
 Latest local status recorded in the readiness report:
 
 - Local package ready: `True`
-- Reduced reproducibility package CPM support members: `30/30` present
+- Reduced reproducibility package CPM support members: `34/34` present
 - Missing reduced-package CPM support members: `0`
 - External metadata still pending: seven coauthor e-mail addresses if the live
   submission system requires all author e-mails

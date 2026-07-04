@@ -41,6 +41,9 @@ LIVE_PACKET_DOCX = ROOT / "manuscript" / "computational_particle_mechanics_live_
 LIVE_PACKET_MD = ROOT / "docs" / "cpm_live_submission_packet_20260704.md"
 LIVE_PACKET_CSV = ROOT / "docs" / "cpm_live_submission_packet_20260704.csv"
 LIVE_PACKET_JSON = ROOT / "docs" / "cpm_live_submission_packet_20260704.json"
+ACTION_SHEET_MD = ROOT / "docs" / "cpm_live_submission_action_sheet_20260704.md"
+ACTION_SHEET_CSV = ROOT / "docs" / "cpm_live_submission_action_sheet_20260704.csv"
+ACTION_SHEET_JSON = ROOT / "docs" / "cpm_live_submission_action_sheet_20260704.json"
 EMAIL_LOOKUP_MD = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.md"
 EMAIL_LOOKUP_CSV = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.csv"
 SUPPORT_DOCX = [
@@ -57,6 +60,9 @@ SUPPORT_TEXT = [
     ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.md",
     LIVE_PACKET_MD,
     LIVE_PACKET_CSV,
+    ACTION_SHEET_MD,
+    ACTION_SHEET_CSV,
+    ACTION_SHEET_JSON,
     EMAIL_LOOKUP_MD,
     EMAIL_LOOKUP_CSV,
 ]
@@ -277,18 +283,21 @@ def check_support_docs() -> None:
         "computational_particle_mechanics_blinded_review_optional.zip",
         "computational_particle_mechanics_live_submission_packet.docx",
         "cpm_live_submission_packet_20260704.md",
+        "cpm_live_submission_action_sheet_20260704.md",
         "cpm_author_email_public_lookup_20260704.md",
         "cpm_official_submission_guide_alignment_20260704.md",
         "scripts/check_computational_particle_mechanics_submission_package.py",
         "10.5281/zenodo.20687351",
         "Four public candidate e-mail records",
         "confirmation aids only",
-        "Reduced reproducibility package CPM support members: `30/30` present",
+        "Reduced reproducibility package CPM support members: `34/34` present",
     ]:
         if required not in start:
             fail(f"START_HERE missing {required}")
     if not LIVE_PACKET_JSON.exists():
         fail("missing live-submission packet JSON")
+    if not ACTION_SHEET_JSON.exists():
+        fail("missing live-submission action-sheet JSON")
     coauthor_request = (
         ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.txt"
     ).read_text(encoding="utf-8")
@@ -329,6 +338,25 @@ def check_support_docs() -> None:
         fail("live-submission packet JSON missing candidate e-mail lookup")
     if payload.get("candidate_email_count") != 4:
         fail("expected four public candidate e-mails for confirmation")
+    action_payload = json.loads(ACTION_SHEET_JSON.read_text(encoding="utf-8"))
+    if action_payload.get("missing_email_count") != 7:
+        fail("live-submission action sheet does not preserve missing e-mail count")
+    actions = action_payload.get("actions", [])
+    if len(actions) != 14:
+        fail(f"expected 14 live-submission action rows, found {len(actions)}")
+    if any(row.get("file_status") != "present" for row in actions if isinstance(row, dict)):
+        fail("live-submission action sheet includes a missing file")
+    action_text = ACTION_SHEET_MD.read_text(encoding="utf-8")
+    for term in [
+        "CPM Live Submission Action Sheet",
+        "Preview the system-generated PDF before final submit",
+        "formal_upload_package",
+    ]:
+        if term == "formal_upload_package":
+            if term not in ACTION_SHEET_CSV.read_text(encoding="utf-8"):
+                fail(f"live-submission action sheet CSV missing {term}")
+        elif term not in action_text:
+            fail(f"live-submission action sheet missing {term}")
 
 
 def check_official_guide_alignment() -> None:

@@ -1,0 +1,15 @@
+order,live_system_role,file,requirement,file_status,submitter_action,formal_upload_package
+1,Manuscript,01_manuscript.pdf,required,present,Upload as the main manuscript PDF.,computational_particle_mechanics_upload_ready.zip
+2,Highlights,02_highlights.docx,required_if_highlights_field_or_file_is_requested,present,Upload or paste the five highlights from the editorial fields file.,computational_particle_mechanics_upload_ready.zip
+3,Graphical abstract,03_graphical_abstract.png,if_requested,present,Prefer PNG for preview; use TIFF if the system asks for high-resolution artwork.,computational_particle_mechanics_upload_ready.zip
+4,Graphical abstract high-resolution artwork,03_graphical_abstract.tiff,if_requested,present,Use if the live system requests a TIFF graphical abstract.,computational_particle_mechanics_upload_ready.zip
+5,Graphical abstract editable backup,03_graphical_abstract.pdf; 03_graphical_abstract.svg,support,present,Keep as editable backup; upload only if the system asks for source artwork.,computational_particle_mechanics_upload_ready.zip
+6,Declaration of competing interest,04_declaration_of_competing_interest.docx,required,present,Upload or paste the declaration text.,computational_particle_mechanics_upload_ready.zip
+7,Cover letter,05_cover_letter.docx,required,present,Upload as the cover letter.,computational_particle_mechanics_upload_ready.zip
+8,Author details and CRediT contributions,06_author_emails_and_contributions.docx,support,present,Use for author metadata and contribution fields.,computational_particle_mechanics_upload_ready.zip
+9,LaTeX source,07_latex_source.zip,if_requested,present,Upload if the system asks for source files at initial submission.,computational_particle_mechanics_upload_ready.zip
+10,Editorial paste fields,08_editorial_submission_fields.docx,support,present,"Use for title, abstract, keywords and availability statements.",computational_particle_mechanics_upload_ready.zip
+11,Main figures,09_main_figures.zip,if_separate_figure_files_are_requested,present,Upload if the system asks for separate figures; otherwise keep as support.,computational_particle_mechanics_upload_ready.zip
+12,Author e-mail completion sheet,10_author_email_completion_sheet.docx; 10_author_email_completion_sheet.csv,external_metadata,present,Complete seven coauthor e-mails if the live system requires all author e-mails.,computational_particle_mechanics_upload_ready.zip
+13,Optional blinded review file,computational_particle_mechanics_blinded_review_optional.zip,only_if_double_anonymized_review_is_requested,present,Use only if the live system requests a blinded manuscript package.,computational_particle_mechanics_upload_ready.zip
+14,Reduced reproducibility package,repaired_submission_package.zip,support_or_repository_record,present,Use for data/code repository support or if supplemental data are requested.,computational_particle_mechanics_upload_ready.zip
