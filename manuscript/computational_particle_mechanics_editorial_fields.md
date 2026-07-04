@@ -67,11 +67,14 @@ Jian Wang, wjfttt@mail.ustc.edu.cn
 | Cover letter | `05_cover_letter.docx` |
 | Author e-mails and CRediT contributions | `06_author_emails_and_contributions.docx` |
 | LaTeX source, if requested | `07_latex_source.zip` |
+| Separate main figure files, if requested | `09_main_figures.zip` |
+| Coauthor e-mail completion sheet | `10_author_email_completion_sheet.docx` / `.csv` |
 
 ## Items to complete in the live submission system
 
-- Add coauthor e-mail addresses if the system requires all author e-mails.
+- Add coauthor e-mail addresses if the system requires all author e-mails. A
+  completion sheet is provided as `10_author_email_completion_sheet.docx` and
+  `10_author_email_completion_sheet.csv`.
 - Confirm the final article type used by the Elsevier/ScienceDirect Computational Particle Mechanics submission page.
 - Check whether graphical abstract TIFF or PNG is preferred by the live system.
 - Check whether `07_latex_source.zip` is requested at initial submission or only after acceptance/revision.
-

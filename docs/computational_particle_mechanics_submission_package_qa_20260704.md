@@ -25,6 +25,7 @@ ZIP:
 | LaTeX manuscript source | `07_latex_source.zip` |
 | Editorial system paste fields | `08_editorial_submission_fields.docx` |
 | Main figure files | `09_main_figures.zip` |
+| Author e-mail completion sheet | `10_author_email_completion_sheet.docx`, `10_author_email_completion_sheet.csv` |
 | Upload guide | `README_upload_roles.txt` |
 
 ## Build command
@@ -54,7 +55,7 @@ with zipfile.ZipFile(zip_path) as zf:
 digest = hashlib.sha256(zip_path.read_bytes()).hexdigest()
 assert digest == sha_path.read_text().split()[0]
 rows = list(csv.DictReader((root / "computational_particle_mechanics_upload_ready" / "MANIFEST.csv").open()))
-assert len(rows) == 13
+assert len(rows) == 15
 with zipfile.ZipFile(root / "computational_particle_mechanics_upload_ready" / "07_latex_source.zip") as zf:
     assert zf.testzip() is None
 with zipfile.ZipFile(root / "computational_particle_mechanics_upload_ready" / "09_main_figures.zip") as zf:
@@ -66,6 +67,7 @@ for name in [
     "05_cover_letter.docx",
     "06_author_emails_and_contributions.docx",
     "08_editorial_submission_fields.docx",
+    "10_author_email_completion_sheet.docx",
 ]:
     Document(root / "computational_particle_mechanics_upload_ready" / name)
 print("PASS")
@@ -76,13 +78,16 @@ Observed result:
 
 - ZIP integrity: pass.
 - ZIP SHA256: pass.
-- Manifest: 13 records after adding the LaTeX source zip, editorial
-  submission-fields Word file and separate main-figure package.
+- Manifest: 15 records after adding the LaTeX source zip, editorial
+  submission-fields Word file, separate main-figure package and author e-mail
+  completion files.
 - Word files: all open successfully with `python-docx`.
 - `07_latex_source.zip` opens successfully and contains the target-specific
   source file `manuscript/computational_particle_mechanics_submission.tex`.
 - `09_main_figures.zip` opens successfully and contains 19 members: a README
   plus PDF, PNG and SVG versions of the six main figures.
+- `10_author_email_completion_sheet.csv` contains eight author rows, with seven
+  coauthor e-mail fields still marked as missing in current records.
 - The five Highlights contain 83, 76, 84, 82 and 73 characters, respectively,
   so they satisfy the common Elsevier 85-character limit.
 

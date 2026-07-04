@@ -244,6 +244,48 @@ def build_target_tex_and_pdf() -> None:
     )
 
 
+def write_author_email_completion_sheet(docx_path: Path, csv_path: Path) -> None:
+    """Write a lightweight sheet for collecting missing coauthor e-mails."""
+    doc = Document()
+    configure_doc(doc)
+    add_title(doc, "Author e-mail completion sheet", TITLE)
+    doc.add_paragraph(
+        "Purpose: complete the author metadata required by the live submission system. "
+        "The corresponding author e-mail is already available; the remaining fields "
+        "should be confirmed before final submission if the system requires all author e-mails."
+    )
+    table = doc.add_table(rows=1, cols=5)
+    table.style = "Table Grid"
+    headers = ["Author", "Affiliation", "E-mail to fill or confirm", "Status", "Contribution summary"]
+    for cell, text in zip(table.rows[0].cells, headers):
+        cell.text = text
+    for name, affiliation, email, credit in AUTHORS:
+        cells = table.add_row().cells
+        cells[0].text = name
+        cells[1].text = affiliation
+        cells[2].text = "" if email == "not provided in current records" else email
+        cells[3].text = "Missing" if email == "not provided in current records" else "Available"
+        cells[4].text = credit
+    doc.add_paragraph(
+        "Return format: provide one institutional e-mail address for each author marked Missing, "
+        "or confirm that the submission system only requires the corresponding author e-mail."
+    )
+    doc.save(docx_path)
+    with csv_path.open("w", newline="", encoding="utf-8") as handle:
+        writer = csv.writer(handle)
+        writer.writerow(headers)
+        for name, affiliation, email, credit in AUTHORS:
+            writer.writerow(
+                [
+                    name,
+                    affiliation,
+                    "" if email == "not provided in current records" else email,
+                    "Missing" if email == "not provided in current records" else "Available",
+                    credit,
+                ]
+            )
+
+
 def main() -> None:
     build_target_tex_and_pdf()
     reset_dir(UPLOAD_DIR)
@@ -254,12 +296,15 @@ def main() -> None:
     declaration_docx = UPLOAD_DIR / "04_declaration_of_competing_interest.docx"
     author_docx = UPLOAD_DIR / "06_author_emails_and_contributions.docx"
     fields_docx = UPLOAD_DIR / "08_editorial_submission_fields.docx"
+    email_completion_docx = UPLOAD_DIR / "10_author_email_completion_sheet.docx"
+    email_completion_csv = UPLOAD_DIR / "10_author_email_completion_sheet.csv"
 
     docx_from_markdown(MANUSCRIPT / "computational_particle_mechanics_cover_letter.md", cover_docx, "Cover letter")
     docx_from_markdown(MANUSCRIPT / "computational_particle_mechanics_highlights.md", highlights_docx, "Highlights")
     docx_from_markdown(MANUSCRIPT / "repaired_declaration_of_competing_interest.md", declaration_docx, "Declaration of competing interest")
     docx_from_markdown(MANUSCRIPT / "computational_particle_mechanics_editorial_fields.md", fields_docx, "Computational Particle Mechanics Editorial Submission Fields")
     write_author_docx(author_docx)
+    write_author_email_completion_sheet(email_completion_docx, email_completion_csv)
     latex_source_zip = UPLOAD_DIR / "07_latex_source.zip"
     build_latex_source_zip(latex_source_zip)
     main_figures_zip = UPLOAD_DIR / "09_main_figures.zip"
@@ -274,6 +319,8 @@ def main() -> None:
         (latex_source_zip, "LaTeX source"),
         (fields_docx, "Editorial submission fields"),
         (main_figures_zip, "Main figure files"),
+        (email_completion_docx, "Author e-mail completion sheet"),
+        (email_completion_csv, "Author e-mail completion CSV"),
     ]:
         rows.append({"role": role, "path": path.name, "bytes": str(path.stat().st_size), "sha256": sha256(path)})
 
@@ -306,6 +353,7 @@ def main() -> None:
                 "LaTeX manuscript source: 07_latex_source.zip",
                 "Editorial system paste fields: 08_editorial_submission_fields.docx",
                 "Main figure files: 09_main_figures.zip",
+                "Author e-mail completion sheet: 10_author_email_completion_sheet.docx and .csv",
                 "",
                 "Computational Particle Mechanics currently routes submissions through the Elsevier/ScienceDirect journal page.",
                 "The full reproducibility package remains submission_packages/repaired_submission_package.zip.",
