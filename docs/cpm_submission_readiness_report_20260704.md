@@ -1,6 +1,6 @@
 # CPM Submission Readiness Report
 
-Generated: `2026-07-04T20:34:45`
+Generated: `2026-07-04T21:28:16`
 
 ## Status
 
@@ -23,8 +23,11 @@ PASS CPM submission package: manifest=15, figures=19, docx=8, DOI and support do
 - Upload package bytes: `3818971`
 - Upload package SHA256: `28856aa5f177038db9b2862be9a94da2ffd708caa91db228af43548ef096389e`
 - Reduced reproducibility package: `submission_packages/repaired_submission_package.zip`
-- Reduced reproducibility package bytes: `6205103`
-- Reduced reproducibility package SHA256: `1d2621aea90e73a6bac6ede79d71e64cfaf19d202850e1ac7154eb92a20d7295`
+- Reduced reproducibility package bytes: `6235059`
+- Reduced reproducibility package SHA256: `13bb13a32a33c730c0a6bdb34f8d93fad91af003feb7b2697c56e42fc384b1a4`
+- Required reduced-package CPM support members: `8`
+- Present reduced-package CPM support members: `8`
+- Missing reduced-package CPM support members: `0`
 - Manifest rows: `15`
 - Upload zip members: `16`
 - LaTeX source zip members: `9`
@@ -44,6 +47,11 @@ Missing e-mail authors:
 - Qi-Gang Wu
 - Gang Shen
 - Haishun Deng
+
+## Reduced Package Support Evidence
+
+- Local package ready: `True`
+- All required CPM support members are present in the reduced reproducibility package.
 
 ## External Items Before Final Submit
 

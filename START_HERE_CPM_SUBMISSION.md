@@ -75,6 +75,14 @@ Current machine-readable readiness report:
 - `docs/cpm_submission_readiness_report_20260704.md`
 - `docs/cpm_submission_readiness_report_20260704.json`
 
+Latest local status recorded in the readiness report:
+
+- Local package ready: `True`
+- Reduced reproducibility package CPM support members: `8/8` present
+- Missing reduced-package CPM support members: `0`
+- External metadata still pending: seven coauthor e-mail addresses if the live
+  submission system requires all author e-mails
+
 Current literature-gap and novelty support:
 
 - `docs/cpm_literature_gap_map_20260704.md`
@@ -94,6 +102,11 @@ The reduced reproducibility package remains:
 
 - `submission_packages/repaired_submission_package.zip`
 - `submission_packages/repaired_submission_package.zip.sha256`
+
+It contains the current literature-gap map, material-response summary,
+reviewer-risk matrix and the scripts used to regenerate/check those support
+files. The live readiness report itself is kept outside the zip because it
+records the current package checksum.
 
 The large raw restart files and full local-bond dump histories are archived
 outside the GitHub repository and are not needed for initial manuscript review.

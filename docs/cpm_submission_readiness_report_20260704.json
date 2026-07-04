@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-04T20:34:45",
+  "generated_at": "2026-07-04T21:28:16",
   "target_journal": "Computational Particle Mechanics",
   "manuscript_title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
   "doi": "https://doi.org/10.5281/zenodo.20687351",
@@ -10,8 +10,11 @@
   "upload_package_bytes": 3818971,
   "upload_package_sha256": "28856aa5f177038db9b2862be9a94da2ffd708caa91db228af43548ef096389e",
   "reproducibility_package": "submission_packages/repaired_submission_package.zip",
-  "reproducibility_package_bytes": 6205103,
-  "reproducibility_package_sha256": "1d2621aea90e73a6bac6ede79d71e64cfaf19d202850e1ac7154eb92a20d7295",
+  "reproducibility_package_bytes": 6235059,
+  "reproducibility_package_sha256": "13bb13a32a33c730c0a6bdb34f8d93fad91af003feb7b2697c56e42fc384b1a4",
+  "required_repro_support_members": 8,
+  "present_repro_support_members": 8,
+  "missing_repro_support_members": [],
   "manifest_rows": 15,
   "upload_zip_members": 16,
   "latex_source_members": 9,
@@ -27,6 +30,7 @@
     "Gang Shen",
     "Haishun Deng"
   ],
+  "local_ready": true,
   "internal_status": "ready_for_live_submission_after_external_metadata",
   "external_items": [
     "Complete seven missing coauthor e-mail addresses if required by the live submission system.",

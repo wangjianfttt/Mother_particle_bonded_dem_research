@@ -41,8 +41,6 @@ REQUIRED_SUPPORT = {
     "docs/cpm_material_response_summary_20260704.md",
     "docs/cpm_reviewer_risk_preflight_20260704.csv",
     "docs/cpm_reviewer_risk_preflight_20260704.md",
-    "docs/cpm_submission_readiness_report_20260704.json",
-    "docs/cpm_submission_readiness_report_20260704.md",
     "manuscript/repaired_full_submission.pdf",
     "manuscript/repaired_full_submission.tex",
     "manuscript/repaired_full_submission_draft.md",

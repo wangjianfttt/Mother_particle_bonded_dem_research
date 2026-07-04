@@ -27,9 +27,11 @@ and editorial-system paste fields, separate main-figure files and an author
 e-mail completion sheet.
 
 The reduced reproducibility package contains manuscript-level source data,
-tables, figure-generation scripts, checking scripts, figures and the rebuilt
-manuscript files. It is intended to reproduce the processed evidence used by
-the paper, not the full raw DEM trajectories.
+tables, figure-generation scripts, checking scripts, figures, the rebuilt
+manuscript files, and the current CPM support evidence for literature-gap
+mapping, material-response summary and reviewer-risk review. It is intended to
+reproduce the processed evidence used by the paper, not the full raw DEM
+trajectories.
 
 ## Large raw data
 
@@ -57,6 +59,12 @@ The current local verification status is recorded in:
 - `docs/cpm_material_response_summary_20260704.csv`
 - `docs/computational_particle_mechanics_submission_package_qa_20260704.md`
 - `docs/next_stage_optimization_plan.md`
+
+The readiness report is intentionally kept outside the reduced reproducibility
+zip because it records the current package checksum. The latest local status is
+`ready_for_live_submission_after_external_metadata`; the remaining external
+metadata item is seven coauthor e-mail addresses if the live submission system
+requires every author's e-mail address.
 
 Practical submission support files are:
 

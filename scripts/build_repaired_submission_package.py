@@ -349,8 +349,6 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         "docs/cpm_material_response_summary_20260704.md",
         "docs/cpm_reviewer_risk_preflight_20260704.csv",
         "docs/cpm_reviewer_risk_preflight_20260704.md",
-        "docs/cpm_submission_readiness_report_20260704.json",
-        "docs/cpm_submission_readiness_report_20260704.md",
     ]
     source_files.update(extra_sources)
     for rel in sorted(source_files):
@@ -372,7 +370,7 @@ Repository DOI: https://doi.org/10.5281/zenodo.20687351
 
 Large raw DEM dump, local-bond and restart histories are kept outside this compact package on the NAS archive described in `docs/nas_raw_dump_storage_check_20260704_1736.md`.
 
-The `docs/cpm_*` files record the Computational Particle Mechanics retargeting support evidence, including literature-gap mapping, material-response summary values, reviewer-risk preflight checks and submission readiness notes. These files are support artifacts; the manuscript text remains the reader-facing source.
+The included `docs/cpm_*` files record the Computational Particle Mechanics retargeting support evidence, including literature-gap mapping, material-response summary values and reviewer-risk preflight checks. The live readiness report is kept outside this zip because it records the current package checksum.
 
 Primary checks:
 
