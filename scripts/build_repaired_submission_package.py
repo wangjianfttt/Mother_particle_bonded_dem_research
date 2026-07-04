@@ -301,6 +301,8 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         md_files["cover"],
         md_files["highlights"],
         md_files["declaration"],
+        ROOT / "START_HERE_CPM_SUBMISSION.md",
+        ROOT / "README_CPM_SUBMISSION_20260704.md",
         DOCS / "repaired_full_pdf_visual_qa_20260704.md",
         DOCS / "nas_raw_dump_storage_check_20260704_1736.md",
         DOCS / "next_stage_optimization_plan.md",

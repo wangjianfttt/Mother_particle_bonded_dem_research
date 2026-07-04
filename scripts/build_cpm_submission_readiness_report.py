@@ -22,6 +22,8 @@ REPORT_MD = DOCS / "cpm_submission_readiness_report_20260704.md"
 REPORT_JSON = DOCS / "cpm_submission_readiness_report_20260704.json"
 
 REQUIRED_REPRO_SUPPORT = [
+    "repaired_submission_package/START_HERE_CPM_SUBMISSION.md",
+    "repaired_submission_package/README_CPM_SUBMISSION_20260704.md",
     "repaired_submission_package/docs/cpm_literature_gap_map_20260704.md",
     "repaired_submission_package/docs/cpm_official_submission_guide_alignment_20260704.md",
     "repaired_submission_package/docs/cpm_material_response_summary_20260704.md",

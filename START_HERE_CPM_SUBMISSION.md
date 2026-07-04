@@ -56,8 +56,10 @@ Seven coauthor e-mail addresses are not in the current local records. Use
 `10_author_email_completion_sheet.docx` or `.csv` to collect them if the live
 submission system requires every author's e-mail address.
 
-Two public candidate e-mail records have been collected for confirmation, but
-they have not been promoted into the formal author metadata:
+Four public candidate e-mail records have been collected for confirmation, but
+they have not been promoted into the formal author metadata. These candidates
+are confirmation aids only; do not enter them into the live submission system
+until the corresponding author or coauthor confirms the address:
 
 - `docs/cpm_author_email_public_lookup_20260704.md`
 - `docs/cpm_author_email_public_lookup_20260704.csv`
@@ -69,6 +71,10 @@ Support files for this step:
 
 - `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx`
 - `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.txt`
+- `manuscript/computational_particle_mechanics_author_email_collection_packet.docx`
+- `manuscript/computational_particle_mechanics_author_email_collection_packet.csv`
+- `manuscript/computational_particle_mechanics_author_email_collection_packet.md`
+- `manuscript/computational_particle_mechanics_author_email_collection_packet.txt`
 - `manuscript/computational_particle_mechanics_live_submission_checklist.docx`
 - `manuscript/computational_particle_mechanics_live_submission_checklist.md`
 - `manuscript/computational_particle_mechanics_live_submission_packet.docx`
@@ -103,7 +109,7 @@ Current machine-readable readiness report:
 Latest local status recorded in the readiness report:
 
 - Local package ready: `True`
-- Reduced reproducibility package CPM support members: `28/28` present
+- Reduced reproducibility package CPM support members: `30/30` present
 - Missing reduced-package CPM support members: `0`
 - External metadata still pending: seven coauthor e-mail addresses if the live
   submission system requires all author e-mails

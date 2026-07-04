@@ -273,6 +273,7 @@ def check_support_docs() -> None:
     for required in [
         "computational_particle_mechanics_upload_ready.zip",
         "10_author_email_completion_sheet.docx",
+        "computational_particle_mechanics_author_email_collection_packet.docx",
         "computational_particle_mechanics_blinded_review_optional.zip",
         "computational_particle_mechanics_live_submission_packet.docx",
         "cpm_live_submission_packet_20260704.md",
@@ -280,6 +281,9 @@ def check_support_docs() -> None:
         "cpm_official_submission_guide_alignment_20260704.md",
         "scripts/check_computational_particle_mechanics_submission_package.py",
         "10.5281/zenodo.20687351",
+        "Four public candidate e-mail records",
+        "confirmation aids only",
+        "Reduced reproducibility package CPM support members: `30/30` present",
     ]:
         if required not in start:
             fail(f"START_HERE missing {required}")
