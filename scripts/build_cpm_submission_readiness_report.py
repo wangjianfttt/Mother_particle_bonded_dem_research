@@ -32,6 +32,9 @@ REQUIRED_REPRO_SUPPORT = [
     "repaired_submission_package/docs/cpm_live_submission_packet_docx_qa_20260704.md",
     "repaired_submission_package/docs/cpm_author_email_public_lookup_20260704.md",
     "repaired_submission_package/docs/cpm_author_email_public_lookup_20260704.csv",
+    "repaired_submission_package/docs/cpm_goal_completion_audit_20260704.md",
+    "repaired_submission_package/docs/cpm_goal_completion_audit_20260704.csv",
+    "repaired_submission_package/docs/cpm_goal_completion_audit_20260704.json",
     "repaired_submission_package/manuscript/computational_particle_mechanics_live_submission_packet.docx",
     "repaired_submission_package/manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx",
     "repaired_submission_package/manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.txt",
@@ -44,6 +47,7 @@ REQUIRED_REPRO_SUPPORT = [
     "repaired_submission_package/scripts/build_cpm_reviewer_risk_preflight.py",
     "repaired_submission_package/scripts/build_cpm_live_submission_packet.py",
     "repaired_submission_package/scripts/build_cpm_submission_support_docs.py",
+    "repaired_submission_package/scripts/build_cpm_goal_completion_audit.py",
     "repaired_submission_package/scripts/check_cpm_reviewer_risk_preflight.py",
     "repaired_submission_package/scripts/check_cpm_scientific_alignment.py",
 ]

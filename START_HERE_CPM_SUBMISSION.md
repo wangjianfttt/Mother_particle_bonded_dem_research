@@ -61,6 +61,9 @@ they have not been promoted into the formal author metadata:
 
 - `docs/cpm_author_email_public_lookup_20260704.md`
 - `docs/cpm_author_email_public_lookup_20260704.csv`
+- `docs/cpm_goal_completion_audit_20260704.md`
+- `docs/cpm_goal_completion_audit_20260704.csv`
+- `docs/cpm_goal_completion_audit_20260704.json`
 
 Support files for this step:
 
@@ -100,7 +103,7 @@ Current machine-readable readiness report:
 Latest local status recorded in the readiness report:
 
 - Local package ready: `True`
-- Reduced reproducibility package CPM support members: `19/19` present
+- Reduced reproducibility package CPM support members: `28/28` present
 - Missing reduced-package CPM support members: `0`
 - External metadata still pending: seven coauthor e-mail addresses if the live
   submission system requires all author e-mails

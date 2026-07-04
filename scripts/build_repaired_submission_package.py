@@ -307,6 +307,9 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         DOCS / "cpm_live_submission_packet_docx_qa_20260704.md",
         DOCS / "cpm_author_email_public_lookup_20260704.md",
         DOCS / "cpm_author_email_public_lookup_20260704.csv",
+        DOCS / "cpm_goal_completion_audit_20260704.md",
+        DOCS / "cpm_goal_completion_audit_20260704.csv",
+        DOCS / "cpm_goal_completion_audit_20260704.json",
         MANUSCRIPT / "computational_particle_mechanics_live_submission_packet.docx",
         MANUSCRIPT / "computational_particle_mechanics_coauthor_email_request_zh_en.docx",
         MANUSCRIPT / "computational_particle_mechanics_coauthor_email_request_zh_en.txt",
@@ -349,6 +352,7 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         "scripts/build_cpm_submission_readiness_report.py",
         "scripts/build_cpm_live_submission_packet.py",
         "scripts/build_cpm_submission_support_docs.py",
+        "scripts/build_cpm_goal_completion_audit.py",
         "scripts/check_cpm_reviewer_risk_preflight.py",
         "scripts/check_cpm_scientific_alignment.py",
         "data/figure_source/pb007_material_strength_response.csv",
@@ -366,8 +370,11 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         "docs/cpm_live_submission_packet_20260704.csv",
         "docs/cpm_live_submission_packet_20260704.json",
         "docs/cpm_live_submission_packet_20260704.md",
-        "docs/cpm_author_email_public_lookup_20260704.csv",
         "docs/cpm_author_email_public_lookup_20260704.md",
+        "docs/cpm_author_email_public_lookup_20260704.csv",
+        "docs/cpm_goal_completion_audit_20260704.md",
+        "docs/cpm_goal_completion_audit_20260704.csv",
+        "docs/cpm_goal_completion_audit_20260704.json",
     ]
     source_files.update(extra_sources)
     for rel in sorted(source_files):

@@ -63,6 +63,9 @@ The current local verification status is recorded in:
 - `docs/cpm_live_submission_packet_docx_qa_20260704.md`
 - `docs/cpm_author_email_public_lookup_20260704.md`
 - `docs/cpm_author_email_public_lookup_20260704.csv`
+- `docs/cpm_goal_completion_audit_20260704.md`
+- `docs/cpm_goal_completion_audit_20260704.csv`
+- `docs/cpm_goal_completion_audit_20260704.json`
 - `docs/cpm_literature_gap_map_20260704.md`
 - `docs/cpm_literature_gap_map_20260704.csv`
 - `docs/cpm_official_submission_guide_alignment_20260704.md`

@@ -39,6 +39,20 @@ ROWS = [
         "remaining_action": "Use the optional blinded package if the live system requests a blinded manuscript file.",
     },
     {
+        "guide_item": "Abstract length",
+        "official_source": "ScienceDirect Guide for Authors: abstract must be concise, factual and not exceed 250 words.",
+        "current_package_evidence": "manuscript/computational_particle_mechanics_submission.tex",
+        "status": "ready",
+        "remaining_action": "Current manuscript abstract is checked by the package script and remains within 250 words.",
+    },
+    {
+        "guide_item": "Title-page author details",
+        "official_source": "ScienceDirect Guide for Authors: title page should include author names, affiliations, corresponding author and e-mail details where available.",
+        "current_package_evidence": "submission_packages/computational_particle_mechanics_upload_ready/10_author_email_completion_sheet.csv; manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx",
+        "status": "external_metadata_pending",
+        "remaining_action": "Confirm seven coauthor e-mails or leave only confirmed e-mail information if the live system does not require all author e-mails.",
+    },
+    {
         "guide_item": "Editable manuscript source",
         "official_source": "ScienceDirect Guide for Authors: submit editable source files where requested.",
         "current_package_evidence": "submission_packages/computational_particle_mechanics_upload_ready/07_latex_source.zip",
@@ -47,17 +61,17 @@ ROWS = [
     },
     {
         "guide_item": "Highlights",
-        "official_source": "ScienceDirect Guide for Authors: highlights are required for this journal family workflow.",
+        "official_source": "Prepared as Elsevier-system support material; upload only if the live submission workflow requests highlights.",
         "current_package_evidence": "submission_packages/computational_particle_mechanics_upload_ready/02_highlights.docx",
-        "status": "ready",
-        "remaining_action": "Upload the DOCX or paste the five highlights from editorial fields.",
+        "status": "ready_if_requested",
+        "remaining_action": "Upload the DOCX or paste the five highlights only if the live system asks for them.",
     },
     {
         "guide_item": "Graphical abstract and artwork",
-        "official_source": "ScienceDirect Guide for Authors: graphical abstract/artwork files should be supplied separately; generative-AI artwork is not permitted.",
+        "official_source": "ScienceDirect Guide for Authors: artwork files should be supplied separately; generative-AI artwork is not permitted. Graphical abstract is prepared only as live-system support material.",
         "current_package_evidence": "submission_packages/computational_particle_mechanics_upload_ready/03_graphical_abstract.*; scripts/plot_apt_graphical_abstract.py",
-        "status": "ready",
-        "remaining_action": "Use the script-generated graphical abstract files; do not upload generative-AI artwork.",
+        "status": "ready_if_requested",
+        "remaining_action": "Use the script-generated graphical abstract only if requested; do not upload generative-AI artwork.",
     },
     {
         "guide_item": "Declaration of competing interest",
@@ -141,6 +155,7 @@ def write_md() -> None:
             "",
             "- Local upload and reproducibility files are ready for live-system entry.",
             "- An optional blinded-review package is available for the double-anonymized review workflow if requested by the live system.",
+            "- Highlights and graphical-abstract files are prepared as optional live-system support, not treated as confirmed compulsory CPM guide items.",
             "- The remaining non-local items are seven coauthor e-mail addresses, live article-type/category confirmation and system-generated PDF preview.",
             "",
         ]

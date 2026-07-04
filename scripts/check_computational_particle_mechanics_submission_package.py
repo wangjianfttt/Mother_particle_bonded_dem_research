@@ -6,6 +6,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import os
 import re
 import subprocess
 import sys
@@ -33,6 +34,7 @@ COVER_LETTER = ROOT / "manuscript" / "computational_particle_mechanics_cover_let
 CPM_FIELDS = ROOT / "manuscript" / "computational_particle_mechanics_editorial_fields.md"
 CPM_HIGHLIGHTS = ROOT / "manuscript" / "computational_particle_mechanics_highlights.md"
 OFFICIAL_GUIDE = ROOT / "docs" / "cpm_official_submission_guide_alignment_20260704.md"
+GOAL_AUDIT_JSON = ROOT / "docs" / "cpm_goal_completion_audit_20260704.json"
 README = ROOT / "README_CPM_SUBMISSION_20260704.md"
 START_HERE = ROOT / "START_HERE_CPM_SUBMISSION.md"
 LIVE_PACKET_DOCX = ROOT / "manuscript" / "computational_particle_mechanics_live_submission_packet.docx"
@@ -214,6 +216,19 @@ def check_highlights() -> None:
         fail(f"highlight length exceeds 85 characters: {too_long}")
 
 
+def check_abstract_word_count() -> None:
+    text = CPM_TEX.read_text(encoding="utf-8")
+    match = re.search(r"\\begin\{abstract\}(.*?)\\end\{abstract\}", text, re.S)
+    if not match:
+        fail("manuscript TeX missing abstract environment")
+    abstract = match.group(1)
+    abstract = re.sub(r"\\[a-zA-Z]+\*?(?:\[[^\]]*\])?(?:\{([^{}]*)\})?", lambda item: item.group(1) or "", abstract)
+    abstract = re.sub(r"[{}$]", " ", abstract)
+    words = re.findall(r"[A-Za-z0-9]+(?:[-'][A-Za-z0-9]+)?", abstract)
+    if len(words) > 250:
+        fail(f"abstract exceeds CPM 250-word guide limit: {len(words)} words")
+
+
 def check_reader_text() -> None:
     for path in [
         CPM_TEX,
@@ -302,12 +317,36 @@ def check_official_guide_alignment() -> None:
         "ScienceDirect Guide for Authors",
         "Springer transition notice",
         "Double-anonymized review",
+        "Abstract length",
+        "not exceed 250 words",
+        "ready_if_requested",
+        "optional live-system support",
         "computational_particle_mechanics_blinded_review_optional.zip",
         "external_metadata_pending",
     ]
     for term in required:
         if term not in text:
             fail(f"official guide alignment report missing {term!r}")
+    forbidden = [
+        "highlights are required for this journal family workflow",
+    ]
+    for term in forbidden:
+        if term in text:
+            fail(f"official guide alignment retains unsupported requirement wording: {term}")
+
+
+def check_goal_completion_audit() -> None:
+    if not GOAL_AUDIT_JSON.exists():
+        fail("missing goal-level completion audit JSON")
+    payload = json.loads(GOAL_AUDIT_JSON.read_text(encoding="utf-8"))
+    if payload.get("overall_status") != "ready_after_external_author_metadata":
+        fail("goal-level completion audit does not record the correct external-metadata boundary")
+    rows = payload.get("rows", [])
+    statuses = {row.get("requirement"): row.get("status") for row in rows if isinstance(row, dict)}
+    if statuses.get("External author metadata for live system") != "external_pending":
+        fail("goal-level completion audit missing external author-metadata pending status")
+    if payload.get("large_raw_residue_count") != 0:
+        fail("goal-level completion audit reports remaining large raw dump/restart residues")
 
 
 def check_blinded_review_package() -> None:
@@ -354,10 +393,13 @@ def main() -> None:
     check_nested_zips()
     check_author_email_sheet()
     check_highlights()
+    check_abstract_word_count()
     check_reader_text()
     check_doi_and_target()
     check_support_docs()
     check_official_guide_alignment()
+    if os.environ.get("CPM_SKIP_GOAL_AUDIT") != "1":
+        check_goal_completion_audit()
     check_blinded_review_package()
     check_scientific_alignment()
     check_reviewer_risk_preflight()
