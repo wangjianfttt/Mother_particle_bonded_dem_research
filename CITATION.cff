@@ -1,0 +1,25 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite the archived package."
+title: "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles"
+doi: 10.5281/zenodo.20687351
+url: "https://github.com/wangjianfttt/Mother_particle_bonded_dem_research"
+version: "cpm-submission-20260706"
+date-released: "2026-07-06"
+authors:
+  - family-names: Wang
+    given-names: Jian
+  - family-names: Wang
+    given-names: Siyu
+  - family-names: Zhang
+    given-names: Hang
+  - family-names: Lei
+    given-names: Ming-Zhun
+  - family-names: Wen
+    given-names: Wei
+  - family-names: Wu
+    given-names: Qi-Gang
+  - family-names: Shen
+    given-names: Gang
+  - family-names: Deng
+    given-names: Haishun
+repository-code: "https://github.com/wangjianfttt/Mother_particle_bonded_dem_research"

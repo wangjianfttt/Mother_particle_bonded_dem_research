@@ -33,6 +33,7 @@ REQUIRED_UPLOAD = {
 }
 
 REQUIRED_SUPPORT = {
+    "CITATION.cff",
     "README.md",
     "MANIFEST.csv",
     "docs/cpm_literature_gap_map_20260704.csv",
@@ -78,6 +79,7 @@ REQUIRED_SUPPORT = {
     "scripts/build_cpm_goal_completion_audit.py",
     "scripts/check_cpm_reviewer_risk_preflight.py",
     "scripts/check_cpm_scientific_alignment.py",
+    "scripts/check_computational_particle_mechanics_submission_package.py",
     "scripts/build_repaired_full_latex.py",
     "scripts/build_repaired_submission_package.py",
     "scripts/check_repaired_submission_package.py",
@@ -207,6 +209,30 @@ def check_cpm_support_summary(failures: list[str]) -> None:
             failures.append(f"CPM support summary missing phrase: {phrase}")
 
 
+def check_repository_metadata(failures: list[str]) -> None:
+    readme = SUPPORT_DIR / "README.md"
+    citation = SUPPORT_DIR / "CITATION.cff"
+    if not readme.exists() or not citation.exists():
+        return
+    readme_text = readme.read_text(encoding="utf-8", errors="ignore")
+    citation_text = citation.read_text(encoding="utf-8", errors="ignore")
+    for phrase in [
+        "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
+        "https://doi.org/10.5281/zenodo.20687351",
+        "Computational Particle Mechanics",
+        "submission_packages/repaired_submission_package.zip",
+    ]:
+        if phrase not in readme_text:
+            failures.append(f"support README missing phrase: {phrase}")
+    for phrase in [
+        "cff-version: 1.2.0",
+        "doi: 10.5281/zenodo.20687351",
+        "repository-code: \"https://github.com/wangjianfttt/Mother_particle_bonded_dem_research\"",
+    ]:
+        if phrase not in citation_text:
+            failures.append(f"support CITATION missing phrase: {phrase}")
+
+
 def main() -> None:
     failures: list[str] = []
     check_required(UPLOAD_DIR, REQUIRED_UPLOAD, failures)
@@ -217,6 +243,7 @@ def main() -> None:
     check_zip(SUPPORT_ZIP, failures)
     check_pdf(failures)
     check_cpm_support_summary(failures)
+    check_repository_metadata(failures)
     # Upload files are reader-facing. Support package is checked only for current
     # repaired materials and source-data exports, not historical scripts.
     check_visible_text(UPLOAD_DIR, failures)

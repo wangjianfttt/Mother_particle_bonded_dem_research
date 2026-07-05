@@ -1,14 +1,16 @@
-# Li4SiO4 Pebble Breakage DEM Research
+# Bonded-template DEM fracture-event sequences in packed brittle ceramic pebbles
 
-本项目用于组织聚变堆包层 Li4SiO4 硅酸锂球床颗粒破碎研究。当前研究路线以 LIGGGHTS-INL 为主要 DEM 平台，采用 bonded-particle model 将一个陶瓷球表示为 500 个以上 bonded 小颗粒，先完成单颗粒压碎标定，再将可破碎颗粒模板注入球床，研究压缩载荷下的 bond 断裂、颗粒破碎和球床宏观性质演化。
+This repository contains the compact code, processed data, representative
+inputs, figures and submission-support materials for the manuscript:
 
-## Repository and DOI
+**Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles**
 
-This repository hosts the code, processed data products, representative inputs, manuscript figures and submission-support materials for the Journal of Nuclear Materials manuscript:
+The current target route is **Computational Particle Mechanics** through the
+Elsevier/ScienceDirect double-anonymized submission workflow.
 
-**Acceptance-gated bonded-template DEM reveals localized fracture sequences in Li4SiO4 ceramic breeder beds**
+## Citable archive
 
-The citable archived reproducibility package uses the same Zenodo DOI:
+The citable archived package is:
 
 https://doi.org/10.5281/zenodo.20687351
 
@@ -16,24 +18,99 @@ The live GitHub repository is:
 
 https://github.com/wangjianfttt/Mother_particle_bonded_dem_research
 
-Very large DEM restart files and complete raw local-bond dump histories are not tracked in this repository; they are retained as local audit archives and can be assembled separately if needed.
+## What is included
 
-## Project Structure
+- `scripts/`: template generation, post-processing, figure generation and
+  package-check scripts.
+- `data/figure_source/`: source CSV tables for manuscript figures.
+- `data/processed/`: reduced processed event and force-network tables.
+- `tables/`: mechanism, material-response and endpoint summary tables.
+- `figures/`: editable and raster manuscript figures.
+- `manuscript/`: LaTeX/Markdown manuscript sources and manuscript-side
+  source-data maps.
+- `submission_packages/`: public reproducibility, upload-ready and internal
+  submission-support packages.
+- `docs/`: readiness reports, reviewer-risk checks, official-guide alignment
+  and storage/offload records.
 
-- `docs/`: 研究计划、技术路线、模型标定方案。
-- `literature/`: 文献矩阵、检索式、阅读笔记。
-- `simulations/single_pebble/`: 单颗粒压缩与 BPM 标定算例。
-- `simulations/pebble_bed/`: 球床压缩与破碎演化算例。
-- `data/`: 实验数据、文献数据、模拟后处理数据。
-- `scripts/`: 生成颗粒模板、后处理、绘图脚本。
-- `figures/`: 论文和汇报图。
-- `submission_packages/`: JNM 投稿包、Editorial Manager 上传包和缩减复现包。
+The repository is intended to reproduce manuscript-level processed evidence,
+figures and submission materials. It is not a full raw-trajectory archive.
 
-## Current Milestone
+## Large raw data boundary
 
-第一阶段目标是完成单颗粒 BPM 标定：
+Very large DEM restart files, raw particle dumps, local-bond dumps and complete
+contact histories are retained outside the GitHub repository in local/NAS
+archive storage. The compact package uses processed tables, figure-source CSV
+files and representative inputs for reproducible manuscript-level evidence.
 
-1. 从文献提取 Li4SiO4 单颗粒压缩实验数据。
-2. 建立 500-1500 子颗粒组成的 bonded sphere 模板。
-3. 标定 bond 刚度、强度和非均质参数，使模拟复现实验 crush load、初始刚度和破碎模式。
-4. 做分辨率、加载速率、摩擦系数和 bond strength 分布敏感性分析。
+The current local storage record notes zero local DEM raw/restart residues
+above 20 MB in `simulations/`, with archived raw outputs under the NAS path
+documented in:
+
+- `docs/nas_raw_dump_storage_check_20260704_1736.md`
+- `docs/next_stage_optimization_plan.md`
+
+## Current submission packages
+
+- CPM upload package:
+  `submission_packages/computational_particle_mechanics_upload_ready.zip`
+- CPM upload package checksum:
+  `submission_packages/computational_particle_mechanics_upload_ready.zip.sha256`
+- Double-anonymized blinded review package:
+  `submission_packages/computational_particle_mechanics_blinded_review_package.zip`
+- Public code/data reproducibility package:
+  `submission_packages/computational_particle_mechanics_public_reproducibility_package.zip`
+- Public code/data reproducibility checksum:
+  `submission_packages/computational_particle_mechanics_public_reproducibility_package.zip.sha256`
+- Internal reduced submission-support package:
+  `submission_packages/repaired_submission_package.zip`
+- Internal reduced submission-support checksum:
+  `submission_packages/repaired_submission_package.zip.sha256`
+
+The live readiness status is recorded in:
+
+- `START_HERE_CPM_SUBMISSION.md`
+- `docs/cpm_submission_readiness_report_20260704.md`
+- `docs/cpm_goal_completion_audit_20260704.md`
+- `docs/cpm_live_submission_packet_20260704.md`
+
+The current local status is
+`ready_for_live_submission_after_external_metadata`: scientific evidence,
+figures, source-data matrices, checks and upload packages pass local
+preflight; the remaining external item is coauthor e-mail completion if the
+live submission system requires all author e-mails.
+
+## Verification
+
+Use the bundled Codex Python runtime if `python-docx` is not installed in the
+system Python:
+
+```bash
+/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+  scripts/build_cpm_public_repro_package.py
+/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+  scripts/build_repaired_submission_package.py
+/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+  scripts/check_computational_particle_mechanics_submission_package.py
+python3 scripts/check_cpm_public_repro_package.py
+python3 scripts/check_repaired_submission_package.py
+(cd submission_packages && shasum -a 256 -c computational_particle_mechanics_upload_ready.zip.sha256)
+(cd submission_packages && shasum -a 256 -c computational_particle_mechanics_public_reproducibility_package.zip.sha256)
+(cd submission_packages && shasum -a 256 -c repaired_submission_package.zip.sha256)
+```
+
+Expected current result:
+
+```text
+PASS CPM submission package: manifest=19, figures=19, figure source-data check, docx=11, DOI, guide alignment, public reproducibility package, live packet and double-anonymous blinded review manuscript verified
+PASS CPM public reproducibility package: 85 files, manifest, checksum, representative inputs and public-file hygiene verified
+PASS repaired submission package check
+computational_particle_mechanics_upload_ready.zip: OK
+computational_particle_mechanics_public_reproducibility_package.zip: OK
+repaired_submission_package.zip: OK
+```
+
+## Citation
+
+Please cite the archived package using the DOI above. A GitHub citation file is
+provided in `CITATION.cff`.

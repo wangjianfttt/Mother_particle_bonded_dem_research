@@ -42,6 +42,17 @@ AUTHORS = [
     ("Haishun Deng", "Anhui University of Science and Technology", "not provided in current records", "Supervision, Project administration"),
 ]
 
+CHINESE_NAMES = {
+    "Jian Wang": "汪键",
+    "Siyu Wang": "王思雨",
+    "Hang Zhang": "张航",
+    "Ming-Zhun Lei": "雷明准",
+    "Wei Wen": "文伟",
+    "Qi-Gang Wu": "吴琪刚",
+    "Gang Shen": "沈刚",
+    "Haishun Deng": "邓海顺",
+}
+
 FIGURE_STEMS = [
     ("Figure 1", FIG / "main" / "fig1_workflow"),
     ("Figure 2", FIG / "apt_redesign" / "fig2_single_pebble_template_validation"),
@@ -117,7 +128,7 @@ Dear Editor,
 
 Please consider our manuscript entitled "{TITLE}" as a research article.
 
-This work develops a source-data-backed bonded-template DEM workflow for packed brittle-particle fracture. Each parent particle is represented by a 500-subparticle bonded template, inserted intact into a random load-bearing bed, and compressed while parent-particle fracture events and native force-network descriptors are recorded. The revised manuscript now includes a material-strength matrix across accepted cracking geometries, which directly links bond-strength reduction, local force-path topology, first-event displacement and endpoint damage.
+This work develops a source-data-backed bonded-template DEM workflow for packed brittle-particle fracture. Each parent particle is represented by a 500-subparticle bonded template, inserted intact into a random load-bearing bed, and compressed while parent-particle fracture events and native force-network descriptors are recorded. The revised manuscript now includes a material-strength matrix across selected cracking geometries, which directly links bond-strength reduction, local force-path topology, first-event displacement and endpoint damage.
 
 The main contribution is a particle-resolved event-sequence framework for brittle packed beds. It moves beyond bulk force-displacement reporting by identifying the damaged parent particle, the displacement of each localized bond-loss increment, the native force-path state around the event and the response to bond-strength variation. The calculation is intentionally framed as finite-window mechanism evidence for packed brittle ceramic pebbles, with Li4SiO4 used as a representative application material.
 
@@ -187,17 +198,19 @@ def write_author_docx(path: Path) -> None:
     )
     p.runs[0].font.color.rgb = RGBColor.from_string("555555")
 
-    table = doc.add_table(rows=1, cols=3)
+    table = doc.add_table(rows=1, cols=4)
     table.style = "Table Grid"
     header = table.rows[0].cells
     header[0].text = "Author"
-    header[1].text = "Affiliation"
-    header[2].text = "E-mail"
+    header[1].text = "Chinese name"
+    header[2].text = "Affiliation"
+    header[3].text = "E-mail"
     for name, affiliation, email, _credit in AUTHORS:
         cells = table.add_row().cells
         cells[0].text = name
-        cells[1].text = affiliation
-        cells[2].text = email
+        cells[1].text = CHINESE_NAMES.get(name, "")
+        cells[2].text = affiliation
+        cells[3].text = email
 
     doc.add_heading("CRediT Authorship Contribution Statement", level=1)
     for name, _affiliation, _email, credit in AUTHORS:
@@ -301,6 +314,7 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         md_files["cover"],
         md_files["highlights"],
         md_files["declaration"],
+        ROOT / "CITATION.cff",
         ROOT / "START_HERE_CPM_SUBMISSION.md",
         ROOT / "README_CPM_SUBMISSION_20260704.md",
         DOCS / "repaired_full_pdf_visual_qa_20260704.md",
@@ -367,6 +381,7 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         "scripts/build_cpm_goal_completion_audit.py",
         "scripts/check_cpm_reviewer_risk_preflight.py",
         "scripts/check_cpm_scientific_alignment.py",
+        "scripts/check_computational_particle_mechanics_submission_package.py",
         "data/figure_source/pb007_material_strength_response.csv",
         "tables/pb007_material_parameter_response.csv",
         "tables/pb007_material_strength_matrix_summary.csv",
@@ -408,9 +423,11 @@ This package supports the manuscript:
 
 **{TITLE}**
 
-The package is generated from the repaired target-neutral manuscript, not from the older APT/JNM upload bundles. It contains the manuscript PDF/TeX/Markdown source, submission-side Word documents, source-data matrices, editable figures, raster figures, figure source tables and regeneration/check scripts.
+The package is generated from the repaired Computational Particle Mechanics manuscript route, not from older target-specific upload bundles. It contains the manuscript PDF/TeX/Markdown source, submission-side Word documents, source-data matrices, editable figures, raster figures, figure source tables, repository citation metadata and regeneration/check scripts.
 
 Repository DOI: https://doi.org/10.5281/zenodo.20687351
+
+Support archive path: `submission_packages/repaired_submission_package.zip`
 
 Large raw DEM dump, local-bond and restart histories are kept outside this compact package on the NAS archive described in `docs/nas_raw_dump_storage_check_20260704_1736.md`.
 
@@ -425,6 +442,7 @@ python3 scripts/build_cpm_official_submission_guide_alignment.py
 python3 scripts/build_cpm_material_response_summary.py
 python3 scripts/build_cpm_reviewer_risk_preflight.py
 python3 scripts/check_cpm_reviewer_risk_preflight.py
+python3 scripts/check_computational_particle_mechanics_submission_package.py
 python3 scripts/build_repaired_full_latex.py
 (cd manuscript && latexmk -pdf -interaction=nonstopmode -halt-on-error repaired_full_submission.tex)
 ```

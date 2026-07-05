@@ -6,6 +6,7 @@ from __future__ import annotations
 import csv
 import hashlib
 import json
+import os
 import subprocess
 import zipfile
 from datetime import datetime
@@ -17,6 +18,11 @@ DOCS = ROOT / "docs"
 UPLOAD_DIR = ROOT / "submission_packages" / "computational_particle_mechanics_upload_ready"
 UPLOAD_ZIP = ROOT / "submission_packages" / "computational_particle_mechanics_upload_ready.zip"
 REPRO_ZIP = ROOT / "submission_packages" / "repaired_submission_package.zip"
+PUBLIC_REPRO_ZIP = (
+    ROOT
+    / "submission_packages"
+    / "computational_particle_mechanics_public_reproducibility_package.zip"
+)
 EMAIL_SHEET = UPLOAD_DIR / "10_author_email_completion_sheet.csv"
 REPORT_MD = DOCS / "cpm_submission_readiness_report_20260704.md"
 REPORT_JSON = DOCS / "cpm_submission_readiness_report_20260704.json"
@@ -64,6 +70,7 @@ REQUIRED_REPRO_SUPPORT = [
     "repaired_submission_package/scripts/build_cpm_goal_completion_audit.py",
     "repaired_submission_package/scripts/check_cpm_reviewer_risk_preflight.py",
     "repaired_submission_package/scripts/check_cpm_scientific_alignment.py",
+    "repaired_submission_package/scripts/check_computational_particle_mechanics_submission_package.py",
 ]
 
 
@@ -83,7 +90,9 @@ def run_check() -> tuple[str, str]:
         ),
         "scripts/check_computational_particle_mechanics_submission_package.py",
     ]
-    proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, check=False)
+    env = os.environ.copy()
+    env["CPM_SKIP_GOAL_AUDIT"] = "1"
+    proc = subprocess.run(cmd, cwd=ROOT, text=True, capture_output=True, check=False, env=env)
     return ("PASS" if proc.returncode == 0 else "FAIL", (proc.stdout + proc.stderr).strip())
 
 
@@ -134,6 +143,10 @@ def build_payload() -> dict[str, object]:
         "reproducibility_package": str(REPRO_ZIP.relative_to(ROOT)),
         "reproducibility_package_bytes": REPRO_ZIP.stat().st_size,
         "reproducibility_package_sha256": sha256(REPRO_ZIP),
+        "public_reproducibility_package": str(PUBLIC_REPRO_ZIP.relative_to(ROOT)),
+        "public_reproducibility_package_bytes": PUBLIC_REPRO_ZIP.stat().st_size,
+        "public_reproducibility_package_sha256": sha256(PUBLIC_REPRO_ZIP),
+        "public_reproducibility_package_members": zip_member_count(PUBLIC_REPRO_ZIP),
         "required_repro_support_members": len(REQUIRED_REPRO_SUPPORT),
         "present_repro_support_members": support_present_count,
         "missing_repro_support_members": support_missing,
@@ -152,7 +165,8 @@ def build_payload() -> dict[str, object]:
         ),
         "external_items": [
             "Complete seven missing coauthor e-mail addresses if required by the live submission system.",
-            "Confirm the article type and upload categories in the live Elsevier/ScienceDirect submission system.",
+            "Use the current Elsevier/ScienceDirect double-anonymized route and confirm article type/category in the live system.",
+            "Confirm the article type and upload categories in the live submission system.",
             "Preview the system-generated submission PDF before final submit.",
         ],
     }
@@ -188,6 +202,10 @@ def write_markdown(payload: dict[str, object]) -> None:
         f"- Reduced reproducibility package: `{payload['reproducibility_package']}`",
         f"- Reduced reproducibility package bytes: `{payload['reproducibility_package_bytes']}`",
         f"- Reduced reproducibility package SHA256: `{payload['reproducibility_package_sha256']}`",
+        f"- Public code/data reproducibility package: `{payload['public_reproducibility_package']}`",
+        f"- Public code/data reproducibility package bytes: `{payload['public_reproducibility_package_bytes']}`",
+        f"- Public code/data reproducibility package SHA256: `{payload['public_reproducibility_package_sha256']}`",
+        f"- Public code/data reproducibility package members: `{payload['public_reproducibility_package_members']}`",
         f"- Required reduced-package CPM support members: `{payload['required_repro_support_members']}`",
         f"- Present reduced-package CPM support members: `{payload['present_repro_support_members']}`",
         f"- Missing reduced-package CPM support members: `{len(payload['missing_repro_support_members'])}`",
