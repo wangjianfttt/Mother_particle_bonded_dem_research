@@ -59,6 +59,7 @@ PDF_QA_JSON = ROOT / "docs" / "cpm_final_pdf_visual_qa_20260704.json"
 PDF_QA_MD = ROOT / "docs" / "cpm_final_pdf_visual_qa_20260704.md"
 EMAIL_LOOKUP_MD = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.md"
 EMAIL_LOOKUP_CSV = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.csv"
+EXTERNAL_AUTHOR_ACTIONS = ROOT / "docs" / "cpm_external_author_metadata_final_actions_20260706.md"
 SOURCE_DATA_MATRIX = ROOT / "manuscript" / "repaired_full_manuscript_source_data_matrix.csv"
 SUPPORT_DOCX = [
     ROOT / "manuscript" / "computational_particle_mechanics_author_email_collection_packet.docx",
@@ -85,6 +86,7 @@ SUPPORT_TEXT = [
     PDF_QA_MD,
     EMAIL_LOOKUP_MD,
     EMAIL_LOOKUP_CSV,
+    EXTERNAL_AUTHOR_ACTIONS,
 ]
 
 EXPECTED_UPLOAD_FILES = {
@@ -509,6 +511,21 @@ def check_support_docs() -> None:
     for path in SUPPORT_TEXT:
         if not path.exists() or path.stat().st_size == 0:
             fail(f"missing or empty support text file: {path.name}")
+    external_author_actions = EXTERNAL_AUTHOR_ACTIONS.read_text(encoding="utf-8")
+    for term in [
+        "Ask directly",
+        "Confirm public candidates before use",
+        "Siyu Wang",
+        "Hang Zhang",
+        "Qi-Gang Wu",
+        "leimz@ipp.ac.cn",
+        "wenwei@ipp.ac.cn",
+        "shenganghit@163.com",
+        "269469122@qq.com",
+        "Preview the generated submission PDF before final submission",
+    ]:
+        if term not in external_author_actions:
+            fail(f"external author metadata final-actions note missing term: {term}")
     start = START_HERE.read_text(encoding="utf-8")
     for required in [
         "computational_particle_mechanics_upload_ready.zip",

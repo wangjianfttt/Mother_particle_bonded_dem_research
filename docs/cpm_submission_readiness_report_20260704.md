@@ -1,6 +1,6 @@
 # CPM Submission Readiness Report
 
-Generated: `2026-07-06T00:48:31`
+Generated: `2026-07-06T00:57:49`
 
 ## Status
 
@@ -24,14 +24,14 @@ PASS CPM submission package: manifest=19, figures=19, figure source-data gate, d
 - Upload package bytes: `6644057`
 - Upload package SHA256: `3c1fe15f2a2f3b10f9ab6f41ce713a3bde95f177a476bdc6f4a22d1ab864ca44`
 - Reduced reproducibility package: `submission_packages/repaired_submission_package.zip`
-- Reduced reproducibility package bytes: `8116885`
-- Reduced reproducibility package SHA256: `aedd6536497e05f5dbe98c03b43e7c25ba8bb9a7dcfc65d281be3bd5c6ec65ea`
+- Reduced reproducibility package bytes: `8118694`
+- Reduced reproducibility package SHA256: `5dcd890c00de285f963901fbafa62400e82400492ab8de2f58b73f7c67501d57`
 - Public code/data reproducibility package: `submission_packages/computational_particle_mechanics_public_reproducibility_package.zip`
-- Public code/data reproducibility package bytes: `3621191`
-- Public code/data reproducibility package SHA256: `c6c5ab28a8a183ed733b144e45d33f677aabfbfdbbec8a175b017e67322dcbb2`
+- Public code/data reproducibility package bytes: `3621304`
+- Public code/data reproducibility package SHA256: `d7fe47d1d5f91e11008338fd1e69423d441ef5322253daa44c6228bcef3fbb97`
 - Public code/data reproducibility package members: `85`
-- Required reduced-package CPM support members: `43`
-- Present reduced-package CPM support members: `43`
+- Required reduced-package CPM support members: `44`
+- Present reduced-package CPM support members: `44`
 - Missing reduced-package CPM support members: `0`
 - Manifest rows: `19`
 - Upload zip members: `20`

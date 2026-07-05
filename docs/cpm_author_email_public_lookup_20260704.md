@@ -1,4 +1,4 @@
-# CPM author e-mail public lookup, 2026-07-04; refreshed 2026-07-05
+# CPM author e-mail public lookup, 2026-07-04; refreshed 2026-07-05 and 2026-07-06
 
 ## Purpose
 
@@ -41,6 +41,12 @@ the coauthor before final entry into the journal submission system.
   ResearchGate page for Li4SiO4/Li2TiO3 ceramic-particle crushing confirms a
   relevant `Qi-Gang Wu` authorship context, but it does not provide a
   submission-system e-mail candidate. No new candidate was promoted.
+- A fourth targeted lookup on 2026-07-06 repeated the missing-author searches
+  for `Siyu Wang`/`王思雨`, `Hang Zhang`/`张航` and `Qi-Gang Wu`/`吴琪刚` with
+  Anhui University of Science and Technology, Institute of Plasma Physics and
+  e-mail terms. No verifiable new personal e-mail candidate was found. The
+  recommended action remains direct author confirmation for Siyu Wang, Hang
+  Zhang and Qi-Gang Wu.
 - Ming-Zhun Lei: the open PMC article "Optimization of Electron Beam Welding
   Joint of Water-Cooled Ceramic Breeder Blanket" lists Mingzhun Lei and includes
   the public e-mail candidate `leimz@ipp.ac.cn`.

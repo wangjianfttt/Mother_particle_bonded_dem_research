@@ -46,6 +46,7 @@ REQUIRED_REPRO_SUPPORT = [
     "repaired_submission_package/docs/cpm_live_submission_packet_docx_qa_20260704.md",
     "repaired_submission_package/docs/cpm_author_email_public_lookup_20260704.md",
     "repaired_submission_package/docs/cpm_author_email_public_lookup_20260704.csv",
+    "repaired_submission_package/docs/cpm_external_author_metadata_final_actions_20260706.md",
     "repaired_submission_package/docs/cpm_goal_completion_audit_20260704.md",
     "repaired_submission_package/docs/cpm_goal_completion_audit_20260704.csv",
     "repaired_submission_package/docs/cpm_goal_completion_audit_20260704.json",

@@ -20,13 +20,13 @@ TITLE = (
 )
 
 MISSING_AUTHORS = [
-    "Siyu Wang",
-    "Hang Zhang",
-    "Ming-Zhun Lei",
-    "Wei Wen",
-    "Qi-Gang Wu",
-    "Gang Shen",
-    "Haishun Deng",
+    ("Siyu Wang", "王思雨"),
+    ("Hang Zhang", "张航"),
+    ("Ming-Zhun Lei", "雷明准"),
+    ("Wei Wen", "文伟"),
+    ("Qi-Gang Wu", "吴琪刚"),
+    ("Gang Shen", "沈刚"),
+    ("Haishun Deng", "邓海顺"),
 ]
 
 PUBLIC_CANDIDATE_EMAILS = [
@@ -59,57 +59,78 @@ PUBLIC_CANDIDATE_EMAILS = [
 AUTHOR_EMAIL_ACTION_ROWS = [
     {
         "author": "Siyu Wang",
+        "chinese_name": "王思雨",
         "affiliation": "Anhui University of Science and Technology",
         "current_status": "Missing",
         "public_candidate": "",
-        "source": "No reliable public candidate after local search and targeted web search.",
+        "email_to_fill_or_confirm": "",
+        "confirmation_status": "Pending author reply",
+        "source": "No reliable public candidate after local search and targeted web searches through 2026-07-06.",
         "action": "Ask author directly for preferred submission-system e-mail.",
     },
     {
         "author": "Hang Zhang",
+        "chinese_name": "张航",
         "affiliation": "Anhui University of Science and Technology",
         "current_status": "Missing",
         "public_candidate": "",
-        "source": "No reliable public candidate after local search and targeted web search.",
+        "email_to_fill_or_confirm": "",
+        "confirmation_status": "Pending author reply",
+        "source": "No reliable public candidate after local search and targeted web searches through 2026-07-06.",
         "action": "Ask author directly for preferred submission-system e-mail.",
     },
     {
         "author": "Ming-Zhun Lei",
+        "chinese_name": "雷明准",
         "affiliation": "Institute of Plasma Physics, Chinese Academy of Sciences",
         "current_status": "Missing",
         "public_candidate": "leimz@ipp.ac.cn",
+        "email_to_fill_or_confirm": "leimz@ipp.ac.cn",
+        "confirmation_status": "Candidate needs confirmation",
         "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8234535/",
         "action": "Ask author to confirm whether this public candidate may be used.",
     },
     {
         "author": "Wei Wen",
+        "chinese_name": "文伟",
         "affiliation": "Anhui University of Science and Technology; Institute of Plasma Physics, Chinese Academy of Sciences",
         "current_status": "Missing",
         "public_candidate": "wenwei@ipp.ac.cn",
+        "email_to_fill_or_confirm": "wenwei@ipp.ac.cn",
+        "confirmation_status": "Candidate needs confirmation",
         "source": "https://www.ipp.cas.cn/yjs/xcsc/202207/P020250115777706650358.pdf",
         "action": "Ask author to confirm whether this public candidate may be used.",
     },
     {
         "author": "Qi-Gang Wu",
+        "chinese_name": "吴琪刚",
         "affiliation": "Institute of Plasma Physics, Chinese Academy of Sciences",
         "current_status": "Missing",
         "public_candidate": "",
-        "source": "No reliable personal e-mail candidate after local search and targeted web search.",
+        "email_to_fill_or_confirm": "",
+        "confirmation_status": "Pending author reply",
+        "source": "No reliable personal e-mail candidate after local search and targeted web searches through 2026-07-06.",
         "action": "Ask author directly for preferred submission-system e-mail.",
     },
     {
         "author": "Gang Shen",
+        "chinese_name": "沈刚",
         "affiliation": "Anhui University of Science and Technology",
         "current_status": "Missing",
         "public_candidate": "shenganghit@163.com",
+        "email_to_fill_or_confirm": "shenganghit@163.com",
+        "confirmation_status": "Candidate needs confirmation",
         "source": "https://journals.sagepub.com/doi/10.1177/09544062241299521",
         "action": "Ask author to confirm whether this public candidate may be used.",
     },
     {
         "author": "Haishun Deng",
+        "chinese_name": "邓海顺",
         "affiliation": "Anhui University of Science and Technology",
         "current_status": "Missing",
         "public_candidate": "269469122@qq.com",
+        "email_to_fill_or_confirm": "269469122@qq.com",
+        "confirmation_status": "Candidate needs confirmation",
         "source": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11637116/",
         "action": "Ask author to confirm whether this public candidate may be used.",
     },
@@ -149,7 +170,7 @@ def write_email_request() -> None:
         "Li4SiO4 bonded-template DEM 颗粒破碎论文准备转投 Computational Particle Mechanics。投稿系统可能要求填写每位作者的邮箱地址。当前稿件中通讯作者邮箱已经确认：Jian Wang, wjfttt@mail.ustc.edu.cn。",
         "",
         "请下面几位作者各自提供一个投稿系统使用的机构邮箱，或确认可以使用的常用学术邮箱：",
-        *[f"- {name}" for name in MISSING_AUTHORS],
+        *[f"- {english_name}（{chinese_name}）" for english_name, chinese_name in MISSING_AUTHORS],
         "",
         "我另外查到四条公开候选邮箱，仅供本人确认，不会在未确认前直接填入投稿系统：",
         *[f"- {name}: {email}（{note_zh}）" for name, email, note_zh, _note_en in PUBLIC_CANDIDATE_EMAILS],
@@ -165,7 +186,7 @@ def write_email_request() -> None:
         "We are preparing the Li4SiO4 bonded-template DEM manuscript for submission to Computational Particle Mechanics. The online submission system may require an e-mail address for every author. The corresponding author e-mail has been confirmed as Jian Wang, wjfttt@mail.ustc.edu.cn.",
         "",
         "Please provide one institutional or preferred academic e-mail address for the following authors:",
-        *[f"- {name}" for name in MISSING_AUTHORS],
+        *[f"- {english_name} ({chinese_name})" for english_name, chinese_name in MISSING_AUTHORS],
         "",
         "Four public candidate e-mail records have been found for confirmation only. They will not be entered into the submission system before author confirmation:",
         *[f"- {name}: {email} ({note_en})" for name, email, _note_zh, note_en in PUBLIC_CANDIDATE_EMAILS],
@@ -201,14 +222,16 @@ def write_live_checklist() -> None:
         ("Author e-mails", "Fill seven missing coauthor e-mails if the live system requires all author e-mails."),
         ("Candidate e-mails", "Ask Ming-Zhun Lei, Wei Wen, Gang Shen and Haishun Deng to confirm whether the four public candidate e-mails may be used."),
         ("Article type", "Select Research article or the closest equivalent in the live Elsevier/ScienceDirect system."),
-        ("Manuscript", "Upload 01_manuscript.pdf."),
+        ("Submission route", "Use the current Elsevier/ScienceDirect route and confirm article type, file categories and PDF preview in the live system."),
+        ("Review manuscript", "Upload 01_review_manuscript_blinded.pdf as the review manuscript for double-anonymized review."),
         ("Highlights", "Upload 02_highlights.docx or paste the five Highlights from 08_editorial_submission_fields.docx."),
         ("Graphical abstract", "Upload 03_graphical_abstract.png or 03_graphical_abstract.tiff."),
         ("Declaration", "Upload 04_declaration_of_competing_interest.docx."),
         ("Cover letter", "Upload 05_cover_letter.docx."),
         ("Authors and CRediT", "Use 06_author_emails_and_contributions.docx and the completed e-mail sheet."),
-        ("Blinded manuscript if requested", "Use computational_particle_mechanics_blinded_review_optional.zip only if the live system requests a blinded manuscript for double-anonymized review."),
-        ("LaTeX source", "Upload 07_latex_source.zip if the initial submission system requests source files."),
+        ("Blinded review source", "Use 01_review_manuscript_blinded.tex or computational_particle_mechanics_blinded_review_package.zip if editable blinded source is requested."),
+        ("LaTeX source", "Upload 07_latex_source.zip if the initial submission system requests full author source files."),
+        ("Word source backup", "Upload 12_full_author_manuscript_single_column.docx if the system requests a Word/source manuscript file."),
         ("Figures", "Upload 09_main_figures.zip or individual figure files if the system separates artwork upload."),
         ("Data availability", "Paste the DOI-backed data availability statement from 08_editorial_submission_fields.docx."),
         ("Code availability", "Paste the GitHub/Zenodo code availability statement from 08_editorial_submission_fields.docx."),
@@ -277,13 +300,14 @@ def write_author_email_collection_packet() -> None:
         "",
         "## Action table",
         "",
-        "| Author | Affiliation | Status | Public candidate | Action |",
-        "| --- | --- | --- | --- | --- |",
+        "| Author | Chinese name | Affiliation | E-mail to fill or confirm | Confirmation status | Public candidate | Action |",
+        "| --- | --- | --- | --- | --- | --- | --- |",
     ]
     for row in AUTHOR_EMAIL_ACTION_ROWS:
         md_lines.append(
-            f"| {row['author']} | {row['affiliation']} | {row['current_status']} | "
-            f"{row['public_candidate'] or 'None'} | {row['action']} |"
+            f"| {row['author']} | {row['chinese_name']} | {row['affiliation']} | "
+            f"{row['email_to_fill_or_confirm'] or 'To be provided'} | "
+            f"{row['confirmation_status']} | {row['public_candidate'] or 'None'} | {row['action']} |"
         )
     md_lines.extend(
         [
@@ -309,17 +333,19 @@ def write_author_email_collection_packet() -> None:
     for line in short_en:
         doc.add_paragraph(line)
     doc.add_heading("Action table", level=1)
-    table = doc.add_table(rows=1, cols=4)
+    table = doc.add_table(rows=1, cols=6)
     table.style = "Table Grid"
-    headers = ["Author", "Status", "Public candidate", "Action"]
+    headers = ["Author", "Chinese name", "E-mail to fill or confirm", "Confirmation status", "Public candidate", "Action"]
     for cell, text in zip(table.rows[0].cells, headers):
         cell.text = text
     for row in AUTHOR_EMAIL_ACTION_ROWS:
         cells = table.add_row().cells
         cells[0].text = row["author"]
-        cells[1].text = row["current_status"]
-        cells[2].text = row["public_candidate"] or "None"
-        cells[3].text = row["action"]
+        cells[1].text = row["chinese_name"]
+        cells[2].text = row["email_to_fill_or_confirm"] or "To be provided"
+        cells[3].text = row["confirmation_status"]
+        cells[4].text = row["public_candidate"] or "None"
+        cells[5].text = row["action"]
     doc.add_heading("Rule", level=1)
     doc.add_paragraph(
         "Public candidates are confirmation aids only. Do not enter them into the live submission system until the corresponding author or coauthor confirms the address."
@@ -331,10 +357,11 @@ def write_individual_contact_messages() -> None:
     rows = []
     for row in AUTHOR_EMAIL_ACTION_ROWS:
         author = row["author"]
+        chinese_name = row["chinese_name"]
         candidate = row["public_candidate"]
         if candidate:
             zh = (
-                f"{author}老师您好，CPM投稿系统可能需要每位作者邮箱。"
+                f"{chinese_name}老师您好，CPM投稿系统可能需要每位作者邮箱。"
                 f"我查到一个公开候选邮箱：{candidate}。请您确认该邮箱是否可以用于本次投稿系统；"
                 "同时请确认作者顺序、单位和贡献描述是否无误。谢谢！"
             )
@@ -346,7 +373,7 @@ def write_individual_contact_messages() -> None:
             action_type = "confirm_public_candidate"
         else:
             zh = (
-                f"{author}您好，CPM投稿系统可能需要每位作者邮箱。"
+                f"{chinese_name}您好，CPM投稿系统可能需要每位作者邮箱。"
                 "请您回复一个可用于投稿系统的常用学术邮箱；同时请确认作者顺序、单位和贡献描述是否无误。谢谢！"
             )
             en = (
@@ -357,8 +384,11 @@ def write_individual_contact_messages() -> None:
         rows.append(
             {
                 "author": author,
+                "chinese_name": chinese_name,
                 "action_type": action_type,
                 "public_candidate": candidate,
+                "email_to_fill_or_confirm": row["email_to_fill_or_confirm"],
+                "confirmation_status": row["confirmation_status"],
                 "chinese_message": zh,
                 "english_message": en,
             }
@@ -383,7 +413,10 @@ def write_individual_contact_messages() -> None:
             [
                 f"## {row['author']}",
                 "",
+                f"- Chinese name: `{row['chinese_name']}`",
                 f"- Action type: `{row['action_type']}`",
+                f"- E-mail to fill or confirm: `{row['email_to_fill_or_confirm'] or 'To be provided'}`",
+                f"- Confirmation status: `{row['confirmation_status']}`",
                 f"- Public candidate: `{row['public_candidate'] or 'None'}`",
                 "",
                 "Chinese message:",
@@ -416,6 +449,9 @@ def write_individual_contact_messages() -> None:
         meta.style = "Table Grid"
         for label, value in [
             ("Action", row["action_type"]),
+            ("Chinese name", row["chinese_name"]),
+            ("E-mail to fill or confirm", row["email_to_fill_or_confirm"] or "To be provided"),
+            ("Confirmation status", row["confirmation_status"]),
             ("Public candidate", row["public_candidate"] or "None"),
         ]:
             cells = meta.add_row().cells

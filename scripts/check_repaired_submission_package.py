@@ -50,6 +50,7 @@ REQUIRED_SUPPORT = {
     "docs/cpm_live_submission_packet_docx_qa_20260704.md",
     "docs/cpm_author_email_public_lookup_20260704.csv",
     "docs/cpm_author_email_public_lookup_20260704.md",
+    "docs/cpm_external_author_metadata_final_actions_20260706.md",
     "docs/cpm_goal_completion_audit_20260704.csv",
     "docs/cpm_goal_completion_audit_20260704.json",
     "docs/cpm_goal_completion_audit_20260704.md",

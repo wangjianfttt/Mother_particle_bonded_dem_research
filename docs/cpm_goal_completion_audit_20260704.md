@@ -1,6 +1,6 @@
 # CPM Goal-Level Completion Audit
 
-Generated: `2026-07-06T00:48:31`
+Generated: `2026-07-06T00:57:50`
 
 - Overall status: `ready_after_external_author_metadata`
 - CPM preflight status: `PASS`

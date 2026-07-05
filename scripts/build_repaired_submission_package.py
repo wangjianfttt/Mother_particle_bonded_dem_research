@@ -323,6 +323,7 @@ def build_support_package(md_files: dict[str, Path]) -> None:
         DOCS / "cpm_live_submission_packet_docx_qa_20260704.md",
         DOCS / "cpm_author_email_public_lookup_20260704.md",
         DOCS / "cpm_author_email_public_lookup_20260704.csv",
+        DOCS / "cpm_external_author_metadata_final_actions_20260706.md",
         DOCS / "cpm_goal_completion_audit_20260704.md",
         DOCS / "cpm_goal_completion_audit_20260704.csv",
         DOCS / "cpm_goal_completion_audit_20260704.json",

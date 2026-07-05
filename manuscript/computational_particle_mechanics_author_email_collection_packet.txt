@@ -20,15 +20,15 @@ Authors with public candidate e-mails should confirm whether the candidate can b
 
 ## Action table
 
-| Author | Affiliation | Status | Public candidate | Action |
-| --- | --- | --- | --- | --- |
-| Siyu Wang | Anhui University of Science and Technology | Missing | None | Ask author directly for preferred submission-system e-mail. |
-| Hang Zhang | Anhui University of Science and Technology | Missing | None | Ask author directly for preferred submission-system e-mail. |
-| Ming-Zhun Lei | Institute of Plasma Physics, Chinese Academy of Sciences | Missing | leimz@ipp.ac.cn | Ask author to confirm whether this public candidate may be used. |
-| Wei Wen | Anhui University of Science and Technology; Institute of Plasma Physics, Chinese Academy of Sciences | Missing | wenwei@ipp.ac.cn | Ask author to confirm whether this public candidate may be used. |
-| Qi-Gang Wu | Institute of Plasma Physics, Chinese Academy of Sciences | Missing | None | Ask author directly for preferred submission-system e-mail. |
-| Gang Shen | Anhui University of Science and Technology | Missing | shenganghit@163.com | Ask author to confirm whether this public candidate may be used. |
-| Haishun Deng | Anhui University of Science and Technology | Missing | 269469122@qq.com | Ask author to confirm whether this public candidate may be used. |
+| Author | Chinese name | Affiliation | E-mail to fill or confirm | Confirmation status | Public candidate | Action |
+| --- | --- | --- | --- | --- | --- | --- |
+| Siyu Wang | 王思雨 | Anhui University of Science and Technology | To be provided | Pending author reply | None | Ask author directly for preferred submission-system e-mail. |
+| Hang Zhang | 张航 | Anhui University of Science and Technology | To be provided | Pending author reply | None | Ask author directly for preferred submission-system e-mail. |
+| Ming-Zhun Lei | 雷明准 | Institute of Plasma Physics, Chinese Academy of Sciences | leimz@ipp.ac.cn | Candidate needs confirmation | leimz@ipp.ac.cn | Ask author to confirm whether this public candidate may be used. |
+| Wei Wen | 文伟 | Anhui University of Science and Technology; Institute of Plasma Physics, Chinese Academy of Sciences | wenwei@ipp.ac.cn | Candidate needs confirmation | wenwei@ipp.ac.cn | Ask author to confirm whether this public candidate may be used. |
+| Qi-Gang Wu | 吴琪刚 | Institute of Plasma Physics, Chinese Academy of Sciences | To be provided | Pending author reply | None | Ask author directly for preferred submission-system e-mail. |
+| Gang Shen | 沈刚 | Anhui University of Science and Technology | shenganghit@163.com | Candidate needs confirmation | shenganghit@163.com | Ask author to confirm whether this public candidate may be used. |
+| Haishun Deng | 邓海顺 | Anhui University of Science and Technology | 269469122@qq.com | Candidate needs confirmation | 269469122@qq.com | Ask author to confirm whether this public candidate may be used. |
 
 ## Rule
 
