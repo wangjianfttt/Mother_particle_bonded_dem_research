@@ -317,9 +317,25 @@ def check_author_email_sheet() -> None:
     rows = list(csv.DictReader(sheet.open(encoding="utf-8")))
     if len(rows) != 8:
         fail(f"expected 8 author rows, found {len(rows)}")
-    missing = [row for row in rows if row["Status"] == "Missing"]
-    if len(missing) != 7:
-        fail(f"expected 7 missing coauthor e-mails, found {len(missing)}")
+    by_author = {row["Author"]: row for row in rows}
+    expected_missing = {"Siyu Wang", "Hang Zhang", "Qi-Gang Wu"}
+    missing = {row["Author"] for row in rows if row["Status"] == "Missing"}
+    if missing != expected_missing:
+        fail(f"expected missing author e-mails for {sorted(expected_missing)}, found {sorted(missing)}")
+    expected_candidates = {
+        "Ming-Zhun Lei": "leimz@ipp.ac.cn",
+        "Wei Wen": "wenwei@ipp.ac.cn",
+        "Gang Shen": "shenganghit@163.com",
+        "Haishun Deng": "269469122@qq.com",
+    }
+    for author, email in expected_candidates.items():
+        row = by_author.get(author)
+        if row is None:
+            fail(f"author e-mail sheet missing {author}")
+        if row["Status"] != "Candidate needs confirmation":
+            fail(f"{author} should be marked Candidate needs confirmation")
+        if row["E-mail to fill or confirm"] != email:
+            fail(f"{author} candidate e-mail mismatch")
     if not any(row["Author"] == "Jian Wang" and row["Status"] == "Available" for row in rows):
         fail("corresponding author e-mail is not marked available")
 
