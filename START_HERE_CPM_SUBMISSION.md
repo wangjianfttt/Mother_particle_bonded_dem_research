@@ -69,14 +69,14 @@ The corresponding author e-mail is available:
 
 - Jian Wang: `wjfttt@mail.ustc.edu.cn`
 
-Seven coauthor e-mail addresses are not in the current local records. Use
-`10_author_email_completion_sheet.docx` or `.csv` to collect them if the live
+Seven non-corresponding-author e-mail entries still require completion or
+confirmation. Use `10_author_email_completion_sheet.docx` or `.csv` if the live
 submission system requires every author's e-mail address.
 
-Four public candidate e-mail records have been collected for confirmation, but
-they have not been promoted into the formal author metadata. These candidates
-are confirmation aids only; do not enter them into the live submission system
-until the corresponding author or coauthor confirms the address:
+Four public candidate e-mail records have been collected for confirmation and
+are listed in the completion sheet as `Candidate needs confirmation`. These
+candidates are confirmation aids only; do not treat them as final author
+metadata until the corresponding author or coauthor confirms the address:
 
 - `docs/cpm_author_email_public_lookup_20260704.md`
 - `docs/cpm_author_email_public_lookup_20260704.csv`
@@ -139,8 +139,9 @@ Latest local status recorded in the readiness report:
 - Missing reduced-package CPM support members: `0`
 - Current final PDF visual QA: `PASS`, 19 pages, 0 blank pages, author-production PDF SHA match, blinded review PDF checked
 - Single-column Word manuscript backup: `12_full_author_manuscript_single_column.docx`
-- External metadata still pending: seven coauthor e-mail addresses if the live
-  submission system requires all author e-mails
+- External metadata still pending: seven non-corresponding-author e-mail entries
+  require completion or confirmation if the live submission system requires all
+  author e-mails
 
 Current literature-gap and novelty support:
 

@@ -77,8 +77,9 @@ The live readiness status is recorded in:
 The current local status is
 `ready_for_live_submission_after_external_metadata`: scientific evidence,
 figures, source-data matrices, checks and upload packages pass local
-preflight; the remaining external item is coauthor e-mail completion if the
-live submission system requires all author e-mails.
+preflight; the remaining external item is completion or confirmation of seven
+non-corresponding-author e-mail entries if the live submission system requires
+all author e-mails.
 
 ## Verification
 
@@ -103,7 +104,7 @@ Expected current result:
 
 ```text
 PASS CPM submission package: manifest=19, figures=19, figure source-data check, docx=11, DOI, guide alignment, public reproducibility package, live packet and double-anonymous blinded review manuscript verified
-PASS CPM public reproducibility package: 85 files, manifest, checksum, representative inputs and public-file hygiene verified
+PASS CPM public reproducibility package: 93 files, manifest, checksum, representative inputs and public-file hygiene verified
 PASS repaired submission package check
 computational_particle_mechanics_upload_ready.zip: OK
 computational_particle_mechanics_public_reproducibility_package.zip: OK

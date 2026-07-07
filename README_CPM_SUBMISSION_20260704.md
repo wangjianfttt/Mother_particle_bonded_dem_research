@@ -88,12 +88,14 @@ The current local verification status is recorded in:
 The readiness report is intentionally kept outside the reduced reproducibility
 zip because it records the current package checksum. The latest local status is
 `ready_for_live_submission_after_external_metadata`; the remaining external
-metadata item is seven coauthor e-mail addresses if the live submission system
-requires every author's e-mail address.
+metadata item is completion or confirmation of seven non-corresponding-author
+e-mail entries if the live submission system requires every author's e-mail
+address.
 
 Four public candidate e-mail records are listed in
 `docs/cpm_author_email_public_lookup_20260704.md` for corresponding-author
-confirmation. They are not counted as completed author metadata until confirmed
+confirmation and in the upload-package completion sheet as `Candidate needs
+confirmation`. They are not counted as completed author metadata until confirmed
 by the coauthors.
 
 The blinded-review package is provided because the ScienceDirect Guide for
