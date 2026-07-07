@@ -1,4 +1,0 @@
-case,subparticles,initial_bonds,peak_top_force_N,peak_displacement_mm,first_break_displacement_mm,final_broken_bonds,final_fragment_count,largest_fragment_fraction,second_fragment_fraction
-SP-RES-250,250,2641,17.905282,0.2945,0.0955,364,32,0.468,0.412
-SP-RES-500,500,5876,19.395593,0.2605,0.095,475,35,0.474,0.46
-SP-RES-1000,1000,12513,22.640137,0.296,0.0965,2241,111,0.446,0.445

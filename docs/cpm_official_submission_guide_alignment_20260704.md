@@ -1,22 +1,23 @@
 # CPM official submission-guide alignment
 
-Date: 2026-07-04
+Date: 2026-07-08
 
-Official sources checked:
+Official sources checked or rechecked on 2026-07-08:
 
-- ScienceDirect Guide for Authors: https://www.sciencedirect.com/journal/computational-particle-mechanics/publish/guide-for-authors
-- Springer transition notice for this journal: https://link.springer.com/journal/40571/submission-guidelines
+- Current ScienceDirect Guide for Authors: https://www.sciencedirect.com/journal/computational-particle-mechanics/publish/guide-for-authors
+- Springer journal transition notice: https://link.springer.com/journal/40571
 
 Purpose: map current upload files and support files to the live journal requirements before final submission.
 
 | Guide item | Official source | Current package evidence | Status | Remaining action |
 | --- | --- | --- | --- | --- |
-| Current submission route | ScienceDirect Guide for Authors; Springer submission-guidelines transition notice | `submission_packages/computational_particle_mechanics_upload_ready.zip; START_HERE_CPM_SUBMISSION.md` | `ready` | Use the live ScienceDirect/Editorial Manager route, not the closed Springer portal. |
+| Current submission route | The Springer journal page states that submissions closed there on 1 July 2025 and points authors to the Elsevier/ScienceDirect journal site; the current ScienceDirect Guide for Authors provides the active Guide for Authors and Submit Article entry. | `submission_packages/computational_particle_mechanics_upload_ready.zip; START_HERE_CPM_SUBMISSION.md` | `ready` | Start from the Elsevier/ScienceDirect route linked from the current Guide for Authors, then confirm article type and file categories in the live submission system. |
+| Review route | ScienceDirect Guide for Authors: journal follows a double-anonymized review process. | `submission_packages/computational_particle_mechanics_upload_ready/01_review_manuscript_blinded.pdf; submission_packages/computational_particle_mechanics_upload_ready/11_full_author_manuscript_for_production.pdf; submission_packages/computational_particle_mechanics_upload_ready/12_full_author_manuscript_single_column.docx` | `ready_for_double_anonymized_review` | Use the blinded manuscript as the review manuscript. Keep the author-bearing PDF and single-column Word manuscript for title-page, author-metadata, source-file, production or explicit system-requested roles. |
 | Article scope | ScienceDirect Guide for Authors: journal covers computational particle mechanics, DEM, modelling and fracture/fragmentation of particulate systems. | `manuscript/computational_particle_mechanics_submission.tex; docs/cpm_literature_gap_map_20260704.md` | `ready` | Select Research article or closest available article type in the live system. |
-| Double-anonymized review | ScienceDirect Guide for Authors: journal operates a double anonymized review process. | `submission_packages/computational_particle_mechanics_blinded_review_optional.zip` | `ready_if_requested` | Use the optional blinded package if the live system requests a blinded manuscript file. |
+| Double-anonymized review | ScienceDirect Guide for Authors: journal operates a double anonymized review process. | `submission_packages/computational_particle_mechanics_blinded_review_package.zip` | `required_for_double_anonymized_review` | Use the blinded manuscript as the review manuscript; omit author names, affiliations, acknowledgements, funding identifiers, author contributions and author-linked repository identifiers from review files. |
 | Abstract length | ScienceDirect Guide for Authors: abstract must be concise, factual and not exceed 250 words. | `manuscript/computational_particle_mechanics_submission.tex` | `ready` | Current manuscript abstract is checked by the package script and remains within 250 words. |
-| Title-page author details | ScienceDirect Guide for Authors: title page should include author names, affiliations, corresponding author and e-mail details where available. | `submission_packages/computational_particle_mechanics_upload_ready/10_author_email_completion_sheet.csv; manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx` | `external_metadata_pending` | Confirm seven coauthor e-mails or leave only confirmed e-mail information if the live system does not require all author e-mails. |
-| Editable manuscript source | ScienceDirect Guide for Authors: submit editable source files where requested. | `submission_packages/computational_particle_mechanics_upload_ready/07_latex_source.zip` | `ready` | Upload LaTeX source zip if the system asks for source files at initial submission. |
+| Title-page author details | ScienceDirect Guide for Authors: title page should include author names, affiliations, corresponding author and e-mail details where available. | `submission_packages/computational_particle_mechanics_upload_ready/00_title_page_author_details.docx; submission_packages/computational_particle_mechanics_upload_ready/10_author_email_completion_sheet.csv; manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx` | `external_metadata_pending` | Confirm seven coauthor e-mails or leave only confirmed e-mail information if the live system does not require all author e-mails. |
+| Editable manuscript source | ScienceDirect Guide for Authors: submit editable source files where requested. | `submission_packages/computational_particle_mechanics_upload_ready/07_latex_source.zip; submission_packages/computational_particle_mechanics_upload_ready/12_full_author_manuscript_single_column.docx` | `ready` | Upload the LaTeX source zip or the single-column Word backup if the live system asks for editable source files at initial submission. |
 | Highlights | Prepared as Elsevier-system support material; upload only if the live submission workflow requests highlights. | `submission_packages/computational_particle_mechanics_upload_ready/02_highlights.docx` | `ready_if_requested` | Upload the DOCX or paste the five highlights only if the live system asks for them. |
 | Graphical abstract and artwork | ScienceDirect Guide for Authors: artwork files should be supplied separately; generative-AI artwork is not permitted. Graphical abstract is prepared only as live-system support material. | `submission_packages/computational_particle_mechanics_upload_ready/03_graphical_abstract.*; scripts/plot_apt_graphical_abstract.py` | `ready_if_requested` | Use the script-generated graphical abstract only if requested; do not upload generative-AI artwork. |
 | Declaration of competing interest | ScienceDirect Guide for Authors: declaration files/statements are required. | `submission_packages/computational_particle_mechanics_upload_ready/04_declaration_of_competing_interest.docx` | `ready` | Upload the declaration DOCX. |
@@ -29,6 +30,8 @@ Purpose: map current upload files and support files to the live journal requirem
 ## Summary
 
 - Local upload and reproducibility files are ready for live-system entry.
-- An optional blinded-review package is available for the double-anonymized review workflow if requested by the live system.
-- Highlights and graphical-abstract files are prepared as optional live-system support, not treated as confirmed compulsory CPM guide items.
+- The current prepared route is Elsevier/ScienceDirect with double-anonymized review.
+- The author-bearing PDF and single-column Word manuscript are retained for title-page, source-file, production or explicit live-system requests.
+- Article type, file categories and the system-generated PDF must be confirmed in the live submission system.
+- Highlights and graphical-abstract files are prepared as live-system support; upload them only where the submission workflow requests those item types.
 - The remaining non-local items are seven coauthor e-mail addresses, live article-type/category confirmation and system-generated PDF preview.

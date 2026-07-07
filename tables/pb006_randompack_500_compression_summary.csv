@@ -1,2 +1,0 @@
-case,mother_pebbles,subparticles,initial_internal_bonds,settled_bed_height_mm,compression_end_displacement_mm,thermo_final_broken_bonds,last_local_bond_dump_step,last_local_bond_dump_displacement_mm,localized_broken_bonds_to_last_dump,localized_breakage_events,localized_broken_pebbles,first_break_step,first_break_displacement_mm,first_break_pebble,first_break_new_bonds,top_height_bin_broken_bonds,second_height_bin_broken_bonds
-PB-006-bonded-randompack-500-prod-0p20mm-primitivewall,500,250000,2938000,3.99437,0.2,16,80000,0.1974975,271,11,5,30000,0.0724975,500,23,223,48

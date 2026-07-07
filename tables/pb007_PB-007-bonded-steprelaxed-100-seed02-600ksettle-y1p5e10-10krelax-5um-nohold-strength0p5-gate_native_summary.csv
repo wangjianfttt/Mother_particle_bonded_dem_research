@@ -1,2 +1,0 @@
-pair_file,inter_pebble_edges,inter_pebble_subcontacts,inter_pebble_force_sum_N,top_loaded_mother_pebbles,bottom_loaded_mother_pebbles,top_wall_force_z_N,bottom_wall_force_z_N,side_wall_force_z_N,all_wall_force_z_N,top_reachable_mother_pebbles,bottom_mothers_reachable_from_top,spanning_force_graph
-/Users/wangjian-macbook13/Documents/颗粒破碎统计研究/simulations/pebble_bed/PB-007/cases/PB-007-bonded-steprelaxed-100-seed02-600ksettle-y1p5e10-10krelax-5um-nohold-strength0p5-gate/post/pairs_final.local,28,34,0.02889460710148907,1,4,-0.0129718,0.007142611,0.0024573486,-0.0033718404,26,3,1

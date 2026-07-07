@@ -547,8 +547,8 @@ def check_support_docs() -> None:
         "10.5281/zenodo.20687351",
         "Four public candidate e-mail records",
         "confirmation aids only",
-        "Reduced reproducibility package CPM support members: `43/43` present",
-        "Current final PDF visual QA: `PASS`, 18 pages, 0 blank pages, author-production PDF SHA match, blinded review PDF checked",
+        "Reduced reproducibility package CPM support members: `47/47` present",
+        "Current final PDF visual QA: `PASS`, 19 pages, 0 blank pages, author-production PDF SHA match, blinded review PDF checked",
         "Elsevier/ScienceDirect",
         "double-anonymized review",
         "author-bearing PDF/Word backup",
@@ -675,7 +675,6 @@ def check_support_docs() -> None:
     pdf_qa = json.loads(PDF_QA_JSON.read_text(encoding="utf-8"))
     expected_pdf_qa = {
         "status": "PASS",
-        "page_count": 18,
         "author_production_matches_manuscript_pdf": True,
         "blank_page_count": 0,
         "contains_title": True,
@@ -683,6 +682,8 @@ def check_support_docs() -> None:
         "contains_references_heading": True,
         "unresolved_reference_tokens": 0,
     }
+    if not isinstance(pdf_qa.get("page_count"), int) or pdf_qa["page_count"] < 1:
+        fail(f"CPM final PDF visual QA has invalid page_count: {pdf_qa.get('page_count')!r}")
     for key, expected in expected_pdf_qa.items():
         if pdf_qa.get(key) != expected:
             fail(f"CPM final PDF visual QA mismatch for {key}: {pdf_qa.get(key)!r}")

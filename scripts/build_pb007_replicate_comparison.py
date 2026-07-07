@@ -1,9 +1,13 @@
 #!/usr/bin/env python3
-"""Build a publication-grade pilot/replicate comparison figure."""
+"""Build a mechanism-focused PB-007 comparison figure.
+
+The figure intentionally avoids using top-wall displacement as the dominant
+coordinate.  It re-expresses the corrected bed calculations as force-network,
+localization and endpoint mechanism variables.
+"""
 
 from __future__ import annotations
 
-from dataclasses import dataclass
 from pathlib import Path
 
 import matplotlib as mpl
@@ -15,205 +19,68 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[1]
 OUT_STEM = ROOT / "figures" / "pb007" / "pb007_replicate_comparison"
 SOURCE_DATA = ROOT / "data" / "processed" / "pb007_replicate_comparison_source_data.csv"
-SUMMARY_DATA = ROOT / "tables" / "pb007_macro_topology_event_metrics.csv"
-INITIAL_BONDS = 493_500
+MECHANISM_INDEX_TABLE = ROOT / "tables" / "pb007_mechanism_indices.csv"
+MACRO_DATA = ROOT / "tables" / "pb007_macro_topology_event_metrics.csv"
+EVENT_TOPOLOGY = ROOT / "tables" / "pb007_event_aligned_topology.csv"
+STRONG_FORCE_TAIL = ROOT / "tables" / "pb007_strong_force_tail_state_metrics.csv"
 
 
-@dataclass(frozen=True)
-class Case:
-    label: str
-    short: str
-    case_id: str
-    color: str
-    linestyle: str
-
-
-CASES = [
-    Case(
-        label="Pilot: localized microcracking",
-        short="Pilot",
-        case_id="PB-007-bonded-steprelaxed-100-pilot-y1p5e10-10krelax-60um-fracture-pilot",
-        color="#335C81",
-        linestyle="-",
-    ),
-    Case(
-        label="Independent replicate: intact to 60 um",
-        short="Independent",
-        case_id="PB-007-bonded-steprelaxed-100-seed02-600ksettle-y1p5e10-10krelax-60um-nohold-fracture-seed02",
-        color="#B85C38",
-        linestyle="-",
-    ),
-    Case(
-        label="Third bed: delayed microcracking",
-        short="Delayed",
-        case_id="PB-007-bonded-steprelaxed-100-seed03-600ksettle-y1p5e10-10krelax-60um-nohold-fracture-seed03",
-        color="#168A74",
-        linestyle="-",
-    ),
-    Case(
-        label="Independent replicate, 0.5x bond strength: intact",
-        short="0.5x audit",
-        case_id="PB-007-bonded-steprelaxed-100-seed02-600ksettle-y1p5e10-10krelax-60um-nohold-strength0p5-trigger-seed02",
-        color="#4F7F52",
-        linestyle="--",
-    ),
-    Case(
-        label="Independent replicate, 0.25x bond strength: intact",
-        short="0.25x audit",
-        case_id="PB-007-bonded-steprelaxed-100-seed02-600ksettle-y1p5e10-10krelax-60um-nohold-strength0p25-trigger-seed02",
-        color="#7C6A9D",
-        linestyle=":",
-    ),
-]
-
-
-def _read_thermo(case: Case) -> pd.DataFrame:
-    path = ROOT / "data" / "processed" / f"{case.case_id}_thermo.csv"
-    df = pd.read_csv(path)
-    df.columns = [c.strip() for c in df.columns]
-    for col in [
-        "Step",
-        "KinEng",
-        "top_disp",
-        "top_forc",
-        "bottom_f",
-        "side_for",
-        "all_wall",
-        "bond_bro",
-        "bond_int",
-    ]:
-        df[col] = pd.to_numeric(df[col], errors="coerce")
-    df = df[df["bond_int"] > 0].drop_duplicates(subset="Step", keep="last").copy()
-    df = df.sort_values("Step")
-    df["disp_um"] = df["top_disp"] * 1.0e6
-    df["top_force_mN"] = df["top_forc"].abs() * 1.0e3
-    df["broken_bonds"] = INITIAL_BONDS - df["bond_int"]
-    df["broken_bonds"] = df["broken_bonds"].clip(lower=0)
-    # Repeated run-0/load rows can share a displacement; keep the most damaged
-    # and highest-load state at each displayed displacement.
-    grouped = (
-        df.groupby("disp_um", as_index=False)
-        .agg(
-            top_force_mN=("top_force_mN", "max"),
-            broken_bonds=("broken_bonds", "max"),
-            kinetic_energy_J=("KinEng", "last"),
-        )
-        .sort_values("disp_um")
-    )
-    grouped["case"] = case.short
-    return grouped
-
-
-def _read_native(case: Case, thermo: pd.DataFrame) -> pd.DataFrame:
-    path = ROOT / "data" / "processed" / f"{case.case_id}_native_force_network_series.csv"
-    native = pd.read_csv(path)
-    for col in [
-        "timestep",
-        "inter_pebble_edges",
-        "inter_pebble_subcontacts",
-        "inter_pebble_force_sum_N",
-        "top_reachable_mother_pebbles",
-        "bottom_mothers_reachable_from_top",
-        "spanning_force_graph",
-    ]:
-        native[col] = pd.to_numeric(native[col], errors="coerce")
-    thermo_path = ROOT / "data" / "processed" / f"{case.case_id}_thermo.csv"
-    raw = pd.read_csv(thermo_path)
-    raw.columns = [c.strip() for c in raw.columns]
-    raw["Step"] = pd.to_numeric(raw["Step"], errors="coerce")
-    raw["top_disp"] = pd.to_numeric(raw["top_disp"], errors="coerce")
-    raw = raw.dropna(subset=["Step", "top_disp"]).drop_duplicates(subset="Step", keep="last")
-    step_to_disp = raw.set_index("Step")["top_disp"].to_dict()
-    native["disp_um"] = native["timestep"].map(step_to_disp).astype(float) * 1.0e6
-    if native["disp_um"].isna().any():
-        # Fall back to nearest thermo displacement if an event dump step is not
-        # exactly present in the compact thermo extraction.
-        raw_steps = raw["Step"].to_numpy(dtype=float)
-        raw_disp = raw["top_disp"].to_numpy(dtype=float)
-        missing = native["disp_um"].isna()
-        for idx, step in native.loc[missing, "timestep"].items():
-            nearest = int(np.argmin(np.abs(raw_steps - step)))
-            native.loc[idx, "disp_um"] = raw_disp[nearest] * 1.0e6
-    native["case"] = case.short
-    summary = _read_summary(case)
-    if "last_valid_bond_step" in summary.index and pd.notna(summary["last_valid_bond_step"]):
-        final_step = int(summary["last_valid_bond_step"])
-    else:
-        valid = raw[raw["top_disp"] <= float(summary["final_top_displacement_m"]) + 1.0e-12]
-        final_step = int(valid["Step"].max()) if not valid.empty else int(raw["Step"].max())
-    final_row = {
-        "timestep": final_step,
-        "inter_pebble_edges": float(summary["native_inter_pebble_edges"]),
-        "inter_pebble_subcontacts": np.nan,
-        "inter_pebble_force_sum_N": np.nan,
-        "inter_pebble_force_mean_N": np.nan,
-        "inter_pebble_force_max_N": np.nan,
-        "top_loaded_mother_pebbles": np.nan,
-        "bottom_loaded_mother_pebbles": np.nan,
-        "top_wall_force_z_N": np.nan,
-        "bottom_wall_force_z_N": np.nan,
-        "side_wall_force_z_N": np.nan,
-        "all_wall_force_z_N": np.nan,
-        "top_reachable_mother_pebbles": float(summary["native_top_reachable_mother_pebbles"]),
-        "bottom_mothers_reachable_from_top": float(summary["native_bottom_mothers_reachable_from_top"]),
-        "spanning_force_graph": float(summary["native_spanning_force_graph"]),
-        "disp_um": float(summary["final_top_displacement_um"]),
-        "case": case.short,
-    }
-    native = pd.concat([native, pd.DataFrame([final_row])], ignore_index=True)
-    native = native.drop_duplicates(subset=["disp_um"], keep="last")
-    return native.sort_values("disp_um")
-
-
-def _read_events(case: Case) -> pd.DataFrame:
-    path = ROOT / "data" / "processed" / f"{case.case_id}_breakage_events.csv"
-    if not path.exists() or path.stat().st_size == 0:
-        return pd.DataFrame()
-    df = pd.read_csv(path)
-    if df.empty:
-        return df
-    for col in ["top_displacement_mm", "new_broken_bonds", "cumulative_broken_bonds", "pebble_id"]:
-        df[col] = pd.to_numeric(df[col], errors="coerce")
-    df["disp_um"] = df["top_displacement_mm"] * 1000.0
-    df["case"] = case.short
-    return df
-
-
-def _read_summary(case: Case) -> pd.Series:
-    path = ROOT / "tables" / f"pb007_{case.case_id}_acceptance_summary.csv"
-    return pd.read_csv(path).iloc[0]
-
-
-def _event_step_series(case: Case, event_df: pd.DataFrame, summary: pd.Series) -> pd.DataFrame:
-    final_disp = float(summary["final_top_displacement_um"])
-    rows = [{"disp_um": 0.0, "cumulative_broken_bonds": 0.0, "new_broken_bonds": 0.0, "case": case.short}]
-    if not event_df.empty:
-        grouped = (
-            event_df.groupby("disp_um", as_index=False)
-            .agg(new_broken_bonds=("new_broken_bonds", "sum"))
-            .sort_values("disp_um")
-        )
-        cumulative = 0.0
-        for _, row in grouped.iterrows():
-            cumulative += float(row["new_broken_bonds"])
-            rows.append(
-                {
-                    "disp_um": float(row["disp_um"]),
-                    "cumulative_broken_bonds": cumulative,
-                    "new_broken_bonds": float(row["new_broken_bonds"]),
-                    "case": case.short,
-                }
-            )
-    if rows[-1]["disp_um"] < final_disp:
-        rows.append(
-            {
-                "disp_um": final_disp,
-                "cumulative_broken_bonds": rows[-1]["cumulative_broken_bonds"],
-                "new_broken_bonds": 0.0,
-                "case": case.short,
-            }
-        )
-    return pd.DataFrame(rows)
+CASE_STYLE = {
+    "pilot_localized_microcracking": {
+        "label": "Pilot",
+        "color": "#335C81",
+        "marker": "o",
+        "kind": "cracked",
+    },
+    "seed02_intact_to_60um": {
+        "label": "Independent",
+        "color": "#B85C38",
+        "marker": "s",
+        "kind": "intact",
+    },
+    "seed03_delayed_microcracking_to_60um": {
+        "label": "Delayed",
+        "color": "#168A74",
+        "marker": "^",
+        "kind": "cracked",
+    },
+    "seed04_early_microcracking_to_60um": {
+        "label": "Early",
+        "color": "#8B3A62",
+        "marker": "P",
+        "kind": "cracked",
+    },
+    "seed06_synchronous_microcracking_to_60um": {
+        "label": "Synchronous",
+        "color": "#D08A24",
+        "marker": "X",
+        "kind": "cracked",
+    },
+    "seed02_strength0p5_intact_to_60um": {
+        "label": "0.5x intact",
+        "color": "#4F7F52",
+        "marker": "D",
+        "kind": "strength_control",
+    },
+    "seed02_strength0p25_intact_to_60um": {
+        "label": "0.25x intact",
+        "color": "#7C6A9D",
+        "marker": "v",
+        "kind": "strength_control",
+    },
+    "seed09_200bed_intact_to_60um": {
+        "label": "200-bed",
+        "color": "#5E7CE2",
+        "marker": "h",
+        "kind": "scale",
+    },
+    "seed09_200bed_strength0p25_to_60um": {
+        "label": "200-bed 0.25x",
+        "color": "#2E6F40",
+        "marker": "*",
+        "kind": "scale",
+    },
+}
 
 
 def _style() -> None:
@@ -221,317 +88,393 @@ def _style() -> None:
         {
             "font.family": "sans-serif",
             "font.sans-serif": ["Arial", "Helvetica", "DejaVu Sans", "sans-serif"],
-            "svg.fonttype": "none",
-            "pdf.fonttype": 42,
-            "font.size": 7.2,
+            "font.size": 7.8,
+            "axes.labelsize": 7.8,
+            "axes.linewidth": 0.75,
             "axes.spines.top": False,
             "axes.spines.right": False,
-            "axes.linewidth": 0.7,
             "xtick.direction": "in",
             "ytick.direction": "in",
-            "xtick.major.width": 0.6,
-            "ytick.major.width": 0.6,
             "legend.frameon": False,
+            "pdf.fonttype": 42,
+            "ps.fonttype": 42,
+            "svg.fonttype": "none",
         }
     )
 
 
+def _prepare_macro() -> pd.DataFrame:
+    macro = pd.read_csv(MACRO_DATA)
+    macro["display_case"] = macro["case_label"].map(lambda key: CASE_STYLE[key]["label"])
+    macro["color"] = macro["case_label"].map(lambda key: CASE_STYLE[key]["color"])
+    macro["marker"] = macro["case_label"].map(lambda key: CASE_STYLE[key]["marker"])
+    macro["case_kind"] = macro["case_label"].map(lambda key: CASE_STYLE[key]["kind"])
+    macro["broken_bond_fraction"] = macro["broken_bonds_at_endpoint"] / macro["initial_internal_bonds"].replace(0, np.nan)
+    macro["damaged_fraction"] = macro["damaged_mother_pebbles"] / macro["mother_pebble_count"].replace(0, np.nan)
+    macro["network_reorganization_fraction"] = (
+        (macro["max_inter_mother_edges"] - macro["final_inter_mother_edges"])
+        / macro["max_inter_mother_edges"].replace(0, np.nan)
+    )
+    macro["force_relaxation_fraction"] = (
+        (macro["peak_top_force_N"] - macro["final_top_force_N"])
+        / macro["peak_top_force_N"].replace(0, np.nan)
+    )
+    macro["load_path_reach_fraction"] = macro["final_top_reachable_mothers"] / macro["mother_pebble_count"].replace(0, np.nan)
+    macro["bottom_reach_fraction"] = macro["final_bottom_reachable_from_top"] / macro["mother_pebble_count"].replace(0, np.nan)
+    macro["force_path_intensity_norm"] = (
+        macro["final_inter_pebble_force_sum_N"]
+        / macro["final_inter_pebble_force_sum_N"].max()
+    )
+    macro["broken_bond_fraction_x1e5"] = macro["broken_bond_fraction"] * 1.0e5
+    macro["damage_localization_index_bonds_per_damaged_mother"] = np.where(
+        macro["damaged_mother_pebbles"] > 0,
+        macro["broken_bonds_at_endpoint"] / macro["damaged_mother_pebbles"],
+        0.0,
+    )
+    macro["endpoint_damage_state"] = np.where(
+        macro["broken_bonds_at_endpoint"] > 0,
+        "localized microcracking",
+        "intact to endpoint",
+    )
+    macro["posthoc_mechanism_index"] = (
+        macro["force_path_intensity_norm"]
+        * (1.0 + macro["network_reorganization_fraction"].clip(lower=0.0))
+        * (1.0 + macro["force_relaxation_fraction"].clip(lower=0.0))
+    )
+    if STRONG_FORCE_TAIL.exists():
+        tail = pd.read_csv(STRONG_FORCE_TAIL)
+        tail = tail[tail["state_kind"] == "final"].copy()
+        tail = tail.rename(
+            columns={
+                "case_label": "display_case",
+                "inter_parent_force_sum_N": "tail_inter_parent_force_sum_N",
+                "F95_edge_force_N": "tail_F95_edge_force_N",
+                "F99_edge_force_N": "tail_F99_edge_force_N",
+                "top5_force_share": "tail_top5_force_share",
+                "top1_force_share": "tail_top1_force_share",
+            }
+        )
+        tail["display_case"] = tail["display_case"].replace(
+            {
+                "Intact": "Independent",
+                "Intact 0.5x": "0.5x intact",
+                "Intact 0.25x": "0.25x intact",
+            }
+        )
+        keep = [
+            "display_case",
+            "tail_inter_parent_force_sum_N",
+            "tail_F95_edge_force_N",
+            "tail_F99_edge_force_N",
+            "tail_top5_force_share",
+            "tail_top1_force_share",
+        ]
+        macro = macro.merge(tail[keep], on="display_case", how="left")
+    else:
+        macro["tail_F95_edge_force_N"] = np.nan
+        macro["tail_F99_edge_force_N"] = np.nan
+        macro["tail_top5_force_share"] = np.nan
+        macro["tail_top1_force_share"] = np.nan
+    return macro
+
+
+def _write_mechanism_index_table(macro: pd.DataFrame) -> None:
+    columns = [
+        "display_case",
+        "endpoint_damage_state",
+        "final_inter_pebble_force_sum_N",
+        "force_path_intensity_norm",
+        "network_reorganization_fraction",
+        "force_relaxation_fraction",
+        "broken_bonds_at_endpoint",
+        "broken_bond_fraction_x1e5",
+        "tail_F95_edge_force_N",
+        "tail_F99_edge_force_N",
+        "tail_top5_force_share",
+        "damaged_mother_pebbles",
+        "damage_localization_index_bonds_per_damaged_mother",
+        "final_top_reachable_mothers",
+        "final_bottom_reachable_from_top",
+        "posthoc_mechanism_index",
+    ]
+    out = macro[columns].copy()
+    out = out.sort_values(
+        ["broken_bonds_at_endpoint", "posthoc_mechanism_index"],
+        ascending=[False, False],
+    )
+    MECHANISM_INDEX_TABLE.parent.mkdir(parents=True, exist_ok=True)
+    out.to_csv(MECHANISM_INDEX_TABLE, index=False)
+
+
+def _source_data(macro: pd.DataFrame, events: pd.DataFrame) -> pd.DataFrame:
+    macro_source = macro.copy()
+    macro_source["source_panel"] = "a_c_d_endpoint_mechanism"
+    event_source = events.copy()
+    event_source["source_panel"] = "b_event_aligned_topology"
+    return pd.concat([macro_source, event_source], ignore_index=True, sort=False)
+
+
+def _scatter_cases(ax: plt.Axes, macro: pd.DataFrame) -> None:
+    for _, row in macro.iterrows():
+        size = 58 + 220 * float(row["damaged_fraction"])
+        edge = "#222222" if row["case_kind"] == "cracked" else "white"
+        alpha = 0.98 if row["case_kind"] != "strength_control" else 0.62
+        if row["case_kind"] == "scale":
+            alpha = 0.88
+        ax.scatter(
+            row["final_inter_pebble_force_sum_N"],
+            row["broken_bonds_at_endpoint"],
+            s=size,
+            marker=row["marker"],
+            color=row["color"],
+            edgecolor=edge,
+            linewidth=0.65,
+            alpha=alpha,
+            zorder=3,
+            label=row["display_case"],
+        )
+    intact = macro[macro["case_kind"].isin(["intact", "strength_control", "scale"])]
+    if not intact.empty:
+        ax.text(
+            max(float(intact["final_inter_pebble_force_sum_N"].min()) + 0.03, 0.08),
+            0.75,
+            "intact/control\nbeds",
+            fontsize=6.0,
+            color="0.28",
+            ha="left",
+            va="bottom",
+        )
+    ax.set_xlabel("Endpoint inter-particle force sum (N)")
+    ax.set_ylabel("Endpoint broken internal bonds")
+    xmin = max(0.0, float(macro["final_inter_pebble_force_sum_N"].min()) - 0.05)
+    xmax = float(macro["final_inter_pebble_force_sum_N"].max()) + 0.10
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(-0.8, 11.8)
+
+
+def _plot_event_topology(ax: plt.Axes, events: pd.DataFrame) -> None:
+    if events.empty:
+        ax.text(0.5, 0.5, "No event-aligned topology rows", transform=ax.transAxes, ha="center", va="center")
+        return
+
+    grouped = (
+        events.groupby(
+            [
+                "case_label",
+                "event_timestep",
+                "event_displacement_um",
+                "force_sum_ratio_next_to_previous",
+                "delta_inter_mother_edges",
+            ],
+            as_index=False,
+        )
+        .agg(
+            new_broken_bonds=("new_broken_bonds", "sum"),
+            damaged_pebbles=("pebble_id", "nunique"),
+            cumulative_broken_bonds=("cumulative_broken_bonds", "max"),
+        )
+        .sort_values(["case_label", "event_timestep"])
+    )
+
+    x = grouped["force_sum_ratio_next_to_previous"].astype(float)
+    y = grouped["delta_inter_mother_edges"].astype(float)
+    for _, row in grouped.iterrows():
+        style = next(
+            item for item in CASE_STYLE.values() if item["label"] == row["case_label"]
+        )
+        size = 64 + 18 * float(row["new_broken_bonds"])
+        ax.scatter(
+            row["force_sum_ratio_next_to_previous"],
+            row["delta_inter_mother_edges"],
+            s=size,
+            marker=style["marker"],
+            color=style["color"],
+            edgecolor="#222222",
+            linewidth=0.55,
+            zorder=4,
+        )
+    ax.axvline(1.0, color="0.72", lw=0.75, ls=(0, (2, 2)), zorder=0)
+    ax.axhline(0.0, color="0.72", lw=0.75, ls=(0, (2, 2)), zorder=0)
+    ax.set_xlabel("Next / previous inter-particle force sum")
+    ax.set_ylabel("Change in force-network edges")
+    ax.set_xlim(max(0.0, float(x.min()) - 0.18), max(3.0, float(x.max()) + 0.35))
+    y_pad = max(4.0, 0.12 * (float(y.max()) - float(y.min()) or 1.0))
+    ax.set_ylim(float(y.min()) - y_pad, float(y.max()) + y_pad)
+
+
+def _plot_reachability(ax: plt.Axes, macro: pd.DataFrame) -> None:
+    for _, row in macro.iterrows():
+        alpha = 0.95 if row["case_kind"] != "strength_control" else 0.55
+        if row["case_kind"] == "scale":
+            alpha = 0.82
+        ax.scatter(
+            row["final_bottom_reachable_from_top"],
+            row["final_top_reachable_mothers"],
+            s=70 + 9 * row["broken_bonds_at_endpoint"],
+            marker=row["marker"],
+            color=row["color"],
+            edgecolor="#222222" if row["case_kind"] in {"cracked", "scale"} else "white",
+            linewidth=0.55,
+            alpha=alpha,
+        )
+        if row["case_kind"] == "cracked":
+            dx = 0.35 if row["display_case"] == "Pilot" else 0.55
+            dy = 0.45 if row["display_case"] == "Pilot" else 0.25
+            ax.text(
+                row["final_bottom_reachable_from_top"] + dx,
+                row["final_top_reachable_mothers"] + dy,
+                f"{int(row['broken_bonds_at_endpoint'])} bonds",
+                fontsize=6.2,
+                color=row["color"],
+            )
+    intact = macro[macro["case_kind"].isin(["intact", "strength_control", "scale"])]
+    if not intact.empty:
+        ax.text(
+            0.98,
+            0.92,
+            "intact/control beds:\n0 bonds",
+            transform=ax.transAxes,
+            fontsize=6.2,
+            color="0.34",
+            ha="right",
+            va="top",
+        )
+    ax.set_xlabel("Bottom-contacting parent particles reachable from top")
+    ax.set_ylabel("Top-reachable parent particles")
+    xmin = max(0.0, float(macro["final_bottom_reachable_from_top"].min()) - 1.2)
+    xmax = float(macro["final_bottom_reachable_from_top"].max()) + 1.8
+    ymin = max(0.0, float(macro["final_top_reachable_mothers"].min()) - 3.0)
+    ymax = float(macro["final_top_reachable_mothers"].max()) + 3.0
+    ax.set_xlim(xmin, xmax)
+    ax.set_ylim(ymin, ymax)
+
+
+def _plot_fingerprint(ax: plt.Axes, macro: pd.DataFrame) -> None:
+    metrics = [
+        ("final_inter_pebble_force_sum_N", "Force-path\nintensity", "N", "{:.2f}"),
+        ("tail_F95_edge_force_N", "F95 edge\nforce", "N", "{:.3f}"),
+        ("network_reorganization_fraction", "Network\nreorganization", "fraction", "{:.2f}"),
+        ("force_relaxation_fraction", "Force\nrelaxation", "fraction", "{:.2f}"),
+        ("broken_bond_fraction", "Broken-bond\nfraction", "x1e-5", "{:.2f}"),
+    ]
+    y_positions = np.arange(len(metrics))[::-1]
+    ordered_names = list(macro["display_case"])
+    offsets = {
+        name: offset
+        for name, offset in zip(
+            ordered_names,
+            np.linspace(0.24, -0.30, len(ordered_names)),
+        )
+    }
+    for metric_index, (column, label, unit, fmt) in enumerate(metrics):
+        values = macro.set_index("display_case")[column].astype(float)
+        denom = float(values.max()) if float(values.max()) > 0 else 1.0
+        base = y_positions[metric_index]
+        for _, row in macro.iterrows():
+            name = row["display_case"]
+            raw = float(row[column])
+            value = raw / denom
+            y = base + offsets[name]
+            ax.plot([0, value], [y, y], color=row["color"], lw=1.65, alpha=0.30)
+            ax.scatter(value, y, s=24, marker=row["marker"], color=row["color"], edgecolor="white", linewidth=0.45)
+            if name in {"Pilot", "Independent", "Delayed", "Early", "Synchronous", "200-bed", "200-bed 0.25x"}:
+                display = raw * 1.0e5 if column == "broken_bond_fraction" else raw
+                ax.text(min(value + 0.035, 1.05), y, fmt.format(display), ha="left", va="center", fontsize=5.9, color=row["color"])
+        ax.text(-0.03, base, f"{label}\n({unit})", ha="right", va="center", fontsize=6.1, color="0.20")
+    ax.axvline(1.0, color="0.82", lw=0.65, zorder=0)
+    ax.set_xlim(-0.02, 1.23)
+    ax.set_ylim(-0.62, len(metrics) - 0.35)
+    ax.set_yticks([])
+    ax.set_xlabel("Normalized within each variable")
+
+
 def main() -> None:
     _style()
-    OUT_STEM.parent.mkdir(parents=True, exist_ok=True)
+    macro = _prepare_macro()
+    events = pd.read_csv(EVENT_TOPOLOGY)
     SOURCE_DATA.parent.mkdir(parents=True, exist_ok=True)
+    _source_data(macro, events).to_csv(SOURCE_DATA, index=False)
+    _write_mechanism_index_table(macro)
 
-    thermo = {case.short: _read_thermo(case) for case in CASES}
-    native = {case.short: _read_native(case, thermo[case.short]) for case in CASES}
-    events = {case.short: _read_events(case) for case in CASES}
-    summaries = {case.short: _read_summary(case) for case in CASES}
-    macro = pd.read_csv(SUMMARY_DATA)
-    macro_short = {
-        "pilot_localized_microcracking": "Pilot",
-        "seed02_intact_to_60um": "Independent",
-        "seed03_delayed_microcracking_to_60um": "Delayed",
-        "seed02_strength0p5_intact_to_60um": "0.5x audit",
-        "seed02_strength0p25_intact_to_60um": "0.25x audit",
-    }
-    macro["case"] = macro["case_label"].map(macro_short)
-    macro = macro.dropna(subset=["case"]).copy()
-    event_steps = {
-        case.short: _event_step_series(case, events[case.short], summaries[case.short])
-        for case in CASES
-    }
-
-    source_frames: list[pd.DataFrame] = []
-    for case in CASES:
-        t = thermo[case.short].copy()
-        t["source_panel"] = "a_b_thermo"
-        source_frames.append(t)
-        n = native[case.short].copy()
-        n["source_panel"] = "c_d_native"
-        source_frames.append(n)
-        if not events[case.short].empty:
-            e = events[case.short].copy()
-            e["source_panel"] = "b_event_markers"
-            source_frames.append(e)
-        es = event_steps[case.short].copy()
-        es["source_panel"] = "b_event_step_series"
-        source_frames.append(es)
-    pd.concat(source_frames, ignore_index=True, sort=False).to_csv(SOURCE_DATA, index=False)
-
-    fig = plt.figure(figsize=(7.25, 4.85))
+    fig = plt.figure(figsize=(7.35, 4.55))
     gs = fig.add_gridspec(
         2,
         3,
         left=0.075,
         right=0.985,
-        bottom=0.11,
-        top=0.88,
-        width_ratios=[1.48, 1.02, 1.18],
-        height_ratios=[1.18, 1.0],
+        bottom=0.105,
+        top=0.855,
+        width_ratios=[1.08, 1.12, 1.18],
+        height_ratios=[1.0, 1.0],
         wspace=0.52,
-        hspace=0.46,
+        hspace=0.55,
     )
-    ax_force = fig.add_subplot(gs[0, :2])
-    ax_bonds = fig.add_subplot(gs[1, 0])
-    ax_edges = fig.add_subplot(gs[1, 1])
+    ax_map = fig.add_subplot(gs[0, 0])
+    ax_event = fig.add_subplot(gs[0, 1])
+    ax_reach = fig.add_subplot(gs[1, 0:2])
     ax_fingerprint = fig.add_subplot(gs[:, 2])
-    wash = "#FBFAF7"
-    for ax in [ax_force, ax_bonds, ax_edges, ax_fingerprint]:
-        ax.set_facecolor(wash)
+    axes = [ax_map, ax_event, ax_reach, ax_fingerprint]
+    for ax in axes:
+        ax.set_facecolor("#FBFAF7")
 
-    for case in CASES:
-        df = thermo[case.short]
-        force_alpha = 1.0 if case.short in {"Pilot", "Independent", "Delayed"} else 0.45
-        force_lw = 1.85 if case.short in {"Pilot", "Independent", "Delayed"} else 0.9
-        ax_force.plot(
-            df["disp_um"],
-            df["top_force_mN"],
-            color=case.color,
-            lw=force_lw,
-            ls=case.linestyle,
-            alpha=force_alpha,
-            label=case.short,
-        )
-        bdf = event_steps[case.short]
-        ax_bonds.step(
-            bdf["disp_um"],
-            bdf["cumulative_broken_bonds"],
-            where="post",
-            color=case.color,
-            lw=1.55,
-            ls=case.linestyle,
-            label=case.short,
-        )
-        nd = native[case.short]
-        if case.short in {"Pilot", "Independent", "Delayed"}:
-            ax_edges.plot(nd["disp_um"], nd["inter_pebble_edges"], marker="o", ms=3.4, lw=1.4, ls=case.linestyle, color=case.color)
-            ax_edges.plot(nd["disp_um"], nd["top_reachable_mother_pebbles"], marker="s", ms=3.0, lw=1.15, ls="--", color=case.color, alpha=0.82)
+    _scatter_cases(ax_map, macro)
+    _plot_event_topology(ax_event, events)
+    _plot_reachability(ax_reach, macro)
+    _plot_fingerprint(ax_fingerprint, macro)
 
-    plotted_events = pd.concat(
-        [
-            event_steps[name].loc[event_steps[name]["new_broken_bonds"] > 0].copy()
-            for name in ["Pilot", "Delayed"]
-            if not event_steps[name].empty
-        ],
-        ignore_index=True,
-    )
-    plotted_events["event_index"] = np.arange(1, len(plotted_events) + 1)
-    if not plotted_events.empty:
-        ax_bonds.scatter(
-            plotted_events["disp_um"],
-            plotted_events["cumulative_broken_bonds"],
-            s=22,
-            color="#222222",
-            zorder=4,
-            linewidth=0.3,
-            edgecolor="white",
+    for label, ax in zip("abcd", axes):
+        ax.text(
+            0.02,
+            0.98,
+            label,
+            transform=ax.transAxes,
+            fontsize=9.2,
+            fontweight="bold",
+            ha="left",
+            va="top",
+            clip_on=True,
         )
-        for _, row in plotted_events.iterrows():
-            ax_force.axvline(row["disp_um"], color="#A8364B", lw=0.65, ls=(0, (2, 2)), alpha=0.55, zorder=0)
-        for _, row in plotted_events.iterrows():
-            is_first_event = float(row["disp_um"]) < 30.0
-            ax_bonds.annotate(
-                f"+{int(row['new_broken_bonds'])}",
-                xy=(row["disp_um"], row["cumulative_broken_bonds"]),
-                xytext=(7 if is_first_event else 0, 12 if is_first_event else 8),
-                textcoords="offset points",
-                ha="left" if is_first_event else "center",
-                va="bottom",
-                fontsize=6.5,
-                color="#222222",
-                bbox=dict(boxstyle="round,pad=0.12", facecolor=wash, edgecolor="none", alpha=0.96),
+
+    handles = []
+    labels = []
+    plotted_case_labels = set(macro["case_label"])
+    for key, style in CASE_STYLE.items():
+        if key not in plotted_case_labels:
+            continue
+        handles.append(
+            mpl.lines.Line2D(
+                [],
+                [],
+                marker=style["marker"],
+                linestyle="None",
+                markerfacecolor=style["color"],
+                markeredgecolor="#222222" if style["kind"] == "cracked" else "white",
+                markersize=5.2,
             )
-
-    ax_force.text(
-        0.03,
-        0.90,
-        "pilot and third bed microcrack locally",
-        transform=ax_force.transAxes,
-        color=CASES[0].color,
-        fontsize=7.0,
-        fontweight="bold",
-        ha="left",
-    )
-    ax_force.text(
-        0.97,
-        0.13,
-        "one independent bed and weakened-bond audits remain intact",
-        transform=ax_force.transAxes,
-        color="0.30",
-        fontsize=6.6,
-        ha="right",
-    )
-    ax_force.set_xlabel("Top-wall displacement (µm)")
-    ax_force.set_ylabel("Top-wall force (mN)")
-    ax_force.set_xlim(0, 61.0)
-    ax_force.set_title("macroscopic response separates intact and locally cracking beds", loc="left", fontweight="bold")
-    ax_force.legend(
-        loc="upper right",
-        ncol=2,
-        fontsize=5.8,
-        handlelength=1.8,
-        columnspacing=0.75,
-    )
-    ax_bonds.set_xlabel("Top-wall displacement (µm)")
-    ax_bonds.set_ylabel("Event-localized broken bonds")
-    ax_bonds.set_xlim(0, 61.0)
-    ax_bonds.set_ylim(-0.5, 11.2)
-    ax_bonds.set_yticks([0, 2, 4, 6, 8, 10])
-    ax_bonds.text(
-        0.05,
-        0.13,
-        "pilot: 5 bonds\nthird bed: 10 bonds\nintact bed/audits: 0",
-        transform=ax_bonds.transAxes,
-        ha="left",
-        va="bottom",
-        fontsize=6.1,
-        fontweight="bold",
-        color="0.15",
-        bbox=dict(boxstyle="round,pad=0.16", facecolor=wash, edgecolor="none", alpha=0.96),
-    )
-    ax_bonds.set_title("fracture event boundary", loc="left", fontweight="bold")
-
-    ax_edges.set_xlabel("Top-wall displacement (µm)")
-    ax_edges.set_ylabel("Mother-pebble count / edge count")
-    ax_edges.set_xlim(0, 61.0)
-    ax_edges.set_ylim(0, 90)
-    ax_edges.text(
-        0.05,
-        0.95,
-        "circles: edges\nsquares: top-reachable",
-        transform=ax_edges.transAxes,
-        ha="left",
-        va="top",
-        fontsize=5.4,
-        color="0.25",
-        bbox=dict(boxstyle="round,pad=0.12", facecolor=wash, edgecolor="none", alpha=0.90),
-    )
-    ax_edges.text(
-        0.04,
-        0.08,
-        "all corrected cases\nretain spanning graphs",
-        transform=ax_edges.transAxes,
-        ha="left",
-        va="bottom",
-        fontsize=6.3,
-        color="#168A74",
-        fontweight="bold",
-    )
-    ax_edges.set_title("native force-network topology", loc="left", fontweight="bold")
-
-    metrics = [
-        ("final_top_force_N", "Endpoint\nforce", "mN", 1000.0, "{:.0f}"),
-        ("broken_bonds_at_endpoint", "Broken\nbonds", "bonds", 1.0, "{:.0f}"),
-        ("final_inter_pebble_force_sum_N", "Inter-pebble\nforce sum", "N", 1.0, "{:.2f}"),
-        ("final_bottom_reachable_from_top", "Bottom\nreachability", "pebbles", 1.0, "{:.0f}"),
-    ]
-    y_positions = np.arange(len(metrics))[::-1]
-    offsets = {
-        "Pilot": 0.28,
-        "Independent": 0.14,
-        "Delayed": 0.0,
-        "0.5x audit": -0.14,
-        "0.25x audit": -0.28,
-    }
-    case_lookup = {case.short: case for case in CASES}
-    for metric_idx, (column, label, unit, scale, fmt) in enumerate(metrics):
-        values = macro.set_index("case")[column].astype(float)
-        max_value = values.max()
-        denom = max_value if max_value > 0 else 1.0
-        y_base = y_positions[metric_idx]
-        for case in CASES:
-            value = float(values.loc[case.short])
-            normalized = value / denom
-            y = y_base + offsets[case.short]
-            ax_fingerprint.plot(
-                [0, normalized],
-                [y, y],
-                color=case.color,
-                lw=1.8,
-                alpha=0.30,
-                solid_capstyle="round",
-            )
-            ax_fingerprint.scatter(
-                normalized,
-                y,
-                s=24,
-                color=case.color,
-                edgecolor="white",
-                linewidth=0.45,
-                zorder=3,
-            )
-            display_value = fmt.format(value * scale)
-            if case.short in {"Pilot", "Independent", "Delayed"}:
-                ax_fingerprint.text(
-                    min(normalized + 0.035, 1.04),
-                    y,
-                    display_value,
-                    ha="left",
-                    va="center",
-                    fontsize=5.7,
-                    color=case.color,
-                )
-            if case.short in {"0.5x audit", "0.25x audit"} and column == "broken_bonds_at_endpoint":
-                ax_fingerprint.text(
-                    min(normalized + 0.035, 1.04),
-                    y,
-                    "0",
-                    ha="left",
-                    va="center",
-                    fontsize=5.4,
-                    color=case.color,
-                )
-        ax_fingerprint.text(
-            -0.035,
-            y_base,
-            f"{label}\n({unit})",
-            ha="right",
-            va="center",
-            fontsize=5.8,
-            color="0.20",
         )
-    ax_fingerprint.axvline(1.0, color="0.80", lw=0.6, zorder=0)
-    ax_fingerprint.set_xlim(-0.02, 1.18)
-    ax_fingerprint.set_ylim(-0.65, len(metrics) - 0.35)
-    ax_fingerprint.set_xlabel("Normalized within each endpoint metric")
-    ax_fingerprint.set_yticks([])
-    ax_fingerprint.set_title("endpoint mechanism fingerprint", loc="left", fontweight="bold", fontsize=7.8)
-    for label, ax in zip("abcd", [ax_force, ax_bonds, ax_edges, ax_fingerprint]):
-        ax.text(-0.12, 1.07, label, transform=ax.transAxes, fontsize=9, fontweight="bold", va="top")
-
-    fig.suptitle(
-        "Corrected cases separate load-path connectivity from fracture onset",
-        x=0.08,
-        ha="left",
-        y=0.992,
-        fontsize=8.8,
-        fontweight="bold",
+        labels.append(style["label"])
+    fig.legend(
+        handles,
+        labels,
+        loc="upper center",
+        bbox_to_anchor=(0.54, 0.985),
+        ncol=5,
+        fontsize=6.4,
+        columnspacing=0.85,
+        handletextpad=0.35,
     )
-    fig.savefig(OUT_STEM.with_suffix(".svg"), bbox_inches="tight")
-    fig.savefig(OUT_STEM.with_suffix(".pdf"), bbox_inches="tight")
-    fig.savefig(OUT_STEM.with_suffix(".png"), dpi=600, bbox_inches="tight")
-    fig.savefig(OUT_STEM.with_suffix(".tiff"), dpi=600, bbox_inches="tight")
+
+    OUT_STEM.parent.mkdir(parents=True, exist_ok=True)
+    for suffix, kwargs in {
+        ".svg": {},
+        ".pdf": {},
+        ".png": {"dpi": 600},
+        ".tiff": {"dpi": 600},
+    }.items():
+        fig.savefig(OUT_STEM.with_suffix(suffix), bbox_inches="tight", **kwargs)
     print(OUT_STEM.with_suffix(".png"))
     print(SOURCE_DATA)
+    print(MECHANISM_INDEX_TABLE)
 
 
 if __name__ == "__main__":

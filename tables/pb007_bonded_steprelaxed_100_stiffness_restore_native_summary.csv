@@ -1,2 +1,0 @@
-pair_file,inter_pebble_edges,inter_pebble_subcontacts,inter_pebble_force_sum_N,top_loaded_mother_pebbles,bottom_loaded_mother_pebbles,top_wall_force_z_N,bottom_wall_force_z_N,side_wall_force_z_N,all_wall_force_z_N,top_reachable_mother_pebbles,bottom_mothers_reachable_from_top,spanning_force_graph
-simulations/pebble_bed/PB-007/cases/PB-007-bonded-steprelaxed-100-pilot-stiffness-restore-hold/post/pairs_final.local,19,21,0.046134867927780834,2,1,-0.0067664100000000005,0.000383521,-0.00140271,-0.007785599,8,0,0

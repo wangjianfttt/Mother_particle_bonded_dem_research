@@ -1,2 +1,0 @@
-case,npebbles,localized_events,localized_broken_bonds,broken_pebbles,first_break_displacement_mm,first_break_pebble_id,final_top_force_N,top_bin_broken_bonds,second_bin_broken_bonds,bed_height_mm,top_bin_count,global_mean_degree
-PB-006-bonded-randompack-1000-seed01-orient02-prod-0p15mm-targeted-window-restartable,1000,9,95,1,0.0724975,1000,12.174007,95,0,7.912032999999999,58,5.128

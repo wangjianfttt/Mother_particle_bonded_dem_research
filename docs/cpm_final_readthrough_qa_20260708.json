@@ -1,0 +1,41 @@
+{
+  "generated_at": "2026-07-08T00:51:56",
+  "status": "PASS",
+  "results": [
+    {
+      "name": "pdf_visual_qa_freshness",
+      "status": "PASS",
+      "detail": "all visual-QA checks passed"
+    },
+    {
+      "name": "reader_facing_forbidden_terms",
+      "status": "PASS",
+      "detail": "no hits"
+    },
+    {
+      "name": "display_item_references",
+      "status": "PASS",
+      "detail": "fig_labels=6, table_labels=4, fig_refs={1: True, 2: True, 3: True, 4: True, 5: True, 6: True}, table_refs={1: True, 2: True, 3: True, 4: True}, duplicates=[]"
+    },
+    {
+      "name": "strong_force_tail_numbers",
+      "status": "PASS",
+      "detail": "missing_tex=[], missing_pdf=[]"
+    },
+    {
+      "name": "upload_nested_figures",
+      "status": "PASS",
+      "detail": "all required figure PDFs present"
+    },
+    {
+      "name": "support_package_force_tail_sources",
+      "status": "PASS",
+      "detail": "force-tail sources present"
+    },
+    {
+      "name": "large_local_raw_residue",
+      "status": "PASS",
+      "detail": "no local raw-like files above 20 MiB"
+    }
+  ]
+}

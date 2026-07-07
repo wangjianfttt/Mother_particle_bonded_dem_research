@@ -1,4 +1,0 @@
-case,subparticles,initial_bonds,peak_top_force_N,peak_displacement_mm,first_break_displacement_mm,final_broken_bonds,final_fragment_count,largest_fragment_fraction,second_fragment_fraction,loading_velocity_m_per_s
-SP-RES-500,500,5876,19.395593,0.2605,0.095,475,35,0.474,0.46,0.1
-SP-RATE-500-0p05-FULL,500,5876,18.840352,0.23325,0.0945,454,33,0.472,0.466,0.05
-SP-RATE-500-0p03-FULL,500,5876,17.350181,0.2457,0.0945,521,39,0.474,0.452,0.03

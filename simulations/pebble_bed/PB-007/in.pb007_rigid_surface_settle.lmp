@@ -18,9 +18,16 @@ variable        poisson        index 0.30
 variable        cor            index 0.20
 variable        mu             index 0.60
 variable        box_half       index 3.0e-3
+variable        factory_half   index 2.5e-3
+variable        factory_zlo    index 0.010
+variable        factory_zhi    index 0.022
+variable        domain_half    index 3.5e-3
+variable        domain_zhi     index 0.025
+variable        particle_rate  index 2000
+variable        insert_every   index 5000
 variable        insert_seed    index 32452843
 
-region          domain block -0.0035 0.0035 -0.0035 0.0035 0.0 0.025 units box
+region          domain block -${domain_half} ${domain_half} -${domain_half} ${domain_half} 0.0 ${domain_zhi} units box
 create_box      2 domain
 
 neighbor        8.5e-5 bin
@@ -47,10 +54,10 @@ fix             zlo all wall/gran model hertz tangential history primitive type 
 fix             body all particletemplate/multisphere 15485863 atom_type 1 density constant ${rho} &
                 nspheres 500 ntry 1000000 spheres file data/template_rigid.multisphere scale 1.0 type 1
 fix             pdd all particledistribution/discrete/numberbased 15485867 1 body 1.0
-region          factory block -0.0025 0.0025 -0.0025 0.0025 0.010 0.022 units box
+region          factory block -${factory_half} ${factory_half} -${factory_half} ${factory_half} ${factory_zlo} ${factory_zhi} units box
 
 fix             ins all insert/rate/region seed ${insert_seed} distributiontemplate pdd &
-                nparticles ${npebbles} particlerate 2000 insert_every 5000 &
+                nparticles ${npebbles} particlerate ${particle_rate} insert_every ${insert_every} &
                 maxattempt 5000 overlapcheck yes all_in yes random_distribute exact &
                 vel constant 0.0 0.0 -0.10 orientation random region factory ntry_mc 10000
 

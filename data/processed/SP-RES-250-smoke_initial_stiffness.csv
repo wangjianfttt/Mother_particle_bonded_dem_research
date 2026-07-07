@@ -1,6 +1,0 @@
-metric,value
-source_csv,/Users/wangjian-macbook13/Documents/颗粒破碎统计研究/data/processed/SP-RES-250-smoke_thermo.csv
-force_threshold_N,0.05
-fit_points,0
-initial_stiffness_N_per_mm,
-intercept_N,

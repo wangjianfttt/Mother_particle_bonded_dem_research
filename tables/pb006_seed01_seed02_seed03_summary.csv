@@ -1,4 +1,0 @@
-seed,case,localized_events,localized_broken_bonds,broken_pebbles,first_break_displacement_mm,first_break_pebble_id,first_event_new_broken_bonds,final_top_force_N,top_bin_broken_bonds,second_bin_broken_bonds
-seed01,PB-006-bonded-randompack-500-prod-0p20mm-primitivewall,11,271,5,0.0724975,500,23,27.017553,223,48
-seed02,PB-006-bonded-randompack-500-seed02-prod-0p20mm-primitivewall,9,246,4,0.0724975,500,42,27.412001,210,36
-seed03,PB-006-bonded-randompack-500-seed03-prod-0p20mm-primitivewall,22,559,7,0.0724975,500,23,47.85561,500,59

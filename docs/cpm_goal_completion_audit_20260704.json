@@ -1,7 +1,8 @@
 {
-  "generated_at": "2026-07-06T00:57:50",
+  "generated_at": "2026-07-08T00:51:37",
   "overall_status": "ready_after_external_author_metadata",
   "preflight_status": "PASS",
+  "final_readthrough_status": "PASS",
   "large_raw_residue_count": 0,
   "active_large_raw_count": 0,
   "nas_archive": {
@@ -16,25 +17,25 @@
     ]
   },
   "readiness": {
-    "generated_at": "2026-07-06T00:57:49",
+    "generated_at": "2026-07-08T00:51:36",
     "target_journal": "Computational Particle Mechanics",
     "manuscript_title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
     "doi": "https://doi.org/10.5281/zenodo.20687351",
     "github_repository": "wangjianfttt/Mother_particle_bonded_dem_research",
     "preflight_status": "PASS",
-    "preflight_output": "PASS CPM public reproducibility package: 85 files, manifest, checksum, representative inputs and public-file hygiene verified\nPASS CPM scientific alignment: manuscript, cover letter, fields and gap map match\nPASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries\nPASS CPM submission package: manifest=19, figures=19, figure source-data gate, docx=11, DOI, guide alignment, public reproducibility package, live packet and double-anonymous blinded review manuscript verified",
+    "preflight_output": "PASS CPM public reproducibility package: 93 files, manifest, checksum, representative inputs and public-file hygiene verified\nPASS CPM scientific alignment: manuscript, cover letter, fields and gap map match\nPASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries\nPASS CPM submission package: manifest=19, figures=19, figure source-data gate, docx=11, DOI, guide alignment, public reproducibility package, live packet and double-anonymous blinded review manuscript verified",
     "upload_package": "submission_packages/computational_particle_mechanics_upload_ready.zip",
-    "upload_package_bytes": 6644057,
-    "upload_package_sha256": "3c1fe15f2a2f3b10f9ab6f41ce713a3bde95f177a476bdc6f4a22d1ab864ca44",
+    "upload_package_bytes": 6784262,
+    "upload_package_sha256": "61491d96fd34289984259141cc68102aa264c47849346bf926fb0a2de8d930ae",
     "reproducibility_package": "submission_packages/repaired_submission_package.zip",
-    "reproducibility_package_bytes": 8118694,
-    "reproducibility_package_sha256": "5dcd890c00de285f963901fbafa62400e82400492ab8de2f58b73f7c67501d57",
+    "reproducibility_package_bytes": 8194931,
+    "reproducibility_package_sha256": "bc07dace8e03f4234b5aec71e4ae292fb84ab0eff0873ef66e18e92e9e306a70",
     "public_reproducibility_package": "submission_packages/computational_particle_mechanics_public_reproducibility_package.zip",
-    "public_reproducibility_package_bytes": 3621304,
-    "public_reproducibility_package_sha256": "d7fe47d1d5f91e11008338fd1e69423d441ef5322253daa44c6228bcef3fbb97",
-    "public_reproducibility_package_members": 85,
-    "required_repro_support_members": 44,
-    "present_repro_support_members": 44,
+    "public_reproducibility_package_bytes": 3713713,
+    "public_reproducibility_package_sha256": "0c8396103d8798c70b8f957885aa0e77bc72b08ba7d0972af8da51ccbe53a495",
+    "public_reproducibility_package_members": 93,
+    "required_repro_support_members": 47,
+    "present_repro_support_members": 47,
     "missing_repro_support_members": [],
     "manifest_rows": 19,
     "upload_zip_members": 20,
@@ -58,6 +59,336 @@
       "Use the current Elsevier/ScienceDirect double-anonymized route and confirm article type/category in the live system.",
       "Confirm the article type and upload categories in the live submission system.",
       "Preview the system-generated submission PDF before final submit."
+    ]
+  },
+  "pdf_visual_qa": {
+    "generated_at": "2026-07-08T00:18:15",
+    "manuscript_pdf": "manuscript/computational_particle_mechanics_submission.pdf",
+    "author_production_pdf": "submission_packages/computational_particle_mechanics_upload_ready/11_full_author_manuscript_for_production.pdf",
+    "blinded_review_pdf": "submission_packages/computational_particle_mechanics_upload_ready/01_review_manuscript_blinded.pdf",
+    "manuscript_pdf_sha256": "f32c5e4f4ac7d4399de745b58ffa019d75d24ad872705ab1959ed0e58e26410d",
+    "author_production_pdf_sha256": "f32c5e4f4ac7d4399de745b58ffa019d75d24ad872705ab1959ed0e58e26410d",
+    "blinded_review_pdf_sha256": "e3bed6f592d5d0e75b03ee1e47ddeeef941c281329e2b38834628fa74af99c85",
+    "author_production_matches_manuscript_pdf": true,
+    "blinded_review_forbidden_hits": [],
+    "visual_qa_dir": "docs/pdf_visual_qa/cpm_final_submission_20260704",
+    "contact_sheet": "docs/pdf_visual_qa/cpm_final_submission_20260704/contact_sheet.png",
+    "page_count": 19,
+    "contains_title": true,
+    "contains_doi": true,
+    "contains_references_heading": true,
+    "unresolved_reference_tokens": 0,
+    "page_metrics": [
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-01.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 8.0177,
+        "nonwhite_ratio": 0.059108,
+        "content_bbox": [
+          215,
+          243,
+          972,
+          1369
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-02.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 9.6294,
+        "nonwhite_ratio": 0.071145,
+        "content_bbox": [
+          214,
+          250,
+          972,
+          1365
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-03.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 8.8421,
+        "nonwhite_ratio": 0.065969,
+        "content_bbox": [
+          214,
+          255,
+          971,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-04.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 8.9966,
+        "nonwhite_ratio": 0.067214,
+        "content_bbox": [
+          215,
+          250,
+          971,
+          1365
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-05.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 6.492,
+        "nonwhite_ratio": 0.048982,
+        "content_bbox": [
+          216,
+          246,
+          971,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-06.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 6.6009,
+        "nonwhite_ratio": 0.065945,
+        "content_bbox": [
+          215,
+          253,
+          971,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-07.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 6.0653,
+        "nonwhite_ratio": 0.060578,
+        "content_bbox": [
+          215,
+          253,
+          971,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-08.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 6.66,
+        "nonwhite_ratio": 0.048945,
+        "content_bbox": [
+          215,
+          246,
+          971,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-09.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 5.8682,
+        "nonwhite_ratio": 0.074862,
+        "content_bbox": [
+          215,
+          255,
+          971,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-10.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 9.376,
+        "nonwhite_ratio": 0.069569,
+        "content_bbox": [
+          215,
+          250,
+          972,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-11.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 7.436,
+        "nonwhite_ratio": 0.056451,
+        "content_bbox": [
+          216,
+          256,
+          971,
+          1365
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-12.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 6.8978,
+        "nonwhite_ratio": 0.051865,
+        "content_bbox": [
+          216,
+          246,
+          971,
+          1365
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-13.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 7.2125,
+        "nonwhite_ratio": 0.05702,
+        "content_bbox": [
+          215,
+          257,
+          971,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-14.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 8.853,
+        "nonwhite_ratio": 0.065763,
+        "content_bbox": [
+          214,
+          250,
+          971,
+          1365
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-15.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 8.7077,
+        "nonwhite_ratio": 0.064133,
+        "content_bbox": [
+          215,
+          250,
+          971,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-16.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 7.9523,
+        "nonwhite_ratio": 0.05752,
+        "content_bbox": [
+          215,
+          249,
+          972,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-17.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 7.9079,
+        "nonwhite_ratio": 0.058062,
+        "content_bbox": [
+          218,
+          249,
+          971,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-18.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 7.7605,
+        "nonwhite_ratio": 0.056894,
+        "content_bbox": [
+          218,
+          249,
+          972,
+          1366
+        ],
+        "blank_flag": false
+      },
+      {
+        "file": "docs/pdf_visual_qa/cpm_final_submission_20260704/page-19.png",
+        "width": 1190,
+        "height": 1540,
+        "mean_ink_distance": 2.3414,
+        "nonwhite_ratio": 0.017236,
+        "content_bbox": [
+          218,
+          249,
+          970,
+          1366
+        ],
+        "blank_flag": false
+      }
+    ],
+    "blank_page_count": 0,
+    "blank_pages": [],
+    "status": "PASS"
+  },
+  "final_readthrough": {
+    "generated_at": "2026-07-08T00:51:36",
+    "status": "PASS",
+    "results": [
+      {
+        "name": "pdf_visual_qa_freshness",
+        "status": "PASS",
+        "detail": "all visual-QA checks passed"
+      },
+      {
+        "name": "reader_facing_forbidden_terms",
+        "status": "PASS",
+        "detail": "no hits"
+      },
+      {
+        "name": "display_item_references",
+        "status": "PASS",
+        "detail": "fig_labels=6, table_labels=4, fig_refs={1: True, 2: True, 3: True, 4: True, 5: True, 6: True}, table_refs={1: True, 2: True, 3: True, 4: True}, duplicates=[]"
+      },
+      {
+        "name": "strong_force_tail_numbers",
+        "status": "PASS",
+        "detail": "missing_tex=[], missing_pdf=[]"
+      },
+      {
+        "name": "upload_nested_figures",
+        "status": "PASS",
+        "detail": "all required figure PDFs present"
+      },
+      {
+        "name": "support_package_force_tail_sources",
+        "status": "PASS",
+        "detail": "force-tail sources present"
+      },
+      {
+        "name": "large_local_raw_residue",
+        "status": "PASS",
+        "detail": "no local raw-like files above 20 MiB"
+      }
     ]
   },
   "rows": [
@@ -85,14 +416,21 @@
     {
       "requirement": "Rebuilt manuscript mainline and display evidence",
       "status": "achieved",
-      "evidence": "Target-specific TeX/PDF, source-data matrix, six main figures, local TIFF artwork and editable figure package are present and checked by the CPM figure source-data gate.",
+      "evidence": "Target-specific TeX/PDF, source-data matrix, six main figures, local TIFF artwork and editable figure package are present; final PDF visual QA status=PASS, pages=19, blank pages=0.",
       "current_file_or_command": "manuscript/computational_particle_mechanics_submission.*; submission_packages/computational_particle_mechanics_upload_ready/09_main_figures.zip",
       "remaining_action": "Keep claims synchronized with the finite-window evidence matrix."
     },
     {
+      "requirement": "Final read-through and stale-wording guard",
+      "status": "achieved",
+      "evidence": "PASS pdf_visual_qa_freshness: all visual-QA checks passed; PASS reader_facing_forbidden_terms: no hits; PASS display_item_references: fig_labels=6, table_labels=4, fig_refs={1: True, 2: True, 3: True, 4: True, 5: True, 6: True}, table_refs={1: True, 2: True, 3: True, 4: True}, duplicates=[]; PASS strong_force_tail_numbers: missing_tex=[], missing_pdf=[]; PASS upload_nested_figures: all required figure PDFs present; PASS support_package_force_tail_sources: force-tail sources present; PASS large_local_raw_residue: no local raw-like files above 20 MiB; <project-root>/docs/cpm_final_readthrough_qa_20260708.md",
+      "current_file_or_command": "scripts/check_cpm_final_readthrough.py; docs/cpm_final_readthrough_qa_20260708.json",
+      "remaining_action": "Rerun after any manuscript, figure, upload-package or support-package rebuild."
+    },
+    {
       "requirement": "Official-guide and submission package readiness",
       "status": "achieved",
-      "evidence": "PASS CPM public reproducibility package: 85 files, manifest, checksum, representative inputs and public-file hygiene verified; PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match; PASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries; PASS CPM submission package: manifest=19, figures=19, figure source-data gate, docx=11, DOI, guide alignment, public reproducibility package, live packet and double-anonymous blinded review manuscript verified",
+      "evidence": "PASS CPM public reproducibility package: 93 files, manifest, checksum, representative inputs and public-file hygiene verified; PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match; PASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries; PASS CPM submission package: manifest=19, figures=19, figure source-data gate, docx=11, DOI, guide alignment, public reproducibility package, live packet and double-anonymous blinded review manuscript verified",
       "current_file_or_command": "scripts/check_computational_particle_mechanics_submission_package.py; docs/cpm_submission_readiness_report_20260704.json",
       "remaining_action": "Use the blinded review package for the current Elsevier/ScienceDirect double-anonymized route; keep the author-bearing PDF/Word manuscript for title-page, source-file, production or explicit live-system requests."
     },

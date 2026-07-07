@@ -1,0 +1,6 @@
+descriptor,zero_loss_range,cracking_range,overlap_between_endpoint_classes,finite_window_separation,manuscript_use
+final inter-particle force sum,0.253-0.253 N,0.575-1.33 N,no,minimum cracking value / maximum zero-loss value = 2.28,Use as the strongest endpoint state variable in the current finite windows.
+bond-strength multiplier,0.25-1,0.25-1,yes,"0.25x, 0.50x and 1.00x appear in both endpoint classes",Use to show that strength multiplier must be read with packing geometry.
+top-reachable parent-particle count,67,46-79,yes,reachability overlaps across endpoint classes,"Use as a connectivity descriptor, not as a single separator."
+bottom-contacting particles reachable from top,18,10-14,no,zero-loss rows have higher bottom reachability in the current finite windows,Use together with force intensity and damage chronology.
+endpoint broken-bond count,0 bonds,10-15 bonds,no,output class definition,"Use as the observed response, not as a predictor."

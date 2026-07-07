@@ -1,4 +1,0 @@
-label,case,event_count,total_broken_bonds,damaged_pebbles,damaged_pebble_ids,first_break_displacement_mm,last_event_displacement_mm,post_last_event_quiet_window_mm,max_burst_bonds,mean_waiting_displacement_mm,top_pebble_damage_fraction,top_bin_broken_bonds,second_bin_broken_bonds
-1000-bed A,PB-006-bonded-randompack-1000-seed01-prod-0p15mm-targeted-window-restartable,15,98,3,961;980;1000,0.0674975,0.1499975,2.4999999999886224e-06,20,0.005892857142857143,0.6428571428571429,98,0
-orientation replicate,PB-006-bonded-randompack-1000-seed01-orient02-prod-0p15mm-targeted-window-restartable,9,95,1,1000,0.0724975,0.1199975,0.030002499999999988,27,0.0059375,1.0,95,0
-1000-bed B,PB-006-bonded-randompack-1000-seed02-prod-0p15mm-targeted-window-restartable,31,316,5,949;997;998;999;1000,0.0599975,0.1499975,2.4999999999886224e-06,21,0.003,0.3829113924050633,316,0

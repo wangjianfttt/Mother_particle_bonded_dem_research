@@ -1,2 +1,0 @@
-pair_file,inter_pebble_edges,inter_pebble_subcontacts,inter_pebble_force_sum_N,top_loaded_mother_pebbles,bottom_loaded_mother_pebbles,top_wall_force_z_N,bottom_wall_force_z_N,side_wall_force_z_N,all_wall_force_z_N,top_reachable_mother_pebbles,bottom_mothers_reachable_from_top,spanning_force_graph
-simulations/pebble_bed/PB-007/cases/PB-007-bonded-loadpath-100-pilot-10um-sixmesh/post/pairs_final.local,163,291,0.0009726023486996597,2,27,-0.001780596193,0.0003547691,7.847194573000001e-06,-0.0014179798984269999,99,26,1

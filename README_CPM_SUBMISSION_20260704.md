@@ -20,15 +20,25 @@ https://doi.org/10.5281/zenodo.20687351
   `submission_packages/repaired_submission_package.zip`
 - Reduced reproducibility checksum:
   `submission_packages/repaired_submission_package.zip.sha256`
-- Optional blinded-review package for double-anonymized review:
-  `submission_packages/computational_particle_mechanics_blinded_review_optional.zip`
-- Optional blinded-review checksum:
-  `submission_packages/computational_particle_mechanics_blinded_review_optional.zip.sha256`
+- Blinded-review package for double-anonymized review:
+  `submission_packages/computational_particle_mechanics_blinded_review_package.zip`
+- Blinded-review checksum:
+  `submission_packages/computational_particle_mechanics_blinded_review_package.zip.sha256`
 
-The upload-ready package contains the manuscript PDF, Highlights, graphical
-abstract, declaration, cover letter, author contribution file, LaTeX source zip
-and editorial-system paste fields, separate main-figure files and an author
-e-mail completion sheet.
+The upload-ready package contains the blinded review manuscript PDF/source,
+separate title-page and author metadata file, Highlights, graphical abstract,
+declaration, cover letter, author contribution file, LaTeX source zip and
+editorial-system paste fields, separate main-figure files, an author e-mail
+completion sheet and the full author manuscript for title-page or
+production-source roles only, plus a single-column Word manuscript backup for
+source-file requests.
+
+Route note: the package is prepared for the current Elsevier/ScienceDirect
+double-anonymized route. The Springer journal page states that submissions
+closed there on 1 July 2025 and points authors to the Elsevier journal site.
+Use the blinded manuscript as the review manuscript. Keep the full author
+manuscript and single-column Word source for title-page, source-file,
+production or explicit live-system requests.
 
 The reduced reproducibility package contains manuscript-level source data,
 tables, figure-generation scripts, checking scripts, figures, the rebuilt
@@ -47,7 +57,7 @@ files and representative input files to support manuscript-level regeneration.
 ## Basic verification
 
 ```bash
-/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/check_computational_particle_mechanics_submission_package.py
+<user-home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/check_computational_particle_mechanics_submission_package.py
 (cd submission_packages && shasum -a 256 -c repaired_submission_package.zip.sha256)
 (cd submission_packages && shasum -a 256 -c computational_particle_mechanics_upload_ready.zip.sha256)
 ```
@@ -81,15 +91,17 @@ zip because it records the current package checksum. The latest local status is
 metadata item is seven coauthor e-mail addresses if the live submission system
 requires every author's e-mail address.
 
-Two public candidate e-mail records are listed in
+Four public candidate e-mail records are listed in
 `docs/cpm_author_email_public_lookup_20260704.md` for corresponding-author
 confirmation. They are not counted as completed author metadata until confirmed
 by the coauthors.
 
-The optional blinded-review package is provided because the official guide
-states that the journal uses a double-anonymized review process. Use it only if
-the live submission workflow requests a blinded manuscript file; otherwise use
-the full manuscript in the main upload package.
+The blinded-review package is provided because the ScienceDirect Guide for
+Authors states that the journal uses a double-anonymized review process. Use the
+blinded manuscript as the review manuscript. Use the full author-bearing
+manuscript, single-column Word backup and author details for title-page,
+metadata, source-file or production roles. A legacy compatibility copy is also available as
+`submission_packages/computational_particle_mechanics_blinded_review_optional.zip`.
 
 Practical submission support files are:
 
@@ -101,13 +113,13 @@ Practical submission support files are:
 Regenerate the readiness report with:
 
 ```bash
-/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
+<user-home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
 ```
 
 Regenerate the live-submission packet with:
 
 ```bash
-/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_live_submission_packet.py
+<user-home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_live_submission_packet.py
 ```
 
 The package check also runs:

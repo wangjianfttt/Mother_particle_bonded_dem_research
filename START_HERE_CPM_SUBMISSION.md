@@ -18,13 +18,23 @@ Use:
 
 - `submission_packages/computational_particle_mechanics_upload_ready.zip`
 
+Route note:
+
+- The Springer journal page states that submissions closed there on 1 July
+  2025 and points authors to the Elsevier journal site.
+- The current ScienceDirect Guide for Authors supports double-anonymized
+  review, and the package is prepared for that path.
+- Use the blinded manuscript as the review manuscript. Keep the author-bearing PDF/Word backup for title-page, source-file, production or explicit live-system requests.
+
 Checksum:
 
 - `submission_packages/computational_particle_mechanics_upload_ready.zip.sha256`
 
 This zip contains:
 
-- `01_manuscript.pdf` - manuscript PDF
+- `00_title_page_author_details.docx` - title page and author metadata
+- `01_review_manuscript_blinded.pdf` - blinded review manuscript PDF
+- `01_review_manuscript_blinded.tex` - blinded review manuscript source
 - `02_highlights.docx` - Highlights
 - `03_graphical_abstract.png` / `.tiff` - graphical abstract
 - `03_graphical_abstract.pdf` / `.svg` - editable graphical abstract backups
@@ -35,16 +45,23 @@ This zip contains:
 - `08_editorial_submission_fields.docx`
 - `09_main_figures.zip`
 - `10_author_email_completion_sheet.docx` / `.csv`
+- `11_full_author_manuscript_for_production.pdf` - full author manuscript for
+  title-page or production-source roles only
+- `12_full_author_manuscript_single_column.docx` - single-column Word
+  manuscript backup for source-file requests only
 - `README_upload_roles.txt`
 
-Optional double-anonymized review support:
+Double-anonymized review manuscript package:
 
-- `submission_packages/computational_particle_mechanics_blinded_review_optional.zip`
-- `submission_packages/computational_particle_mechanics_blinded_review_optional.zip.sha256`
+- `submission_packages/computational_particle_mechanics_blinded_review_package.zip`
+- `submission_packages/computational_particle_mechanics_blinded_review_package.zip.sha256`
 
-Use this optional package only if the live submission system asks for a blinded
-manuscript file. The main upload package remains the authoritative full
-submission package.
+Use the blinded manuscript as the review manuscript for the Elsevier /
+ScienceDirect double-anonymized review route. Use the full author-bearing
+manuscript, single-column Word backup and author-details files for title-page,
+metadata, source-file or production roles.
+A legacy compatibility copy remains available as
+`submission_packages/computational_particle_mechanics_blinded_review_optional.zip`.
 
 ## Current external item
 
@@ -97,7 +114,7 @@ Support files for this step:
 Run:
 
 ```bash
-/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/check_computational_particle_mechanics_submission_package.py
+<user-home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/check_computational_particle_mechanics_submission_package.py
 ```
 
 Expected result:
@@ -105,7 +122,7 @@ Expected result:
 ```text
 PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match
 PASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries
-PASS CPM submission package: manifest=15, figures=19, docx=9, DOI, guide alignment, live packet and optional blinded package verified
+PASS CPM submission package: manifest=19, figures=19, docx=11, DOI, guide alignment, live packet and double-anonymous blinded review manuscript verified
 ```
 
 Current machine-readable readiness report:
@@ -118,9 +135,10 @@ Current machine-readable readiness report:
 Latest local status recorded in the readiness report:
 
 - Local package ready: `True`
-- Reduced reproducibility package CPM support members: `42/42` present
+- Reduced reproducibility package CPM support members: `47/47` present
 - Missing reduced-package CPM support members: `0`
-- Current final PDF visual QA: `PASS`, 18 pages, 0 blank pages, manuscript/upload PDF SHA match
+- Current final PDF visual QA: `PASS`, 19 pages, 0 blank pages, author-production PDF SHA match, blinded review PDF checked
+- Single-column Word manuscript backup: `12_full_author_manuscript_single_column.docx`
 - External metadata still pending: seven coauthor e-mail addresses if the live
   submission system requires all author e-mails
 
@@ -138,7 +156,7 @@ Current literature-gap and novelty support:
 Regenerate it with:
 
 ```bash
-/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
+<user-home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 scripts/build_cpm_submission_readiness_report.py
 ```
 
 The reduced reproducibility package remains:

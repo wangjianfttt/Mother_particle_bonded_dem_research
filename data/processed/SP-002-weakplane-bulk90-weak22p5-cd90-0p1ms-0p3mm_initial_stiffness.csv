@@ -1,6 +1,0 @@
-metric,value
-source_csv,data/processed/SP-002-weakplane-bulk90-weak22p5-cd90-0p1ms-0p3mm_thermo.csv
-force_threshold_N,0.05
-fit_points,6
-initial_stiffness_N_per_mm,480.42775314478814
-intercept_N,-48.192208275815524

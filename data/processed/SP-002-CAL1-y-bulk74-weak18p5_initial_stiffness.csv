@@ -1,6 +1,0 @@
-metric,value
-source_csv,/Users/wangjian-macbook13/Documents/颗粒破碎统计研究/data/processed/SP-002-CAL1-y-bulk74-weak18p5_thermo.csv
-force_threshold_N,0.05
-fit_points,6
-initial_stiffness_N_per_mm,483.4290171447912
-intercept_N,-48.50379097781584

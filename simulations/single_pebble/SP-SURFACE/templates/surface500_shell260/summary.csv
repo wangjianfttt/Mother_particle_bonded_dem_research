@@ -1,2 +1,0 @@
-count,shell_count,core_count,subparticle_radius_mm,shell_radius_mm,minimum_shell_spacing_mm,diameter_min_mm,diameter_q01_mm,diameter_q05_mm,diameter_median_mm,diameter_q95_mm,diameter_max_mm
-500,260,240,0.042171633265087466,0.45782836673491256,0.08777474712543856,0.9903604299953309,0.992438647673011,0.993547280838977,0.9963924141428038,0.9988925507981148,0.9999658019717721

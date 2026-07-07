@@ -1,2 +1,0 @@
-case_id,purpose,contact_young_Pa,top_speed_m_per_s,final_step_valid,nominal_initial_intact_bonds,final_valid_intact_bonds,spurious_bonds_lost,final_top_displacement_m,final_top_force_N,final_bottom_force_N,final_side_wall_force_z_N,final_all_wall_force_z_N,interpretation
-PB-007-bonded-steprelaxed-100-pilot-stiffness-restore-hold,zero-displacement stiffness-restoration check,90000000000.0,0.0,6001,493500,493486,14,0.0,0.006766,-0.000383,0.001096,0.007478,fails zero-pre-damage criterion after direct stiffness restoration

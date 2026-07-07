@@ -1,5 +1,0 @@
-top_speed_m_s,peak_top_force_N,peak_bottom_force_N,first_break_displacement_mm,final_broken_bonds,source_csv
-1.0,6.6665597,5.4772435,0.10500000000000001,193.0,data/processed/SP-002-strength-50MPa_thermo.csv
-0.5,7.1879479,5.4395284,0.1075,123.0,data/processed/SP-002-speed-0p5ms-50MPa_thermo.csv
-0.25,6.9870008,5.8185261,0.10625,105.0,data/processed/SP-002-speed-0p25ms-50MPa_thermo.csv
-0.1,6.4455429,6.0572662,0.10900000000000001,106.0,data/processed/SP-002-speed-0p1ms-50MPa_thermo.csv

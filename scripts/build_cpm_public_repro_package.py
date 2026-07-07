@@ -55,11 +55,15 @@ PUBLIC_EXACT_FILES = {
     "docs/cpm_material_response_summary_20260704.md",
     "docs/cpm_official_submission_guide_alignment_20260704.csv",
     "docs/cpm_official_submission_guide_alignment_20260704.md",
-    "docs/cpm_submission_readiness_report_20260704.md",
     "docs/cpm_goal_completion_audit_20260704.md",
+    "docs/cpm_goal_completion_audit_20260704.csv",
+    "docs/cpm_goal_completion_audit_20260704.json",
     "docs/repaired_manuscript_evidence_status_20260704.md",
     "docs/repaired_full_pdf_visual_qa_20260704.md",
     "docs/cpm_final_pdf_visual_qa_20260704.md",
+    "docs/cpm_final_pdf_visual_qa_20260704.json",
+    "docs/cpm_final_readthrough_qa_20260708.md",
+    "docs/cpm_final_readthrough_qa_20260708.json",
     "docs/nas_raw_dump_storage_check_20260704_1736.md",
     "data/figure_source/pb007_material_strength_response.csv",
     "data/figure_source/pb007_material_strength_response_progress.csv",
@@ -72,6 +76,8 @@ PUBLIC_EXACT_FILES = {
     "tables/pb007_material_strength_matrix_summary.csv",
     "tables/pb007_mechanism_indices.csv",
     "tables/pb007_mechanism_variable_separation.csv",
+    "tables/pb007_strong_force_retention.csv",
+    "tables/pb007_strong_force_tail_state_metrics.csv",
     "simulations/single_pebble/SP-002/in.plate_compression_weakplane.lmp",
     "simulations/single_pebble/SP-RESOLUTION/in.resolution_compression.lmp",
     "simulations/single_pebble/SP-RESOLUTION/templates/sp_500_d1mm_nooverlap/particles.csv",
@@ -88,9 +94,11 @@ PUBLIC_EXACT_FILES = {
     "scripts/build_repaired_full_latex.py",
     "scripts/check_repaired_full_manuscript_consistency.py",
     "scripts/check_computational_particle_mechanics_submission_package.py",
+    "scripts/check_cpm_final_readthrough.py",
     "scripts/summarize_pb007_material_parameter_response.py",
     "scripts/summarize_pb007_mechanism_metrics.py",
     "scripts/summarize_pb007_mechanism_variable_separation.py",
+    "scripts/summarize_pb007_strong_force_retention.py",
     "scripts/plot_main_workflow_figure.py",
 }
 
@@ -154,9 +162,9 @@ def sanitize_text_file(path: Path) -> None:
         return
     replacements = {
         str(ROOT): "<project-root>",
-        "/Users/wangjian-macbook13/Documents/颗粒破碎统计研究": "<project-root>",
-        "/Users/wangjian-macbook13/Documents": "<project-root-parent>",
-        "/Users/wangjian-macbook13": "<user-home>",
+        "<project-root>": "<project-root>",
+        "<project-root-parent>": "<project-root-parent>",
+        "<user-home>": "<user-home>",
     }
     for old, new in replacements.items():
         text = text.replace(old, new)

@@ -1,2 +1,0 @@
-case_id,final_step,atoms,mother_pebbles,x_span_mm,zlo_mm,zhi_mm,bed_height_mm,final_ke_multisphere_J,total_neighbors,max_height_gate_mm,min_neighbors_gate,rigid_pack_gate_status
-PB-007-rigid-surface-100-seed03-600ksettle,600000,50000,100,6.0002232,-0.0003027999999999999,3.4981316000000002,3.4984344,6.1684936e-10,12348,6.0,5000,pass

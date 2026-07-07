@@ -86,11 +86,11 @@ Use the bundled Codex Python runtime if `python-docx` is not installed in the
 system Python:
 
 ```bash
-/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+<user-home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
   scripts/build_cpm_public_repro_package.py
-/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+<user-home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
   scripts/build_repaired_submission_package.py
-/Users/wangjian-macbook13/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
+<user-home>/.cache/codex-runtimes/codex-primary-runtime/dependencies/python/bin/python3 \
   scripts/check_computational_particle_mechanics_submission_package.py
 python3 scripts/check_cpm_public_repro_package.py
 python3 scripts/check_repaired_submission_package.py
@@ -114,3 +114,14 @@ repaired_submission_package.zip: OK
 
 Please cite the archived package using the DOI above. A GitHub citation file is
 provided in `CITATION.cff`.
+
+
+## Public Reproducibility Package
+
+This folder is the public code/data package for the Computational Particle
+Mechanics manuscript. It intentionally excludes cover letters, author e-mail
+collection files, live submission packets and editorial upload work files.
+
+Package archive: `submission_packages/computational_particle_mechanics_public_reproducibility_package.zip`
+Checksum file: `submission_packages/computational_particle_mechanics_public_reproducibility_package.zip.sha256`
+Repository DOI: https://doi.org/10.5281/zenodo.20687351

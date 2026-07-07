@@ -1,3 +1,0 @@
-case_id,stage,subparticle_count,mother_diameter_mm,subparticle_diameter_mean_mm,bond_normal_stiffness,bond_shear_stiffness,bond_tensile_strength,bond_shear_strength,bond_radius_multiplier,friction_particle_particle,friction_particle_wall,loading_rate,peak_load_N,initial_stiffness_N_mm,broken_bond_count_at_peak,fragment_count,notes
-SP-000,single_pebble,,,,,,,,,,,,,,,,baseline placeholder
-PB-000,pebble_bed,,,,,,,,,,,,,,,,baseline placeholder

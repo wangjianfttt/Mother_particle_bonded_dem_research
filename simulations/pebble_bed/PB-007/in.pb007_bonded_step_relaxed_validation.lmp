@@ -41,6 +41,7 @@ variable        sigma_weak     index 2.25e7
 variable        tau_weak       index 2.25e7
 variable        create_dist    equal 2.00e-4
 variable        create_weak    equal 9.00e-5
+variable        final_extra_steps index 0
 
 region          reg block -0.03 0.03 -0.03 0.03 -0.03 0.08 units box
 create_box      3 reg
@@ -154,6 +155,12 @@ variable        top_disp equal ${load_i}*${top_speed}*${dt}*${increment_steps}
 run             ${hold_steps}
 next            load_i
 jump            SELF load_loop
+
+fix             move_top_extra all move/mesh mesh mesh_top linear 0.0 0.0 -${top_speed}
+run             ${final_extra_steps}
+unfix           move_top_extra
+variable        top_disp delete
+variable        top_disp equal ${n_increments}*${top_speed}*${dt}*${increment_steps}+${top_speed}*${dt}*${final_extra_steps}
 
 write_dump      all custom post/particles_final.dump id type x y z vx vy vz radius
 dump            bonds_final all local 1 post/bonds_final.local c_bond_force[7] c_bond_force[8]

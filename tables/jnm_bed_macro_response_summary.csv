@@ -1,4 +1,0 @@
-case,settled_bed_height_mm,first_break_displacement_mm,first_break_engineering_strain_percent,pressure_near_first_break_MPa,endpoint_pressure_MPa,localized_broken_bonds,damaged_mother_pebbles
-Bed A,3.99437,0.0724975,1.8149921013826964,0.01576332148760331,0.2232855619834711,271,5
-Bed B,4.08026,0.0724975,1.7767862832270493,0.0006186679421487604,0.22654546280991736,246,4
-Bed C,3.8153,0.0724975,1.900178229759128,0.04494259256198348,0.3955009090909091,559,7

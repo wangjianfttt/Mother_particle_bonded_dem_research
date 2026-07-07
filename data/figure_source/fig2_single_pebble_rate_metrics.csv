@@ -1,0 +1,4 @@
+case,loading_velocity_m_s,peak_top_force_N,first_break_displacement_mm,largest_fragment_fraction,second_fragment_fraction,fragment_count
+SP-RES-500,0.1,19.395593,0.095,0.474,0.46,35
+SP-RATE-500-0p05-FULL,0.05,18.840352,0.0945,0.472,0.466,33
+SP-RATE-500-0p03-FULL,0.03,17.350181,0.0945,0.474,0.452,39

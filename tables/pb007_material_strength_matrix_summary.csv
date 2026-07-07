@@ -1,0 +1,12 @@
+case_label,geometry_class,strength_multiplier,case_status,final_displacement_um,broken_bonds_at_endpoint,first_event_displacement_um,damaged_mother_pebbles,final_inter_pebble_force_sum_N,final_top_reachable_mothers,final_bottom_reachable_from_top,final_spanning_force_graph
+seed04_strength0p25,early_cracking,0.25,completed_postprocessed,60.0,15,19.0,2,0.8708695396361767,56,13,1
+seed04_strength0p5,early_cracking,0.5,completed_postprocessed,60.0,10,19.0,2,1.1956111326061798,62,13,1
+seed04_strength0p75,early_cracking,0.75,completed_postprocessed,60.0,10,19.0,2,1.3275441519827584,53,12,1
+seed04_nominal,early_cracking,1.0,completed_postprocessed,60.0,10,19.0,2,0.5754712409648477,46,10,1
+seed02_strength0p25,intact_geometry,0.25,completed_postprocessed,60.0,0,,0,0.2526280110783732,67,18,1
+seed02_strength0p5,intact_geometry,0.5,completed_postprocessed,60.0,0,,0,0.2526280110783732,67,18,1
+seed02_nominal,intact_geometry,1.0,completed_postprocessed,60.0,0,,0,0.2527022955195097,67,18,1
+seed06_strength0p25,synchronous_cracking,0.25,completed_postprocessed,60.0,15,19.0,3,0.7472596833685103,76,10,1
+seed06_strength0p5,synchronous_cracking,0.5,completed_postprocessed,60.0,10,19.0,2,0.8530619257881701,73,14,1
+seed06_strength0p75,synchronous_cracking,0.75,completed_postprocessed,60.0,10,29.0,2,1.1797217011143295,79,14,1
+seed06_nominal,synchronous_cracking,1.0,completed_postprocessed,60.0,10,39.0,2,0.9447621714911172,72,12,1

@@ -1,0 +1,12 @@
+case_label,geometry_class,strength_multiplier,endpoint_class,final_inter_pebble_force_sum_N,final_top_reachable_mothers,final_bottom_reachable_from_top,first_event_displacement_um,broken_bonds_at_endpoint,damaged_mother_pebbles,force_sum_separation_rule_current_windows
+seed04_nominal,early_cracking,1.0,localized cracking,0.5754712409648477,46,10,19.0,10,2,True
+seed04_strength0p75,early_cracking,0.75,localized cracking,1.3275441519827584,53,12,19.0,10,2,True
+seed04_strength0p5,early_cracking,0.5,localized cracking,1.1956111326061798,62,13,19.0,10,2,True
+seed04_strength0p25,early_cracking,0.25,localized cracking,0.8708695396361767,56,13,19.0,15,2,True
+seed06_nominal,synchronous_cracking,1.0,localized cracking,0.9447621714911172,72,12,39.0,10,2,True
+seed06_strength0p75,synchronous_cracking,0.75,localized cracking,1.1797217011143295,79,14,29.0,10,2,True
+seed06_strength0p5,synchronous_cracking,0.5,localized cracking,0.8530619257881701,73,14,19.0,10,2,True
+seed06_strength0p25,synchronous_cracking,0.25,localized cracking,0.7472596833685103,76,10,19.0,15,3,True
+seed02_nominal,intact_geometry,1.0,zero-loss endpoint,0.2527022955195097,67,18,,0,0,False
+seed02_strength0p5,intact_geometry,0.5,zero-loss endpoint,0.2526280110783732,67,18,,0,0,False
+seed02_strength0p25,intact_geometry,0.25,zero-loss endpoint,0.2526280110783732,67,18,,0,0,False

@@ -12,7 +12,8 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 PACKAGE_NAME = "computational_particle_mechanics_public_reproducibility_package"
-PACKAGE_DIR = ROOT / "submission_packages" / PACKAGE_NAME
+PACKAGE_ROOT_MODE = (ROOT / "MANIFEST.csv").exists()
+PACKAGE_DIR = ROOT if PACKAGE_ROOT_MODE else ROOT / "submission_packages" / PACKAGE_NAME
 PACKAGE_ZIP = ROOT / "submission_packages" / f"{PACKAGE_NAME}.zip"
 PACKAGE_SHA = ROOT / "submission_packages" / f"{PACKAGE_NAME}.zip.sha256"
 MANIFEST = PACKAGE_DIR / "MANIFEST.csv"
@@ -26,10 +27,13 @@ REQUIRED_MEMBERS = {
     "manuscript/computational_particle_mechanics_blinded_submission.pdf",
     "manuscript/repaired_full_manuscript_source_data_matrix.csv",
     "manuscript/repaired_manuscript_claim_evidence_matrix.csv",
+    "docs/cpm_goal_completion_audit_20260704.md",
+    "docs/cpm_final_readthrough_qa_20260708.md",
     "data/figure_source/pb007_material_strength_response.csv",
     "data/processed/pb007_replicate_comparison_source_data.csv",
     "tables/pb007_material_parameter_response.csv",
     "tables/pb007_macro_topology_event_metrics.csv",
+    "tables/pb007_strong_force_tail_state_metrics.csv",
     "figures/main/fig1_workflow.svg",
     "figures/apt_redesign/fig2_single_pebble_template_validation.svg",
     "figures/apt_redesign/fig3_entry_state_validation.svg",
@@ -42,7 +46,9 @@ REQUIRED_MEMBERS = {
     "simulations/pebble_bed/PB-007/in.pb007_bonded_step_relaxed_validation.lmp",
     "scripts/build_cpm_public_repro_package.py",
     "scripts/check_cpm_public_repro_package.py",
+    "scripts/check_cpm_final_readthrough.py",
     "scripts/check_computational_particle_mechanics_submission_package.py",
+    "scripts/summarize_pb007_strong_force_retention.py",
 }
 
 FORBIDDEN_PATH_PATTERNS = [
@@ -92,7 +98,7 @@ def check_manifest() -> list[str]:
     actual = {
         path.relative_to(PACKAGE_DIR).as_posix()
         for path in PACKAGE_DIR.rglob("*")
-        if path.is_file() and path.name != "MANIFEST.csv"
+        if path.is_file() and path.name != "MANIFEST.csv" and ".git" not in path.relative_to(PACKAGE_DIR).parts
     }
     missing = sorted(actual - listed)
     stale = sorted(listed - actual)
@@ -126,6 +132,8 @@ def check_forbidden_paths(members: list[str]) -> None:
 def check_local_paths() -> None:
     hits: list[str] = []
     for path in PACKAGE_DIR.rglob("*"):
+        if ".git" in path.relative_to(PACKAGE_DIR).parts:
+            continue
         if not path.is_file() or path.suffix.lower() not in TEXT_SUFFIXES:
             continue
         text = path.read_text(encoding="utf-8", errors="replace")
@@ -173,13 +181,15 @@ def main() -> int:
         check_required(members)
         check_forbidden_paths(members)
         check_local_paths()
-        check_checksum()
-        check_zip(members)
+        if not PACKAGE_ROOT_MODE:
+            check_checksum()
+            check_zip(members)
     except Exception as exc:  # noqa: BLE001
         return fail(str(exc))
+    checksum_note = ", checksum" if not PACKAGE_ROOT_MODE else ""
     print(
         "PASS CPM public reproducibility package: "
-        f"{len(members)} files, manifest, checksum, representative inputs and public-file hygiene verified"
+        f"{len(members)} files, manifest{checksum_note}, representative inputs and public-file hygiene verified"
     )
     return 0
 

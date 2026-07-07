@@ -12,13 +12,13 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[1]
 OUTPUT = ROOT / "tables" / "pb007_macro_topology_event_metrics.csv"
-INITIAL_BONDS = 493_500
 
 
 @dataclass(frozen=True)
 class Case:
     label: str
     case_id: str
+    optional: bool = False
 
 
 CASES = [
@@ -35,12 +35,29 @@ CASES = [
         "PB-007-bonded-steprelaxed-100-seed03-600ksettle-y1p5e10-10krelax-60um-nohold-fracture-seed03",
     ),
     Case(
+        "seed04_early_microcracking_to_60um",
+        "PB-007-bonded-steprelaxed-100-seed04-600ksettle-y1p5e10-10krelax-60um-nohold-fracture-seed04",
+    ),
+    Case(
+        "seed06_synchronous_microcracking_to_60um",
+        "PB-007-bonded-steprelaxed-100-seed06-600ksettle-y1p5e10-10krelax-60um-nohold-fracture-seed06",
+    ),
+    Case(
         "seed02_strength0p5_intact_to_60um",
         "PB-007-bonded-steprelaxed-100-seed02-600ksettle-y1p5e10-10krelax-60um-nohold-strength0p5-trigger-seed02",
     ),
     Case(
         "seed02_strength0p25_intact_to_60um",
         "PB-007-bonded-steprelaxed-100-seed02-600ksettle-y1p5e10-10krelax-60um-nohold-strength0p25-trigger-seed02",
+    ),
+    Case(
+        "seed09_200bed_intact_to_60um",
+        "PB-007-bonded-steprelaxed-200-seed09-midbox-fast600ksettle-y1p5e10-10kstage-hold100-60um-fracture-200bed",
+    ),
+    Case(
+        "seed09_200bed_strength0p25_to_60um",
+        "PB-007-bonded-steprelaxed-200-seed09-midbox-fast600ksettle-60um-strength0p25-200bed",
+        optional=True,
     ),
 ]
 
@@ -144,7 +161,7 @@ def _event_metrics(case_id: str) -> dict[str, float | int | str]:
     }
 
 
-def _first_thermo_break_disp_um(case_id: str) -> float:
+def _first_thermo_break_disp_um(case_id: str, initial_bonds: int) -> float:
     path = ROOT / "data" / "processed" / f"{case_id}_thermo.csv"
     if not path.exists():
         return float("nan")
@@ -152,7 +169,7 @@ def _first_thermo_break_disp_um(case_id: str) -> float:
     for col in ["top_disp", "bond_int"]:
         df[col] = pd.to_numeric(df[col], errors="coerce")
     valid = df[df["bond_int"] > 0].copy()
-    damaged = valid[valid["bond_int"] < INITIAL_BONDS]
+    damaged = valid[valid["bond_int"] < initial_bonds]
     if damaged.empty:
         return float("nan")
     return float(damaged["top_disp"].iloc[0] * 1.0e6)
@@ -198,10 +215,49 @@ def _acceptance_summary(case_id: str) -> pd.Series:
     return pd.read_csv(ROOT / "tables" / f"pb007_{case_id}_acceptance_summary.csv").iloc[0]
 
 
+def _has_postprocessed_case(case_id: str) -> bool:
+    required = [
+        ROOT / "tables" / f"pb007_{case_id}_acceptance_summary.csv",
+        ROOT / "tables" / f"pb007_{case_id}_native_summary.csv",
+        ROOT / "data" / "processed" / f"{case_id}_thermo.csv",
+        ROOT / "data" / "processed" / f"{case_id}_bond_series.csv",
+        ROOT / "data" / "processed" / f"{case_id}_breakage_events.csv",
+        ROOT / "data" / "processed" / f"{case_id}_native_force_network_series.csv",
+    ]
+    return all(path.exists() and path.stat().st_size > 0 for path in required)
+
+
+def _mother_pebble_count(case_id: str) -> int:
+    metadata_path = (
+        ROOT
+        / "simulations"
+        / "pebble_bed"
+        / "PB-007"
+        / "cases"
+        / case_id
+        / "data"
+        / "bonded_template_metadata.csv"
+    )
+    if metadata_path.exists():
+        return int(len(pd.read_csv(metadata_path)))
+    series_path = ROOT / "data" / "processed" / f"{case_id}_bond_series.csv"
+    if series_path.exists():
+        series = pd.read_csv(series_path, usecols=["pebble_id"])
+        return int(series["pebble_id"].nunique())
+    acceptance = _acceptance_summary(case_id)
+    initial_bonds = int(acceptance["initial_intact_bonds"])
+    return int(round(initial_bonds / 4935.0))
+
+
 def main() -> None:
     rows = []
     for case in CASES:
+        if case.optional and not _has_postprocessed_case(case.case_id):
+            print(f"skip optional unprocessed case: {case.case_id}")
+            continue
         acceptance = _acceptance_summary(case.case_id)
+        initial_bonds = int(acceptance["initial_intact_bonds"])
+        mother_count = _mother_pebble_count(case.case_id)
         thermo = _macro_curve(case.case_id, acceptance)
         peak_idx = thermo["top_force_N"].idxmax()
         peak = thermo.loc[peak_idx]
@@ -212,12 +268,14 @@ def main() -> None:
             "final_top_force_N": float(acceptance["final_top_force_N"]),
             "peak_top_force_N": float(peak["top_force_N"]),
             "peak_force_displacement_um": float(peak["disp_um"]),
+            "mother_pebble_count": mother_count,
+            "initial_internal_bonds": initial_bonds,
             "secant_stiffness_0_20um_N_per_m": _window_stiffness(thermo, 0.0, 20.0),
             "secant_stiffness_20_40um_N_per_m": _window_stiffness(thermo, 20.0, 40.0),
             "secant_stiffness_40_60um_N_per_m": _window_stiffness(thermo, 40.0, 60.0),
             "minimum_intact_bonds": int(acceptance["minimum_intact_bonds"]),
-            "broken_bonds_at_endpoint": int(acceptance["initial_intact_bonds"] - acceptance["minimum_intact_bonds"]),
-            "first_thermo_break_disp_um": _first_thermo_break_disp_um(case.case_id),
+            "broken_bonds_at_endpoint": int(initial_bonds - acceptance["minimum_intact_bonds"]),
+            "first_thermo_break_disp_um": _first_thermo_break_disp_um(case.case_id, initial_bonds),
         }
         row.update(_event_metrics(case.case_id))
         row.update(_native_metrics(case.case_id))

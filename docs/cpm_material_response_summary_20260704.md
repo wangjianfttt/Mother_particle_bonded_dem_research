@@ -7,7 +7,7 @@ Input: `tables/pb007_material_parameter_response.csv`.
 ## Source-backed findings
 
 - **completed_endpoint_rows**: 11 completed endpoints; 8 cracking endpoints; 3 zero-loss endpoints
-  Boundary: Finite 100-particle endpoint set.
+  Boundary: Finite 100-parent-particle endpoint set.
 - **strength_matrix_scope**: 6 strength-reduction rows across early_cracking and synchronous_cracking geometries
   Boundary: Strength multipliers 0.75x, 0.50x and 0.25x for two cracking geometries.
 - **intact_geometry_controls**: intact_geometry remains at 0 broken bonds for strength multipliers 1x, 0.5x, 0.25x; final force-sum range 0.253-0.253 N
