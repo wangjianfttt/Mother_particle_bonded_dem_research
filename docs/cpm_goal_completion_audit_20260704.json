@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T01:44:32",
+  "generated_at": "2026-07-08T02:40:12",
   "overall_status": "ready_after_external_author_metadata",
   "preflight_status": "PASS",
   "final_readthrough_status": "PASS",
@@ -17,7 +17,7 @@
     ]
   },
   "readiness": {
-    "generated_at": "2026-07-08T01:44:30",
+    "generated_at": "2026-07-08T02:17:14",
     "target_journal": "Computational Particle Mechanics",
     "manuscript_title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
     "doi": "https://doi.org/10.5281/zenodo.20687351",
@@ -28,11 +28,11 @@
     "upload_package_bytes": 6782010,
     "upload_package_sha256": "cedb4584299ab9157ce008e902d597051337418ba4e0efb1332d7dcbbd9a19ce",
     "reproducibility_package": "submission_packages/repaired_submission_package.zip",
-    "reproducibility_package_bytes": 8209259,
-    "reproducibility_package_sha256": "5a2cd02542cd3ddf40e6975eea19e3e507851d4b87de3f65ad254edcc02a865a",
+    "reproducibility_package_bytes": 8227251,
+    "reproducibility_package_sha256": "f380ee634522aaa05547a1e4eb1d6b627af88cd32417980da3917dd63cb65971",
     "public_reproducibility_package": "submission_packages/computational_particle_mechanics_public_reproducibility_package.zip",
-    "public_reproducibility_package_bytes": 3714041,
-    "public_reproducibility_package_sha256": "115a29e19189b57bf39d2542bb0381651012f24a065d6ea27ad3e996f7a328ba",
+    "public_reproducibility_package_bytes": 3714034,
+    "public_reproducibility_package_sha256": "ae1217103ee7f00e7ca769d451dbca6131415dbaf86fb39b686a53c34bcac394",
     "public_reproducibility_package_members": 93,
     "required_repro_support_members": 47,
     "present_repro_support_members": 47,
@@ -62,12 +62,12 @@
     ]
   },
   "pdf_visual_qa": {
-    "generated_at": "2026-07-08T01:13:44",
+    "generated_at": "2026-07-08T02:27:22",
     "manuscript_pdf": "manuscript/computational_particle_mechanics_submission.pdf",
     "author_production_pdf": "submission_packages/computational_particle_mechanics_upload_ready/11_full_author_manuscript_for_production.pdf",
     "blinded_review_pdf": "submission_packages/computational_particle_mechanics_upload_ready/01_review_manuscript_blinded.pdf",
-    "manuscript_pdf_sha256": "b887ee9f524772947b95295efef4302e7f703bba5fff0d7aebb1449a67307218",
-    "author_production_pdf_sha256": "b887ee9f524772947b95295efef4302e7f703bba5fff0d7aebb1449a67307218",
+    "manuscript_pdf_sha256": "2af14556e2d6890cc254be42690a0642b349e5b1143458d984f30d393b83d2b1",
+    "author_production_pdf_sha256": "2af14556e2d6890cc254be42690a0642b349e5b1143458d984f30d393b83d2b1",
     "blinded_review_pdf_sha256": "e3bed6f592d5d0e75b03ee1e47ddeeef941c281329e2b38834628fa74af99c85",
     "author_production_matches_manuscript_pdf": true,
     "blinded_review_forbidden_hits": [],
@@ -351,7 +351,7 @@
     "status": "PASS"
   },
   "final_readthrough": {
-    "generated_at": "2026-07-08T01:44:31",
+    "generated_at": "2026-07-08T02:40:11",
     "status": "PASS",
     "results": [
       {

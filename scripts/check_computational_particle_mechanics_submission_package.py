@@ -55,6 +55,11 @@ LIVE_PACKET_JSON = ROOT / "docs" / "cpm_live_submission_packet_20260704.json"
 ACTION_SHEET_MD = ROOT / "docs" / "cpm_live_submission_action_sheet_20260704.md"
 ACTION_SHEET_CSV = ROOT / "docs" / "cpm_live_submission_action_sheet_20260704.csv"
 ACTION_SHEET_JSON = ROOT / "docs" / "cpm_live_submission_action_sheet_20260704.json"
+DRY_RUN_MD = ROOT / "docs" / "cpm_live_portal_dry_run_pack_20260708.md"
+DRY_RUN_CSV = ROOT / "docs" / "cpm_live_portal_dry_run_pack_20260708.csv"
+DRY_RUN_JSON = ROOT / "docs" / "cpm_live_portal_dry_run_pack_20260708.json"
+DRY_RUN_DOCX = ROOT / "manuscript" / "computational_particle_mechanics_live_portal_dry_run_pack.docx"
+DRY_RUN_DOCX_QA = ROOT / "docs" / "cpm_live_portal_dry_run_pack_docx_qa_20260708.md"
 PDF_QA_JSON = ROOT / "docs" / "cpm_final_pdf_visual_qa_20260704.json"
 PDF_QA_MD = ROOT / "docs" / "cpm_final_pdf_visual_qa_20260704.md"
 EMAIL_LOOKUP_MD = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.md"
@@ -67,6 +72,7 @@ SUPPORT_DOCX = [
     ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.docx",
     ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.docx",
     LIVE_PACKET_DOCX,
+    DRY_RUN_DOCX,
 ]
 SUPPORT_TEXT = [
     ROOT / "manuscript" / "computational_particle_mechanics_author_email_collection_packet.csv",
@@ -82,6 +88,10 @@ SUPPORT_TEXT = [
     ACTION_SHEET_MD,
     ACTION_SHEET_CSV,
     ACTION_SHEET_JSON,
+    DRY_RUN_MD,
+    DRY_RUN_CSV,
+    DRY_RUN_JSON,
+    DRY_RUN_DOCX_QA,
     PDF_QA_JSON,
     PDF_QA_MD,
     EMAIL_LOOKUP_MD,
@@ -658,6 +668,50 @@ def check_support_docs() -> None:
     actions = action_payload.get("actions", [])
     if len(actions) != 16:
         fail(f"expected 16 live-submission action rows, found {len(actions)}")
+    dry_run = json.loads(DRY_RUN_JSON.read_text(encoding="utf-8"))
+    if dry_run.get("submission_route") != "Elsevier/ScienceDirect double-anonymized review":
+        fail("live portal dry-run pack has wrong submission route")
+    if dry_run.get("external_pending_author_email_entries") != 7:
+        fail("live portal dry-run pack does not preserve seven pending author e-mail entries")
+    dry_rows = dry_run.get("rows", [])
+    sections = {row.get("section") for row in dry_rows if isinstance(row, dict)}
+    for section in ["copy_paste_field", "upload_file", "external_author_metadata"]:
+        if section not in sections:
+            fail(f"live portal dry-run pack missing section {section}")
+    dry_md = DRY_RUN_MD.read_text(encoding="utf-8")
+    for term in [
+        "CPM live portal dry-run pack",
+        "01_review_manuscript_blinded.pdf",
+        "system-generated PDF",
+        "Data availability statement",
+        "Code availability statement",
+        "Jian Wang",
+        "Qi-Gang Wu",
+        "Candidate needs confirmation",
+    ]:
+        if term not in dry_md:
+            fail(f"live portal dry-run pack missing term: {term}")
+    dry_docx_text = docx_text(DRY_RUN_DOCX)
+    for term in [
+        "CPM Live Portal Dry-Run Pack",
+        "01_review_manuscript_blinded.pdf",
+        "system-generated PDF",
+        "Data availability statement",
+        "Code availability statement",
+        "Qi-Gang Wu",
+        "Candidate needs confirmation",
+    ]:
+        if term not in dry_docx_text:
+            fail(f"live portal dry-run DOCX missing term: {term}")
+    dry_docx_qa = DRY_RUN_DOCX_QA.read_text(encoding="utf-8")
+    for term in [
+        "Rendered pages: `5`",
+        "Blank pages: `0`",
+        "all required live-submission terms were present",
+        "no row begins with a split fragment",
+    ]:
+        if term not in dry_docx_qa:
+            fail(f"live portal dry-run DOCX QA missing term: {term}")
     if any(row.get("file_status") != "present" for row in actions if isinstance(row, dict)):
         fail("live-submission action sheet includes a missing file")
     action_text = ACTION_SHEET_MD.read_text(encoding="utf-8")
@@ -730,15 +784,20 @@ def check_official_guide_alignment() -> None:
     required = [
         "ScienceDirect Guide for Authors",
         "Springer journal transition notice",
+        "submissions closed there on 1 July 2025",
+        "Submit Article entry",
         "Elsevier/ScienceDirect",
         "Review route",
         "Double-anonymized review",
         "Abstract length",
         "not exceed 250 words",
+        "editable source files",
+        "single-column Word manuscript",
         "required_for_double_anonymized_review",
         "review manuscript",
         "computational_particle_mechanics_blinded_review_package.zip",
         "external_metadata_pending",
+        "system-generated PDF",
     ]
     for term in required:
         if term not in text:
