@@ -1,6 +1,6 @@
 {
-  "generated_at": "2026-07-08T03:09:54",
-  "overall_status": "ready_after_external_author_metadata",
+  "generated_at": "2026-07-08T05:52:23",
+  "overall_status": "ready_after_external_author_metadata_and_live_pdf_preview",
   "preflight_status": "PASS",
   "final_readthrough_status": "PASS",
   "large_raw_residue_count": 0,
@@ -39,8 +39,8 @@
       "Gang Shen",
       "Haishun Deng"
     ],
-    "required_repro_support_members": 47,
-    "present_repro_support_members": 47,
+    "required_repro_support_members": 75,
+    "present_repro_support_members": 75,
     "missing_repro_support_members": [],
     "public_reproducibility_package_members": 93,
     "external_items": [
@@ -50,13 +50,114 @@
       "Preview the system-generated submission PDF before final submit."
     ]
   },
+  "external_status": {
+    "generated_at": "2026-07-08T05:50:54",
+    "target_journal": "Computational Particle Mechanics",
+    "internal_status": "ready_for_live_submission_after_external_metadata",
+    "preflight_status": "PASS",
+    "upload_package": "submission_packages/computational_particle_mechanics_upload_ready.zip",
+    "upload_package_sha256": "0f36ff33929ddc79d6ed4d9d759f18430b1affc438749502cdfa70fc09ee9d41",
+    "pending_author_email_count": 7,
+    "pending_pdf_preview": true,
+    "external_ready": false,
+    "rows": [
+      {
+        "item": "Author e-mail: Siyu Wang",
+        "category": "author_metadata",
+        "current_status": "pending_confirmation",
+        "candidate_or_source": "Ask for preferred submission-system e-mail",
+        "final_value": "",
+        "can_submit_now": "no",
+        "required_action": "Do not enter yet",
+        "evidence_file": "manuscript/cpm_coauthor_contact_messages/01_siyu_wang_email_confirmation.txt",
+        "reply_status": "Pending author reply"
+      },
+      {
+        "item": "Author e-mail: Hang Zhang",
+        "category": "author_metadata",
+        "current_status": "pending_confirmation",
+        "candidate_or_source": "Ask for preferred submission-system e-mail",
+        "final_value": "",
+        "can_submit_now": "no",
+        "required_action": "Do not enter yet",
+        "evidence_file": "manuscript/cpm_coauthor_contact_messages/02_hang_zhang_email_confirmation.txt",
+        "reply_status": "Pending author reply"
+      },
+      {
+        "item": "Author e-mail: Ming-Zhun Lei",
+        "category": "author_metadata",
+        "current_status": "pending_confirmation",
+        "candidate_or_source": "leimz@ipp.ac.cn",
+        "final_value": "",
+        "can_submit_now": "no",
+        "required_action": "Do not enter candidate until confirmed",
+        "evidence_file": "manuscript/cpm_coauthor_contact_messages/03_mingzhun_lei_email_confirmation.txt",
+        "reply_status": "Pending author reply"
+      },
+      {
+        "item": "Author e-mail: Wei Wen",
+        "category": "author_metadata",
+        "current_status": "pending_confirmation",
+        "candidate_or_source": "wenwei@ipp.ac.cn",
+        "final_value": "",
+        "can_submit_now": "no",
+        "required_action": "Do not enter candidate until confirmed",
+        "evidence_file": "manuscript/cpm_coauthor_contact_messages/04_wei_wen_email_confirmation.txt",
+        "reply_status": "Pending author reply"
+      },
+      {
+        "item": "Author e-mail: Qi-Gang Wu",
+        "category": "author_metadata",
+        "current_status": "pending_confirmation",
+        "candidate_or_source": "Ask for preferred submission-system e-mail",
+        "final_value": "",
+        "can_submit_now": "no",
+        "required_action": "Do not enter yet",
+        "evidence_file": "manuscript/cpm_coauthor_contact_messages/05_qigang_wu_email_confirmation.txt",
+        "reply_status": "Pending author reply"
+      },
+      {
+        "item": "Author e-mail: Gang Shen",
+        "category": "author_metadata",
+        "current_status": "pending_confirmation",
+        "candidate_or_source": "shenganghit@163.com",
+        "final_value": "",
+        "can_submit_now": "no",
+        "required_action": "Do not enter candidate until confirmed",
+        "evidence_file": "manuscript/cpm_coauthor_contact_messages/06_gang_shen_email_confirmation.txt",
+        "reply_status": "Pending author reply"
+      },
+      {
+        "item": "Author e-mail: Haishun Deng",
+        "category": "author_metadata",
+        "current_status": "pending_confirmation",
+        "candidate_or_source": "269469122@qq.com",
+        "final_value": "",
+        "can_submit_now": "no",
+        "required_action": "Do not enter candidate until confirmed",
+        "evidence_file": "manuscript/cpm_coauthor_contact_messages/07_haishun_deng_email_confirmation.txt",
+        "reply_status": "Pending author reply"
+      },
+      {
+        "item": "System-generated PDF preview",
+        "category": "live_system_preview",
+        "current_status": "pending_live_preview",
+        "candidate_or_source": "Generated by Elsevier/ScienceDirect after file upload",
+        "final_value": "",
+        "can_submit_now": "no",
+        "required_action": "Preview the generated submission PDF before final submit",
+        "evidence_file": "docs/cpm_system_generated_pdf_preview_checklist_20260708.md",
+        "reply_status": "Pending live-system action"
+      }
+    ]
+  },
   "pdf_visual_qa": {
-    "generated_at": "2026-07-08T02:46:41",
+    "generated_at": "2026-07-08T05:46:08",
     "manuscript_pdf": "manuscript/computational_particle_mechanics_submission.pdf",
     "author_production_pdf": "submission_packages/computational_particle_mechanics_upload_ready/11_full_author_manuscript_for_production.pdf",
     "blinded_review_pdf": "submission_packages/computational_particle_mechanics_upload_ready/01_review_manuscript_blinded.pdf",
-    "manuscript_pdf_sha256": "c48217ada4ad3005fc805a0ad45dfdb34b62946209a4c8088c7a00da3d784cd9",
-    "author_production_pdf_sha256": "c48217ada4ad3005fc805a0ad45dfdb34b62946209a4c8088c7a00da3d784cd9",
+    "manuscript_pdf_sha256": "93bce3d62cd924e2d81df3801159953f363e04be578cdefc034b18f952c0c49c",
+    "author_production_pdf_sha256": "93bce3d62cd924e2d81df3801159953f363e04be578cdefc034b18f952c0c49c",
     "blinded_review_pdf_sha256": "e3bed6f592d5d0e75b03ee1e47ddeeef941c281329e2b38834628fa74af99c85",
     "author_production_matches_manuscript_pdf": true,
     "blinded_review_forbidden_hits": [],
@@ -340,7 +441,7 @@
     "status": "PASS"
   },
   "final_readthrough": {
-    "generated_at": "2026-07-08T03:09:53",
+    "generated_at": "2026-07-08T05:52:22",
     "status": "PASS",
     "results": [
       {
@@ -426,9 +527,16 @@
     {
       "requirement": "External author metadata for live system",
       "status": "external_pending",
-      "evidence": "Unconfirmed or missing coauthor e-mail entry count = 7; 4 public candidate e-mails require author confirmation.",
-      "current_file_or_command": "manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx; docs/cpm_author_email_public_lookup_20260704.md",
+      "evidence": "Unconfirmed or missing coauthor e-mail entry count = 7; external-status pending author e-mail count = 7; 4 public candidate e-mails require author confirmation.",
+      "current_file_or_command": "manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx; docs/cpm_author_email_public_lookup_20260704.md; docs/cpm_external_submission_status_20260708.json",
       "remaining_action": "Collect or confirm coauthor e-mails before final system submission if the live system requires them."
+    },
+    {
+      "requirement": "Live-system generated PDF preview",
+      "status": "external_pending",
+      "evidence": "External-status tracker pending_pdf_preview=True; final local PDF visual QA is PASS with 19 pages.",
+      "current_file_or_command": "docs/cpm_system_generated_pdf_preview_checklist_20260708.md; docs/cpm_external_submission_status_20260708.json",
+      "remaining_action": "Inspect the system-generated PDF after live upload and before final submit."
     }
   ]
 }

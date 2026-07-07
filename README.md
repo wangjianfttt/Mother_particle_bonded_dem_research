@@ -71,6 +71,7 @@ The live readiness status is recorded in:
 
 - `START_HERE_CPM_SUBMISSION.md`
 - `docs/cpm_submission_readiness_report_20260704.md`
+- `docs/cpm_external_submission_status_20260708.md`
 - `docs/cpm_goal_completion_audit_20260704.md`
 - `docs/cpm_live_submission_packet_20260704.md`
 
@@ -79,7 +80,7 @@ The current local status is
 figures, source-data matrices, checks and upload packages pass local
 preflight; the remaining external item is completion or confirmation of seven
 non-corresponding-author e-mail entries if the live submission system requires
-all author e-mails.
+all author e-mails, followed by inspection of the system-generated PDF preview.
 
 ## Verification
 

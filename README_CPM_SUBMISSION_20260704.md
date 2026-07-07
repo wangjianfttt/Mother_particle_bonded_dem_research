@@ -90,7 +90,8 @@ zip because it records the current package checksum. The latest local status is
 `ready_for_live_submission_after_external_metadata`; the remaining external
 metadata item is completion or confirmation of seven non-corresponding-author
 e-mail entries if the live submission system requires every author's e-mail
-address.
+address, followed by inspection of the system-generated PDF preview. The current
+external-action summary is `docs/cpm_external_submission_status_20260708.md`.
 
 Four public candidate e-mail records are listed in
 `docs/cpm_author_email_public_lookup_20260704.md` for corresponding-author

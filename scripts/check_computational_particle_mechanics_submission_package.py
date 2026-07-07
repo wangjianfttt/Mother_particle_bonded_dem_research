@@ -64,13 +64,30 @@ PDF_QA_JSON = ROOT / "docs" / "cpm_final_pdf_visual_qa_20260704.json"
 PDF_QA_MD = ROOT / "docs" / "cpm_final_pdf_visual_qa_20260704.md"
 EMAIL_LOOKUP_MD = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.md"
 EMAIL_LOOKUP_CSV = ROOT / "docs" / "cpm_author_email_public_lookup_20260704.csv"
+EMAIL_REPLY_TRACKER_MD = ROOT / "docs" / "cpm_author_email_reply_tracker_20260708.md"
+EMAIL_REPLY_TRACKER_CSV = ROOT / "docs" / "cpm_author_email_reply_tracker_20260708.csv"
 EXTERNAL_AUTHOR_ACTIONS = ROOT / "docs" / "cpm_external_author_metadata_final_actions_20260706.md"
+FINAL_HANDOFF_ZH = ROOT / "docs" / "cpm_final_live_submission_handoff_zh_20260708.md"
+SYSTEM_PDF_PREVIEW_CHECKLIST = ROOT / "docs" / "cpm_system_generated_pdf_preview_checklist_20260708.md"
+EXTERNAL_SUBMISSION_STATUS_MD = ROOT / "docs" / "cpm_external_submission_status_20260708.md"
+EXTERNAL_SUBMISSION_STATUS_CSV = ROOT / "docs" / "cpm_external_submission_status_20260708.csv"
+EXTERNAL_SUBMISSION_STATUS_JSON = ROOT / "docs" / "cpm_external_submission_status_20260708.json"
+FINAL_STORAGE_AUDIT = ROOT / "docs" / "cpm_final_storage_isolation_audit_20260708.md"
+OBJECTIVE_CLOSURE_AUDIT = ROOT / "docs" / "cpm_objective_requirement_closure_audit_20260708.md"
+CURRENT_GUIDE_LIVE_CHECK = ROOT / "docs" / "cpm_current_guide_live_check_20260708.md"
+BLINDED_IDENTITY_AUDIT_MD = ROOT / "docs" / "cpm_blinded_identity_leak_audit_20260708.md"
+BLINDED_IDENTITY_AUDIT_CSV = ROOT / "docs" / "cpm_blinded_identity_leak_audit_20260708.csv"
+BLINDED_IDENTITY_AUDIT_JSON = ROOT / "docs" / "cpm_blinded_identity_leak_audit_20260708.json"
+LIVE_UPLOAD_BUNDLE_AUDIT_MD = ROOT / "docs" / "cpm_live_upload_bundle_audit_20260708.md"
+LIVE_UPLOAD_BUNDLE_AUDIT_CSV = ROOT / "docs" / "cpm_live_upload_bundle_audit_20260708.csv"
+LIVE_UPLOAD_BUNDLE_AUDIT_JSON = ROOT / "docs" / "cpm_live_upload_bundle_audit_20260708.json"
 SOURCE_DATA_MATRIX = ROOT / "manuscript" / "repaired_full_manuscript_source_data_matrix.csv"
 SUPPORT_DOCX = [
     ROOT / "manuscript" / "computational_particle_mechanics_author_email_collection_packet.docx",
     ROOT / "manuscript" / "computational_particle_mechanics_individual_contact_messages.docx",
     ROOT / "manuscript" / "computational_particle_mechanics_coauthor_email_request_zh_en.docx",
     ROOT / "manuscript" / "computational_particle_mechanics_live_submission_checklist.docx",
+    ROOT / "manuscript" / "computational_particle_mechanics_external_submission_status.docx",
     LIVE_PACKET_DOCX,
     DRY_RUN_DOCX,
 ]
@@ -96,7 +113,23 @@ SUPPORT_TEXT = [
     PDF_QA_MD,
     EMAIL_LOOKUP_MD,
     EMAIL_LOOKUP_CSV,
+    EMAIL_REPLY_TRACKER_MD,
+    EMAIL_REPLY_TRACKER_CSV,
+    CURRENT_GUIDE_LIVE_CHECK,
+    BLINDED_IDENTITY_AUDIT_MD,
+    BLINDED_IDENTITY_AUDIT_CSV,
+    BLINDED_IDENTITY_AUDIT_JSON,
+    LIVE_UPLOAD_BUNDLE_AUDIT_MD,
+    LIVE_UPLOAD_BUNDLE_AUDIT_CSV,
+    LIVE_UPLOAD_BUNDLE_AUDIT_JSON,
     EXTERNAL_AUTHOR_ACTIONS,
+    FINAL_HANDOFF_ZH,
+    SYSTEM_PDF_PREVIEW_CHECKLIST,
+    EXTERNAL_SUBMISSION_STATUS_MD,
+    EXTERNAL_SUBMISSION_STATUS_CSV,
+    EXTERNAL_SUBMISSION_STATUS_JSON,
+    FINAL_STORAGE_AUDIT,
+    OBJECTIVE_CLOSURE_AUDIT,
 ]
 
 EXPECTED_UPLOAD_FILES = {
@@ -328,24 +361,41 @@ def check_author_email_sheet() -> None:
     if len(rows) != 8:
         fail(f"expected 8 author rows, found {len(rows)}")
     by_author = {row["Author"]: row for row in rows}
-    expected_missing = {"Siyu Wang", "Hang Zhang", "Qi-Gang Wu"}
-    missing = {row["Author"] for row in rows if row["Status"] == "Missing"}
-    if missing != expected_missing:
-        fail(f"expected missing author e-mails for {sorted(expected_missing)}, found {sorted(missing)}")
-    expected_candidates = {
+    tracker_rows = {
+        row["Author"]: row
+        for row in csv.DictReader(EMAIL_REPLY_TRACKER_CSV.open(encoding="utf-8"))
+    }
+    public_candidates = {
         "Ming-Zhun Lei": "leimz@ipp.ac.cn",
         "Wei Wen": "wenwei@ipp.ac.cn",
         "Gang Shen": "shenganghit@163.com",
         "Haishun Deng": "269469122@qq.com",
     }
-    for author, email in expected_candidates.items():
+    expected_direct_missing = {"Siyu Wang", "Hang Zhang", "Qi-Gang Wu"}
+    for author in expected_direct_missing | set(public_candidates):
         row = by_author.get(author)
         if row is None:
             fail(f"author e-mail sheet missing {author}")
-        if row["Status"] != "Candidate needs confirmation":
-            fail(f"{author} should be marked Candidate needs confirmation")
-        if row["E-mail to fill or confirm"] != email:
-            fail(f"{author} candidate e-mail mismatch")
+        tracker = tracker_rows.get(author, {})
+        final_email = tracker.get("Final e-mail to enter", "").strip()
+        reply_status = tracker.get("Reply status", "").lower()
+        if final_email:
+            if "pending" in reply_status:
+                fail(f"{author} has final e-mail but pending reply status")
+            if row["Status"] != "Available":
+                fail(f"{author} confirmed e-mail should be marked Available")
+            if row["E-mail to fill or confirm"] != final_email:
+                fail(f"{author} confirmed e-mail mismatch")
+        elif author in public_candidates:
+            if row["Status"] != "Candidate needs confirmation":
+                fail(f"{author} should be marked Candidate needs confirmation")
+            if row["E-mail to fill or confirm"] != public_candidates[author]:
+                fail(f"{author} candidate e-mail mismatch")
+        else:
+            if row["Status"] != "Missing":
+                fail(f"{author} should remain Missing until direct confirmation")
+            if row["E-mail to fill or confirm"]:
+                fail(f"{author} should not have an unconfirmed e-mail")
     if not any(row["Author"] == "Jian Wang" and row["Status"] == "Available" for row in rows):
         fail("corresponding author e-mail is not marked available")
 
@@ -564,16 +614,26 @@ def check_support_docs() -> None:
         "computational_particle_mechanics_blinded_review_package.zip",
         "Use the blinded manuscript as the review manuscript",
         "computational_particle_mechanics_live_submission_packet.docx",
+        "cpm_final_live_submission_handoff_zh_20260708.md",
+        "cpm_system_generated_pdf_preview_checklist_20260708.md",
+        "cpm_final_storage_isolation_audit_20260708.md",
+        "cpm_objective_requirement_closure_audit_20260708.md",
         "cpm_live_submission_packet_20260704.md",
         "cpm_live_submission_action_sheet_20260704.md",
         "cpm_final_pdf_visual_qa_20260704.md",
         "cpm_author_email_public_lookup_20260704.md",
+        "cpm_author_email_reply_tracker_20260708.md",
+        "cpm_external_submission_status_20260708.md",
         "cpm_official_submission_guide_alignment_20260704.md",
+        "cpm_current_guide_live_check_20260708.md",
+        "cpm_blinded_identity_leak_audit_20260708.md",
+        "cpm_live_upload_bundle_audit_20260708.md",
+        "scripts/apply_cpm_author_email_reply_tracker.py",
         "scripts/check_computational_particle_mechanics_submission_package.py",
         "10.5281/zenodo.20687351",
         "Four public candidate e-mail records",
         "confirmation aids only",
-        "Reduced reproducibility package CPM support members: `47/47` present",
+        "Reduced reproducibility package CPM support members: `75/75` present",
         "Current final PDF visual QA: `PASS`, 19 pages, 0 blank pages, author-production PDF SHA match, blinded review PDF checked",
         "Elsevier/ScienceDirect",
         "double-anonymized review",
@@ -589,6 +649,77 @@ def check_support_docs() -> None:
     ]:
         if forbidden in start:
             fail(f"START_HERE retains stale submission-route wording: {forbidden}")
+    final_handoff = FINAL_HANDOFF_ZH.read_text(encoding="utf-8")
+    for term in [
+        "CPM 最终在线投稿操作手册",
+        "01_review_manuscript_blinded.pdf",
+        "不要把 `11_full_author_manuscript_for_production.pdf` 当作双匿名审稿主稿上传",
+        "不要把 `12_full_author_manuscript_single_column.docx` 当作默认审稿主稿上传",
+        "不要上传 NAS 中的大型 raw dump",
+        "不要在未经确认时把公开候选邮箱直接填入投稿系统",
+        "manuscript/cpm_coauthor_contact_messages/",
+        "预览系统生成的 PDF",
+    ]:
+        if term not in final_handoff:
+            fail(f"final Chinese live-submission handoff missing term: {term}")
+    system_pdf_checklist = SYSTEM_PDF_PREVIEW_CHECKLIST.read_text(encoding="utf-8")
+    for term in [
+        "CPM System-Generated PDF Preview Checklist",
+        "01_review_manuscript_blinded.pdf",
+        "does not expose author names, author affiliations, author e-mails, acknowledgements or funding text",
+        "Author-bearing PDF/Word files are not used as the double-anonymous review manuscript",
+        "No raw dump, restart, full local-bond history or NAS archive file is attached",
+        "系统期刊为 Computational Particle Mechanics",
+        "双匿名预览稿中没有作者姓名、单位、邮箱、致谢或基金文本",
+        "Preview PDF file name downloaded from system",
+    ]:
+        if term not in system_pdf_checklist:
+            fail(f"system-generated PDF preview checklist missing term: {term}")
+    current_guide_live_check = CURRENT_GUIDE_LIVE_CHECK.read_text(encoding="utf-8")
+    for term in [
+        "CPM Current Guide Live Check",
+        "ScienceDirect Guide for Authors",
+        "Springer journal transition page",
+        "Elsevier/ScienceDirect submission route",
+        "blinded review manuscript",
+        "system-generated PDF preview",
+        "seven non-corresponding-author e-mail entries",
+        "not a substitute for live-system checking",
+    ]:
+        if term not in current_guide_live_check:
+            fail(f"current guide live-check note missing term: {term}")
+    final_storage_audit = FINAL_STORAGE_AUDIT.read_text(encoding="utf-8")
+    for term in [
+        "CPM Final Storage-Isolation Audit",
+        "<project-root>",
+        "not a `CloudStorage` path",
+        "/Volumes/BulkArchive/DEM_ARCHIVE/颗粒破碎统计研究",
+        "6.9 TiB available",
+        "no local raw-like files above 20 MiB were found",
+        "Large raw restart files, full local-bond histories and full raw dump trajectories",
+    ]:
+        if term not in final_storage_audit:
+            fail(f"final storage-isolation audit missing term: {term}")
+    objective_closure = OBJECTIVE_CLOSURE_AUDIT.read_text(encoding="utf-8")
+    for term in [
+        "CPM Objective Requirement Closure Audit",
+        "Isolate work from synchronized-cloud risk",
+        "Offload old/large raw DEM data to NAS",
+        "Audit rejection-driven scientific gaps",
+        "Add material-property dependence after JNM rejection",
+        "Move beyond displacement-only reporting",
+        "Rebuild manuscript mainline for CPM",
+        "Prepare double-anonymous submission package",
+        "Prepare code/data/reproducibility package",
+        "Prepare final author metadata support",
+        "Prepare live-system final checks",
+        "local scientific, storage, reproducibility and submission-package",
+        "requirements are achieved for the CPM resubmission route",
+        "external live-submission actions",
+        "inspect the system-generated PDF",
+    ]:
+        if term not in objective_closure:
+            fail(f"objective requirement closure audit missing term: {term}")
     if not LIVE_PACKET_JSON.exists():
         fail("missing live-submission packet JSON")
     if not ACTION_SHEET_JSON.exists():
@@ -622,6 +753,57 @@ def check_support_docs() -> None:
     ]:
         if term not in collection_packet:
             fail(f"author e-mail collection packet missing term: {term}")
+    email_reply_tracker = EMAIL_REPLY_TRACKER_MD.read_text(encoding="utf-8")
+    for term in [
+        "CPM Author E-mail Reply Tracker",
+        "Final e-mail to enter",
+        "Do not enter candidate until confirmed",
+        "Pending author reply",
+        "manuscript/cpm_coauthor_contact_messages/",
+        "Preview the generated submission PDF before final submit",
+    ]:
+        if term not in email_reply_tracker:
+            fail(f"author e-mail reply tracker missing term: {term}")
+    reply_rows = list(csv.DictReader(EMAIL_REPLY_TRACKER_CSV.open(encoding="utf-8")))
+    if len(reply_rows) != 7:
+        fail(f"expected 7 author e-mail reply tracker rows, found {len(reply_rows)}")
+    tracker_pending_count = 0
+    for row in reply_rows:
+        final_email = row["Final e-mail to enter"].strip()
+        reply_status = row["Reply status"].strip().lower()
+        if final_email:
+            if "pending" in reply_status:
+                fail(f"author e-mail reply tracker has final e-mail but pending reply status for {row['Author']}")
+        else:
+            tracker_pending_count += 1
+            if "pending" not in reply_status:
+                fail(f"author e-mail reply tracker has no final e-mail but non-pending status for {row['Author']}")
+    external_status = json.loads(EXTERNAL_SUBMISSION_STATUS_JSON.read_text(encoding="utf-8"))
+    if external_status.get("target_journal") != "Computational Particle Mechanics":
+        fail("external submission status has wrong target journal")
+    if external_status.get("pending_author_email_count") != tracker_pending_count:
+        fail("external submission status pending e-mail count does not match tracker")
+    if external_status.get("pending_pdf_preview") is not True:
+        fail("external submission status should keep live PDF preview pending before final submit")
+    if external_status.get("external_ready") is not False:
+        fail("external submission status should remain false until live PDF preview is recorded")
+    external_rows = external_status.get("rows", [])
+    if len(external_rows) != 8:
+        fail(f"expected 8 external submission status rows, found {len(external_rows)}")
+    status_csv_rows = list(csv.DictReader(EXTERNAL_SUBMISSION_STATUS_CSV.open(encoding="utf-8")))
+    if len(status_csv_rows) != 8:
+        fail(f"expected 8 external submission status CSV rows, found {len(status_csv_rows)}")
+    status_md = EXTERNAL_SUBMISSION_STATUS_MD.read_text(encoding="utf-8")
+    for term in [
+        "CPM External Submission Status",
+        "External-ready status",
+        "Pending author e-mail entries",
+        "Pending live-system PDF preview",
+        "Preview the generated submission PDF before final submit",
+        "scripts/apply_cpm_author_email_reply_tracker.py --rebuild",
+    ]:
+        if term not in status_md:
+            fail(f"external submission status missing term: {term}")
     individual_messages = (
         ROOT / "manuscript" / "computational_particle_mechanics_individual_contact_messages.md"
     ).read_text(encoding="utf-8")
@@ -638,7 +820,38 @@ def check_support_docs() -> None:
     ]:
         if term not in individual_messages:
             fail(f"individual contact messages missing term: {term}")
+    contact_dir = ROOT / "manuscript" / "cpm_coauthor_contact_messages"
+    contact_files = sorted(contact_dir.glob("*.txt"))
+    if len(contact_files) != 7:
+        fail(f"expected 7 individual coauthor contact text files, found {len(contact_files)}")
+    expected_contact_terms = {
+        "siyu_wang": "To be provided by author",
+        "hang_zhang": "To be provided by author",
+        "mingzhun_lei": "leimz@ipp.ac.cn",
+        "wei_wen": "wenwei@ipp.ac.cn",
+        "qigang_wu": "To be provided by author",
+        "gang_shen": "shenganghit@163.com",
+        "haishun_deng": "269469122@qq.com",
+    }
+    joined_names = "\n".join(path.name for path in contact_files)
+    for key, term in expected_contact_terms.items():
+        matches = [path for path in contact_files if key in path.name]
+        if len(matches) != 1:
+            fail(f"missing individual coauthor contact text file for {key}")
+        text = matches[0].read_text(encoding="utf-8")
+        for required in [
+            "Chinese message",
+            "English backup",
+            "Submission-system entry note",
+            "Do not enter a public candidate e-mail into the live submission system",
+            term,
+        ]:
+            if required not in text:
+                fail(f"individual coauthor contact file {matches[0].name} missing {required!r}")
+    if "email_confirmation.txt" not in joined_names:
+        fail("individual coauthor contact files do not use the expected confirmation naming")
     payload = json.loads(LIVE_PACKET_JSON.read_text(encoding="utf-8"))
+    expected_missing_email_count = readiness_payload.get("missing_email_count")
     for key, value in [
         ("target_journal", "Computational Particle Mechanics"),
         ("submission_route", "Elsevier / ScienceDirect double-anonymized route"),
@@ -646,7 +859,7 @@ def check_support_docs() -> None:
         ("blinded_review_package", "submission_packages/computational_particle_mechanics_blinded_review_package.zip"),
         ("legacy_blinded_package", "submission_packages/computational_particle_mechanics_blinded_review_optional.zip"),
         ("reduced_reproducibility_package", "submission_packages/repaired_submission_package.zip"),
-        ("missing_email_count", 7),
+        ("missing_email_count", expected_missing_email_count),
     ]:
         if payload.get(key) != value:
             fail(f"live-submission packet JSON mismatch for {key}")
@@ -655,7 +868,7 @@ def check_support_docs() -> None:
     if payload.get("candidate_email_count") != 4:
         fail("expected four public candidate e-mails for confirmation")
     action_payload = json.loads(ACTION_SHEET_JSON.read_text(encoding="utf-8"))
-    if action_payload.get("missing_email_count") != 7:
+    if action_payload.get("missing_email_count") != expected_missing_email_count:
         fail("live-submission action sheet does not preserve missing e-mail count")
     if action_payload.get("upload_package_sha256") != readiness_payload.get("upload_package_sha256"):
         fail("live-submission action sheet upload-package SHA is stale")
@@ -671,8 +884,8 @@ def check_support_docs() -> None:
     dry_run = json.loads(DRY_RUN_JSON.read_text(encoding="utf-8"))
     if dry_run.get("submission_route") != "Elsevier/ScienceDirect double-anonymized review":
         fail("live portal dry-run pack has wrong submission route")
-    if dry_run.get("external_pending_author_email_entries") != 7:
-        fail("live portal dry-run pack does not preserve seven pending author e-mail entries")
+    if dry_run.get("external_pending_author_email_entries") != expected_missing_email_count:
+        fail("live portal dry-run pack does not preserve pending author e-mail entries")
     dry_rows = dry_run.get("rows", [])
     sections = {row.get("section") for row in dry_rows if isinstance(row, dict)}
     for section in ["copy_paste_field", "upload_file", "external_author_metadata"]:
@@ -707,7 +920,9 @@ def check_support_docs() -> None:
     for term in [
         "Rendered pages: `5`",
         "Blank pages: `0`",
-        "all required live-submission terms were present",
+        "The obsolete mandatory-highlights wording is absent",
+        "Highlights and Graphical Abstract as live-system requested support materials",
+        'the Highlights row reads "only if the live system asks for highlights"',
         "no row begins with a split fragment",
     ]:
         if term not in dry_docx_qa:
@@ -715,6 +930,14 @@ def check_support_docs() -> None:
     if any(row.get("file_status") != "present" for row in actions if isinstance(row, dict)):
         fail("live-submission action sheet includes a missing file")
     action_text = ACTION_SHEET_MD.read_text(encoding="utf-8")
+    for text_name, text_blob in [
+        ("live portal dry-run pack", dry_md),
+        ("live portal dry-run DOCX", dry_docx_text),
+        ("live portal dry-run DOCX QA", dry_docx_qa),
+        ("live-submission action sheet", action_text),
+    ]:
+        if "required_if_highlights_field_or_file_is_requested" in text_blob:
+            fail(f"{text_name} retains stale highlights requirement wording")
     for term in [
         "CPM Live Submission Action Sheet",
         "Preview the system-generated PDF before final submit",
@@ -775,6 +998,39 @@ def check_support_docs() -> None:
         fail("CPM final PDF contact sheet is missing or empty")
     if pdf_qa.get("blinded_review_forbidden_hits") != []:
         fail("CPM final PDF QA reports identifying terms in blinded review manuscript")
+    blinded_identity = json.loads(BLINDED_IDENTITY_AUDIT_JSON.read_text(encoding="utf-8"))
+    if blinded_identity.get("overall_status") != "PASS":
+        fail("blinded identity-leak audit is not PASS")
+    identity_rows = blinded_identity.get("rows", [])
+    if len(identity_rows) != 6:
+        fail(f"blinded identity-leak audit should contain 6 checked sources, found {len(identity_rows)}")
+    failed_identity_rows = [
+        row.get("source", "unknown")
+        for row in identity_rows
+        if row.get("status") != "PASS" or row.get("forbidden_hit_count") != 0
+    ]
+    if failed_identity_rows:
+        fail(f"blinded identity-leak audit has failed rows: {failed_identity_rows}")
+    live_upload_audit = json.loads(LIVE_UPLOAD_BUNDLE_AUDIT_JSON.read_text(encoding="utf-8"))
+    if live_upload_audit.get("overall_status") != "PASS":
+        fail("live upload bundle audit is not PASS")
+    live_summary = live_upload_audit.get("summary", {})
+    if live_summary.get("zip_member_count") != 20:
+        fail("live upload bundle audit should record 20 zip members")
+    if live_summary.get("manifest_row_count") != 19:
+        fail("live upload bundle audit should record 19 manifest rows")
+    if live_summary.get("raw_like_files") != []:
+        fail(f"live upload bundle audit reports raw-like files: {live_summary.get('raw_like_files')}")
+    if live_summary.get("large_unapproved_files") != []:
+        fail(
+            "live upload bundle audit reports unapproved large files: "
+            f"{live_summary.get('large_unapproved_files')}"
+        )
+    if live_summary.get("review_files") != [
+        "01_review_manuscript_blinded.pdf",
+        "01_review_manuscript_blinded.tex",
+    ]:
+        fail("live upload bundle audit does not restrict review files to blinded manuscript files")
 
 
 def check_official_guide_alignment() -> None:
@@ -817,12 +1073,19 @@ def check_goal_completion_audit() -> None:
     if not GOAL_AUDIT_JSON.exists():
         fail("missing goal-level completion audit JSON")
     payload = json.loads(GOAL_AUDIT_JSON.read_text(encoding="utf-8"))
-    if payload.get("overall_status") != "ready_after_external_author_metadata":
-        fail("goal-level completion audit does not record the correct external-metadata boundary")
+    if payload.get("overall_status") != "ready_after_external_author_metadata_and_live_pdf_preview":
+        fail("goal-level completion audit does not record the current external metadata and live-PDF boundary")
     rows = payload.get("rows", [])
     statuses = {row.get("requirement"): row.get("status") for row in rows if isinstance(row, dict)}
     if statuses.get("External author metadata for live system") != "external_pending":
         fail("goal-level completion audit missing external author-metadata pending status")
+    if statuses.get("Live-system generated PDF preview") != "external_pending":
+        fail("goal-level completion audit missing live-system PDF-preview pending status")
+    external_status = payload.get("external_status", {})
+    if external_status.get("pending_author_email_count") != 7:
+        fail("goal-level completion audit external-status payload should track 7 pending author e-mail rows")
+    if external_status.get("pending_pdf_preview") is not True:
+        fail("goal-level completion audit external-status payload should track pending live PDF preview")
     if payload.get("large_raw_residue_count") != 0:
         fail("goal-level completion audit reports remaining large raw dump/restart residues")
 

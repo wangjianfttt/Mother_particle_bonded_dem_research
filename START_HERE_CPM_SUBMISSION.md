@@ -80,12 +80,31 @@ metadata until the corresponding author or coauthor confirms the address:
 
 - `docs/cpm_author_email_public_lookup_20260704.md`
 - `docs/cpm_author_email_public_lookup_20260704.csv`
+- `docs/cpm_author_email_reply_tracker_20260708.md`
+- `docs/cpm_author_email_reply_tracker_20260708.csv`
+- `docs/cpm_external_submission_status_20260708.md`
+- `docs/cpm_external_submission_status_20260708.csv`
+- `docs/cpm_external_submission_status_20260708.json`
+- `manuscript/computational_particle_mechanics_external_submission_status.docx`
 - `docs/cpm_goal_completion_audit_20260704.md`
 - `docs/cpm_goal_completion_audit_20260704.csv`
 - `docs/cpm_goal_completion_audit_20260704.json`
+- `scripts/apply_cpm_author_email_reply_tracker.py`
+- `scripts/build_cpm_external_submission_status.py`
 
 Support files for this step:
 
+- `docs/cpm_current_guide_live_check_20260708.md`
+- `docs/cpm_final_live_submission_handoff_zh_20260708.md`
+- `docs/cpm_system_generated_pdf_preview_checklist_20260708.md`
+- `docs/cpm_final_storage_isolation_audit_20260708.md`
+- `docs/cpm_objective_requirement_closure_audit_20260708.md`
+- `docs/cpm_blinded_identity_leak_audit_20260708.md`
+- `docs/cpm_blinded_identity_leak_audit_20260708.csv`
+- `docs/cpm_blinded_identity_leak_audit_20260708.json`
+- `docs/cpm_live_upload_bundle_audit_20260708.md`
+- `docs/cpm_live_upload_bundle_audit_20260708.csv`
+- `docs/cpm_live_upload_bundle_audit_20260708.json`
 - `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx`
 - `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.txt`
 - `manuscript/computational_particle_mechanics_author_email_collection_packet.docx`
@@ -120,22 +139,26 @@ Run:
 Expected result:
 
 ```text
+PASS CPM public reproducibility package: 93 files, manifest, checksum, representative inputs and public-file hygiene verified
 PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match
 PASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries
-PASS CPM submission package: manifest=19, figures=19, docx=11, DOI, guide alignment, live packet and double-anonymous blinded review manuscript verified
+PASS CPM submission package: manifest=19, figures=19, figure source-data gate, docx=11, DOI, guide alignment, public reproducibility package, live packet and double-anonymous blinded review manuscript verified
 ```
 
 Current machine-readable readiness report:
 
 - `docs/cpm_submission_readiness_report_20260704.md`
 - `docs/cpm_submission_readiness_report_20260704.json`
+- `docs/cpm_external_submission_status_20260708.md`
+- `docs/cpm_external_submission_status_20260708.json`
+- `manuscript/computational_particle_mechanics_external_submission_status.docx`
 - `docs/cpm_final_pdf_visual_qa_20260704.md`
 - `docs/cpm_final_pdf_visual_qa_20260704.json`
 
 Latest local status recorded in the readiness report:
 
 - Local package ready: `True`
-- Reduced reproducibility package CPM support members: `47/47` present
+- Reduced reproducibility package CPM support members: `75/75` present
 - Missing reduced-package CPM support members: `0`
 - Current final PDF visual QA: `PASS`, 19 pages, 0 blank pages, author-production PDF SHA match, blinded review PDF checked
 - Single-column Word manuscript backup: `12_full_author_manuscript_single_column.docx`

@@ -1,8 +1,8 @@
 # CPM Goal-Level Completion Audit
 
-Generated: `2026-07-08T03:09:54`
+Generated: `2026-07-08T05:52:23`
 
-- Overall status: `ready_after_external_author_metadata`
+- Overall status: `ready_after_external_author_metadata_and_live_pdf_preview`
 - CPM preflight status: `PASS`
 - Final read-through status: `PASS`
 - Local large raw dump/restart residue count: `0`
@@ -18,7 +18,8 @@ Generated: `2026-07-08T03:09:54`
 | Rebuilt manuscript mainline and display evidence | `achieved` | Target-specific TeX/PDF, source-data matrix, six main figures, local TIFF artwork and editable figure package are present; final PDF visual QA status=PASS, pages=19, blank pages=0. | `manuscript/computational_particle_mechanics_submission.*; submission_packages/computational_particle_mechanics_upload_ready/09_main_figures.zip` | Keep claims synchronized with the finite-window evidence matrix. |
 | Final read-through and stale-wording guard | `achieved` | PASS pdf_visual_qa_freshness: all visual-QA checks passed; PASS reader_facing_forbidden_terms: no hits; PASS display_item_references: fig_labels=6, table_labels=4, fig_refs={1: True, 2: True, 3: True, 4: True, 5: True, 6: True}, table_refs={1: True, 2: True, 3: True, 4: True}, duplicates=[]; PASS strong_force_tail_numbers: missing_tex=[], missing_pdf=[]; PASS upload_nested_figures: all required figure PDFs present; PASS support_package_force_tail_sources: force-tail sources present; PASS large_local_raw_residue: no local raw-like files above 20 MiB; <project-root>/docs/cpm_final_readthrough_qa_20260708.md | `scripts/check_cpm_final_readthrough.py; docs/cpm_final_readthrough_qa_20260708.json` | Rerun after any manuscript, figure, upload-package or support-package rebuild. |
 | Official-guide and submission package readiness | `achieved` | PASS CPM public reproducibility package: 93 files, manifest, checksum, representative inputs and public-file hygiene verified; PASS CPM scientific alignment: manuscript, cover letter, fields and gap map match; PASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries; PASS CPM submission package: manifest=19, figures=19, figure source-data gate, docx=11, DOI, guide alignment, public reproducibility package, live packet and double-anonymous blinded review manuscript verified | `scripts/check_computational_particle_mechanics_submission_package.py; docs/cpm_submission_readiness_report_20260704.json` | Use the blinded review package for the current Elsevier/ScienceDirect double-anonymized route; keep the author-bearing PDF/Word manuscript for title-page, source-file, production or explicit live-system requests. |
-| External author metadata for live system | `external_pending` | Unconfirmed or missing coauthor e-mail entry count = 7; 4 public candidate e-mails require author confirmation. | `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx; docs/cpm_author_email_public_lookup_20260704.md` | Collect or confirm coauthor e-mails before final system submission if the live system requires them. |
+| External author metadata for live system | `external_pending` | Unconfirmed or missing coauthor e-mail entry count = 7; external-status pending author e-mail count = 7; 4 public candidate e-mails require author confirmation. | `manuscript/computational_particle_mechanics_coauthor_email_request_zh_en.docx; docs/cpm_author_email_public_lookup_20260704.md; docs/cpm_external_submission_status_20260708.json` | Collect or confirm coauthor e-mails before final system submission if the live system requires them. |
+| Live-system generated PDF preview | `external_pending` | External-status tracker pending_pdf_preview=True; final local PDF visual QA is PASS with 19 pages. | `docs/cpm_system_generated_pdf_preview_checklist_20260708.md; docs/cpm_external_submission_status_20260708.json` | Inspect the system-generated PDF after live upload and before final submit. |
 
 ## Decision Boundary
 
