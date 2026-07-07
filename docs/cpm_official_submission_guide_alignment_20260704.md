@@ -24,7 +24,7 @@ Purpose: map current upload files and support files to the live journal requirem
 | Figure files | ScienceDirect Guide for Authors: figure files should be uploaded separately at suitable quality. | `submission_packages/computational_particle_mechanics_upload_ready/09_main_figures.zip` | `ready` | Upload 09_main_figures.zip or individual figure files if the live system separates figure upload. |
 | Tables and source data | ScienceDirect Guide for Authors: tables should be editable and data availability should be stated. | `manuscript/computational_particle_mechanics_submission.tex; submission_packages/repaired_submission_package.zip` | `ready` | Use the manuscript tables and reduced reproducibility package for editable/source-backed evidence. |
 | Data and code availability | ScienceDirect Guide for Authors: data/code availability statements and repository links should be supplied where applicable. | `manuscript/computational_particle_mechanics_submission.tex; DOI 10.5281/zenodo.20687351; GitHub repository` | `ready` | Paste the DOI-backed data and code statements from editorial fields. |
-| Author metadata | Live submission system author-entry forms. | `submission_packages/computational_particle_mechanics_upload_ready/10_author_email_completion_sheet.csv` | `external_metadata_pending` | Fill seven coauthor e-mail addresses if the live system requires every author e-mail. |
+| Author metadata | Live submission system author-entry forms. | `submission_packages/computational_particle_mechanics_upload_ready/10_author_email_completion_sheet.csv` | `external_metadata_pending` | Complete or confirm seven non-corresponding-author e-mail entries if the live system requires every author e-mail. |
 | Final generated PDF review | Live submission system preview step. | `manuscript/computational_particle_mechanics_live_submission_checklist.md` | `external_submission_step` | Preview the system-generated PDF before clicking final submit. |
 
 ## Summary
@@ -34,4 +34,4 @@ Purpose: map current upload files and support files to the live journal requirem
 - The author-bearing PDF and single-column Word manuscript are retained for title-page, source-file, production or explicit live-system requests.
 - Article type, file categories and the system-generated PDF must be confirmed in the live submission system.
 - Highlights and graphical-abstract files are prepared as live-system support; upload them only where the submission workflow requests those item types.
-- The remaining non-local items are seven coauthor e-mail addresses, live article-type/category confirmation and system-generated PDF preview.
+- The remaining non-local items are seven non-corresponding-author e-mail entries requiring completion or confirmation, live article-type/category confirmation and system-generated PDF preview.
