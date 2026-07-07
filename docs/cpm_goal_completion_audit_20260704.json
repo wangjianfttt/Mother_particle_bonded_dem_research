@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T02:40:12",
+  "generated_at": "2026-07-08T02:58:02",
   "overall_status": "ready_after_external_author_metadata",
   "preflight_status": "PASS",
   "final_readthrough_status": "PASS",
@@ -16,27 +16,14 @@
       "large_raw_outputs_before_20260704_20260704"
     ]
   },
-  "readiness": {
-    "generated_at": "2026-07-08T02:17:14",
+  "readiness_summary": {
     "target_journal": "Computational Particle Mechanics",
     "manuscript_title": "Bonded-template DEM reveals strength- and topology-dependent fracture-event sequences in packed brittle ceramic pebbles",
     "doi": "https://doi.org/10.5281/zenodo.20687351",
     "github_repository": "wangjianfttt/Mother_particle_bonded_dem_research",
     "preflight_status": "PASS",
-    "preflight_output": "PASS CPM public reproducibility package: 93 files, manifest, checksum, representative inputs and public-file hygiene verified\nPASS CPM scientific alignment: manuscript, cover letter, fields and gap map match\nPASS CPM reviewer-risk preflight: 7 risks mapped to current evidence and boundaries\nPASS CPM submission package: manifest=19, figures=19, figure source-data gate, docx=11, DOI, guide alignment, public reproducibility package, live packet and double-anonymous blinded review manuscript verified",
-    "upload_package": "submission_packages/computational_particle_mechanics_upload_ready.zip",
-    "upload_package_bytes": 6782010,
-    "upload_package_sha256": "cedb4584299ab9157ce008e902d597051337418ba4e0efb1332d7dcbbd9a19ce",
-    "reproducibility_package": "submission_packages/repaired_submission_package.zip",
-    "reproducibility_package_bytes": 8227251,
-    "reproducibility_package_sha256": "f380ee634522aaa05547a1e4eb1d6b627af88cd32417980da3917dd63cb65971",
-    "public_reproducibility_package": "submission_packages/computational_particle_mechanics_public_reproducibility_package.zip",
-    "public_reproducibility_package_bytes": 3714034,
-    "public_reproducibility_package_sha256": "ae1217103ee7f00e7ca769d451dbca6131415dbaf86fb39b686a53c34bcac394",
-    "public_reproducibility_package_members": 93,
-    "required_repro_support_members": 47,
-    "present_repro_support_members": 47,
-    "missing_repro_support_members": [],
+    "internal_status": "ready_for_live_submission_after_external_metadata",
+    "local_ready": true,
     "manifest_rows": 19,
     "upload_zip_members": 20,
     "latex_source_members": 9,
@@ -52,8 +39,10 @@
       "Gang Shen",
       "Haishun Deng"
     ],
-    "local_ready": true,
-    "internal_status": "ready_for_live_submission_after_external_metadata",
+    "required_repro_support_members": 47,
+    "present_repro_support_members": 47,
+    "missing_repro_support_members": [],
+    "public_reproducibility_package_members": 93,
     "external_items": [
       "Complete or confirm seven non-corresponding-author e-mail entries if required by the live submission system.",
       "Use the current Elsevier/ScienceDirect double-anonymized route and confirm article type/category in the live system.",
@@ -62,12 +51,12 @@
     ]
   },
   "pdf_visual_qa": {
-    "generated_at": "2026-07-08T02:27:22",
+    "generated_at": "2026-07-08T02:46:41",
     "manuscript_pdf": "manuscript/computational_particle_mechanics_submission.pdf",
     "author_production_pdf": "submission_packages/computational_particle_mechanics_upload_ready/11_full_author_manuscript_for_production.pdf",
     "blinded_review_pdf": "submission_packages/computational_particle_mechanics_upload_ready/01_review_manuscript_blinded.pdf",
-    "manuscript_pdf_sha256": "2af14556e2d6890cc254be42690a0642b349e5b1143458d984f30d393b83d2b1",
-    "author_production_pdf_sha256": "2af14556e2d6890cc254be42690a0642b349e5b1143458d984f30d393b83d2b1",
+    "manuscript_pdf_sha256": "c48217ada4ad3005fc805a0ad45dfdb34b62946209a4c8088c7a00da3d784cd9",
+    "author_production_pdf_sha256": "c48217ada4ad3005fc805a0ad45dfdb34b62946209a4c8088c7a00da3d784cd9",
     "blinded_review_pdf_sha256": "e3bed6f592d5d0e75b03ee1e47ddeeef941c281329e2b38834628fa74af99c85",
     "author_production_matches_manuscript_pdf": true,
     "blinded_review_forbidden_hits": [],
@@ -351,7 +340,7 @@
     "status": "PASS"
   },
   "final_readthrough": {
-    "generated_at": "2026-07-08T02:40:11",
+    "generated_at": "2026-07-08T02:58:01",
     "status": "PASS",
     "results": [
       {
