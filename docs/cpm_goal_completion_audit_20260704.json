@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-07-08T02:58:02",
+  "generated_at": "2026-07-08T03:09:54",
   "overall_status": "ready_after_external_author_metadata",
   "preflight_status": "PASS",
   "final_readthrough_status": "PASS",
@@ -340,7 +340,7 @@
     "status": "PASS"
   },
   "final_readthrough": {
-    "generated_at": "2026-07-08T02:58:01",
+    "generated_at": "2026-07-08T03:09:53",
     "status": "PASS",
     "results": [
       {
